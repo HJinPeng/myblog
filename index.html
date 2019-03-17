@@ -259,6 +259,156 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/17/jquery--绑定事件、解绑事件/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="HJP">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="HJinPeng">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/03/17/jquery--绑定事件、解绑事件/" itemprop="url">jquery--绑定事件、解绑事件</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-03-17T20:46:35+08:00">
+                2019-03-17
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/jquery/" itemprop="url" rel="index">
+                    <span itemprop="name">jquery</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <h4 id="1-绑定事件"><a href="#1-绑定事件" class="headerlink" title="1. 绑定事件"></a>1. 绑定事件</h4><h5 id="方式1：-eventName-function"><a href="#方式1：-eventName-function" class="headerlink" title="方式1： .eventName(function(){})"></a>方式1： <code>.eventName(function(){})</code></h5><p>特点：编写效率高，但jq只支持几个事件</p>
+<h5 id="方式2：-on-quot-eventName-quot-function"><a href="#方式2：-on-quot-eventName-quot-function" class="headerlink" title="方式2：.on(&quot;eventName&quot;,function(){})"></a>方式2：<code>.on(&quot;eventName&quot;,function(){})</code></h5><p>特点：编写效率略低，但支持所有js事件</p>
+<p>代码：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    $(<span class="string">"button"</span>).click(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        alert(<span class="string">"1"</span>);</span><br><span class="line">    &#125;);</span><br><span class="line"></span><br><span class="line">    $(<span class="string">"button"</span>).on(<span class="string">"click"</span>,<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        alert(<span class="string">"2"</span>);</span><br><span class="line">    &#125;);</span><br><span class="line"></span><br><span class="line">    $(<span class="string">"button"</span>).mouseleave(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        alert(<span class="string">"mouseleave"</span>);</span><br><span class="line">    &#125;);</span><br><span class="line">    </span><br><span class="line">    $(<span class="string">"button"</span>).mouseenter(test);</span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">test</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        alert(<span class="string">"mouseenter"</span>);</span><br><span class="line">    &#125;</span><br><span class="line"> &#125;);</span><br></pre></td></tr></table></figure>
+<p>同一个元素可以绑定多个相同或者不同事件，不会覆盖</p>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2019/03/17/jquery--绑定事件、解绑事件/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/17/jquery--scrollTop()/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
@@ -278,7 +428,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2019/03/17/jquery--scrollTop()/" itemprop="url">scrollTop()</a></h1>
+                <a class="post-title-link" href="/2019/03/17/jquery--scrollTop()/" itemprop="url">jquery--scrollTop()</a></h1>
         
 
         <div class="post-meta">
@@ -1585,149 +1735,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/15/jquery--修改访问符/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="HJP">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="HJinPeng">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/03/15/jquery--修改访问符/" itemprop="url">jquery--释放$的使用权，自定义访问符</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-03-15T11:02:44+08:00">
-                2019-03-15
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/jquery/" itemprop="url" rel="index">
-                    <span itemprop="name">jquery</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h4 id="背景条件"><a href="#背景条件" class="headerlink" title="背景条件"></a>背景条件</h4><p>当引入的其他框架和jquery发生冲突时，如其他框架中定义了 var $ = 123; 且该框架放在在jquery框架引入之前</p>
-<h4 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 1. 释放$的使用权</span></span><br><span class="line"><span class="comment">// jQuery.noConflict();</span></span><br><span class="line"><span class="comment">// 2. 自定义一个符号作为访问符</span></span><br><span class="line"><span class="comment">// 如下访问符改为jq</span></span><br><span class="line">        <span class="keyword">var</span> jq = jQuery.noConflict();</span><br><span class="line">        jq(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">            alert(<span class="string">'123'</span>);</span><br><span class="line">        &#125;);</span><br></pre></td></tr></table></figure>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -1778,7 +1785,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">12</span>
+                  <span class="site-state-item-count">13</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
