@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="HJinPeng">
 <meta property="og:description" content="前言：伪元素和伪类不一样 CSS3中伪元素用双冒号 ::  ，伪类用单冒号 : 1. 伪元素 ::before和::after先看一段代码，伪元素基本用法 123456789101112131415    &amp;lt;style&amp;gt;        p::before&amp;#123;            content: &quot;---&quot;;            color: blue;        &amp;#">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-03-16T05:53:30.211Z">
+<meta property="og:updated_time" content="2019-03-16T15:02:41.059Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="css--伪元素">
 <meta name="twitter:description" content="前言：伪元素和伪类不一样 CSS3中伪元素用双冒号 ::  ，伪类用单冒号 : 1. 伪元素 ::before和::after先看一段代码，伪元素基本用法 123456789101112131415    &amp;lt;style&amp;gt;        p::before&amp;#123;            content: &quot;---&quot;;            color: blue;        &amp;#">
@@ -365,7 +365,9 @@
 <li>伪类元素的默认display值是inline，可修改为block</li>
 </ol>
 <h5 id="1-1-使用-after清除浮动"><a href="#1-1-使用-after清除浮动" class="headerlink" title="1.1 使用::after清除浮动"></a>1.1 使用<code>::after</code>清除浮动</h5><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">div</span><span class="selector-pseudo">::after</span>&#123;</span><br><span class="line">    <span class="attribute">content</span>: <span class="string">""</span>;</span><br><span class="line">    <span class="attribute">display</span>: block;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">0</span>;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">0</span>;</span><br><span class="line">    <span class="attribute">clear</span>: both;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h5 id="1-2-制作图形"><a href="#1-2-制作图形" class="headerlink" title="1.2 制作图形"></a>1.2 制作图形</h5>
+<h5 id="1-2-制作图形"><a href="#1-2-制作图形" class="headerlink" title="1.2 制作图形"></a>1.2 制作图形</h5><h6 id="1-2-1-三角形"><a href="#1-2-1-三角形" class="headerlink" title="1.2.1 三角形"></a>1.2.1 三角形</h6><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">p</span><span class="selector-pseudo">::after</span> &#123;</span><br><span class="line">    <span class="attribute">content</span>: <span class="string">''</span>;</span><br><span class="line">    <span class="attribute">display</span>: inline-block;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">0px</span>;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">0px</span>;</span><br><span class="line">    <span class="attribute">border</span>: <span class="number">10px</span> solid transparent;</span><br><span class="line">    <span class="attribute">border-left</span>: <span class="number">10px</span> solid <span class="number">#AFABAB</span>;        </span><br><span class="line">    <span class="attribute">position</span>: relative;</span><br><span class="line">    <span class="attribute">top</span>: <span class="number">2px</span>;</span><br><span class="line">    <span class="attribute">left</span>: <span class="number">10px</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h6 id="1-2-2-梯形"><a href="#1-2-2-梯形" class="headerlink" title="1.2.2 梯形"></a>1.2.2 梯形</h6><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">p</span><span class="selector-pseudo">::before</span> &#123;</span><br><span class="line">    <span class="attribute">content</span>: <span class="string">''</span>;</span><br><span class="line">    <span class="attribute">display</span>: inline-block;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">20px</span>;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">0px</span>;</span><br><span class="line">    <span class="attribute">border</span>: <span class="number">10px</span> solid transparent;</span><br><span class="line">    <span class="attribute">border-bottom</span>: <span class="number">10px</span> solid <span class="number">#AFABAB</span>;        </span><br><span class="line">    <span class="attribute">position</span>: relative;</span><br><span class="line">    <span class="attribute">top</span>: <span class="number">2px</span>;</span><br><span class="line">    <span class="attribute">left</span>: <span class="number">10px</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
       
     </div>
     
@@ -484,7 +486,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">7</span>
+                  <span class="site-state-item-count">10</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -539,7 +541,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#前言："><span class="nav-text">前言：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-伪元素-before和-after"><span class="nav-text">1. 伪元素 ::before和::after</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#1-1-使用-after清除浮动"><span class="nav-text">1.1 使用::after清除浮动</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#1-2-制作图形"><span class="nav-text">1.2 制作图形</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#前言："><span class="nav-text">前言：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-伪元素-before和-after"><span class="nav-text">1. 伪元素 ::before和::after</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#1-1-使用-after清除浮动"><span class="nav-text">1.1 使用::after清除浮动</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#1-2-制作图形"><span class="nav-text">1.2 制作图形</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#1-2-1-三角形"><span class="nav-text">1.2.1 三角形</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#1-2-2-梯形"><span class="nav-text">1.2.2 梯形</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>
