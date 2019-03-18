@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT">
+  <meta name="keywords" content="-git,">
 
 
 
@@ -79,17 +79,18 @@
 
 
 
-<meta name="description" content="关于我作者： HJP 邮箱：742463015@qq.com">
-<meta property="og:type" content="website">
-<meta property="og:title" content="关于">
-<meta property="og:url" content="http://yoursite.com/about/index.html">
+<meta name="description" content="1. 创建版本库 初始化Git仓库 在一个文件夹中使用git init，就可以变成git可以管理的仓库，会生成默认隐藏的.git文件夹  添加文件到Git仓库  2.1 git add &amp;lt;file&amp;gt;，可反复使用多次，添加多个文件  2.2 git commit -m &amp;lt;message&amp;gt; ，一次提交   2. git status 和 git diffgit status 可">
+<meta name="keywords" content="-git">
+<meta property="og:type" content="article">
+<meta property="og:title" content="git--基本指令">
+<meta property="og:url" content="http://yoursite.com/2019/03/18/git--基本指令/index.html">
 <meta property="og:site_name" content="HJinPeng">
-<meta property="og:description" content="关于我作者： HJP 邮箱：742463015@qq.com">
+<meta property="og:description" content="1. 创建版本库 初始化Git仓库 在一个文件夹中使用git init，就可以变成git可以管理的仓库，会生成默认隐藏的.git文件夹  添加文件到Git仓库  2.1 git add &amp;lt;file&amp;gt;，可反复使用多次，添加多个文件  2.2 git commit -m &amp;lt;message&amp;gt; ，一次提交   2. git status 和 git diffgit status 可">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-12-29T10:54:53.631Z">
+<meta property="og:updated_time" content="2019-03-18T08:39:19.806Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="关于">
-<meta name="twitter:description" content="关于我作者： HJP 邮箱：742463015@qq.com">
+<meta name="twitter:title" content="git--基本指令">
+<meta name="twitter:description" content="1. 创建版本库 初始化Git仓库 在一个文件夹中使用git init，就可以变成git可以管理的仓库，会生成默认隐藏的.git文件夹  添加文件到Git仓库  2.1 git add &amp;lt;file&amp;gt;，可反复使用多次，添加多个文件  2.2 git commit -m &amp;lt;message&amp;gt; ，一次提交   2. git status 和 git diffgit status 可">
 
 
 
@@ -119,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/about/">
+  <link rel="canonical" href="http://yoursite.com/2019/03/18/git--基本指令/">
 
 
 
 
 
-  <title>关于 | HJinPeng</title>
+  <title>git--基本指令 | HJinPeng</title>
   
 
 
@@ -250,35 +251,194 @@
 
   <div id="posts" class="posts-expand">
     
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/18/git--基本指令/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="HJP">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="HJinPeng">
+    </span>
+
     
-    
-    <div class="post-block page">
       <header class="post-header">
 
-	<h1 class="post-title" itemprop="name headline">关于</h1>
-
-
-
-</header>
-
-      
-      
-      
-      <div class="post-body">
         
         
-          <h3 id="关于我"><a href="#关于我" class="headerlink" title="关于我"></a>关于我</h3><p>作者： HJP</p>
-<p>邮箱：<a href="mailto:742463015@qq.com" target="_blank" rel="noopener">742463015@qq.com</a></p>
-
+          <h1 class="post-title" itemprop="name headline">git--基本指令</h1>
         
-      </div>
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-03-18T15:41:56+08:00">
+                2019-03-18
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/git/" itemprop="url" rel="index">
+                    <span itemprop="name">git</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
       
       
+
+      
+        <h4 id="1-创建版本库"><a href="#1-创建版本库" class="headerlink" title="1. 创建版本库"></a>1. 创建版本库</h4><ol>
+<li><p>初始化Git仓库</p>
+<p>在一个文件夹中使用<code>git init</code>，就可以变成git可以管理的仓库，会生成默认隐藏的.git文件夹</p>
+</li>
+<li><p>添加文件到Git仓库</p>
+<p> 2.1 <code>git add &lt;file&gt;</code>，可反复使用多次，添加多个文件</p>
+<p> 2.2 <code>git commit -m &lt;message&gt; ，一次提交</code></p>
+</li>
+</ol>
+<h4 id="2-git-status-和-git-diff"><a href="#2-git-status-和-git-diff" class="headerlink" title="2. git status 和 git diff"></a>2. <code>git status</code> 和 <code>git diff</code></h4><p><code>git status</code> 可以查看工作区的状态，如修改后还未添加到工作区，添加后还未提交等。</p>
+<p><code>git diff</code>可以查看文件的修改内容</p>
+<h4 id="3-版本回退"><a href="#3-版本回退" class="headerlink" title="3. 版本回退"></a>3. 版本回退</h4><ol>
+<li><code>HEAD</code> 指向当前版本</li>
+<li><code>git reset --hard commit_id</code> 可以穿梭到任意一个版本，<code>git reset --hard^</code> 指上一个版本，<code>head^^</code>指上上个版本</li>
+<li>使用<code>git log</code> 可以查看提交的历史，确定回退到哪个版本</li>
+<li>使用<code>git reflog</code> 查看命令历史</li>
+</ol>
+<h4 id="4-撤销修改"><a href="#4-撤销修改" class="headerlink" title="4. 撤销修改"></a>4. 撤销修改</h4><ol>
+<li>当修改了工作区的文件时，想直接丢弃工作区的修改，可以使用<code>git checkout --file</code></li>
+<li>当修改了工作区文件且已经add到了暂存区，想丢弃修改<ol>
+<li><code>git reset HEAD &lt;file&gt;</code>  回到场景1，工作区的文件会变成暂存区的文件状态</li>
+<li><code>git checkout --file</code>  丢弃工作区的文件修改状态</li>
+</ol>
+</li>
+</ol>
+<h4 id="5-删除文件"><a href="#5-删除文件" class="headerlink" title="5. 删除文件"></a>5. 删除文件</h4><ol>
+<li>删除版本库中的文件，<code>git rm</code> 用于删除一个文件，<code>git commit -m &lt;message&gt;</code>提交</li>
+<li>误删本地文件，但文件存在版本库中，可以使用<code>git checkout -- file</code>  将版本库中最新的文件下载到本地</li>
+</ol>
+
       
     </div>
     
     
     
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/git/" rel="tag"># -git</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/03/17/jquery--事件：绑定、解绑、阻止默认行为、自动触发/" rel="next" title="jquery--事件：绑定、解绑、阻止默认行为、自动触发">
+                <i class="fa fa-chevron-left"></i> jquery--事件：绑定、解绑、阻止默认行为、自动触发
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
   </div>
 
 
@@ -391,7 +551,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#关于我"><span class="nav-text">关于我</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-创建版本库"><span class="nav-text">1. 创建版本库</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-git-status-和-git-diff"><span class="nav-text">2. git status 和 git diff</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-版本回退"><span class="nav-text">3. 版本回退</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-撤销修改"><span class="nav-text">4. 撤销修改</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5-删除文件"><span class="nav-text">5. 删除文件</span></a></li></ol></div>
             
 
           </div>
