@@ -259,6 +259,196 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/19/css3/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="HJP">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="HJinPeng">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/03/19/css3/" itemprop="url">css3</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-03-19T15:30:51+08:00">
+                2019-03-19
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/css3/" itemprop="url" rel="index">
+                    <span itemprop="name">css3</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h4 id="1-边框"><a href="#1-边框" class="headerlink" title="1. 边框"></a>1. 边框</h4><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line">  <span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="undefined">        * &#123;</span></span><br><span class="line"><span class="undefined">            margin: 0px;</span></span><br><span class="line"><span class="undefined">            padding: 0px;</span></span><br><span class="line"><span class="undefined">        &#125;</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="css">        <span class="selector-tag">div</span><span class="selector-class">.father</span> &#123;</span></span><br><span class="line"><span class="undefined">            width: 400px;</span></span><br><span class="line"><span class="undefined">            height: 400px;</span></span><br><span class="line"><span class="undefined">            background-color: red;</span></span><br><span class="line"><span class="undefined">            position: relative;</span></span><br><span class="line"><span class="undefined">            top: 100px;</span></span><br><span class="line"><span class="undefined">            left: 100px;</span></span><br><span class="line"><span class="undefined">            border-image: url(imgs/logo.png) 30 30 round;</span></span><br><span class="line"><span class="undefined">            -moz-border-image: url(imgs/logo.png) 30 30 round;</span></span><br><span class="line"><span class="css">            <span class="comment">/* 老的 Firefox */</span></span></span><br><span class="line"><span class="undefined">            -webkit-border-image: url(imgs/logo.png) 30 30 round;</span></span><br><span class="line"><span class="css">            <span class="comment">/* Safari 和 Chrome */</span></span></span><br><span class="line"><span class="undefined">            -o-border-image: url(imgs/logo.png) 30 30 round;</span></span><br><span class="line"><span class="css">            <span class="comment">/* Opera */</span></span></span><br><span class="line"><span class="undefined">        </span></span><br><span class="line"><span class="undefined">        &#125;</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="css">        <span class="selector-tag">div</span><span class="selector-class">.son</span> &#123;</span></span><br><span class="line"><span class="undefined">            width: 200px;</span></span><br><span class="line"><span class="undefined">            height: 200px;</span></span><br><span class="line"><span class="undefined">            background-color: yellow;</span></span><br><span class="line"><span class="undefined">            position: absolute;</span></span><br><span class="line"><span class="undefined">            bottom: 100px;</span></span><br><span class="line"><span class="undefined">            left: 100px;</span></span><br><span class="line"><span class="undefined">            border-radius: 10%;</span></span><br><span class="line"><span class="undefined">            box-shadow: 20px 10px 10px green;</span></span><br><span class="line"><span class="undefined">        &#125;</span></span><br><span class="line"><span class="undefined">    </span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"father"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"son"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h4 id="2-背景"><a href="#2-背景" class="headerlink" title="2. 背景"></a>2. 背景</h4><ol>
+<li>对背景图片设置像素</li>
+</ol>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">body</span>&#123;</span><br><span class="line">            <span class="attribute">background-image</span>: <span class="built_in">url</span>(imgs/logo.png);</span><br><span class="line">            <span class="attribute">background-size</span>: <span class="number">60px</span> <span class="number">50px</span>;</span><br><span class="line">            <span class="attribute">-moz-background-size</span>: <span class="number">60px</span> <span class="number">50px</span>;  <span class="comment">/*老版本firefox*/</span></span><br><span class="line">            <span class="attribute">background-repeat</span>: no-repeat;</span><br><span class="line">        &#125;</span><br></pre></td></tr></table></figure>
+<ol start="2">
+<li>对背景图片设置百分比</li>
+</ol>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">   <span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="css"><span class="selector-tag">div</span><span class="selector-class">.one</span>&#123;</span></span><br><span class="line"><span class="undefined">           background-image: url(imgs/logo.png);</span></span><br><span class="line"><span class="undefined">           background-size: 50% 100%;</span></span><br><span class="line"><span class="undefined">           -moz-background-size: 50% 100%;</span></span><br><span class="line"><span class="undefined">           background-repeat: no-repeat;        </span></span><br><span class="line"><span class="undefined">       &#125;</span></span><br><span class="line"><span class="undefined">   </span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line">   </span><br><span class="line">   <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"one"</span>&gt;</span></span><br><span class="line">       <span class="tag">&lt;<span class="name">h2</span>&gt;</span>this is a h2<span class="tag">&lt;/<span class="name">h2</span>&gt;</span></span><br><span class="line">       <span class="tag">&lt;<span class="name">p</span>&gt;</span>this is a p<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">       <span class="tag">&lt;<span class="name">p</span>&gt;</span>this is a p<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">       <span class="tag">&lt;<span class="name">p</span>&gt;</span>this is a p<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">       <span class="tag">&lt;<span class="name">p</span>&gt;</span>this is a p<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">       <span class="tag">&lt;<span class="name">p</span>&gt;</span>this is a p<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<ol start="3">
+<li>设置背景图片定位</li>
+</ol>
+<p>相对边框： <code>background-origin: border-box;</code></p>
+<p>相对内边框： <code>background-origin: padding-box;</code></p>
+<p>相对内容： <code>background-origin: content-box;</code></p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="undefined">    body&#123;</span></span><br><span class="line"><span class="undefined">        background-image: url(imgs/logo.png);</span></span><br><span class="line"><span class="undefined">        background-size: 60px 50px;</span></span><br><span class="line"><span class="css">        <span class="selector-tag">-moz-background-size</span>: 60<span class="selector-tag">px</span> 50<span class="selector-tag">px</span>;  <span class="comment">/*老版本firefox*/</span></span></span><br><span class="line"><span class="undefined">        background-repeat: no-repeat;</span></span><br><span class="line"><span class="undefined">    &#125;</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="css">    <span class="selector-tag">div</span><span class="selector-class">.one</span>&#123;</span></span><br><span class="line"><span class="undefined">        background-image: url(imgs/logo.png);</span></span><br><span class="line"><span class="undefined">        background-size: 50% 100%;</span></span><br><span class="line"><span class="undefined">        -moz-background-size: 50% 100%;</span></span><br><span class="line"><span class="undefined">        background-repeat: no-repeat;        </span></span><br><span class="line"><span class="undefined">    &#125;</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="css">    <span class="selector-tag">div</span><span class="selector-class">.two</span>&#123;</span></span><br><span class="line"><span class="undefined">        padding: 50px;</span></span><br><span class="line"><span class="undefined">        background-image: url(imgs/logo.png);</span></span><br><span class="line"><span class="undefined">        background-origin: border-box;</span></span><br><span class="line"><span class="undefined">        background-repeat: no-repeat;</span></span><br><span class="line"><span class="undefined">    &#125;</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"two"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">h2</span>&gt;</span>this is a h2<span class="tag">&lt;/<span class="name">h2</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">p</span>&gt;</span>this is a p<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">p</span>&gt;</span>this is a p<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">p</span>&gt;</span>this is a p<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">p</span>&gt;</span>this is a p<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">p</span>&gt;</span>this is a p<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<ol start="4">
+<li>设置多个背景图</li>
+</ol>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">body</span></span><br><span class="line">&#123; </span><br><span class="line">	<span class="attribute">background-image</span>:<span class="built_in">url</span>(bg1.jpg),<span class="built_in">url</span>(bg2.jpg);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="3-文字效果"><a href="#3-文字效果" class="headerlink" title="3. 文字效果"></a>3. 文字效果</h4><ol>
+<li>文本阴影</li>
+</ol>
+<p><code>text-shadow: 5px 5px 5px #ff0000</code></p>
+<h4 id="4-字体"><a href="#4-字体" class="headerlink" title="4. 字体"></a>4. 字体</h4><ol>
+<li>使用<code>@font-face</code>添加自定义字体</li>
+</ol>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">@<span class="keyword">font-face</span></span><br><span class="line">&#123;</span><br><span class="line"><span class="attribute">font-family</span>: myFirstFont;</span><br><span class="line"><span class="attribute">src</span>: <span class="built_in">url</span>(<span class="string">'Sansation_Light.ttf'</span>),</span><br><span class="line">     <span class="built_in">url</span>(<span class="string">'Sansation_Light.eot'</span>); <span class="comment">/* IE9+ */</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-tag">div</span></span><br><span class="line">&#123;</span><br><span class="line"><span class="attribute">font-family</span>:myFirstFont;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="5-转换–2D"><a href="#5-转换–2D" class="headerlink" title="5.  转换–2D"></a>5.  转换–2D</h4><ol>
+<li>translate()</li>
+</ol>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">transform</span>: <span class="selector-tag">translate</span>(100<span class="selector-tag">px</span>, 200<span class="selector-tag">px</span>);</span><br><span class="line"><span class="selector-tag">-ms-transform</span>: <span class="selector-tag">translate</span>(100<span class="selector-tag">px</span>, 200<span class="selector-tag">px</span>); <span class="comment">/* IE 9 */</span></span><br><span class="line"><span class="selector-tag">-webkit-transform</span>: <span class="selector-tag">translate</span>(100<span class="selector-tag">px</span>, 200<span class="selector-tag">px</span>);<span class="comment">/* Safari and Chrome */</span></span><br><span class="line"><span class="selector-tag">-o-transform</span>: <span class="selector-tag">translate</span>(100<span class="selector-tag">px</span>, 200<span class="selector-tag">px</span>);<span class="comment">/* Opera */</span></span><br><span class="line"><span class="selector-tag">-moz-transform</span>: <span class="selector-tag">translate</span>(100<span class="selector-tag">px</span>, 200<span class="selector-tag">px</span>);<span class="comment">/* Firefox */</span></span><br></pre></td></tr></table></figure>
+<p>向右移动100px,向下移动200px;</p>
+<ol start="2">
+<li>rotate()</li>
+</ol>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">transform</span>: <span class="selector-tag">rotate</span>(90<span class="selector-tag">deg</span>);</span><br><span class="line"><span class="selector-tag">-ms-transform</span>: <span class="selector-tag">rotate</span>(90<span class="selector-tag">deg</span>);<span class="comment">/* IE 9 */</span></span><br><span class="line"><span class="selector-tag">-webkit-transform</span>: <span class="selector-tag">rotate</span>(90<span class="selector-tag">deg</span>);<span class="comment">/* Safari and Chrome */</span></span><br><span class="line"><span class="selector-tag">-o-transform</span>: <span class="selector-tag">rotate</span>(90<span class="selector-tag">deg</span>); <span class="comment">/* Opera */</span></span><br><span class="line"><span class="selector-tag">-moz-transform</span>: <span class="selector-tag">rotate</span>(90<span class="selector-tag">deg</span>);<span class="comment">/* Firefox */</span></span><br></pre></td></tr></table></figure>
+<p>顺时针旋转90°</p>
+<ol start="3">
+<li>scale()</li>
+</ol>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">transform</span>: <span class="selector-tag">scale</span>(2,4);</span><br><span class="line"><span class="selector-tag">-ms-transform</span>: <span class="selector-tag">scale</span>(2,4);	<span class="comment">/* IE 9 */</span></span><br><span class="line"><span class="selector-tag">-webkit-transform</span>: <span class="selector-tag">scale</span>(2,4);	<span class="comment">/* Safari 和 Chrome */</span></span><br><span class="line"><span class="selector-tag">-o-transform</span>: <span class="selector-tag">scale</span>(2,4);	<span class="comment">/* Opera */</span></span><br><span class="line"><span class="selector-tag">-moz-transform</span>: <span class="selector-tag">scale</span>(2,4);	<span class="comment">/* Firefox */</span></span><br></pre></td></tr></table></figure>
+<p>将元素宽放大2倍，高放大4倍</p>
+<ol start="4">
+<li>skew()</li>
+</ol>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">transform</span>: <span class="selector-tag">skew</span>(10<span class="selector-tag">deg</span>,20<span class="selector-tag">deg</span>);</span><br><span class="line"><span class="selector-tag">-ms-transform</span>: <span class="selector-tag">skew</span>(10<span class="selector-tag">deg</span>,20<span class="selector-tag">deg</span>);	<span class="comment">/* IE 9 */</span></span><br><span class="line"><span class="selector-tag">-moz-transform</span>: <span class="selector-tag">skew</span>(10<span class="selector-tag">deg</span>,20<span class="selector-tag">deg</span>);	<span class="comment">/* Firefox */</span></span><br><span class="line"><span class="selector-tag">-webkit-transform</span>: <span class="selector-tag">skew</span>(10<span class="selector-tag">deg</span>,20<span class="selector-tag">deg</span>);	<span class="comment">/* Safari and Chrome */</span></span><br><span class="line"><span class="selector-tag">-o-transform</span>: <span class="selector-tag">skew</span>(10<span class="selector-tag">deg</span>,20<span class="selector-tag">deg</span>);	<span class="comment">/* Opera */</span></span><br></pre></td></tr></table></figure>
+<p>把元素围绕x轴翻转10°，围绕y轴翻转20°</p>
+<p>5. </p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/18/jquery--动画/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
@@ -1573,155 +1763,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/17/css-positon/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="HJP">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="HJinPeng">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/03/17/css-positon/" itemprop="url">css-position</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-03-17T13:56:55+08:00">
-                2019-03-17
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/css/" itemprop="url" rel="index">
-                    <span itemprop="name">css</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h4 id="1-利用position-relative-和-position-absolute-和-z-index-1-做出上下层级效果"><a href="#1-利用position-relative-和-position-absolute-和-z-index-1-做出上下层级效果" class="headerlink" title="1. 利用position: relative 和 position: absolute 和 z-index: -1 做出上下层级效果"></a>1. 利用<code>position: relative</code> 和 <code>position: absolute</code> 和 <code>z-index: -1</code> 做出上下层级效果</h4><ol>
-<li>父元素设置position属性</li>
-<li>子元素设置<code>position: absolute</code> ，absolute是相对于最近的上级设置了position的元素左上角进行定位的，设置top/left/right/bottom值定位</li>
-<li>利用<code>z-index</code>设置层级。</li>
-</ol>
-<h4 id="2-position-absolute中的-lt-h-gt-lt-h-gt-文本居中"><a href="#2-position-absolute中的-lt-h-gt-lt-h-gt-文本居中" class="headerlink" title="2. position: absolute中的&lt;h&gt;&lt;/h&gt; 文本居中"></a>2. <code>position: absolute</code>中的<code>&lt;h&gt;&lt;/h&gt;</code> 文本居中</h4><p>解决方案:</p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">h</span>&#123;</span><br><span class="line">    <span class="attribute">position</span>: absolute;</span><br><span class="line">    <span class="attribute">top</span>: <span class="number">100px</span>;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">100%</span>;  </span><br><span class="line">    <span class="attribute">text-align</span>: center;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>其中 <code>width: 100%;</code>  令h标签的长度为父容器的宽</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -1772,7 +1813,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">17</span>
+                  <span class="site-state-item-count">18</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -1783,7 +1824,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-count">6</span>
                   <span class="site-state-item-name">categories</span>
                 </a>
               </div>
@@ -1794,7 +1835,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-count">6</span>
                   <span class="site-state-item-name">tags</span>
                 </a>
               </div>
