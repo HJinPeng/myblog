@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="HJinPeng">
 <meta property="og:description" content="1. 创建和合并分支创建分支：git branch &amp;lt;name&amp;gt; 切换分支：git checkout &amp;lt;name&amp;gt; 创建和切换分支：git checkout -b &amp;lt;name&amp;gt; 查看分支：git branch 合并其他分支到当前分支：git meger &amp;lt;name&amp;gt; 删除分支：git branch -d &amp;lt;name&amp;gt; ######例如：">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-03-20T12:48:27.891Z">
+<meta property="og:updated_time" content="2019-03-20T12:54:35.378Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="git--分支管理">
 <meta name="twitter:description" content="1. 创建和合并分支创建分支：git branch &amp;lt;name&amp;gt; 切换分支：git checkout &amp;lt;name&amp;gt; 创建和切换分支：git checkout -b &amp;lt;name&amp;gt; 查看分支：git branch 合并其他分支到当前分支：git meger &amp;lt;name&amp;gt; 删除分支：git branch -d &amp;lt;name&amp;gt; ######例如：">
@@ -361,6 +361,7 @@
 <p>######例如：</p>
 <p><code>git checkout -b dev</code>表示创建dev分支并切换到dev分支</p>
 <p>当前分支为master，<code>git meger dev</code>表示将分支dev合并到当前的master分支上</p>
+<a id="more"></a>
 <h4 id="2-查看分支合并图"><a href="#2-查看分支合并图" class="headerlink" title="2. 查看分支合并图"></a>2. 查看分支合并图</h4><p><code>git log --graph</code></p>
 <h4 id="3-合并分支时使用-no-ff，能看出曾经做过合并"><a href="#3-合并分支时使用-no-ff，能看出曾经做过合并" class="headerlink" title="3. 合并分支时使用--no-ff，能看出曾经做过合并"></a>3. 合并分支时使用<code>--no-ff</code>，能看出曾经做过合并</h4><p><code>git merge --no-ff -m &quot;说明&quot; &lt;name&gt;</code></p>
 <h4 id="4-修复bug"><a href="#4-修复bug" class="headerlink" title="4. 修复bug"></a>4. 修复bug</h4><p>当手头工作没有完成时，先把工作现场<code>git stash</code>一下，然后去修复bug，修复后，再<code>git stash pop</code>，回到工作现场 </p>
