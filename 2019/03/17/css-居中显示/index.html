@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="1. 利用display: flex123456h&amp;#123;    display: flex;    flex-direction: column;    justify-content: center;    align-items: center;&amp;#125;">
+<meta name="description" content="1. 利用display: flex123456h&amp;#123;    display: flex;    flex-direction: column;    justify-content: center;    align-items: center;&amp;#125; 2. 通过line-height123456&amp;lt;div&amp;gt;	&amp;lt;ul&amp;gt;		&amp;lt;li&amp;gt;1&amp;lt;/li&amp;">
 <meta name="keywords" content="-css">
 <meta property="og:type" content="article">
 <meta property="og:title" content="css-居中显示">
 <meta property="og:url" content="http://yoursite.com/2019/03/17/css-居中显示/index.html">
 <meta property="og:site_name" content="HJinPeng">
-<meta property="og:description" content="1. 利用display: flex123456h&amp;#123;    display: flex;    flex-direction: column;    justify-content: center;    align-items: center;&amp;#125;">
+<meta property="og:description" content="1. 利用display: flex123456h&amp;#123;    display: flex;    flex-direction: column;    justify-content: center;    align-items: center;&amp;#125; 2. 通过line-height123456&amp;lt;div&amp;gt;	&amp;lt;ul&amp;gt;		&amp;lt;li&amp;gt;1&amp;lt;/li&amp;">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-03-17T06:18:28.193Z">
+<meta property="og:updated_time" content="2019-03-22T15:02:06.374Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="css-居中显示">
-<meta name="twitter:description" content="1. 利用display: flex123456h&amp;#123;    display: flex;    flex-direction: column;    justify-content: center;    align-items: center;&amp;#125;">
+<meta name="twitter:description" content="1. 利用display: flex123456h&amp;#123;    display: flex;    flex-direction: column;    justify-content: center;    align-items: center;&amp;#125; 2. 通过line-height123456&amp;lt;div&amp;gt;	&amp;lt;ul&amp;gt;		&amp;lt;li&amp;gt;1&amp;lt;/li&amp;">
 
 
 
@@ -353,6 +353,9 @@
 
       
         <h4 id="1-利用display-flex"><a href="#1-利用display-flex" class="headerlink" title="1. 利用display: flex"></a>1. 利用<code>display: flex</code></h4><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">h</span>&#123;</span><br><span class="line">    <span class="attribute">display</span>: flex;</span><br><span class="line">    <span class="attribute">flex-direction</span>: column;</span><br><span class="line">    <span class="attribute">justify-content</span>: center;</span><br><span class="line">    <span class="attribute">align-items</span>: center;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="2-通过line-height"><a href="#2-通过line-height" class="headerlink" title="2. 通过line-height"></a>2. 通过<code>line-height</code></h4><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">ul</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">li</span>&gt;</span>1<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">li</span>&gt;</span>1<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">div</span>&#123;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">100%</span>;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">45px</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-tag">ul</span>&#123;</span><br><span class="line">    <span class="attribute">line-height</span>: <span class="number">45px</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-tag">li</span>&#123;</span><br><span class="line">    <span class="attribute">list-style</span>: none;</span><br><span class="line">    <span class="attribute">display</span>: inline;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>li为行内元素，ul设置高度和父元素相同，可以实现文本居中</p>
 
       
     </div>
@@ -472,7 +475,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">24</span>
+                  <span class="site-state-item-count">26</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -527,7 +530,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-利用display-flex"><span class="nav-text">1. 利用display: flex</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-利用display-flex"><span class="nav-text">1. 利用display: flex</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-通过line-height"><span class="nav-text">2. 通过line-height</span></a></li></ol></div>
             
 
           </div>
