@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="1. 利用position: relative 和 position: absolute 和 z-index: -1 做出上下层级效果 父元素设置position属性 子元素设置position: absolute ，absolute是相对于最近的上级设置了position的元素左上角进行定位的，设置top/left/right/bottom值定位 利用z-index设置层级。  2. posit">
+<meta name="description" content="1. 什么是雪碧图？将很多很多的小图标放在一张图片上，称之为雪碧图  2. 作用不但减少http请求，而且还降低了图片的大小，加快图片的加载速度 3. 代码1234567&amp;lt;div class=&quot;content_toolbar&quot;&amp;gt;    &amp;lt;span&amp;gt;&amp;lt;i&amp;gt;&amp;lt;/i&amp;gt;收藏&amp;lt;/span&amp;gt;    &amp;lt;span&amp;gt;&amp;lt;i&amp;gt;&amp;lt;/">
 <meta name="keywords" content="-css">
 <meta property="og:type" content="article">
-<meta property="og:title" content="css-position">
-<meta property="og:url" content="http://yoursite.com/2019/03/17/css-positon/index.html">
+<meta property="og:title" content="css-雪碧图的使用">
+<meta property="og:url" content="http://yoursite.com/2019/03/22/css-雪碧图的使用/index.html">
 <meta property="og:site_name" content="HJinPeng">
-<meta property="og:description" content="1. 利用position: relative 和 position: absolute 和 z-index: -1 做出上下层级效果 父元素设置position属性 子元素设置position: absolute ，absolute是相对于最近的上级设置了position的元素左上角进行定位的，设置top/left/right/bottom值定位 利用z-index设置层级。  2. posit">
+<meta property="og:description" content="1. 什么是雪碧图？将很多很多的小图标放在一张图片上，称之为雪碧图  2. 作用不但减少http请求，而且还降低了图片的大小，加快图片的加载速度 3. 代码1234567&amp;lt;div class=&quot;content_toolbar&quot;&amp;gt;    &amp;lt;span&amp;gt;&amp;lt;i&amp;gt;&amp;lt;/i&amp;gt;收藏&amp;lt;/span&amp;gt;    &amp;lt;span&amp;gt;&amp;lt;i&amp;gt;&amp;lt;/">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-03-17T06:24:27.553Z">
+<meta property="og:updated_time" content="2019-03-22T15:22:11.629Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="css-position">
-<meta name="twitter:description" content="1. 利用position: relative 和 position: absolute 和 z-index: -1 做出上下层级效果 父元素设置position属性 子元素设置position: absolute ，absolute是相对于最近的上级设置了position的元素左上角进行定位的，设置top/left/right/bottom值定位 利用z-index设置层级。  2. posit">
+<meta name="twitter:title" content="css-雪碧图的使用">
+<meta name="twitter:description" content="1. 什么是雪碧图？将很多很多的小图标放在一张图片上，称之为雪碧图  2. 作用不但减少http请求，而且还降低了图片的大小，加快图片的加载速度 3. 代码1234567&amp;lt;div class=&quot;content_toolbar&quot;&amp;gt;    &amp;lt;span&amp;gt;&amp;lt;i&amp;gt;&amp;lt;/i&amp;gt;收藏&amp;lt;/span&amp;gt;    &amp;lt;span&amp;gt;&amp;lt;i&amp;gt;&amp;lt;/">
 
 
 
@@ -120,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2019/03/17/css-positon/">
+  <link rel="canonical" href="http://yoursite.com/2019/03/22/css-雪碧图的使用/">
 
 
 
 
 
-  <title>css-position | HJinPeng</title>
+  <title>css-雪碧图的使用 | HJinPeng</title>
   
 
 
@@ -263,7 +263,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/17/css-positon/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/22/css-雪碧图的使用/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="HJP">
@@ -280,7 +280,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">css-position</h1>
+          <h1 class="post-title" itemprop="name headline">css-雪碧图的使用</h1>
         
 
         <div class="post-meta">
@@ -292,8 +292,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-03-17T13:56:55+08:00">
-                2019-03-17
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-03-22T23:18:08+08:00">
+                2019-03-22
               </time>
             
 
@@ -352,14 +352,10 @@
       
 
       
-        <h4 id="1-利用position-relative-和-position-absolute-和-z-index-1-做出上下层级效果"><a href="#1-利用position-relative-和-position-absolute-和-z-index-1-做出上下层级效果" class="headerlink" title="1. 利用position: relative 和 position: absolute 和 z-index: -1 做出上下层级效果"></a>1. 利用<code>position: relative</code> 和 <code>position: absolute</code> 和 <code>z-index: -1</code> 做出上下层级效果</h4><ol>
-<li>父元素设置position属性</li>
-<li>子元素设置<code>position: absolute</code> ，absolute是相对于最近的上级设置了position的元素左上角进行定位的，设置top/left/right/bottom值定位</li>
-<li>利用<code>z-index</code>设置层级。</li>
-</ol>
-<h4 id="2-position-absolute中的-lt-h-gt-lt-h-gt-文本居中"><a href="#2-position-absolute中的-lt-h-gt-lt-h-gt-文本居中" class="headerlink" title="2. position: absolute中的&lt;h&gt;&lt;/h&gt; 文本居中"></a>2. <code>position: absolute</code>中的<code>&lt;h&gt;&lt;/h&gt;</code> 文本居中</h4><p>解决方案:</p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">h</span>&#123;</span><br><span class="line">    <span class="attribute">position</span>: absolute;</span><br><span class="line">    <span class="attribute">top</span>: <span class="number">100px</span>;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">100%</span>;  </span><br><span class="line">    <span class="attribute">text-align</span>: center;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>其中 <code>width: 100%;</code>  令h标签的长度为父容器的宽</p>
+        <h4 id="1-什么是雪碧图？"><a href="#1-什么是雪碧图？" class="headerlink" title="1. 什么是雪碧图？"></a>1. 什么是雪碧图？</h4><p>将很多很多的小图标放在一张图片上，称之为雪碧图 </p>
+<h4 id="2-作用"><a href="#2-作用" class="headerlink" title="2. 作用"></a>2. 作用</h4><p>不但减少http请求，而且还降低了图片的大小，加快图片的加载速度</p>
+<h4 id="3-代码"><a href="#3-代码" class="headerlink" title="3. 代码"></a>3. 代码</h4><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"content_toolbar"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">span</span>&gt;</span><span class="tag">&lt;<span class="name">i</span>&gt;</span><span class="tag">&lt;/<span class="name">i</span>&gt;</span>收藏<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">span</span>&gt;</span><span class="tag">&lt;<span class="name">i</span>&gt;</span><span class="tag">&lt;/<span class="name">i</span>&gt;</span>添加到<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">span</span>&gt;</span><span class="tag">&lt;<span class="name">i</span>&gt;</span><span class="tag">&lt;/<span class="name">i</span>&gt;</span>下载<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">span</span>&gt;</span><span class="tag">&lt;<span class="name">i</span>&gt;</span><span class="tag">&lt;/<span class="name">i</span>&gt;</span>删除<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">span</span>&gt;</span><span class="tag">&lt;<span class="name">i</span>&gt;</span><span class="tag">&lt;/<span class="name">i</span>&gt;</span>清空列表<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.content_toolbar</span> <span class="selector-tag">span</span> <span class="selector-tag">i</span> &#123;</span><br><span class="line">    <span class="attribute">display</span>: inline-block;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">18px</span>;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">18px</span>;</span><br><span class="line">    <span class="attribute">background</span>: <span class="built_in">url</span>(../imgs/icon_sprite.png) no-repeat <span class="number">0</span> <span class="number">0</span>;</span><br><span class="line">    <span class="attribute">margin-right</span>: <span class="number">10px</span>;</span><br><span class="line">    <span class="attribute">vertical-align</span>: -<span class="number">5px</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.content_toolbar</span> <span class="selector-tag">span</span><span class="selector-pseudo">:nth-child(1)</span> <span class="selector-tag">i</span> &#123;</span><br><span class="line">    <span class="attribute">background-position</span>: -<span class="number">60px</span> -<span class="number">20px</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.content_toolbar</span> <span class="selector-tag">span</span><span class="selector-pseudo">:nth-child(2)</span> <span class="selector-tag">i</span> &#123;</span><br><span class="line">    <span class="attribute">background-position</span>: -<span class="number">20px</span> -<span class="number">20px</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.content_toolbar</span> <span class="selector-tag">span</span><span class="selector-pseudo">:nth-child(3)</span> <span class="selector-tag">i</span> &#123;</span><br><span class="line">    <span class="attribute">background-position</span>: -<span class="number">40px</span> -<span class="number">240px</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.content_toolbar</span> <span class="selector-tag">span</span><span class="selector-pseudo">:nth-child(4)</span> <span class="selector-tag">i</span> &#123;</span><br><span class="line">    <span class="attribute">background-position</span>: -<span class="number">100px</span> -<span class="number">20px</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.content_toolbar</span> <span class="selector-tag">span</span><span class="selector-pseudo">:nth-child(5)</span> <span class="selector-tag">i</span> &#123;</span><br><span class="line">    <span class="attribute">background-position</span>: -<span class="number">40px</span> -<span class="number">300px</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -390,8 +386,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/03/16/css-display的inline,inline-block,block/" rel="next" title="css-display的inline,inline-block,block">
-                <i class="fa fa-chevron-left"></i> css-display的inline,inline-block,block
+              <a href="/2019/03/22/css-设置hover透明度/" rel="next" title="css-设置hover透明度">
+                <i class="fa fa-chevron-left"></i> css-设置hover透明度
               </a>
             
           </div>
@@ -400,8 +396,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2019/03/17/css-居中显示/" rel="prev" title="css-居中显示">
-                css-居中显示 <i class="fa fa-chevron-right"></i>
+              <a href="/2019/03/22/css-vertical-align/" rel="prev" title="css-vertical-align">
+                css-vertical-align <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -534,7 +530,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-利用position-relative-和-position-absolute-和-z-index-1-做出上下层级效果"><span class="nav-text">1. 利用position: relative 和 position: absolute 和 z-index: -1 做出上下层级效果</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-position-absolute中的-lt-h-gt-lt-h-gt-文本居中"><span class="nav-text">2. position: absolute中的&lt;h&gt;&lt;/h&gt; 文本居中</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-什么是雪碧图？"><span class="nav-text">1. 什么是雪碧图？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-作用"><span class="nav-text">2. 作用</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-代码"><span class="nav-text">3. 代码</span></a></li></ol></div>
             
 
           </div>
