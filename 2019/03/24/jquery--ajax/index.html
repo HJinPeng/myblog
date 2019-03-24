@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="jquery有一个动画队列，建议在执行动画之前先调用 .stop() ，在执行动画  1$(&quot;.ad&quot;).stop().slideDown(1000).fadeOut(1000).fadeIn(1000);  自定义动画  123456789101112131415161718$(function () &amp;#123;            $(&quot;button&quot;).eq(0).click(func">
+<meta name="description" content="1. ajax的url123$.ajax(&amp;#123;   url: ./***/*** &amp;#125;); 相对于html的路径，不是相对js的路径">
 <meta name="keywords" content="-jquery">
 <meta property="og:type" content="article">
-<meta property="og:title" content="jquery--动画">
-<meta property="og:url" content="http://yoursite.com/2019/03/18/jquery--动画/index.html">
+<meta property="og:title" content="jquery--ajax">
+<meta property="og:url" content="http://yoursite.com/2019/03/24/jquery--ajax/index.html">
 <meta property="og:site_name" content="HJinPeng">
-<meta property="og:description" content="jquery有一个动画队列，建议在执行动画之前先调用 .stop() ，在执行动画  1$(&quot;.ad&quot;).stop().slideDown(1000).fadeOut(1000).fadeIn(1000);  自定义动画  123456789101112131415161718$(function () &amp;#123;            $(&quot;button&quot;).eq(0).click(func">
+<meta property="og:description" content="1. ajax的url123$.ajax(&amp;#123;   url: ./***/*** &amp;#125;); 相对于html的路径，不是相对js的路径">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-03-19T16:04:10.533Z">
+<meta property="og:updated_time" content="2019-03-24T15:17:13.897Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="jquery--动画">
-<meta name="twitter:description" content="jquery有一个动画队列，建议在执行动画之前先调用 .stop() ，在执行动画  1$(&quot;.ad&quot;).stop().slideDown(1000).fadeOut(1000).fadeIn(1000);  自定义动画  123456789101112131415161718$(function () &amp;#123;            $(&quot;button&quot;).eq(0).click(func">
+<meta name="twitter:title" content="jquery--ajax">
+<meta name="twitter:description" content="1. ajax的url123$.ajax(&amp;#123;   url: ./***/*** &amp;#125;); 相对于html的路径，不是相对js的路径">
 
 
 
@@ -120,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2019/03/18/jquery--动画/">
+  <link rel="canonical" href="http://yoursite.com/2019/03/24/jquery--ajax/">
 
 
 
 
 
-  <title>jquery--动画 | HJinPeng</title>
+  <title>jquery--ajax | HJinPeng</title>
   
 
 
@@ -263,7 +263,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/18/jquery--动画/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/24/jquery--ajax/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="HJP">
@@ -280,7 +280,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">jquery--动画</h1>
+          <h1 class="post-title" itemprop="name headline">jquery--ajax</h1>
         
 
         <div class="post-meta">
@@ -292,8 +292,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-03-18T23:10:01+08:00">
-                2019-03-18
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-03-24T23:15:05+08:00">
+                2019-03-24
               </time>
             
 
@@ -352,22 +352,8 @@
       
 
       
-        <ol>
-<li>jquery有一个动画队列，建议在执行动画之前先调用 <code>.stop()</code> ，在执行动画</li>
-</ol>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">".ad"</span>).stop().slideDown(<span class="number">1000</span>).fadeOut(<span class="number">1000</span>).fadeIn(<span class="number">1000</span>);</span><br></pre></td></tr></table></figure>
-<ol start="2">
-<li>自定义动画</li>
-</ol>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">            $(<span class="string">"button"</span>).eq(<span class="number">0</span>).click(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">                $(<span class="string">".one"</span>).animate(&#123;</span><br><span class="line">                    width: <span class="string">"200"</span>,</span><br><span class="line">                    height: <span class="string">"200"</span></span><br><span class="line">                &#125;, <span class="number">1000</span>, <span class="string">"linear"</span>,<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">                    alert(<span class="string">"ok"</span>);</span><br><span class="line">                &#125;);</span><br><span class="line">            &#125;);</span><br><span class="line">            </span><br><span class="line">            $(<span class="string">"button"</span>).eq(<span class="number">1</span>).click(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">                $(<span class="string">".one"</span>).animate(&#123;</span><br><span class="line">                    width: <span class="string">"+=100"</span></span><br><span class="line">                &#125;, <span class="number">1000</span>, <span class="string">"linear"</span>,<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">                    alert(<span class="string">"ok"</span>);</span><br><span class="line">                &#125;);</span><br><span class="line">            &#125;);</span><br><span class="line">        &#125;);</span><br></pre></td></tr></table></figure>
-<ol start="3">
-<li>delay()延迟执行</li>
-</ol>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    $(<span class="string">"button"</span>).eq(<span class="number">0</span>).click(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">        $(<span class="string">".one"</span>).animate(&#123;</span><br><span class="line">            width: <span class="number">300</span></span><br><span class="line">        &#125;,<span class="number">1000</span>).delay(<span class="number">2000</span>).animate(&#123;</span><br><span class="line">            height: <span class="number">300</span></span><br><span class="line">        &#125;,<span class="number">1000</span>);</span><br><span class="line">    &#125;);</span><br><span class="line"></span><br><span class="line">    $(<span class="string">"button"</span>).eq(<span class="number">1</span>).click(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">        $(<span class="string">".one"</span>).animate(&#123;</span><br><span class="line">            width: <span class="string">"+=100"</span></span><br><span class="line">        &#125;, <span class="number">1000</span>, <span class="string">"linear"</span>,<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">            alert(<span class="string">"ok"</span>);</span><br><span class="line">        &#125;);</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-<ol start="4">
-<li>stop（）</li>
-</ol>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//立即停止当前动画，继续执行之后的动画</span></span><br><span class="line">$(<span class="string">"div"</span>).stop();  </span><br><span class="line">$(<span class="string">"div"</span>).stop(<span class="literal">false</span>);</span><br><span class="line">$(<span class="string">"div"</span>).stop(<span class="literal">false</span>,<span class="literal">false</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">//立即停止当前和后续所有动画</span></span><br><span class="line">$(<span class="string">"div"</span>).stop(<span class="literal">true</span>);</span><br><span class="line">$(<span class="string">"div"</span>).stop(<span class="literal">true</span>,<span class="literal">false</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">//立即完成当前动画，并继续执行后续动画</span></span><br><span class="line">$(<span class="string">"div"</span>).stop(<span class="literal">false</span>,<span class="literal">true</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">//立即完成当前的动画，并且停止所有后续动画</span></span><br><span class="line">$(<span class="string">"div"</span>).stop(<span class="literal">true</span>,<span class="literal">true</span>);</span><br></pre></td></tr></table></figure>
+        <h4 id="1-ajax的url"><a href="#1-ajax的url" class="headerlink" title="1. ajax的url"></a>1. ajax的url</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$.ajax(&#123;</span><br><span class="line">   url: .<span class="comment">/***/</span>*** </span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<p>相对于html的路径，不是相对js的路径</p>
 
       
     </div>
@@ -398,8 +384,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/03/18/jquery--事件委托/" rel="next" title="jquery--事件委托">
-                <i class="fa fa-chevron-left"></i> jquery--事件委托
+              <a href="/2019/03/23/css-高斯模糊背景设置/" rel="next" title="css-高斯模糊背景设置">
+                <i class="fa fa-chevron-left"></i> css-高斯模糊背景设置
               </a>
             
           </div>
@@ -408,8 +394,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2019/03/19/css3/" rel="prev" title="css3">
-                css3 <i class="fa fa-chevron-right"></i>
+              <a href="/2019/03/24/jquery--indexOf和lastIndexOf/" rel="prev" title="jquery--indexOf和lastIndexOf">
+                jquery--indexOf和lastIndexOf <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -462,8 +448,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
             
@@ -523,6 +518,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-ajax的url"><span class="nav-text">1. ajax的url</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
