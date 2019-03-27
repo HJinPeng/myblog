@@ -259,6 +259,163 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/18/jquery--动画/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="HJP">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="HJinPeng">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/03/18/jquery--动画/" itemprop="url">jquery--动画</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-03-18T23:10:01+08:00">
+                2019-03-18
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/jquery/" itemprop="url" rel="index">
+                    <span itemprop="name">jquery</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <ol>
+<li>jquery有一个动画队列，建议在执行动画之前先调用 <code>.stop()</code> ，在执行动画</li>
+</ol>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">".ad"</span>).stop().slideDown(<span class="number">1000</span>).fadeOut(<span class="number">1000</span>).fadeIn(<span class="number">1000</span>);</span><br></pre></td></tr></table></figure>
+<ol start="2">
+<li>自定义动画</li>
+</ol>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">            $(<span class="string">"button"</span>).eq(<span class="number">0</span>).click(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">                $(<span class="string">".one"</span>).animate(&#123;</span><br><span class="line">                    width: <span class="string">"200"</span>,</span><br><span class="line">                    height: <span class="string">"200"</span></span><br><span class="line">                &#125;, <span class="number">1000</span>, <span class="string">"linear"</span>,<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">                    alert(<span class="string">"ok"</span>);</span><br><span class="line">                &#125;);</span><br><span class="line">            &#125;);</span><br><span class="line">            </span><br><span class="line">            $(<span class="string">"button"</span>).eq(<span class="number">1</span>).click(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">                $(<span class="string">".one"</span>).animate(&#123;</span><br><span class="line">                    width: <span class="string">"+=100"</span></span><br><span class="line">                &#125;, <span class="number">1000</span>, <span class="string">"linear"</span>,<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">                    alert(<span class="string">"ok"</span>);</span><br><span class="line">                &#125;);</span><br><span class="line">            &#125;);</span><br><span class="line">        &#125;);</span><br></pre></td></tr></table></figure>
+<ol start="3">
+<li>delay()延迟执行</li>
+</ol>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    $(<span class="string">"button"</span>).eq(<span class="number">0</span>).click(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">        $(<span class="string">".one"</span>).animate(&#123;</span><br><span class="line">            width: <span class="number">300</span></span><br><span class="line">        &#125;,<span class="number">1000</span>).delay(<span class="number">2000</span>).animate(&#123;</span><br><span class="line">            height: <span class="number">300</span></span><br><span class="line">        &#125;,<span class="number">1000</span>);</span><br><span class="line">    &#125;);</span><br><span class="line"></span><br><span class="line">    $(<span class="string">"button"</span>).eq(<span class="number">1</span>).click(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">        $(<span class="string">".one"</span>).animate(&#123;</span><br><span class="line">            width: <span class="string">"+=100"</span></span><br><span class="line">        &#125;, <span class="number">1000</span>, <span class="string">"linear"</span>,<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">            alert(<span class="string">"ok"</span>);</span><br><span class="line">        &#125;);</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<ol start="4">
+<li>stop（）</li>
+</ol>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//立即停止当前动画，继续执行之后的动画</span></span><br><span class="line">$(<span class="string">"div"</span>).stop();  </span><br><span class="line">$(<span class="string">"div"</span>).stop(<span class="literal">false</span>);</span><br><span class="line">$(<span class="string">"div"</span>).stop(<span class="literal">false</span>,<span class="literal">false</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">//立即停止当前和后续所有动画</span></span><br><span class="line">$(<span class="string">"div"</span>).stop(<span class="literal">true</span>);</span><br><span class="line">$(<span class="string">"div"</span>).stop(<span class="literal">true</span>,<span class="literal">false</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">//立即完成当前动画，并继续执行后续动画</span></span><br><span class="line">$(<span class="string">"div"</span>).stop(<span class="literal">false</span>,<span class="literal">true</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">//立即完成当前的动画，并且停止所有后续动画</span></span><br><span class="line">$(<span class="string">"div"</span>).stop(<span class="literal">true</span>,<span class="literal">true</span>);</span><br></pre></td></tr></table></figure>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/18/jquery--事件委托/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
@@ -1586,159 +1743,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/16/css-display的inline,inline-block,block/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="HJP">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="HJinPeng">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/03/16/css-display的inline,inline-block,block/" itemprop="url">css-display的inline,inline-block,block</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-03-16T12:08:00+08:00">
-                2019-03-16
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/css/" itemprop="url" rel="index">
-                    <span itemprop="name">css</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h4 id="1-display-block"><a href="#1-display-block" class="headerlink" title="1. display: block"></a>1. <code>display: block</code></h4><ol>
-<li>设置为块级元素，独占一行</li>
-<li>可以设置width,height,margin,padding</li>
-</ol>
-<h4 id="2-display-inline"><a href="#2-display-inline" class="headerlink" title="2 .display: inline"></a>2 .<code>display: inline</code></h4><ol>
-<li>设置为行内元素，和其他行内元素共享一行，当一行拍不下才会换行</li>
-<li>不可设置width,height</li>
-<li>margin-top,margin-bottom,padding-top,padding-bottom不会产生效果</li>
-</ol>
-<h4 id="3-display-inline-block"><a href="#3-display-inline-block" class="headerlink" title="3. display: inline-block"></a>3. <code>display: inline-block</code></h4><ol>
-<li>作为一个行内元素，但是具有block的属性特征，如有width,height</li>
-</ol>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -1789,7 +1793,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">36</span>
+                  <span class="site-state-item-count">37</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
