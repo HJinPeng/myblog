@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="-css,">
+  <meta name="keywords" content="-php,">
 
 
 
@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="1. 利用position: relative 和 position: absolute 和 z-index: -1 做出上下层级效果 父元素设置position属性 子元素设置position: absolute ，absolute是相对于最近的上级设置了position的元素左上角进行定位的，设置top/left/right/bottom值定位 利用z-index设置层级。  2. posit">
-<meta name="keywords" content="-css">
+<meta name="description" content="1. 基本语法1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556&amp;lt;?php/* 多行注释 *///单行注释//1. 定义变量$num = 1;//2. 打印内容echo $num;//3. 数组$arr = array(1,2,3);ec">
+<meta name="keywords" content="-php">
 <meta property="og:type" content="article">
-<meta property="og:title" content="css-position">
-<meta property="og:url" content="http://yoursite.com/2019/03/17/css-positon/index.html">
+<meta property="og:title" content="php--基本语法">
+<meta property="og:url" content="http://yoursite.com/2019/03/27/php--基本语法/index.html">
 <meta property="og:site_name" content="HJinPeng">
-<meta property="og:description" content="1. 利用position: relative 和 position: absolute 和 z-index: -1 做出上下层级效果 父元素设置position属性 子元素设置position: absolute ，absolute是相对于最近的上级设置了position的元素左上角进行定位的，设置top/left/right/bottom值定位 利用z-index设置层级。  2. posit">
+<meta property="og:description" content="1. 基本语法1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556&amp;lt;?php/* 多行注释 *///单行注释//1. 定义变量$num = 1;//2. 打印内容echo $num;//3. 数组$arr = array(1,2,3);ec">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-03-17T06:24:27.553Z">
+<meta property="og:updated_time" content="2019-03-27T11:51:37.450Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="css-position">
-<meta name="twitter:description" content="1. 利用position: relative 和 position: absolute 和 z-index: -1 做出上下层级效果 父元素设置position属性 子元素设置position: absolute ，absolute是相对于最近的上级设置了position的元素左上角进行定位的，设置top/left/right/bottom值定位 利用z-index设置层级。  2. posit">
+<meta name="twitter:title" content="php--基本语法">
+<meta name="twitter:description" content="1. 基本语法1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556&amp;lt;?php/* 多行注释 *///单行注释//1. 定义变量$num = 1;//2. 打印内容echo $num;//3. 数组$arr = array(1,2,3);ec">
 
 
 
@@ -120,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2019/03/17/css-positon/">
+  <link rel="canonical" href="http://yoursite.com/2019/03/27/php--基本语法/">
 
 
 
 
 
-  <title>css-position | HJinPeng</title>
+  <title>php--基本语法 | HJinPeng</title>
   
 
 
@@ -263,7 +263,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/17/css-positon/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/27/php--基本语法/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="HJP">
@@ -280,7 +280,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">css-position</h1>
+          <h1 class="post-title" itemprop="name headline">php--基本语法</h1>
         
 
         <div class="post-meta">
@@ -292,8 +292,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-03-17T13:56:55+08:00">
-                2019-03-17
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-03-27T19:49:22+08:00">
+                2019-03-27
               </time>
             
 
@@ -315,8 +315,8 @@
               
               
                 <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/css/" itemprop="url" rel="index">
-                    <span itemprop="name">css</span>
+                  <a href="/categories/php/" itemprop="url" rel="index">
+                    <span itemprop="name">php</span>
                   </a>
                 </span>
 
@@ -352,14 +352,7 @@
       
 
       
-        <h4 id="1-利用position-relative-和-position-absolute-和-z-index-1-做出上下层级效果"><a href="#1-利用position-relative-和-position-absolute-和-z-index-1-做出上下层级效果" class="headerlink" title="1. 利用position: relative 和 position: absolute 和 z-index: -1 做出上下层级效果"></a>1. 利用<code>position: relative</code> 和 <code>position: absolute</code> 和 <code>z-index: -1</code> 做出上下层级效果</h4><ol>
-<li>父元素设置position属性</li>
-<li>子元素设置<code>position: absolute</code> ，absolute是相对于最近的上级设置了position的元素左上角进行定位的，设置top/left/right/bottom值定位</li>
-<li>利用<code>z-index</code>设置层级。</li>
-</ol>
-<h4 id="2-position-absolute中的-lt-h-gt-lt-h-gt-文本居中"><a href="#2-position-absolute中的-lt-h-gt-lt-h-gt-文本居中" class="headerlink" title="2. position: absolute中的&lt;h&gt;&lt;/h&gt; 文本居中"></a>2. <code>position: absolute</code>中的<code>&lt;h&gt;&lt;/h&gt;</code> 文本居中</h4><p>解决方案:</p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">h</span>&#123;</span><br><span class="line">    <span class="attribute">position</span>: absolute;</span><br><span class="line">    <span class="attribute">top</span>: <span class="number">100px</span>;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">100%</span>;  </span><br><span class="line">    <span class="attribute">text-align</span>: center;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>其中 <code>width: 100%;</code>  令h标签的长度为父容器的宽</p>
+        <h4 id="1-基本语法"><a href="#1-基本语法" class="headerlink" title="1. 基本语法"></a>1. 基本语法</h4><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"><span class="comment">/* 多行注释 */</span></span><br><span class="line"><span class="comment">//单行注释</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//1. 定义变量</span></span><br><span class="line">$num = <span class="number">1</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">//2. 打印内容</span></span><br><span class="line"><span class="keyword">echo</span> $num;</span><br><span class="line"></span><br><span class="line"><span class="comment">//3. 数组</span></span><br><span class="line">$arr = <span class="keyword">array</span>(<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>);</span><br><span class="line"><span class="keyword">echo</span> <span class="string">"&lt;br&gt;"</span>;</span><br><span class="line">print_r($arr);</span><br><span class="line"><span class="keyword">echo</span> $arr[<span class="number">1</span>];</span><br><span class="line"></span><br><span class="line"><span class="comment">//4. 对象(字典)</span></span><br><span class="line">$dict = <span class="keyword">array</span>(<span class="string">"name"</span>=&gt;<span class="string">"hjp"</span>,<span class="string">"age"</span>=&gt;<span class="string">"21"</span>);</span><br><span class="line">print_r($dict);   <span class="comment">//打印数组</span></span><br><span class="line"><span class="keyword">echo</span> $dict[<span class="string">"name"</span>];</span><br><span class="line"></span><br><span class="line"><span class="comment">//5. 分支循环if switch 三目  for while</span></span><br><span class="line">$age =<span class="number">18</span>;</span><br><span class="line"><span class="keyword">if</span>($age&gt;=<span class="number">18</span>)&#123;</span><br><span class="line">    <span class="keyword">echo</span> <span class="string">"成年人"</span>;</span><br><span class="line">&#125;<span class="keyword">else</span>&#123;</span><br><span class="line">    <span class="keyword">echo</span> <span class="string">"未成年"</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">$res = ($age&gt;=<span class="number">18</span>?<span class="string">"成年人"</span>:<span class="string">"未成年"</span>);</span><br><span class="line"><span class="keyword">echo</span> $res;</span><br><span class="line"></span><br><span class="line"><span class="keyword">switch</span> ($age)&#123;</span><br><span class="line">    <span class="keyword">case</span> <span class="number">0</span>:</span><br><span class="line">        <span class="keyword">echo</span> <span class="string">"0"</span>;</span><br><span class="line">        <span class="keyword">break</span>;</span><br><span class="line">    <span class="keyword">case</span> <span class="number">18</span>:</span><br><span class="line">        <span class="keyword">echo</span> <span class="string">"成年人"</span>;</span><br><span class="line">        <span class="keyword">break</span>;</span><br><span class="line">    <span class="keyword">default</span>:</span><br><span class="line">        <span class="keyword">echo</span> <span class="string">"未成年人"</span>;</span><br><span class="line">        <span class="keyword">break</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span>($i = <span class="number">0</span>;$i&lt;count($arr);$i++)&#123;</span><br><span class="line">    <span class="keyword">echo</span> $arr[$i];</span><br><span class="line">    <span class="keyword">echo</span> <span class="string">"&lt;br&gt;"</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">$i=<span class="number">0</span>;</span><br><span class="line"><span class="keyword">while</span>($i&lt;count($arr))&#123;</span><br><span class="line">    <span class="keyword">echo</span> $arr[$i];</span><br><span class="line">    <span class="keyword">echo</span> <span class="string">"&lt;br&gt;"</span>;</span><br><span class="line">    $i++;</span><br><span class="line">&#125;</span><br><span class="line"><span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -377,7 +370,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/css/" rel="tag"># -css</a>
+            <a href="/tags/php/" rel="tag"># -php</a>
           
         </div>
       
@@ -390,8 +383,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/03/16/css-display的inline,inline-block,block/" rel="next" title="css-display的inline,inline-block,block">
-                <i class="fa fa-chevron-left"></i> css-display的inline,inline-block,block
+              <a href="/2019/03/26/js--原型/" rel="next" title="js--原型">
+                <i class="fa fa-chevron-left"></i> js--原型
               </a>
             
           </div>
@@ -399,10 +392,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/03/17/css-居中显示/" rel="prev" title="css-居中显示">
-                css-居中显示 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -534,7 +523,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-利用position-relative-和-position-absolute-和-z-index-1-做出上下层级效果"><span class="nav-text">1. 利用position: relative 和 position: absolute 和 z-index: -1 做出上下层级效果</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-position-absolute中的-lt-h-gt-lt-h-gt-文本居中"><span class="nav-text">2. position: absolute中的&lt;h&gt;&lt;/h&gt; 文本居中</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-基本语法"><span class="nav-text">1. 基本语法</span></a></li></ol></div>
             
 
           </div>
