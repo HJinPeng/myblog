@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="css,">
+  <meta name="keywords" content="cookie,">
 
 
 
@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="1. display: block 设置为块级元素，独占一行 可以设置width,height,margin,padding  2 .display: inline 设置为行内元素，和其他行内元素共享一行，当一行拍不下才会换行 不可设置width,height margin-top,margin-bottom,padding-top,padding-bottom不会产生效果  3. display">
-<meta name="keywords" content="css">
+<meta name="description" content="封装cookie1. 添加cookie1234567891011121314151617181920addCookie(&quot;ku&quot;, &quot;321&quot;, 1, &quot;/&quot;, &quot;127.0.0.1&quot;);function addCookie(key, value, day, path, domain) &amp;#123;    //1. 处理默认保存路径    //找到当前路径下的到最后一个/的地址    var in">
+<meta name="keywords" content="cookie">
 <meta property="og:type" content="article">
-<meta property="og:title" content="css-display的inline,inline-block,block">
-<meta property="og:url" content="http://yoursite.com/2019/03/16/css-display的inline,inline-block,block/index.html">
+<meta property="og:title" content="添加获取删除cookie封装">
+<meta property="og:url" content="http://yoursite.com/2019/03/29/添加获取删除cookie封装/index.html">
 <meta property="og:site_name" content="HJinPeng">
-<meta property="og:description" content="1. display: block 设置为块级元素，独占一行 可以设置width,height,margin,padding  2 .display: inline 设置为行内元素，和其他行内元素共享一行，当一行拍不下才会换行 不可设置width,height margin-top,margin-bottom,padding-top,padding-bottom不会产生效果  3. display">
+<meta property="og:description" content="封装cookie1. 添加cookie1234567891011121314151617181920addCookie(&quot;ku&quot;, &quot;321&quot;, 1, &quot;/&quot;, &quot;127.0.0.1&quot;);function addCookie(key, value, day, path, domain) &amp;#123;    //1. 处理默认保存路径    //找到当前路径下的到最后一个/的地址    var in">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-03-29T09:27:09.485Z">
+<meta property="og:updated_time" content="2019-03-29T14:01:05.474Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="css-display的inline,inline-block,block">
-<meta name="twitter:description" content="1. display: block 设置为块级元素，独占一行 可以设置width,height,margin,padding  2 .display: inline 设置为行内元素，和其他行内元素共享一行，当一行拍不下才会换行 不可设置width,height margin-top,margin-bottom,padding-top,padding-bottom不会产生效果  3. display">
+<meta name="twitter:title" content="添加获取删除cookie封装">
+<meta name="twitter:description" content="封装cookie1. 添加cookie1234567891011121314151617181920addCookie(&quot;ku&quot;, &quot;321&quot;, 1, &quot;/&quot;, &quot;127.0.0.1&quot;);function addCookie(key, value, day, path, domain) &amp;#123;    //1. 处理默认保存路径    //找到当前路径下的到最后一个/的地址    var in">
 
 
 
@@ -120,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2019/03/16/css-display的inline,inline-block,block/">
+  <link rel="canonical" href="http://yoursite.com/2019/03/29/添加获取删除cookie封装/">
 
 
 
 
 
-  <title>css-display的inline,inline-block,block | HJinPeng</title>
+  <title>添加获取删除cookie封装 | HJinPeng</title>
   
 
 
@@ -263,7 +263,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/16/css-display的inline,inline-block,block/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/29/添加获取删除cookie封装/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="HJP">
@@ -280,7 +280,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">css-display的inline,inline-block,block</h1>
+          <h1 class="post-title" itemprop="name headline">添加获取删除cookie封装</h1>
         
 
         <div class="post-meta">
@@ -292,8 +292,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-03-16T00:00:00+08:00">
-                2019-03-16
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-03-29T21:26:48+08:00">
+                2019-03-29
               </time>
             
 
@@ -315,8 +315,8 @@
               
               
                 <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/css/" itemprop="url" rel="index">
-                    <span itemprop="name">css</span>
+                  <a href="/categories/HTTP/" itemprop="url" rel="index">
+                    <span itemprop="name">HTTP</span>
                   </a>
                 </span>
 
@@ -352,18 +352,11 @@
       
 
       
-        <h4 id="1-display-block"><a href="#1-display-block" class="headerlink" title="1. display: block"></a>1. <code>display: block</code></h4><ol>
-<li>设置为块级元素，独占一行</li>
-<li>可以设置width,height,margin,padding</li>
-</ol>
-<h4 id="2-display-inline"><a href="#2-display-inline" class="headerlink" title="2 .display: inline"></a>2 .<code>display: inline</code></h4><ol>
-<li>设置为行内元素，和其他行内元素共享一行，当一行拍不下才会换行</li>
-<li>不可设置width,height</li>
-<li>margin-top,margin-bottom,padding-top,padding-bottom不会产生效果</li>
-</ol>
-<h4 id="3-display-inline-block"><a href="#3-display-inline-block" class="headerlink" title="3. display: inline-block"></a>3. <code>display: inline-block</code></h4><ol>
-<li>作为一个行内元素，但是具有block的属性特征，如有width,height</li>
-</ol>
+        <h4 id="封装cookie"><a href="#封装cookie" class="headerlink" title="封装cookie"></a>封装cookie</h4><h5 id="1-添加cookie"><a href="#1-添加cookie" class="headerlink" title="1. 添加cookie"></a>1. 添加cookie</h5><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">addCookie(<span class="string">"ku"</span>, <span class="string">"321"</span>, <span class="number">1</span>, <span class="string">"/"</span>, <span class="string">"127.0.0.1"</span>);</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">addCookie</span>(<span class="params">key, value, day, path, domain</span>) </span>&#123;</span><br><span class="line">    <span class="comment">//1. 处理默认保存路径</span></span><br><span class="line">    <span class="comment">//找到当前路径下的到最后一个/的地址</span></span><br><span class="line">    <span class="keyword">var</span> index = <span class="built_in">window</span>.location.pathname.lastIndexOf(<span class="string">"/"</span>);</span><br><span class="line">    <span class="keyword">var</span> currentPath = <span class="built_in">window</span>.location.pathname.slice(<span class="number">0</span>, index);</span><br><span class="line">    <span class="comment">//如果有传入path，则使用path，如果没有传入path，则使用currentPath</span></span><br><span class="line">    path = path || currentPath;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//2. 处理默认保存的domain</span></span><br><span class="line">    domain = domain || <span class="built_in">document</span>.domain;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//3. 处理默认的过期时间</span></span><br><span class="line">    <span class="keyword">if</span> (!day) &#123;</span><br><span class="line">        <span class="built_in">document</span>.cookie = key + <span class="string">"="</span> + value + <span class="string">";path="</span> + path + <span class="string">";domain="</span> + domain + <span class="string">";"</span>;</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="keyword">var</span> date = <span class="keyword">new</span> <span class="built_in">Date</span>();</span><br><span class="line">        date.setDate(date.getDate() + day);</span><br><span class="line">        <span class="built_in">document</span>.cookie = key + <span class="string">"="</span> + value + <span class="string">";expires="</span> + date.toGMTString() + <span class="string">";path="</span> + path + <span class="string">";domain="</span> + domain + <span class="string">";"</span>;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+<p>特别注意：<br>domain的值设置错误的会导致cookie设置不成功</p>
+<h5 id="2-获取cookie值"><a href="#2-获取cookie值" class="headerlink" title="2. 获取cookie值"></a>2. 获取cookie值</h5><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">getCookie</span>(<span class="params">key</span>) </span>&#123;</span><br><span class="line">    <span class="comment">//将获取的字符串以;分割成数组</span></span><br><span class="line">    <span class="keyword">var</span> res = <span class="built_in">document</span>.cookie.split(<span class="string">";"</span>);</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; res.length; i++) &#123;</span><br><span class="line">        <span class="keyword">var</span> temp = res[i].split(<span class="string">"="</span>);</span><br><span class="line">        <span class="comment">// 将每一个key=value以=分割成数组，temp[0]是key，temp[1]是value</span></span><br><span class="line">        <span class="keyword">if</span> (temp[<span class="number">0</span>].trim() === key) &#123;</span><br><span class="line">            <span class="keyword">return</span> temp[<span class="number">1</span>]</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="built_in">console</span>.log(getCookie(<span class="string">"age"</span>));</span><br></pre></td></tr></table></figure>
+<h5 id="3-删除cookie"><a href="#3-删除cookie" class="headerlink" title="3. 删除cookie"></a>3. 删除cookie</h5><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">deleteCookie</span>(<span class="params">key, path</span>) </span>&#123;</span><br><span class="line">    addCookie(key, getCookie(key), <span class="number">-1</span>, path);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">deleteCookie(<span class="string">"age"</span>, <span class="string">"/"</span>);</span><br></pre></td></tr></table></figure>
+<p>注意：默认只能删除默认路径中保存的cookie，如果想删除指定路径下保存的cookie，需要在删除的时候指定路径</p>
 
       
     </div>
@@ -381,7 +374,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/css/" rel="tag"># css</a>
+            <a href="/tags/cookie/" rel="tag"># cookie</a>
           
         </div>
       
@@ -394,8 +387,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/03/15/jquery--静态方法/" rel="next" title="jquery--静态方法">
-                <i class="fa fa-chevron-left"></i> jquery--静态方法
+              <a href="/2019/03/29/cookie/" rel="next" title="cookie">
+                <i class="fa fa-chevron-left"></i> cookie
               </a>
             
           </div>
@@ -404,8 +397,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2019/03/16/css-伪元素/" rel="prev" title="css--伪元素">
-                css--伪元素 <i class="fa fa-chevron-right"></i>
+              <a href="/2019/03/29/20190329215739/" rel="prev" title="20190329215739">
+                20190329215739 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -538,7 +531,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-display-block"><span class="nav-text">1. display: block</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-display-inline"><span class="nav-text">2 .display: inline</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-display-inline-block"><span class="nav-text">3. display: inline-block</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#封装cookie"><span class="nav-text">封装cookie</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#1-添加cookie"><span class="nav-text">1. 添加cookie</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#2-获取cookie值"><span class="nav-text">2. 获取cookie值</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#3-删除cookie"><span class="nav-text">3. 删除cookie</span></a></li></ol></li></ol></div>
             
 
           </div>
