@@ -259,7 +259,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/27/js--ajax-get封装/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/27/js--ajax-get/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="HJP">
@@ -278,7 +278,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2019/03/27/js--ajax-get封装/" itemprop="url">js--ajax-get封装</a></h1>
+                <a class="post-title-link" href="/2019/03/27/js--ajax-get/" itemprop="url">js--ajax-get</a></h1>
         
 
         <div class="post-meta">
@@ -352,10 +352,19 @@
       
         
           
-            <h4 id="1-ajax-get封装"><a href="#1-ajax-get封装" class="headerlink" title="1.  ajax-get封装"></a>1.  ajax-get封装</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">window</span>.onload = <span class="function"><span class="keyword">function</span>(<span class="params">ev</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> btn = <span class="built_in">document</span>.querySelector(<span class="string">"button"</span>);</span><br><span class="line">    btn.onclick = <span class="function"><span class="keyword">function</span>(<span class="params">ev1</span>) </span>&#123;</span><br><span class="line">        ajax(<span class="string">"ajax-get.php"</span>, &#123;</span><br><span class="line">            <span class="string">"userName"</span>: <span class="string">"HJP"</span>,</span><br><span class="line">            <span class="string">"password"</span>: <span class="string">"123456"</span></span><br><span class="line">        &#125;, <span class="number">3000</span>, <span class="function"><span class="keyword">function</span>(<span class="params">xhr</span>) </span>&#123;</span><br><span class="line">            alert(xhr.responseText);</span><br><span class="line">        &#125;, <span class="function"><span class="keyword">function</span>(<span class="params">xhr</span>) </span>&#123;</span><br><span class="line">            alert(<span class="string">"error"</span>);</span><br><span class="line">        &#125;);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-<p>封装了ajax，传入参数为：地址，对象（json对象），超时时间，成功回调函数，失败回调函数</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//对传入的json对象进行格式化处理为url中的数据格式</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">obj2str</span>(<span class="params">obj</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> res = [];</span><br><span class="line">    <span class="comment">//给传进来的obj对象加一个t属性，可以让每次请求地址都不一样，兼容ie的缓存问题</span></span><br><span class="line">    obj.t = <span class="keyword">new</span> <span class="built_in">Date</span>().getTime();     </span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">var</span> key <span class="keyword">in</span> obj) &#123;</span><br><span class="line">        <span class="comment">//在url中不可出现中文，只可以出现字母/数字/下划线/ASCII</span></span><br><span class="line">        <span class="comment">//调用encodeURIComponent将中文转化为其他字符</span></span><br><span class="line">        res.push(<span class="built_in">encodeURIComponent</span>(key) + <span class="string">"="</span> + <span class="built_in">encodeURIComponent</span>(obj[key])); <span class="comment">// [userName=HJP,password=123456,t=1231654613156]</span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> res.join(<span class="string">"&amp;"</span>); <span class="comment">//userName=HJP&amp;password=123456&amp;t=1321456132321321</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">ajax</span>(<span class="params">url, obj, timeout, success, error</span>) </span>&#123;</span><br><span class="line">    <span class="comment">// 0. 将对象转换为字符串</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">var</span> str = obj2str(obj); <span class="comment">//key=value&amp;key=value</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">// 1. 创建一个异步对象</span></span><br><span class="line">    <span class="keyword">var</span> xmlhttp, timer;</span><br><span class="line">    <span class="keyword">if</span> (<span class="built_in">window</span>.XMLHttpRequest) &#123; <span class="comment">// code for IE7+, Firefox, Chrome, Opera, Safari</span></span><br><span class="line">        xmlhttp = <span class="keyword">new</span> XMLHttpRequest();</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123; <span class="comment">// code for IE6, IE5</span></span><br><span class="line">        xmlhttp = <span class="keyword">new</span> ActiveXObject(<span class="string">"Microsoft.XMLHTTP"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// 2. 设置请求方式和请求地址</span></span><br><span class="line">    <span class="comment">/*</span></span><br><span class="line"><span class="comment">    method：请求的类型；GET 或 POST</span></span><br><span class="line"><span class="comment">    url：文件在服务器上的位置</span></span><br><span class="line"><span class="comment">    async：true（异步）或 false（同步）</span></span><br><span class="line"><span class="comment">    */</span></span><br><span class="line">    xmlhttp.open(<span class="string">"GET"</span>, url + <span class="string">"?"</span> + str, <span class="literal">true</span>);</span><br><span class="line">    <span class="comment">// 3. 发送请求</span></span><br><span class="line">    xmlhttp.send();</span><br><span class="line">    <span class="comment">// 4. 监听状态的变化</span></span><br><span class="line">    xmlhttp.onreadystatechange = <span class="function"><span class="keyword">function</span>(<span class="params">ev2</span>) </span>&#123;</span><br><span class="line">        <span class="comment">/*</span></span><br><span class="line"><span class="comment">        0: 请求未初始化</span></span><br><span class="line"><span class="comment">        1: 服务器连接已建立</span></span><br><span class="line"><span class="comment">        2: 请求已接收</span></span><br><span class="line"><span class="comment">        3: 请求处理中</span></span><br><span class="line"><span class="comment">        4: 请求已完成，且响应已就绪</span></span><br><span class="line"><span class="comment">        */</span></span><br><span class="line">        <span class="keyword">if</span> (xmlhttp.readyState === <span class="number">4</span>) &#123;</span><br><span class="line">            clearInterval(timer);    <span class="comment">//当请求完成时，删除定时器</span></span><br><span class="line">            <span class="comment">//判断是否请求成功</span></span><br><span class="line">            <span class="keyword">if</span> (xmlhttp.status &gt;= <span class="number">200</span> &amp;&amp; xmlhttp.status &lt;= <span class="number">300</span> || xmlhttp.status === <span class="number">304</span>) &#123;</span><br><span class="line">                <span class="comment">// 5. 处理返回的结果</span></span><br><span class="line">                success(xmlhttp);</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                error(xmlhttp);</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 判断外界是否传入了超时时间</span></span><br><span class="line">    <span class="keyword">if</span> (timeout) &#123;</span><br><span class="line">        <span class="comment">//创建定时器，第一个是超过第二个参数的时间就执行的回调函数，第二个是时间</span></span><br><span class="line">        timer = setInterval(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">            xmlhttp.abort(); <span class="comment">//中断请求</span></span><br><span class="line">            clearInterval(timer); <span class="comment">//删除定时器</span></span><br><span class="line">        &#125;, timeout);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>在url中不可出现中文，只可以出现字母/数字/下划线/ASCII<br>调用encodeURIComponent将中文转化为其他字符</p>
+            <h4 id="1-ajax-get"><a href="#1-ajax-get" class="headerlink" title="1.  ajax-get"></a>1.  ajax-get</h4><p>5个步骤</p>
+<ol>
+<li>创建一个异步对象</li>
+<li>设置请求方式和请求地址</li>
+<li>发送请求</li>
+<li>监听状态的变化（请求已完成 ，值等于4）<ol>
+<li>判断请求成功（&gt;=200 &amp;&amp; &lt;=300 || ===304)</li>
+<li>请求失败</li>
+</ol>
+</li>
+<li>在4.1中处理返回数据</li>
+</ol>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">window</span>.onload = <span class="function"><span class="keyword">function</span>(<span class="params">ev</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> btn = <span class="built_in">document</span>.querySelector(<span class="string">"button"</span>);</span><br><span class="line">    btn.onclick = <span class="function"><span class="keyword">function</span>(<span class="params">ev1</span>) </span>&#123;</span><br><span class="line">        <span class="comment">// 1. 创建一个异步对象，兼容ie5/6</span></span><br><span class="line">        <span class="keyword">var</span> xmlhttp;</span><br><span class="line">        <span class="keyword">if</span> (<span class="built_in">window</span>.XMLHttpRequest) &#123; <span class="comment">// code for IE7+, Firefox, Chrome, Opera, Safari</span></span><br><span class="line">            xmlhttp = <span class="keyword">new</span> XMLHttpRequest();</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123; <span class="comment">// code for IE6, IE5</span></span><br><span class="line">            xmlhttp = <span class="keyword">new</span> ActiveXObject(<span class="string">"Microsoft.XMLHTTP"</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">// 2. 设置请求方式和请求地址</span></span><br><span class="line">        <span class="comment">/*</span></span><br><span class="line"><span class="comment">        method：请求的类型；GET 或 POST</span></span><br><span class="line"><span class="comment">        url：文件在服务器上的位置</span></span><br><span class="line"><span class="comment">        async：true（异步）或 false（同步）</span></span><br><span class="line"><span class="comment">        */</span></span><br><span class="line">        <span class="comment">//ie浏览器的缓存问题，同一个地址只能有一个数据，为了修改数据后能够被访问到，故每次都要修改地址，通过使用 ?t=new Date().getTime() 可以解决兼容性问题</span></span><br><span class="line">         xmlhttp.open(<span class="string">"GET"</span>, <span class="string">"ajax-get.php?t="</span> + (<span class="keyword">new</span> <span class="built_in">Date</span>().getTime()), <span class="literal">true</span>);</span><br><span class="line">        <span class="comment">// 3. 发送请求</span></span><br><span class="line">        xmlhttp.send();</span><br><span class="line">        <span class="comment">// 4. 监听状态的变化</span></span><br><span class="line">        xmlhttp.onreadystatechange = <span class="function"><span class="keyword">function</span>(<span class="params">ev2</span>) </span>&#123;</span><br><span class="line">            <span class="comment">/*</span></span><br><span class="line"><span class="comment">            0: 请求未初始化</span></span><br><span class="line"><span class="comment">            1: 服务器连接已建立</span></span><br><span class="line"><span class="comment">            2: 请求已接收</span></span><br><span class="line"><span class="comment">            3: 请求处理中</span></span><br><span class="line"><span class="comment">            4: 请求已完成，且响应已就绪</span></span><br><span class="line"><span class="comment">            */</span></span><br><span class="line">            <span class="keyword">if</span> (xmlhttp.readyState === <span class="number">4</span>) &#123;</span><br><span class="line">                <span class="comment">//判断是否请求成功</span></span><br><span class="line">                <span class="keyword">if</span> (xmlhttp.status &gt;= <span class="number">200</span> &amp;&amp; xmlhttp.status &lt;= <span class="number">300</span> || xmlhttp.status === <span class="number">304</span>) &#123;</span><br><span class="line">                    <span class="comment">// 5. 处理返回的结果</span></span><br><span class="line">                    <span class="built_in">console</span>.log(<span class="string">"接受到服务器返回的数据了"</span>);</span><br><span class="line">                &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                    <span class="built_in">console</span>.log(<span class="string">"没有接受到服务器返回的数据"</span>);</span><br><span class="line">                &#125;</span><br><span class="line"></span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 
           
         
@@ -1136,150 +1145,6 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/23/css-高斯模糊背景设置/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="HJP">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="HJinPeng">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/03/23/css-高斯模糊背景设置/" itemprop="url">css-高斯模糊背景设置</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-03-23T00:00:00+08:00">
-                2019-03-23
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/css/" itemprop="url" rel="index">
-                    <span itemprop="name">css</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h4 id="如何使用高斯背景图"><a href="#如何使用高斯背景图" class="headerlink" title="如何使用高斯背景图"></a>如何使用高斯背景图</h4><h6 id="步骤1：设置两个div"><a href="#步骤1：设置两个div" class="headerlink" title="步骤1：设置两个div"></a>步骤1：设置两个div</h6><p>一个设置高斯模糊，一个设置灰色蒙版</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"mask_bg"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"mask"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<h6 id="步骤2：设置css"><a href="#步骤2：设置css" class="headerlink" title="步骤2：设置css"></a>步骤2：设置css</h6><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.mask_bg</span> &#123;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">100%</span>;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">100%</span>;</span><br><span class="line">    <span class="attribute">position</span>: absolute;</span><br><span class="line">    <span class="attribute">top</span>: <span class="number">0</span>;</span><br><span class="line">    <span class="attribute">left</span>: <span class="number">0</span>;</span><br><span class="line">    <span class="attribute">background</span>: <span class="built_in">url</span>(../imgs/lnj.jpg) no-repeat <span class="number">0</span> <span class="number">0</span>;</span><br><span class="line">    <span class="attribute">background-size</span>: cover;    <span class="comment">/*根据图片比例充满整个背景*/</span></span><br><span class="line">    <span class="attribute">z-index</span>: -<span class="number">2</span>;               <span class="comment">/*高斯背景图片层级最低*/</span></span><br><span class="line">    <span class="attribute">filter</span>: <span class="built_in">blur</span>(100px);       <span class="comment">/*滤镜属性，设置高斯模糊，数值越高越模糊*/</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.mask</span> &#123;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">100%</span>;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">100%</span>;</span><br><span class="line">    <span class="attribute">position</span>: absolute;</span><br><span class="line">    <span class="attribute">top</span>: <span class="number">0</span>;</span><br><span class="line">    <span class="attribute">left</span>: <span class="number">0</span>;</span><br><span class="line">    <span class="attribute">z-index</span>: -<span class="number">1</span>;                             <span class="comment">/*比高斯背景高一层*/</span></span><br><span class="line">    <span class="attribute">background</span>: <span class="built_in">rgba</span>(0, 0, 0, 0.35);         <span class="comment">/*设置灰色蒙版，好看，可避免两边太白*/</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/23/jquery--滚动条插件/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
@@ -1382,6 +1247,150 @@
 <figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*滚动条宽度设置*/</span></span><br><span class="line"><span class="selector-class">._mCS_1</span> <span class="selector-class">.mCSB_dragger</span> <span class="selector-class">.mCSB_dragger_bar</span> &#123;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">8px</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>添加属性：在滚动窗口设置属性，主题可参阅上面插件链接中的主题名称</p>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">data-mcs-theme</span>=<span class="string">"minimal-dark"</span>&gt;</span></span><br><span class="line">     <span class="tag">&lt;<span class="name">ul</span>&gt;</span></span><br><span class="line">         <span class="tag">&lt;<span class="name">li</span>&gt;</span>..<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">         <span class="tag">&lt;<span class="name">li</span>&gt;</span>..<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">         <span class="tag">&lt;<span class="name">li</span>&gt;</span>..<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">     <span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br><span class="line"> <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/23/css-高斯模糊背景设置/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="HJP">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="HJinPeng">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/03/23/css-高斯模糊背景设置/" itemprop="url">css-高斯模糊背景设置</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-03-23T00:00:00+08:00">
+                2019-03-23
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/css/" itemprop="url" rel="index">
+                    <span itemprop="name">css</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h4 id="如何使用高斯背景图"><a href="#如何使用高斯背景图" class="headerlink" title="如何使用高斯背景图"></a>如何使用高斯背景图</h4><h6 id="步骤1：设置两个div"><a href="#步骤1：设置两个div" class="headerlink" title="步骤1：设置两个div"></a>步骤1：设置两个div</h6><p>一个设置高斯模糊，一个设置灰色蒙版</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"mask_bg"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"mask"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h6 id="步骤2：设置css"><a href="#步骤2：设置css" class="headerlink" title="步骤2：设置css"></a>步骤2：设置css</h6><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.mask_bg</span> &#123;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">100%</span>;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">100%</span>;</span><br><span class="line">    <span class="attribute">position</span>: absolute;</span><br><span class="line">    <span class="attribute">top</span>: <span class="number">0</span>;</span><br><span class="line">    <span class="attribute">left</span>: <span class="number">0</span>;</span><br><span class="line">    <span class="attribute">background</span>: <span class="built_in">url</span>(../imgs/lnj.jpg) no-repeat <span class="number">0</span> <span class="number">0</span>;</span><br><span class="line">    <span class="attribute">background-size</span>: cover;    <span class="comment">/*根据图片比例充满整个背景*/</span></span><br><span class="line">    <span class="attribute">z-index</span>: -<span class="number">2</span>;               <span class="comment">/*高斯背景图片层级最低*/</span></span><br><span class="line">    <span class="attribute">filter</span>: <span class="built_in">blur</span>(100px);       <span class="comment">/*滤镜属性，设置高斯模糊，数值越高越模糊*/</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.mask</span> &#123;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">100%</span>;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">100%</span>;</span><br><span class="line">    <span class="attribute">position</span>: absolute;</span><br><span class="line">    <span class="attribute">top</span>: <span class="number">0</span>;</span><br><span class="line">    <span class="attribute">left</span>: <span class="number">0</span>;</span><br><span class="line">    <span class="attribute">z-index</span>: -<span class="number">1</span>;                             <span class="comment">/*比高斯背景高一层*/</span></span><br><span class="line">    <span class="attribute">background</span>: <span class="built_in">rgba</span>(0, 0, 0, 0.35);         <span class="comment">/*设置灰色蒙版，好看，可避免两边太白*/</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
           
         
@@ -1573,7 +1582,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/22/css-user-select/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/22/css-设置hover透明度/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="HJP">
@@ -1592,7 +1601,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2019/03/22/css-user-select/" itemprop="url">css-user-select</a></h1>
+                <a class="post-title-link" href="/2019/03/22/css-设置hover透明度/" itemprop="url">css-设置hover透明度</a></h1>
         
 
         <div class="post-meta">
@@ -1666,12 +1675,9 @@
       
         
           
-            <h4 id="1-介绍"><a href="#1-介绍" class="headerlink" title="1. 介绍"></a>1. 介绍</h4><p>设置或检索是否允许用户选中文本</p>
-<h4 id="2-使用场景"><a href="#2-使用场景" class="headerlink" title="2. 使用场景"></a>2. 使用场景</h4><p>不希望用户可以粘贴文本，如p中的文本，li的文本等等</p>
-<h4 id="3-取值"><a href="#3-取值" class="headerlink" title="3. 取值"></a>3. 取值</h4><p><code>user-select: none</code> 文本不能被选择</p>
-<p><code>user-select: text</code> 可以选择文本，默认为text</p>
-<p><code>user-select: all</code>当所有内容作为一个整体时可以被选择。如果双击或者在上下文上点击子元素，那么被选择的部分将是以该子元素向上回溯的最高祖先元素 </p>
-<p><code>user-select: element</code>可以选择文本，但选择范围受元素边界的约束</p>
+            <h4 id="1-使用背景"><a href="#1-使用背景" class="headerlink" title="1. 使用背景"></a>1. 使用背景</h4><p>当鼠标悬浮在元素上时，改变元素的透明度</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">div</span>&#123;</span><br><span class="line">    <span class="attribute">opacity</span>: <span class="number">0.5</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-tag">div</span><span class="selector-pseudo">:hover</span>&#123;</span><br><span class="line">    <span class="attribute">opacity</span>: <span class="number">1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>注意：通过rgba()最后一个参数设置的颜色透明度，无法使hover中设置的opacity生效</p>
 
           
         
@@ -1779,7 +1785,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">18</span>
+                  <span class="site-state-item-count">8</span>
                   <span class="site-state-item-name">tags</span>
                 </a>
               </div>
