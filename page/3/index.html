@@ -991,7 +991,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/21/css-overflow/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/21/jquery--实时监听输入框/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="HJP">
@@ -1010,7 +1010,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2019/03/21/css-overflow/" itemprop="url">css-overflow</a></h1>
+                <a class="post-title-link" href="/2019/03/21/jquery--实时监听输入框/" itemprop="url">jquery--实时监听输入框</a></h1>
         
 
         <div class="post-meta">
@@ -1045,8 +1045,8 @@
               
               
                 <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/css/" itemprop="url" rel="index">
-                    <span itemprop="name">css</span>
+                  <a href="/categories/jquery/" itemprop="url" rel="index">
+                    <span itemprop="name">jquery</span>
                   </a>
                 </span>
 
@@ -1084,12 +1084,15 @@
       
         
           
-            <h4 id="1-overflow-hidden"><a href="#1-overflow-hidden" class="headerlink" title="1. overflow: hidden"></a>1. <code>overflow: hidden</code></h4><p>遇到的情况：section设置了背景颜色但高度为auto，section中三个div都设置了float，背景颜色不显示</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">section</span> <span class="attr">class</span>=<span class="string">"content"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"left"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"imgs/left.png"</span> <span class="attr">alt</span>=<span class="string">""</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"center"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"imgs/comment.png"</span> <span class="attr">alt</span>=<span class="string">""</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"right"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"imgs/right.png"</span> <span class="attr">alt</span>=<span class="string">""</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">section</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<p>原因：所有div设置了float，导致section无法根据子元素撑起高度</p>
-<p>解决方法：在父元素section中设置清除浮动<code>section{overflow:hidden;}</code> ,这样浮动的子元素又可以撑起高度了</p>
-<p>ps：若父元素section设置了高度值，则浮动的元素超出范围的部分会被隐藏</p>
-<h4 id="2-overflow-auto"><a href="#2-overflow-auto" class="headerlink" title="2. overflow: auto"></a>2. <code>overflow: auto</code></h4><p>超出边界的值不显示，但显示默认样式滚动条</p>
+            <h4 id="使用情景：实时监听输入框"><a href="#使用情景：实时监听输入框" class="headerlink" title="使用情景：实时监听输入框"></a>使用情景：实时监听输入框</h4><p>使用onkeydown、onkeypress、onkeyup作为监听事件时，会发现一些复制粘贴等操作用不了，同时，在处理组合快键键的时候也很麻烦。 </p>
+<p>故使用下面方式：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">"body"</span>).delegate(<span class="string">".comment"</span>,<span class="string">"propertychange input"</span>,<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">if</span>($(<span class="keyword">this</span>).val().length&gt;<span class="number">0</span>)&#123;</span><br><span class="line">        $(<span class="string">".send"</span>).prop(<span class="string">"disabled"</span>,<span class="literal">false</span>);</span><br><span class="line">    &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">        $(<span class="string">".send"</span>).prop(<span class="string">"disabled"</span>,<span class="literal">true</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<p>代码解释如下：</p>
+<ol>
+<li>因为是动态生成的元素，为了保证事件仍然有效，故用事件委托delegate</li>
+<li>方法：propertychange只要当前对象的属性发生改变就会触发该事件 </li>
+<li>方法：input是标准的浏览器事件，一般应用于input（textarea）元素，当input的value发生变化就会发生，无论是键盘输入还是鼠标黏贴的改变都能及时监听到变化 </li>
+</ol>
 
           
         
@@ -1281,7 +1284,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/21/jquery--实时监听输入框/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/21/css-overflow/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="HJP">
@@ -1300,7 +1303,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2019/03/21/jquery--实时监听输入框/" itemprop="url">jquery--实时监听输入框</a></h1>
+                <a class="post-title-link" href="/2019/03/21/css-overflow/" itemprop="url">css-overflow</a></h1>
         
 
         <div class="post-meta">
@@ -1335,8 +1338,8 @@
               
               
                 <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/jquery/" itemprop="url" rel="index">
-                    <span itemprop="name">jquery</span>
+                  <a href="/categories/css/" itemprop="url" rel="index">
+                    <span itemprop="name">css</span>
                   </a>
                 </span>
 
@@ -1374,15 +1377,12 @@
       
         
           
-            <h4 id="使用情景：实时监听输入框"><a href="#使用情景：实时监听输入框" class="headerlink" title="使用情景：实时监听输入框"></a>使用情景：实时监听输入框</h4><p>使用onkeydown、onkeypress、onkeyup作为监听事件时，会发现一些复制粘贴等操作用不了，同时，在处理组合快键键的时候也很麻烦。 </p>
-<p>故使用下面方式：</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">"body"</span>).delegate(<span class="string">".comment"</span>,<span class="string">"propertychange input"</span>,<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">if</span>($(<span class="keyword">this</span>).val().length&gt;<span class="number">0</span>)&#123;</span><br><span class="line">        $(<span class="string">".send"</span>).prop(<span class="string">"disabled"</span>,<span class="literal">false</span>);</span><br><span class="line">    &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">        $(<span class="string">".send"</span>).prop(<span class="string">"disabled"</span>,<span class="literal">true</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-<p>代码解释如下：</p>
-<ol>
-<li>因为是动态生成的元素，为了保证事件仍然有效，故用事件委托delegate</li>
-<li>方法：propertychange只要当前对象的属性发生改变就会触发该事件 </li>
-<li>方法：input是标准的浏览器事件，一般应用于input（textarea）元素，当input的value发生变化就会发生，无论是键盘输入还是鼠标黏贴的改变都能及时监听到变化 </li>
-</ol>
+            <h4 id="1-overflow-hidden"><a href="#1-overflow-hidden" class="headerlink" title="1. overflow: hidden"></a>1. <code>overflow: hidden</code></h4><p>遇到的情况：section设置了背景颜色但高度为auto，section中三个div都设置了float，背景颜色不显示</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">section</span> <span class="attr">class</span>=<span class="string">"content"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"left"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"imgs/left.png"</span> <span class="attr">alt</span>=<span class="string">""</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"center"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"imgs/comment.png"</span> <span class="attr">alt</span>=<span class="string">""</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"right"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"imgs/right.png"</span> <span class="attr">alt</span>=<span class="string">""</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">section</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>原因：所有div设置了float，导致section无法根据子元素撑起高度</p>
+<p>解决方法：在父元素section中设置清除浮动<code>section{overflow:hidden;}</code> ,这样浮动的子元素又可以撑起高度了</p>
+<p>ps：若父元素section设置了高度值，则浮动的元素超出范围的部分会被隐藏</p>
+<h4 id="2-overflow-auto"><a href="#2-overflow-auto" class="headerlink" title="2. overflow: auto"></a>2. <code>overflow: auto</code></h4><p>超出边界的值不显示，但显示默认样式滚动条</p>
 
           
         
@@ -1585,7 +1585,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/20/git--分支管理/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/20/jquery--操作节点/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="HJP">
@@ -1604,7 +1604,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2019/03/20/git--分支管理/" itemprop="url">git--分支管理</a></h1>
+                <a class="post-title-link" href="/2019/03/20/jquery--操作节点/" itemprop="url">jquery--操作节点</a></h1>
         
 
         <div class="post-meta">
@@ -1639,8 +1639,8 @@
               
               
                 <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/git/" itemprop="url" rel="index">
-                    <span itemprop="name">git</span>
+                  <a href="/categories/jquery/" itemprop="url" rel="index">
+                    <span itemprop="name">jquery</span>
                   </a>
                 </span>
 
@@ -1677,18 +1677,17 @@
 
       
         
-          <h4 id="1-创建和合并分支"><a href="#1-创建和合并分支" class="headerlink" title="1. 创建和合并分支"></a>1. 创建和合并分支</h4><p>创建分支：<code>git branch &lt;name&gt;</code></p>
-<p>切换分支：<code>git checkout &lt;name&gt;</code></p>
-<p>创建和切换分支：<code>git checkout -b &lt;name&gt;</code></p>
-<p>查看分支：<code>git branch</code></p>
-<p>合并其他分支到当前分支：<code>git meger &lt;name&gt;</code></p>
-<p>删除分支：<code>git branch -d &lt;name&gt;</code></p>
-<p>######例如：</p>
-<p><code>git checkout -b dev</code>表示创建dev分支并切换到dev分支</p>
-<p>当前分支为master，<code>git meger dev</code>表示将分支dev合并到当前的master分支上</p>
+          <h4 id="1-内部插入"><a href="#1-内部插入" class="headerlink" title="1. 内部插入"></a>1. 内部插入</h4><ol>
+<li>append() , appendTo()</li>
+</ol>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">      <span class="keyword">var</span> $li = $(<span class="string">"&lt;li&gt;this is a new li&lt;/li&gt;"</span>);</span><br><span class="line">      $(<span class="string">"button"</span>).click(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">          $(<span class="string">"ul"</span>).append($li);</span><br><span class="line">      &#125;);</span><br><span class="line">  &#125;);</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">var</span> $li = $(<span class="string">"&lt;li&gt;this is a new li&lt;/li&gt;"</span>);</span><br><span class="line">    $(<span class="string">"button"</span>).click(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">       $li.appendTo(<span class="string">"ul"</span>);</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<ol start="2">
+<li>prepend() , prependTo() </li>
+</ol>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2019/03/20/git--分支管理/#more" rel="contents">
+            <a class="btn" href="/2019/03/20/jquery--操作节点/#more" rel="contents">
               Read more &raquo;
             </a>
           </div>

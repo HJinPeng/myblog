@@ -259,7 +259,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/20/jquery--操作节点/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/20/git--分支管理/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="HJP">
@@ -278,7 +278,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2019/03/20/jquery--操作节点/" itemprop="url">jquery--操作节点</a></h1>
+                <a class="post-title-link" href="/2019/03/20/git--分支管理/" itemprop="url">git--分支管理</a></h1>
         
 
         <div class="post-meta">
@@ -313,8 +313,8 @@
               
               
                 <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/jquery/" itemprop="url" rel="index">
-                    <span itemprop="name">jquery</span>
+                  <a href="/categories/git/" itemprop="url" rel="index">
+                    <span itemprop="name">git</span>
                   </a>
                 </span>
 
@@ -351,17 +351,18 @@
 
       
         
-          <h4 id="1-内部插入"><a href="#1-内部插入" class="headerlink" title="1. 内部插入"></a>1. 内部插入</h4><ol>
-<li>append() , appendTo()</li>
-</ol>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">      <span class="keyword">var</span> $li = $(<span class="string">"&lt;li&gt;this is a new li&lt;/li&gt;"</span>);</span><br><span class="line">      $(<span class="string">"button"</span>).click(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">          $(<span class="string">"ul"</span>).append($li);</span><br><span class="line">      &#125;);</span><br><span class="line">  &#125;);</span><br></pre></td></tr></table></figure>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">var</span> $li = $(<span class="string">"&lt;li&gt;this is a new li&lt;/li&gt;"</span>);</span><br><span class="line">    $(<span class="string">"button"</span>).click(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">       $li.appendTo(<span class="string">"ul"</span>);</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-<ol start="2">
-<li>prepend() , prependTo() </li>
-</ol>
+          <h4 id="1-创建和合并分支"><a href="#1-创建和合并分支" class="headerlink" title="1. 创建和合并分支"></a>1. 创建和合并分支</h4><p>创建分支：<code>git branch &lt;name&gt;</code></p>
+<p>切换分支：<code>git checkout &lt;name&gt;</code></p>
+<p>创建和切换分支：<code>git checkout -b &lt;name&gt;</code></p>
+<p>查看分支：<code>git branch</code></p>
+<p>合并其他分支到当前分支：<code>git meger &lt;name&gt;</code></p>
+<p>删除分支：<code>git branch -d &lt;name&gt;</code></p>
+<p>######例如：</p>
+<p><code>git checkout -b dev</code>表示创建dev分支并切换到dev分支</p>
+<p>当前分支为master，<code>git meger dev</code>表示将分支dev合并到当前的master分支上</p>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2019/03/20/jquery--操作节点/#more" rel="contents">
+            <a class="btn" href="/2019/03/20/git--分支管理/#more" rel="contents">
               Read more &raquo;
             </a>
           </div>
@@ -558,151 +559,6 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/18/git--远程仓库/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="HJP">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="HJinPeng">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/03/18/git--远程仓库/" itemprop="url">git--远程仓库</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-03-18T00:00:00+08:00">
-                2019-03-18
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/git/" itemprop="url" rel="index">
-                    <span itemprop="name">git</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h4 id="1-关联远程库"><a href="#1-关联远程库" class="headerlink" title="1. 关联远程库"></a>1. 关联远程库</h4><p><code>git remote add origin https://github.com/账号名/仓库名</code></p>
-<h4 id="2-关联后第一次推送master分支"><a href="#2-关联后第一次推送master分支" class="headerlink" title="2. 关联后第一次推送master分支"></a>2. 关联后第一次推送master分支</h4><p><code>git push -u origin master</code></p>
-<h4 id="3-本地提交后，再推送到远程"><a href="#3-本地提交后，再推送到远程" class="headerlink" title="3. 本地提交后，再推送到远程"></a>3. 本地提交后，再推送到远程</h4><p><code>git push origin master</code></p>
-<h4 id="4-克隆仓库"><a href="#4-克隆仓库" class="headerlink" title="4. 克隆仓库"></a>4. 克隆仓库</h4><p><code>git clone https://github.com/账号名/仓库名</code></p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/18/jquery--事件委托/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
@@ -803,6 +659,151 @@
 <h4 id="怎么使用事件委托？"><a href="#怎么使用事件委托？" class="headerlink" title="怎么使用事件委托？"></a>怎么使用事件委托？</h4><p>通过能够刚开始就被加载的父元素（父元素以上），进行事件委托</p>
 <p>如：</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    </span><br><span class="line">    $(<span class="string">"button"</span>).click(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        $(<span class="string">"ul"</span>).append(<span class="string">"&lt;li&gt;这是一个新的li&lt;/li&gt;"</span>);</span><br><span class="line">    &#125;);</span><br><span class="line"></span><br><span class="line">    <span class="comment">// $("li").click(function()&#123;</span></span><br><span class="line">    <span class="comment">//     console.log($(this).text());</span></span><br><span class="line">    <span class="comment">// &#125;);</span></span><br><span class="line"></span><br><span class="line">    $(<span class="string">"ul"</span>).delegate(<span class="string">"li"</span>,<span class="string">"click"</span>,<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log($(<span class="keyword">this</span>).text());</span><br><span class="line">    &#125;);</span><br><span class="line">  &#125;);</span><br></pre></td></tr></table></figure>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/18/git--远程仓库/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="HJP">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="HJinPeng">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/03/18/git--远程仓库/" itemprop="url">git--远程仓库</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-03-18T00:00:00+08:00">
+                2019-03-18
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/git/" itemprop="url" rel="index">
+                    <span itemprop="name">git</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h4 id="1-关联远程库"><a href="#1-关联远程库" class="headerlink" title="1. 关联远程库"></a>1. 关联远程库</h4><p><code>git remote add origin https://github.com/账号名/仓库名</code></p>
+<h4 id="2-关联后第一次推送master分支"><a href="#2-关联后第一次推送master分支" class="headerlink" title="2. 关联后第一次推送master分支"></a>2. 关联后第一次推送master分支</h4><p><code>git push -u origin master</code></p>
+<h4 id="3-本地提交后，再推送到远程"><a href="#3-本地提交后，再推送到远程" class="headerlink" title="3. 本地提交后，再推送到远程"></a>3. 本地提交后，再推送到远程</h4><p><code>git push origin master</code></p>
+<h4 id="4-克隆仓库"><a href="#4-克隆仓库" class="headerlink" title="4. 克隆仓库"></a>4. 克隆仓库</h4><p><code>git clone https://github.com/账号名/仓库名</code></p>
 
           
         
@@ -1162,7 +1163,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/17/jquery--scrollTop()/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/17/css-居中显示/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="HJP">
@@ -1181,7 +1182,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2019/03/17/jquery--scrollTop()/" itemprop="url">jquery--scrollTop()</a></h1>
+                <a class="post-title-link" href="/2019/03/17/css-居中显示/" itemprop="url">css-居中显示</a></h1>
         
 
         <div class="post-meta">
@@ -1216,8 +1217,8 @@
               
               
                 <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/jquery/" itemprop="url" rel="index">
-                    <span itemprop="name">jquery</span>
+                  <a href="/categories/css/" itemprop="url" rel="index">
+                    <span itemprop="name">css</span>
                   </a>
                 </span>
 
@@ -1255,10 +1256,159 @@
       
         
           
-            <h4 id="1-获取网页滚动的偏移位置"><a href="#1-获取网页滚动的偏移位置" class="headerlink" title="1. 获取网页滚动的偏移位置"></a>1. 获取网页滚动的偏移位置</h4><p>为了保证浏览器的兼容性（ie和其他浏览器），获取如下</p>
-<p><code>console.log($(&quot;body&quot;).scrollTop()+$(&quot;html&quot;).scrollTop());</code></p>
-<h4 id="2-设置网页滚动的偏移位置"><a href="#2-设置网页滚动的偏移位置" class="headerlink" title="2. 设置网页滚动的偏移位置"></a>2. 设置网页滚动的偏移位置</h4><p>为了保证浏览器的兼容性（ie和其他浏览器），设置如下</p>
-<p><code>$(&quot;html,body&quot;).srcollTop(300);</code></p>
+            <h4 id="1-利用display-flex"><a href="#1-利用display-flex" class="headerlink" title="1. 利用display: flex"></a>1. 利用<code>display: flex</code></h4><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">h</span>&#123;</span><br><span class="line">    <span class="attribute">display</span>: flex;</span><br><span class="line">    <span class="attribute">flex-direction</span>: column;</span><br><span class="line">    <span class="attribute">justify-content</span>: center;</span><br><span class="line">    <span class="attribute">align-items</span>: center;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="2-通过line-height"><a href="#2-通过line-height" class="headerlink" title="2. 通过line-height"></a>2. 通过<code>line-height</code></h4><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">ul</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">li</span>&gt;</span>1<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">li</span>&gt;</span>1<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">div</span>&#123;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">100%</span>;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">45px</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-tag">ul</span>&#123;</span><br><span class="line">    <span class="attribute">line-height</span>: <span class="number">45px</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-tag">li</span>&#123;</span><br><span class="line">    <span class="attribute">list-style</span>: none;</span><br><span class="line">    <span class="attribute">display</span>: inline;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>li为行内元素，ul设置高度和父元素相同，可以实现文本居中</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/17/css-positon/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="HJP">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="HJinPeng">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/03/17/css-positon/" itemprop="url">css-position</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-03-17T00:00:00+08:00">
+                2019-03-17
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/css/" itemprop="url" rel="index">
+                    <span itemprop="name">css</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h4 id="1-利用position-relative-和-position-absolute-和-z-index-1-做出上下层级效果"><a href="#1-利用position-relative-和-position-absolute-和-z-index-1-做出上下层级效果" class="headerlink" title="1. 利用position: relative 和 position: absolute 和 z-index: -1 做出上下层级效果"></a>1. 利用<code>position: relative</code> 和 <code>position: absolute</code> 和 <code>z-index: -1</code> 做出上下层级效果</h4><ol>
+<li>父元素设置position属性</li>
+<li>子元素设置<code>position: absolute</code> ，absolute是相对于最近的上级设置了position的元素左上角进行定位的，设置top/left/right/bottom值定位</li>
+<li>利用<code>z-index</code>设置层级。</li>
+</ol>
+<h4 id="2-position-absolute中的-lt-h-gt-lt-h-gt-文本居中"><a href="#2-position-absolute中的-lt-h-gt-lt-h-gt-文本居中" class="headerlink" title="2. position: absolute中的&lt;h&gt;&lt;/h&gt; 文本居中"></a>2. <code>position: absolute</code>中的<code>&lt;h&gt;&lt;/h&gt;</code> 文本居中</h4><p>解决方案:</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">h</span>&#123;</span><br><span class="line">    <span class="attribute">position</span>: absolute;</span><br><span class="line">    <span class="attribute">top</span>: <span class="number">100px</span>;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">100%</span>;  </span><br><span class="line">    <span class="attribute">text-align</span>: center;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>其中 <code>width: 100%;</code>  令h标签的长度为父容器的宽</p>
 
           
         
@@ -1411,155 +1561,6 @@
             </a>
           </div>
           <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/17/css-positon/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="HJP">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="HJinPeng">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/03/17/css-positon/" itemprop="url">css-position</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-03-17T00:00:00+08:00">
-                2019-03-17
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/css/" itemprop="url" rel="index">
-                    <span itemprop="name">css</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h4 id="1-利用position-relative-和-position-absolute-和-z-index-1-做出上下层级效果"><a href="#1-利用position-relative-和-position-absolute-和-z-index-1-做出上下层级效果" class="headerlink" title="1. 利用position: relative 和 position: absolute 和 z-index: -1 做出上下层级效果"></a>1. 利用<code>position: relative</code> 和 <code>position: absolute</code> 和 <code>z-index: -1</code> 做出上下层级效果</h4><ol>
-<li>父元素设置position属性</li>
-<li>子元素设置<code>position: absolute</code> ，absolute是相对于最近的上级设置了position的元素左上角进行定位的，设置top/left/right/bottom值定位</li>
-<li>利用<code>z-index</code>设置层级。</li>
-</ol>
-<h4 id="2-position-absolute中的-lt-h-gt-lt-h-gt-文本居中"><a href="#2-position-absolute中的-lt-h-gt-lt-h-gt-文本居中" class="headerlink" title="2. position: absolute中的&lt;h&gt;&lt;/h&gt; 文本居中"></a>2. <code>position: absolute</code>中的<code>&lt;h&gt;&lt;/h&gt;</code> 文本居中</h4><p>解决方案:</p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">h</span>&#123;</span><br><span class="line">    <span class="attribute">position</span>: absolute;</span><br><span class="line">    <span class="attribute">top</span>: <span class="number">100px</span>;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">100%</span>;  </span><br><span class="line">    <span class="attribute">text-align</span>: center;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>其中 <code>width: 100%;</code>  令h标签的长度为父容器的宽</p>
-
-          
         
       
     </div>
