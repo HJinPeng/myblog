@@ -259,6 +259,155 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/28/js--ajax-post封装/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="HJP">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="HJinPeng">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/03/28/js--ajax-post封装/" itemprop="url">js--ajax-post封装</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-03-28T16:51:00+08:00">
+                2019-03-28
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/JavaScript/" itemprop="url" rel="index">
+                    <span itemprop="name">JavaScript</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <h4 id="1-ajax-post封装"><a href="#1-ajax-post封装" class="headerlink" title="1.  ajax-post封装"></a>1.  ajax-post封装</h4><p>function ajax(type, url, obj, timeout, success, error)中</p>
+<p>type为”get”时：<code>xmlhttp.open(type, url + &quot;?&quot; + str, true);</code>  <code>xmlhttp.send();</code></p>
+<p>type为”post”时：<code>xmlhttp.open(type, url, true);</code> <code>xmlhttp.setRequestHeader(&quot;Content-type&quot;, &quot;application/x-www-form-urlencoded&quot;);</code> <code>xmlhttp.send(str);</code></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">window</span>.onload = <span class="function"><span class="keyword">function</span>(<span class="params">ev</span>) </span>&#123;</span><br><span class="line">            <span class="keyword">var</span> btn = <span class="built_in">document</span>.querySelector(<span class="string">"button"</span>);</span><br><span class="line">            btn.onclick = <span class="function"><span class="keyword">function</span>(<span class="params">ev1</span>) </span>&#123;</span><br><span class="line">                ajax(<span class="string">"POST"</span>, <span class="string">"ajax-post.php"</span>, &#123;</span><br><span class="line">                    <span class="string">"userName"</span>: <span class="string">"HJP"</span>,</span><br><span class="line">                    <span class="string">"password"</span>: <span class="string">"123456"</span></span><br><span class="line">                &#125;, <span class="number">3000</span>, <span class="function"><span class="keyword">function</span>(<span class="params">xhr</span>) </span>&#123;</span><br><span class="line">                    alert(xhr.responseText);</span><br><span class="line">                &#125;, <span class="function"><span class="keyword">function</span>(<span class="params">xhr</span>) </span>&#123;</span><br><span class="line">                    alert(<span class="string">"error"</span>);</span><br><span class="line">                &#125;)</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;;</span><br></pre></td></tr></table></figure>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2019/03/28/js--ajax-post封装/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/28/js--ajax-post/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
@@ -559,6 +708,160 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/27/js--ajax-get/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="HJP">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="HJinPeng">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/03/27/js--ajax-get/" itemprop="url">js--ajax-get</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-03-27T00:00:00+08:00">
+                2019-03-27
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/JavaScript/" itemprop="url" rel="index">
+                    <span itemprop="name">JavaScript</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h4 id="1-ajax-get"><a href="#1-ajax-get" class="headerlink" title="1.  ajax-get"></a>1.  ajax-get</h4><p>5个步骤</p>
+<ol>
+<li>创建一个异步对象</li>
+<li>设置请求方式和请求地址</li>
+<li>发送请求</li>
+<li>监听状态的变化（请求已完成 ，值等于4）<ol>
+<li>判断请求成功（&gt;=200 &amp;&amp; &lt;=300 || ===304)</li>
+<li>请求失败</li>
+</ol>
+</li>
+<li>在4.1中处理返回数据</li>
+</ol>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">window</span>.onload = <span class="function"><span class="keyword">function</span>(<span class="params">ev</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> btn = <span class="built_in">document</span>.querySelector(<span class="string">"button"</span>);</span><br><span class="line">    btn.onclick = <span class="function"><span class="keyword">function</span>(<span class="params">ev1</span>) </span>&#123;</span><br><span class="line">        <span class="comment">// 1. 创建一个异步对象，兼容ie5/6</span></span><br><span class="line">        <span class="keyword">var</span> xmlhttp;</span><br><span class="line">        <span class="keyword">if</span> (<span class="built_in">window</span>.XMLHttpRequest) &#123; <span class="comment">// code for IE7+, Firefox, Chrome, Opera, Safari</span></span><br><span class="line">            xmlhttp = <span class="keyword">new</span> XMLHttpRequest();</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123; <span class="comment">// code for IE6, IE5</span></span><br><span class="line">            xmlhttp = <span class="keyword">new</span> ActiveXObject(<span class="string">"Microsoft.XMLHTTP"</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">// 2. 设置请求方式和请求地址</span></span><br><span class="line">        <span class="comment">/*</span></span><br><span class="line"><span class="comment">        method：请求的类型；GET 或 POST</span></span><br><span class="line"><span class="comment">        url：文件在服务器上的位置</span></span><br><span class="line"><span class="comment">        async：true（异步）或 false（同步）</span></span><br><span class="line"><span class="comment">        */</span></span><br><span class="line">        <span class="comment">//ie浏览器的缓存问题，同一个地址只能有一个数据，为了修改数据后能够被访问到，故每次都要修改地址，通过使用 ?t=new Date().getTime() 可以解决兼容性问题</span></span><br><span class="line">         xmlhttp.open(<span class="string">"GET"</span>, <span class="string">"ajax-get.php?t="</span> + (<span class="keyword">new</span> <span class="built_in">Date</span>().getTime()), <span class="literal">true</span>);</span><br><span class="line">        <span class="comment">// 3. 发送请求</span></span><br><span class="line">        xmlhttp.send();</span><br><span class="line">        <span class="comment">// 4. 监听状态的变化</span></span><br><span class="line">        xmlhttp.onreadystatechange = <span class="function"><span class="keyword">function</span>(<span class="params">ev2</span>) </span>&#123;</span><br><span class="line">            <span class="comment">/*</span></span><br><span class="line"><span class="comment">            0: 请求未初始化</span></span><br><span class="line"><span class="comment">            1: 服务器连接已建立</span></span><br><span class="line"><span class="comment">            2: 请求已接收</span></span><br><span class="line"><span class="comment">            3: 请求处理中</span></span><br><span class="line"><span class="comment">            4: 请求已完成，且响应已就绪</span></span><br><span class="line"><span class="comment">            */</span></span><br><span class="line">            <span class="keyword">if</span> (xmlhttp.readyState === <span class="number">4</span>) &#123;</span><br><span class="line">                <span class="comment">//判断是否请求成功</span></span><br><span class="line">                <span class="keyword">if</span> (xmlhttp.status &gt;= <span class="number">200</span> &amp;&amp; xmlhttp.status &lt;= <span class="number">300</span> || xmlhttp.status === <span class="number">304</span>) &#123;</span><br><span class="line">                    <span class="comment">// 5. 处理返回的结果</span></span><br><span class="line">                    <span class="built_in">console</span>.log(<span class="string">"接受到服务器返回的数据了"</span>);</span><br><span class="line">                &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                    <span class="built_in">console</span>.log(<span class="string">"没有接受到服务器返回的数据"</span>);</span><br><span class="line">                &#125;</span><br><span class="line"></span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/27/php--基本语法/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
@@ -798,160 +1101,6 @@
 <p>封装了ajax，传入参数为：地址，对象（json对象），超时时间，成功回调函数，失败回调函数</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//对传入的json对象进行格式化处理为url中的数据格式</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">obj2str</span>(<span class="params">obj</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> res = [];</span><br><span class="line">    <span class="comment">//给传进来的obj对象加一个t属性，可以让每次请求地址都不一样，兼容ie的缓存问题</span></span><br><span class="line">    obj.t = <span class="keyword">new</span> <span class="built_in">Date</span>().getTime();     </span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">var</span> key <span class="keyword">in</span> obj) &#123;</span><br><span class="line">        <span class="comment">//在url中不可出现中文，只可以出现字母/数字/下划线/ASCII</span></span><br><span class="line">        <span class="comment">//调用encodeURIComponent将中文转化为其他字符</span></span><br><span class="line">        res.push(<span class="built_in">encodeURIComponent</span>(key) + <span class="string">"="</span> + <span class="built_in">encodeURIComponent</span>(obj[key])); <span class="comment">// [userName=HJP,password=123456,t=1231654613156]</span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> res.join(<span class="string">"&amp;"</span>); <span class="comment">//userName=HJP&amp;password=123456&amp;t=1321456132321321</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">ajax</span>(<span class="params">url, obj, timeout, success, error</span>) </span>&#123;</span><br><span class="line">    <span class="comment">// 0. 将对象转换为字符串</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">var</span> str = obj2str(obj); <span class="comment">//key=value&amp;key=value</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">// 1. 创建一个异步对象</span></span><br><span class="line">    <span class="keyword">var</span> xmlhttp, timer;</span><br><span class="line">    <span class="keyword">if</span> (<span class="built_in">window</span>.XMLHttpRequest) &#123; <span class="comment">// code for IE7+, Firefox, Chrome, Opera, Safari</span></span><br><span class="line">        xmlhttp = <span class="keyword">new</span> XMLHttpRequest();</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123; <span class="comment">// code for IE6, IE5</span></span><br><span class="line">        xmlhttp = <span class="keyword">new</span> ActiveXObject(<span class="string">"Microsoft.XMLHTTP"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// 2. 设置请求方式和请求地址</span></span><br><span class="line">    <span class="comment">/*</span></span><br><span class="line"><span class="comment">    method：请求的类型；GET 或 POST</span></span><br><span class="line"><span class="comment">    url：文件在服务器上的位置</span></span><br><span class="line"><span class="comment">    async：true（异步）或 false（同步）</span></span><br><span class="line"><span class="comment">    */</span></span><br><span class="line">    xmlhttp.open(<span class="string">"GET"</span>, url + <span class="string">"?"</span> + str, <span class="literal">true</span>);</span><br><span class="line">    <span class="comment">// 3. 发送请求</span></span><br><span class="line">    xmlhttp.send();</span><br><span class="line">    <span class="comment">// 4. 监听状态的变化</span></span><br><span class="line">    xmlhttp.onreadystatechange = <span class="function"><span class="keyword">function</span>(<span class="params">ev2</span>) </span>&#123;</span><br><span class="line">        <span class="comment">/*</span></span><br><span class="line"><span class="comment">        0: 请求未初始化</span></span><br><span class="line"><span class="comment">        1: 服务器连接已建立</span></span><br><span class="line"><span class="comment">        2: 请求已接收</span></span><br><span class="line"><span class="comment">        3: 请求处理中</span></span><br><span class="line"><span class="comment">        4: 请求已完成，且响应已就绪</span></span><br><span class="line"><span class="comment">        */</span></span><br><span class="line">        <span class="keyword">if</span> (xmlhttp.readyState === <span class="number">4</span>) &#123;</span><br><span class="line">            clearInterval(timer);    <span class="comment">//当请求完成时，删除定时器</span></span><br><span class="line">            <span class="comment">//判断是否请求成功</span></span><br><span class="line">            <span class="keyword">if</span> (xmlhttp.status &gt;= <span class="number">200</span> &amp;&amp; xmlhttp.status &lt;= <span class="number">300</span> || xmlhttp.status === <span class="number">304</span>) &#123;</span><br><span class="line">                <span class="comment">// 5. 处理返回的结果</span></span><br><span class="line">                success(xmlhttp);</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                error(xmlhttp);</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 判断外界是否传入了超时时间</span></span><br><span class="line">    <span class="keyword">if</span> (timeout) &#123;</span><br><span class="line">        <span class="comment">//创建定时器，第一个是超过第二个参数的时间就执行的回调函数，第二个是时间</span></span><br><span class="line">        timer = setInterval(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">            xmlhttp.abort(); <span class="comment">//中断请求</span></span><br><span class="line">            clearInterval(timer); <span class="comment">//删除定时器</span></span><br><span class="line">        &#125;, timeout);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>在url中不可出现中文，只可以出现字母/数字/下划线/ASCII<br>调用encodeURIComponent将中文转化为其他字符</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/27/js--ajax-get/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="HJP">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="HJinPeng">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/03/27/js--ajax-get/" itemprop="url">js--ajax-get</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-03-27T00:00:00+08:00">
-                2019-03-27
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/JavaScript/" itemprop="url" rel="index">
-                    <span itemprop="name">JavaScript</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h4 id="1-ajax-get"><a href="#1-ajax-get" class="headerlink" title="1.  ajax-get"></a>1.  ajax-get</h4><p>5个步骤</p>
-<ol>
-<li>创建一个异步对象</li>
-<li>设置请求方式和请求地址</li>
-<li>发送请求</li>
-<li>监听状态的变化（请求已完成 ，值等于4）<ol>
-<li>判断请求成功（&gt;=200 &amp;&amp; &lt;=300 || ===304)</li>
-<li>请求失败</li>
-</ol>
-</li>
-<li>在4.1中处理返回数据</li>
-</ol>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">window</span>.onload = <span class="function"><span class="keyword">function</span>(<span class="params">ev</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> btn = <span class="built_in">document</span>.querySelector(<span class="string">"button"</span>);</span><br><span class="line">    btn.onclick = <span class="function"><span class="keyword">function</span>(<span class="params">ev1</span>) </span>&#123;</span><br><span class="line">        <span class="comment">// 1. 创建一个异步对象，兼容ie5/6</span></span><br><span class="line">        <span class="keyword">var</span> xmlhttp;</span><br><span class="line">        <span class="keyword">if</span> (<span class="built_in">window</span>.XMLHttpRequest) &#123; <span class="comment">// code for IE7+, Firefox, Chrome, Opera, Safari</span></span><br><span class="line">            xmlhttp = <span class="keyword">new</span> XMLHttpRequest();</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123; <span class="comment">// code for IE6, IE5</span></span><br><span class="line">            xmlhttp = <span class="keyword">new</span> ActiveXObject(<span class="string">"Microsoft.XMLHTTP"</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">// 2. 设置请求方式和请求地址</span></span><br><span class="line">        <span class="comment">/*</span></span><br><span class="line"><span class="comment">        method：请求的类型；GET 或 POST</span></span><br><span class="line"><span class="comment">        url：文件在服务器上的位置</span></span><br><span class="line"><span class="comment">        async：true（异步）或 false（同步）</span></span><br><span class="line"><span class="comment">        */</span></span><br><span class="line">        <span class="comment">//ie浏览器的缓存问题，同一个地址只能有一个数据，为了修改数据后能够被访问到，故每次都要修改地址，通过使用 ?t=new Date().getTime() 可以解决兼容性问题</span></span><br><span class="line">         xmlhttp.open(<span class="string">"GET"</span>, <span class="string">"ajax-get.php?t="</span> + (<span class="keyword">new</span> <span class="built_in">Date</span>().getTime()), <span class="literal">true</span>);</span><br><span class="line">        <span class="comment">// 3. 发送请求</span></span><br><span class="line">        xmlhttp.send();</span><br><span class="line">        <span class="comment">// 4. 监听状态的变化</span></span><br><span class="line">        xmlhttp.onreadystatechange = <span class="function"><span class="keyword">function</span>(<span class="params">ev2</span>) </span>&#123;</span><br><span class="line">            <span class="comment">/*</span></span><br><span class="line"><span class="comment">            0: 请求未初始化</span></span><br><span class="line"><span class="comment">            1: 服务器连接已建立</span></span><br><span class="line"><span class="comment">            2: 请求已接收</span></span><br><span class="line"><span class="comment">            3: 请求处理中</span></span><br><span class="line"><span class="comment">            4: 请求已完成，且响应已就绪</span></span><br><span class="line"><span class="comment">            */</span></span><br><span class="line">            <span class="keyword">if</span> (xmlhttp.readyState === <span class="number">4</span>) &#123;</span><br><span class="line">                <span class="comment">//判断是否请求成功</span></span><br><span class="line">                <span class="keyword">if</span> (xmlhttp.status &gt;= <span class="number">200</span> &amp;&amp; xmlhttp.status &lt;= <span class="number">300</span> || xmlhttp.status === <span class="number">304</span>) &#123;</span><br><span class="line">                    <span class="comment">// 5. 处理返回的结果</span></span><br><span class="line">                    <span class="built_in">console</span>.log(<span class="string">"接受到服务器返回的数据了"</span>);</span><br><span class="line">                &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                    <span class="built_in">console</span>.log(<span class="string">"没有接受到服务器返回的数据"</span>);</span><br><span class="line">                &#125;</span><br><span class="line"></span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 
           
         
@@ -1446,150 +1595,6 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/24/jquery--ajax/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="HJP">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="HJinPeng">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/03/24/jquery--ajax/" itemprop="url">jquery--ajax</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-03-24T00:00:00+08:00">
-                2019-03-24
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/jquery/" itemprop="url" rel="index">
-                    <span itemprop="name">jquery</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h4 id="1-ajax的url"><a href="#1-ajax的url" class="headerlink" title="1. ajax的url"></a>1. ajax的url</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$.ajax(&#123;</span><br><span class="line">   url: .<span class="comment">/***/</span>*** </span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-<p>相对于html的路径，不是相对js的路径</p>
-<h4 id="2-ajax使用"><a href="#2-ajax使用" class="headerlink" title="2. ajax使用"></a>2. ajax使用</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    $(<span class="string">"button"</span>).click(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">        $.ajax(&#123;</span><br><span class="line">            type: <span class="string">"GET"</span>,</span><br><span class="line">            url: <span class="string">"ajax-jquery.php"</span>,</span><br><span class="line">            data: <span class="string">"userName=HJP&amp;password=123456"</span>,</span><br><span class="line">            success: <span class="function"><span class="keyword">function</span>(<span class="params">msg</span>) </span>&#123;</span><br><span class="line">                alert(msg);</span><br><span class="line">            &#125;,</span><br><span class="line">            error: <span class="function"><span class="keyword">function</span>(<span class="params">xhr</span>) </span>&#123;</span><br><span class="line">                alert(xhr.status);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;);</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/24/jquery--indexOf和lastIndexOf/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
@@ -1774,7 +1779,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">61</span>
+                  <span class="site-state-item-count">62</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -1785,7 +1790,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">11</span>
+                  <span class="site-state-item-count">12</span>
                   <span class="site-state-item-name">categories</span>
                 </a>
               </div>
