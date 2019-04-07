@@ -259,6 +259,1310 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/04/04/登录--demo-移动端购物商城/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="HJP">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="HJinPeng">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/04/04/登录--demo-移动端购物商城/" itemprop="url">登录--demo-移动端购物商城</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-04-04T14:13:11+08:00">
+                2019-04-04
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/demo-移动端购物商城/" itemprop="url" rel="index">
+                    <span itemprop="name">demo-移动端购物商城</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <h4 id="涉及知识"><a href="#涉及知识" class="headerlink" title="涉及知识"></a>涉及知识</h4><p><code>cookie</code> <code>html</code> <code>css</code> <code>js</code> <code>jq</code> <code>bootstrap</code> <code>ajax</code> <code>php</code> <code>mysql</code></p>
+<h4 id="一、编写登录页面：login-html"><a href="#一、编写登录页面：login-html" class="headerlink" title="一、编写登录页面：login.html"></a>一、编写登录页面：login.html</h4><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">"en"</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"UTF-8"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"viewport"</span> <span class="attr">content</span>=<span class="string">"width=device-width, initial-scale=1.0"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">http-equiv</span>=<span class="string">"X-UA-Compatible"</span> <span class="attr">content</span>=<span class="string">"ie=edge"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>login<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">"stylesheet"</span> <span class="attr">href</span>=<span class="string">"lib/bootstrap/css/bootstrap.css"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">"stylesheet"</span> <span class="attr">href</span>=<span class="string">"css/index.css"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"container login"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">h3</span>&gt;</span>登录<span class="tag">&lt;/<span class="name">h3</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">form</span> <span class="attr">class</span>=<span class="string">"row"</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"form-group col-xs-12"</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">label</span> <span class="attr">for</span>=<span class="string">"username"</span>&gt;</span>用户名<span class="tag">&lt;/<span class="name">label</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">class</span>=<span class="string">"form-control"</span> <span class="attr">id</span>=<span class="string">"username"</span> <span class="attr">placeholder</span>=<span class="string">"username"</span> <span class="attr">name</span>=<span class="string">"username"</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"form-group col-xs-12 "</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">label</span> <span class="attr">for</span>=<span class="string">"password"</span>&gt;</span>密码<span class="tag">&lt;/<span class="name">label</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"password"</span> <span class="attr">class</span>=<span class="string">"form-control"</span> <span class="attr">id</span>=<span class="string">"password"</span> <span class="attr">placeholder</span>=<span class="string">"password"</span> <span class="attr">name</span>=<span class="string">"password"</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"form-group col-xs-12 "</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"javascript:;"</span> <span class="attr">class</span>=<span class="string">"btn  btn-info col-xs-12"</span> <span class="attr">id</span>=<span class="string">"login"</span>&gt;</span>登录<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"form-group col-xs-12 "</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"register.html"</span> <span class="attr">class</span>=<span class="string">"btn btn-defalut pull-right"</span>&gt;</span>没有账号，去注册<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">form</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"lib/jqurey/jquery.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"js/jquery.cookie.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"lib/bootstrap/js/bootstrap.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"js/login.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2019/04/04/登录--demo-移动端购物商城/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/04/04/注册--demo-移动端购物商城/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="HJP">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="HJinPeng">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/04/04/注册--demo-移动端购物商城/" itemprop="url">注册--demo-移动端购物商城</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-04-04T12:08:58+08:00">
+                2019-04-04
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/demo-移动端购物商城/" itemprop="url" rel="index">
+                    <span itemprop="name">demo-移动端购物商城</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <h4 id="涉及知识"><a href="#涉及知识" class="headerlink" title="涉及知识"></a>涉及知识</h4><p><code>html</code> <code>css</code> <code>js</code> <code>jq</code> <code>bootstrap</code> <code>ajax</code> <code>php</code> <code>mysql</code> </p>
+<h4 id="一、准备工作"><a href="#一、准备工作" class="headerlink" title="一、准备工作"></a>一、准备工作</h4><h5 id="0-下载xampp"><a href="#0-下载xampp" class="headerlink" title="0. 下载xampp"></a>0. 下载xampp</h5><ol>
+<li>打开xampp应用：打开数据库连接，打开apache连接</li>
+<li>在xampp文件夹下找到htdocs文件夹，在里面创建项目文件夹，如文件夹phone</li>
+</ol>
+<h5 id="1-封装cookie作为jquery插件"><a href="#1-封装cookie作为jquery插件" class="headerlink" title="1. 封装cookie作为jquery插件"></a>1. 封装cookie作为jquery插件</h5><p>见：<a href="https://blog.hjinpeng.top/2019/04/01/%E5%B0%81%E8%A3%85jquery.cookie.js%E6%8F%92%E4%BB%B6/" target="_blank" rel="noopener">https://blog.hjinpeng.top/2019/04/01/%E5%B0%81%E8%A3%85jquery.cookie.js%E6%8F%92%E4%BB%B6/</a></p>
+<h5 id="2-使用navicat创建数据库"><a href="#2-使用navicat创建数据库" class="headerlink" title="2. 使用navicat创建数据库"></a>2. 使用navicat创建数据库</h5><p>主机：localhost<br>用户名：root<br>密码：【空】<br>创建数据库：phone<br>创建用户表：user<br>user表字段：username（key）,password,image</p>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2019/04/04/注册--demo-移动端购物商城/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/04/04/php--连接数据库/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="HJP">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="HJinPeng">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/04/04/php--连接数据库/" itemprop="url">php--连接数据库</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-04-04T11:43:12+08:00">
+                2019-04-04
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/php/" itemprop="url" rel="index">
+                    <span itemprop="name">php</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <h4 id="一、如何通过php连接数据库"><a href="#一、如何通过php连接数据库" class="headerlink" title="一、如何通过php连接数据库"></a>一、如何通过php连接数据库</h4><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line">    $server = <span class="string">"localhost"</span>; <span class="comment">//主机或ip</span></span><br><span class="line">    $db_user = <span class="string">"root"</span>;    <span class="comment">//用户名</span></span><br><span class="line">    $db_password = <span class="string">""</span>;    <span class="comment">//密码</span></span><br><span class="line">    $db = <span class="string">"phone"</span>;      <span class="comment">//数据库名</span></span><br><span class="line">    </span><br><span class="line">    <span class="comment">//使用mysqli_connect连接数据库，传递四个参数</span></span><br><span class="line">    $link = mysqli_connect($server,$db_user,$db_password,$db);</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">if</span>($link)&#123;</span><br><span class="line">        <span class="keyword">echo</span> <span class="string">"连接成功"</span>;</span><br><span class="line">    &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">        <span class="keyword">echo</span> <span class="string">"连接失败"</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line"><span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2019/04/04/php--连接数据库/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/04/04/表严肃学Vue--模板语法/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="HJP">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="HJinPeng">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/04/04/表严肃学Vue--模板语法/" itemprop="url">表严肃学Vue--模板语法</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-04-04T10:44:48+08:00">
+                2019-04-04
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/Vue/" itemprop="url" rel="index">
+                    <span itemprop="name">Vue</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h4 id="模板语法"><a href="#模板语法" class="headerlink" title="模板语法"></a>模板语法</h4><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">"en"</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"UTF-8"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"viewport"</span> <span class="attr">content</span>=<span class="string">"width=device-width, initial-scale=1.0"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">http-equiv</span>=<span class="string">"X-UA-Compatible"</span> <span class="attr">content</span>=<span class="string">"ie=edge"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>vue-模板语法<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!--v-once当数据改变时，插值处的内容不会更新 --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"app"</span> <span class="attr">v-once</span>&gt;</span></span><br><span class="line">        &#123;&#123;message&#125;&#125;</span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">&lt;!--&#123;&#123;&#125;&#125;会将数据解释为普通文本，而非 HTML 代码。为了输出真正的 HTML，你需要使用 v-html 指令：--&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"app-2"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">p</span>&gt;</span>Using mustaches: &#123;&#123; rawHtml &#125;&#125;<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">p</span>&gt;</span>Using v-html directive: <span class="tag">&lt;<span class="name">span</span> <span class="attr">v-html</span>=<span class="string">"rawHtml"</span>&gt;</span><span class="tag">&lt;/<span class="name">span</span>&gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">&lt;!--Mustache 语法不能作用在 HTML 特性上，遇到这种情况应该使用 v-bind 指令--&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"app-3"</span> <span class="attr">v-bind:class</span>=<span class="string">"'it is '+setclass"</span>&gt;</span></span><br><span class="line">        setclass &#123;&#123; ok ? 'YES' : 'NO' &#125;&#125;</span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">&lt;!--v-bind简写为：v-on简写为@--&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">a</span> <span class="attr">id</span>=<span class="string">"app-4"</span> <span class="attr">v-bind:</span>[<span class="attr">att</span>]=<span class="string">"url"</span>&gt;</span>this is a href<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"https://cdn.jsdelivr.net/npm/vue/dist/vue.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="undefined">        var app = new Vue(&#123;</span></span><br><span class="line"><span class="undefined">            el: '#app',</span></span><br><span class="line"><span class="undefined">            data: &#123;</span></span><br><span class="line"><span class="undefined">                message: 123</span></span><br><span class="line"><span class="undefined">            &#125;</span></span><br><span class="line"><span class="undefined">        &#125;)</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="xml">        var rawHtml = "<span class="tag">&lt;<span class="name">span</span> <span class="attr">style</span>=<span class="string">'color:red'</span>&gt;</span>this should be red<span class="tag">&lt;/<span class="name">span</span>&gt;</span>";</span></span><br><span class="line"><span class="undefined">        var app2 = new Vue(&#123;</span></span><br><span class="line"><span class="undefined">            el: '#app-2',</span></span><br><span class="line"><span class="undefined">            data: &#123;</span></span><br><span class="line"><span class="undefined">                rawHtml</span></span><br><span class="line"><span class="undefined">            &#125;</span></span><br><span class="line"><span class="undefined">        &#125;)</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="undefined">        var app3 = new Vue(&#123;</span></span><br><span class="line"><span class="undefined">            el: '#app-3',</span></span><br><span class="line"><span class="undefined">            data: &#123;</span></span><br><span class="line"><span class="undefined">                setclass: 'yes'</span></span><br><span class="line"><span class="undefined">            &#125;</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="undefined">        &#125;)</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="undefined">        var app4 = new Vue(&#123;</span></span><br><span class="line"><span class="undefined">            el: '#app-4',</span></span><br><span class="line"><span class="undefined">            data: &#123;</span></span><br><span class="line"><span class="undefined">                att: 'href',</span></span><br><span class="line"><span class="undefined">                url: 'www.baidu.com'</span></span><br><span class="line"><span class="undefined">            &#125;</span></span><br><span class="line"><span class="undefined">        &#125;)</span></span><br><span class="line"><span class="undefined">    </span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/04/04/表严肃学Vue--实例/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="HJP">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="HJinPeng">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/04/04/表严肃学Vue--实例/" itemprop="url">表严肃学Vue--实例</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-04-04T10:43:37+08:00">
+                2019-04-04
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/Vue/" itemprop="url" rel="index">
+                    <span itemprop="name">Vue</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h4 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h4><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">"en"</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"UTF-8"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"viewport"</span> <span class="attr">content</span>=<span class="string">"width=device-width, initial-scale=1.0"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">http-equiv</span>=<span class="string">"X-UA-Compatible"</span> <span class="attr">content</span>=<span class="string">"ie=edge"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>Vue实例<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"app"</span>&gt;</span></span><br><span class="line">        &#123;&#123;a&#125;&#125;</span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"app-2"</span>&gt;</span></span><br><span class="line">        &#123;&#123;a&#125;&#125;</span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"https://cdn.jsdelivr.net/npm/vue/dist/vue.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="undefined">        var app = new Vue(&#123;</span></span><br><span class="line"><span class="undefined">            el: '#app',</span></span><br><span class="line"><span class="undefined">            data: &#123;</span></span><br><span class="line"><span class="undefined">                a: 1</span></span><br><span class="line"><span class="undefined">            &#125;,</span></span><br><span class="line"><span class="undefined">            //created 钩子可以用来在一个实例被创建之后执行代码</span></span><br><span class="line"><span class="undefined">            //this 上下文指向调用它的 Vue 实例</span></span><br><span class="line"><span class="undefined">            created: function() &#123;</span></span><br><span class="line"><span class="undefined">                console.log('a is :' + this.a)</span></span><br><span class="line"><span class="undefined">            &#125;</span></span><br><span class="line"><span class="undefined">        &#125;)</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="undefined">        var cantchange = &#123;</span></span><br><span class="line"><span class="undefined">            a: 'cant change'</span></span><br><span class="line"><span class="undefined">        &#125;</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="undefined">        // 阻止修改cantchange的属性</span></span><br><span class="line"><span class="undefined">        Object.freeze(cantchange)</span></span><br><span class="line"><span class="undefined">        var app2 = new Vue(&#123;</span></span><br><span class="line"><span class="undefined">            el: '#app-2',</span></span><br><span class="line"><span class="undefined">            data: cantchange</span></span><br><span class="line"><span class="undefined">        &#125;)</span></span><br><span class="line"><span class="undefined">    </span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/04/04/表严肃学Vue--介绍/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="HJP">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="HJinPeng">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/04/04/表严肃学Vue--介绍/" itemprop="url">表严肃学Vue--介绍</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-04-04T10:39:00+08:00">
+                2019-04-04
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/Vue/" itemprop="url" rel="index">
+                    <span itemprop="name">Vue</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h4 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h4><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">"en"</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"UTF-8"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"viewport"</span> <span class="attr">content</span>=<span class="string">"width=device-width, initial-scale=1.0"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">http-equiv</span>=<span class="string">"X-UA-Compatible"</span> <span class="attr">content</span>=<span class="string">"ie=edge"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>vue_1<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"app"</span>&gt;</span></span><br><span class="line">        &#123;&#123;message&#125;&#125;</span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"app-2"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">span</span> <span class="attr">v-bind:title</span>=<span class="string">"message"</span>&gt;</span></span><br><span class="line">            鼠标悬停几秒钟查看此处动态绑定的提示信息！</span><br><span class="line">        <span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"app-3"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">p</span> <span class="attr">v-if</span>=<span class="string">"seen"</span>&gt;</span>现在你看到我了<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"app-4"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">ol</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">li</span> <span class="attr">v-for</span>=<span class="string">"todo in todos"</span>&gt;</span></span><br><span class="line">                &#123;&#123; todo.text &#125;&#125;</span><br><span class="line">            <span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">ol</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"app-5"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">p</span>&gt;</span>&#123;&#123;message&#125;&#125;<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">button</span> <span class="attr">v-on:click</span>=<span class="string">"reverseMessage"</span>&gt;</span>逆转消息<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"app-6"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">p</span>&gt;</span></span><br><span class="line">            &#123;&#123;message&#125;&#125;</span><br><span class="line">        <span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">v-model</span>=<span class="string">"message"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"app-7"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">ol</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">todo-item</span> <span class="attr">v-for</span>=<span class="string">"item in groceryList"</span> <span class="attr">v-bind:todo</span>=<span class="string">"item"</span> <span class="attr">v-bind:key</span>=<span class="string">"item.id"</span>&gt;</span><span class="tag">&lt;/<span class="name">todo-item</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">ol</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"https://cdn.jsdelivr.net/npm/vue/dist/vue.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="undefined">        var app = new Vue(&#123;</span></span><br><span class="line"><span class="undefined">            el: '#app',</span></span><br><span class="line"><span class="undefined">            data: &#123;</span></span><br><span class="line"><span class="undefined">                message: 'Hello Vue'</span></span><br><span class="line"><span class="undefined">            &#125;</span></span><br><span class="line"><span class="undefined">        &#125;)</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="undefined">        var app2 = new Vue(&#123;</span></span><br><span class="line"><span class="undefined">            el: '#app-2',</span></span><br><span class="line"><span class="undefined">            data: &#123;</span></span><br><span class="line"><span class="undefined">                message: '页面加载于' + new Date().toLocaleString()</span></span><br><span class="line"><span class="undefined">            &#125;</span></span><br><span class="line"><span class="undefined">        &#125;)</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="undefined">        var app3 = new Vue(&#123;</span></span><br><span class="line"><span class="undefined">            el: '#app-3',</span></span><br><span class="line"><span class="undefined">            data: &#123;</span></span><br><span class="line"><span class="undefined">                seen: true</span></span><br><span class="line"><span class="undefined">            &#125;</span></span><br><span class="line"><span class="undefined">        &#125;)</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="undefined">        var app4 = new Vue(&#123;</span></span><br><span class="line"><span class="undefined">            el: '#app-4',</span></span><br><span class="line"><span class="undefined">            data: &#123;</span></span><br><span class="line"><span class="undefined">                todos: [&#123;</span></span><br><span class="line"><span class="undefined">                    text: '学习 Javascript'</span></span><br><span class="line"><span class="undefined">                &#125;, &#123;</span></span><br><span class="line"><span class="undefined">                    text: '学习 Vue'</span></span><br><span class="line"><span class="undefined">                &#125;, &#123;</span></span><br><span class="line"><span class="undefined">                    text: '整个牛项目'</span></span><br><span class="line"><span class="undefined">                &#125;]</span></span><br><span class="line"><span class="undefined">            &#125;</span></span><br><span class="line"><span class="undefined">        &#125;)</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="undefined">        var app5 = new Vue(&#123;</span></span><br><span class="line"><span class="undefined">            el: '#app-5',</span></span><br><span class="line"><span class="undefined">            data: &#123;</span></span><br><span class="line"><span class="undefined">                message: 'hello vue.js'</span></span><br><span class="line"><span class="undefined">            &#125;,</span></span><br><span class="line"><span class="undefined">            methods: &#123;</span></span><br><span class="line"><span class="undefined">                reverseMessage: function() &#123;</span></span><br><span class="line"><span class="undefined">                    this.message = this.message.split('').reverse().join('')</span></span><br><span class="line"><span class="undefined">                &#125;</span></span><br><span class="line"><span class="undefined">            &#125;,</span></span><br><span class="line"><span class="undefined">        &#125;)</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="undefined">        var app6 = new Vue(&#123;</span></span><br><span class="line"><span class="undefined">            el: '#app-6',</span></span><br><span class="line"><span class="undefined">            data: &#123;</span></span><br><span class="line"><span class="undefined">                message: 'hello vue.js'</span></span><br><span class="line"><span class="undefined">            &#125;</span></span><br><span class="line"><span class="undefined">        &#125;)</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="undefined">        Vue.component('todo-item', &#123;</span></span><br><span class="line"><span class="undefined">            props: ['todo'],</span></span><br><span class="line"><span class="xml">            template: '<span class="tag">&lt;<span class="name">li</span>&gt;</span>&#123;&#123;todo.text&#125;&#125;<span class="tag">&lt;/<span class="name">li</span>&gt;</span>'</span></span><br><span class="line"><span class="undefined">        &#125;)</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="undefined">        var app7 = new Vue(&#123;</span></span><br><span class="line"><span class="undefined">            el: '#app-7',</span></span><br><span class="line"><span class="undefined">            data: &#123;</span></span><br><span class="line"><span class="undefined">                groceryList: [&#123;</span></span><br><span class="line"><span class="undefined">                    id: 0,</span></span><br><span class="line"><span class="undefined">                    text: '素菜'</span></span><br><span class="line"><span class="undefined">                &#125;, &#123;</span></span><br><span class="line"><span class="undefined">                    id: 1,</span></span><br><span class="line"><span class="undefined">                    text: '奶酪'</span></span><br><span class="line"><span class="undefined">                &#125;, &#123;</span></span><br><span class="line"><span class="undefined">                    id: 2,</span></span><br><span class="line"><span class="undefined">                    text: '随意'</span></span><br><span class="line"><span class="undefined">                &#125;]</span></span><br><span class="line"><span class="undefined">            &#125;</span></span><br><span class="line"><span class="undefined">        &#125;)</span></span><br><span class="line"><span class="undefined">    </span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/04/04/css--flex/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="HJP">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="HJinPeng">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/04/04/css--flex/" itemprop="url">css--flex</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-04-04T10:25:00+08:00">
+                2019-04-04
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/css/" itemprop="url" rel="index">
+                    <span itemprop="name">css</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <h4 id="一、flex布局"><a href="#一、flex布局" class="headerlink" title="一、flex布局"></a>一、flex布局</h4><p>flex也叫做“弹性布局”<br>flex布局可以响应式地实现页面布局</p>
+<h4 id="二、如何使用"><a href="#二、如何使用" class="headerlink" title="二、如何使用"></a>二、如何使用</h4><h5 id="1-设置flex布局"><a href="#1-设置flex布局" class="headerlink" title="1. 设置flex布局"></a>1. 设置flex布局</h5><p>每个容器都可以设置为flex布局<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">div</span>&#123;</span><br><span class="line">    <span class="attribute">display</span>: -webkit-flex;<span class="comment">/*Google，Safari*/</span></span><br><span class="line">    <span class="attribute">display</span>: flex;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>行内元素使用<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">div</span>&#123;</span><br><span class="line">    <span class="attribute">display</span>: -webkit-inline-flex;<span class="comment">/*Google，Safari*/</span></span><br><span class="line">    <span class="attribute">display</span>: inline-flex;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2019/04/04/css--flex/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/04/03/tomcat--无法显示中文命名图片/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="HJP">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="HJinPeng">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/04/03/tomcat--无法显示中文命名图片/" itemprop="url">tomcat--无法显示中文命名图片</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-04-03T13:12:19+08:00">
+                2019-04-03
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/服务器/" itemprop="url" rel="index">
+                    <span itemprop="name">服务器</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h4 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h4><p>将项目跑在tomcat服务器上时，发现带有中文命名的图片无法显示</p>
+<h4 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h4><p>在tomcat/conf/server.xml中找到<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">Connector</span> <span class="attr">port</span>=<span class="string">"8080"</span> <span class="attr">protocol</span>=<span class="string">"HTTP/1.1"</span></span></span><br><span class="line"><span class="tag">           <span class="attr">connectionTimeout</span>=<span class="string">"20000"</span></span></span><br><span class="line"><span class="tag">           <span class="attr">redirectPort</span>=<span class="string">"8443"</span></span></span><br><span class="line"><span class="tag">           /&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>添加<code>URIEncoding=&quot;utf-8&quot;</code><br><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">Connector</span> <span class="attr">port</span>=<span class="string">"8080"</span> <span class="attr">protocol</span>=<span class="string">"HTTP/1.1"</span></span></span><br><span class="line"><span class="tag">           <span class="attr">connectionTimeout</span>=<span class="string">"20000"</span></span></span><br><span class="line"><span class="tag">           <span class="attr">redirectPort</span>=<span class="string">"8443"</span></span></span><br><span class="line"><span class="tag">           <span class="attr">URIEncoding</span>=<span class="string">"utf-8</span></span></span><br><span class="line"><span class="tag"><span class="string">           /&gt;</span></span></span><br></pre></td></tr></table></figure></p>
+<h4 id="建议"><a href="#建议" class="headerlink" title="建议"></a>建议</h4><p>对于文件或图片等资源的路径命名最好都适用英文</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/04/01/jq--获取img的src/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="HJP">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="HJinPeng">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/04/01/jq--获取img的src/" itemprop="url">jq--获取img的src</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-04-01T18:14:33+08:00">
+                2019-04-01
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/jquery/" itemprop="url" rel="index">
+                    <span itemprop="name">jquery</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h4 id="1-获取"><a href="#1-获取" class="headerlink" title="1. 获取"></a>1. 获取</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">"#img"</span>)[<span class="number">0</span>].src;</span><br></pre></td></tr></table></figure>
+<h4 id="2-修改"><a href="#2-修改" class="headerlink" title="2. 修改"></a>2. 修改</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">"#img"</span>).attr(<span class="string">'src'</span>,path);</span><br></pre></td></tr></table></figure>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/04/01/封装jquery.cookie.js插件/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
@@ -401,1343 +1705,11 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/30/css---last-child和-last-of-type的区别/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="HJP">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="HJinPeng">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/03/30/css---last-child和-last-of-type的区别/" itemprop="url">css--:last-child和:last-of-type的区别</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-03-30T17:47:17+08:00">
-                2019-03-30
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/css/" itemprop="url" rel="index">
-                    <span itemprop="name">css</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h4 id="1-last-child"><a href="#1-last-child" class="headerlink" title="1. :last-child"></a>1. <code>:last-child</code></h4><p>:last-child表示其父元素的最后一个子元素，且这个元素是css指定的元素，才可以生效。<br>比方：<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">p</span>&gt;</span>1<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">p</span>&gt;</span>2<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">p</span>&gt;</span>3<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span>&gt;</span>4<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">p</span><span class="selector-pseudo">:last-child</span>&#123;</span><br><span class="line">    <span class="attribute">color</span>: red;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>则最后一个p不会显示为红色字体，因为父元素的最后一个子元素是div不是p，不是css指定的元素，所以无效</p>
-<h4 id="2-last-of-type"><a href="#2-last-of-type" class="headerlink" title="2. :last-of-type"></a>2. <code>:last-of-type</code></h4><p>:last-of-type表示其父元素下的最后一个指定类型的元素。<br>比方：<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">p</span>&gt;</span>1<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">p</span>&gt;</span>2<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">p</span>&gt;</span>3<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span>&gt;</span>4<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">p</span><span class="selector-pseudo">:last-of-type</span>&#123;</span><br><span class="line">    <span class="attribute">color</span>: red;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>最后一个p元素将会显示为红色</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/29/HTTP--页码hash/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="HJP">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="HJinPeng">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/03/29/HTTP--页码hash/" itemprop="url">HTTP--页码hash</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-03-29T22:19:00+08:00">
-                2019-03-29
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/HTTP/" itemprop="url" rel="index">
-                    <span itemprop="name">HTTP</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h4 id="1-使用场景"><a href="#1-使用场景" class="headerlink" title="1. 使用场景"></a>1. 使用场景</h4><p>在企业开发中，页码一般使用hash，可以在其他浏览器打开的时候也到达同一个页码</p>
-<h4 id="2-url的hash"><a href="#2-url的hash" class="headerlink" title="2. url的hash"></a>2. url的hash</h4><p><img src="https://i.loli.net/
-2019/03/29/5c9e2ce277428.png" alt=""></p>
-<h4 id="3-页码如何使用hash"><a href="#3-页码如何使用hash" class="headerlink" title="3. 页码如何使用hash"></a>3. 页码如何使用hash</h4><h5 id="3-1-获取hash"><a href="#3-1-获取hash" class="headerlink" title="3.1 获取hash"></a>3.1 获取hash</h5><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 通过window.location.hash获取hash</span></span><br><span class="line"><span class="comment">// 使用substring(start,stop);去除掉获取到的hash的第一个#字符， 参数stop可选，没填写默认到结尾</span></span><br><span class="line"><span class="keyword">var</span> number = <span class="built_in">window</span>.location.hash.substring(<span class="number">1</span>) || <span class="number">1</span>;</span><br></pre></td></tr></table></figure>
-<h5 id="3-2-种hash"><a href="#3-2-种hash" class="headerlink" title="3.2 种hash"></a>3.2 种hash</h5><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">window</span>.location.hash = 页码值</span><br></pre></td></tr></table></figure>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/29/HTTP--添加获取删除cookie封装/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="HJP">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="HJinPeng">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/03/29/HTTP--添加获取删除cookie封装/" itemprop="url">HTTP--添加获取删除cookie封装</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-03-29T21:26:48+08:00">
-                2019-03-29
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/HTTP/" itemprop="url" rel="index">
-                    <span itemprop="name">HTTP</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h4 id="封装cookie"><a href="#封装cookie" class="headerlink" title="封装cookie"></a>封装cookie</h4><h5 id="1-添加cookie"><a href="#1-添加cookie" class="headerlink" title="1. 添加cookie"></a>1. 添加cookie</h5><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">addCookie(<span class="string">"ku"</span>, <span class="string">"321"</span>, <span class="number">1</span>, <span class="string">"/"</span>, <span class="string">"127.0.0.1"</span>);</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">addCookie</span>(<span class="params">key, value, day, path, domain</span>) </span>&#123;</span><br><span class="line">    <span class="comment">//1. 处理默认保存路径</span></span><br><span class="line">    <span class="comment">//找到当前路径下的到最后一个/的地址</span></span><br><span class="line">    <span class="keyword">var</span> index = <span class="built_in">window</span>.location.pathname.lastIndexOf(<span class="string">"/"</span>);</span><br><span class="line">    <span class="keyword">var</span> currentPath = <span class="built_in">window</span>.location.pathname.slice(<span class="number">0</span>, index);</span><br><span class="line">    <span class="comment">//如果有传入path，则使用path，如果没有传入path，则使用currentPath</span></span><br><span class="line">    path = path || currentPath;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//2. 处理默认保存的domain</span></span><br><span class="line">    domain = domain || <span class="built_in">document</span>.domain;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//3. 处理默认的过期时间</span></span><br><span class="line">    <span class="keyword">if</span> (!day) &#123;</span><br><span class="line">        <span class="built_in">document</span>.cookie = key + <span class="string">"="</span> + value + <span class="string">";path="</span> + path + <span class="string">";domain="</span> + domain + <span class="string">";"</span>;</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="keyword">var</span> date = <span class="keyword">new</span> <span class="built_in">Date</span>();</span><br><span class="line">        date.setDate(date.getDate() + day);</span><br><span class="line">        <span class="built_in">document</span>.cookie = key + <span class="string">"="</span> + value + <span class="string">";expires="</span> + date.toGMTString() + <span class="string">";path="</span> + path + <span class="string">";domain="</span> + domain + <span class="string">";"</span>;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
-<p>特别注意：<br>domain的值设置错误的会导致cookie设置不成功</p>
-<h5 id="2-获取cookie值"><a href="#2-获取cookie值" class="headerlink" title="2. 获取cookie值"></a>2. 获取cookie值</h5><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">getCookie</span>(<span class="params">key</span>) </span>&#123;</span><br><span class="line">    <span class="comment">//将获取的字符串以;分割成数组</span></span><br><span class="line">    <span class="keyword">var</span> res = <span class="built_in">document</span>.cookie.split(<span class="string">";"</span>);</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; res.length; i++) &#123;</span><br><span class="line">        <span class="keyword">var</span> temp = res[i].split(<span class="string">"="</span>);</span><br><span class="line">        <span class="comment">// 将每一个key=value以=分割成数组，temp[0]是key，temp[1]是value</span></span><br><span class="line">        <span class="keyword">if</span> (temp[<span class="number">0</span>].trim() === key) &#123;</span><br><span class="line">            <span class="keyword">return</span> temp[<span class="number">1</span>]</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="built_in">console</span>.log(getCookie(<span class="string">"age"</span>));</span><br></pre></td></tr></table></figure>
-<h5 id="3-删除cookie"><a href="#3-删除cookie" class="headerlink" title="3. 删除cookie"></a>3. 删除cookie</h5><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">deleteCookie</span>(<span class="params">key, path</span>) </span>&#123;</span><br><span class="line">    addCookie(key, getCookie(key), <span class="number">-1</span>, path);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">deleteCookie(<span class="string">"age"</span>, <span class="string">"/"</span>);</span><br></pre></td></tr></table></figure>
-<p>注意：默认只能删除默认路径中保存的cookie，如果想删除指定路径下保存的cookie，需要在删除的时候指定路径</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/29/HTTP--cookie/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="HJP">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="HJinPeng">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/03/29/HTTP--cookie/" itemprop="url">HTTP--cookie</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-03-29T18:29:49+08:00">
-                2019-03-29
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/HTTP/" itemprop="url" rel="index">
-                    <span itemprop="name">HTTP</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h4 id="1-什么是cookie？"><a href="#1-什么是cookie？" class="headerlink" title="1. 什么是cookie？"></a>1. 什么是cookie？</h4><p>cookie是会话跟踪技术，是用在客户端的<br>session也是会话跟踪技术，但是是用在服务器端的</p>
-<h4 id="2-cookie有什么作用？"><a href="#2-cookie有什么作用？" class="headerlink" title="2. cookie有什么作用？"></a>2. cookie有什么作用？</h4><p>cookie可以将网页的数据保存在浏览器本地</p>
-<h4 id="3-cookie的生命周期"><a href="#3-cookie的生命周期" class="headerlink" title="3. cookie的生命周期"></a>3. cookie的生命周期</h4><p>默认情况下，cookie是属于一次会话（即浏览器关闭就消失），但是可以通过设置<code>expires = 过期时间</code> 设置过期时间</p>
-<h4 id="4-注意点"><a href="#4-注意点" class="headerlink" title="4. 注意点"></a>4. 注意点</h4><ol>
-<li>cookie默认不会保存任何数据</li>
-<li>cookie不能一次性设置多条数据，要想保存多条数据，只能一条一条的设置</li>
-<li>cookie有大小限制： 4kb左右，小于4KB</li>
-<li>cookie有个数限制： 20~50</li>
-</ol>
-<h4 id="5-cookie的作用范围"><a href="#5-cookie的作用范围" class="headerlink" title="5. cookie的作用范围"></a>5. cookie的作用范围</h4><p>同一个浏览器下的同一个路径。<br>如果在同一个浏览器下，路径的下级也可以访问cookie，而上级路径不可以访问到cookie，但可设置path使整个网站都能访问到cookie</p>
-<p>如：<br><code>http://localhost:8081/php_learn/cookie.html</code><br><code>http://localhost:8081/php_learn/cookie2.html</code><br>是属于同一浏览器下的同一路径，路径都是<code>http://localhost:8081/php_learn/</code><br>而<code>http://localhost:8081/php_learn/test/index.html</code><br>也可以访问到cookie。</p>
-<h5 id="设置cookie路径"><a href="#设置cookie路径" class="headerlink" title="设置cookie路径"></a>设置cookie路径</h5><p><code>document.cookie = &quot;name = 123; path:/; domain=hjinpeng.top&quot;;</code><br>设置了cookie在根目录下，根目录下的所有文件都可以访问到cookie，并且在一级域名相同情况下，二级域名也可以访问到cookie</p>
-<h4 id="6-通过浏览器查看网站的cookie"><a href="#6-通过浏览器查看网站的cookie" class="headerlink" title="6. 通过浏览器查看网站的cookie"></a>6. 通过浏览器查看网站的cookie</h4><ol>
-<li>F12进入控制台</li>
-<li>切换到Application</li>
-<li>找到Storage下的Cookies<br>如图所示：<br><img src="https://i.loli.net/2019/03/29/5c9df66c9f8da.png" alt=""></li>
-</ol>
-<h4 id="7-代码"><a href="#7-代码" class="headerlink" title="7. 代码"></a>7. 代码</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">window</span>.onload = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="comment">//获取当前时间</span></span><br><span class="line">    <span class="keyword">var</span> date = <span class="keyword">new</span> <span class="built_in">Date</span>();</span><br><span class="line">    <span class="comment">//设置date保存时间为明天</span></span><br><span class="line">    date.setDate(date.getDate() + <span class="number">1</span>);</span><br><span class="line">    <span class="comment">//通过document.cookie设置</span></span><br><span class="line">    <span class="built_in">document</span>.cookie = <span class="string">"age = 21;expires="</span> + date.toGMTString() + <span class="string">";"</span>;</span><br><span class="line">    alert(<span class="built_in">document</span>.cookie);</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/29/hexo--hexoEditor编辑器/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="HJP">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="HJinPeng">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/03/29/hexo--hexoEditor编辑器/" itemprop="url">hexo--hexoEditor编辑器</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-03-29T11:13:29+08:00">
-                2019-03-29
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/hexo/" itemprop="url" rel="index">
-                    <span itemprop="name">hexo</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h4 id="1-开源项目下载地址"><a href="#1-开源项目下载地址" class="headerlink" title="1. 开源项目下载地址"></a>1. 开源项目下载地址</h4><p><a href="https://github.com/zhuzhuyule/HexoEditor" target="_blank" rel="noopener">开源项目下载地址</a></p>
-<h4 id="2-上传图片"><a href="#2-上传图片" class="headerlink" title="2. 上传图片"></a>2. 上传图片</h4><ol>
-<li>截图</li>
-<li>右键点击粘贴</li>
-<li>上传图床<br><img src="https://i.loli.net/2019/03/29/5c9d93a42ef3a.png" alt=""></li>
-</ol>
-<h4 id="3-同步文件名，一键部署"><a href="#3-同步文件名，一键部署" class="headerlink" title="3. 同步文件名，一键部署"></a>3. 同步文件名，一键部署</h4><p><img src="https://i.loli.net/2019/03/29/5c9d93a4361e8.png" alt=""></p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/28/js--通过eval()将非标准的JSON字符串转换为标准的JSON字符串/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="HJP">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="HJinPeng">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/03/28/js--通过eval()将非标准的JSON字符串转换为标准的JSON字符串/" itemprop="url">js--通过eval()将非标准的JSON字符串转换为标准的JSON字符串</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-03-28T22:26:00+08:00">
-                2019-03-28
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/JavaScript/" itemprop="url" rel="index">
-                    <span itemprop="name">JavaScript</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h4 id="1-标准的json对象"><a href="#1-标准的json对象" class="headerlink" title="1.  标准的json对象"></a>1.  标准的json对象</h4><figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;<span class="attr">"error"</span>: <span class="string">"0"</span>, <span class="attr">"id"</span>: <span class="string">"1"</span>, <span class="attr">"time"</span>: <span class="string">"1526541587"</span>, <span class="attr">"acc"</span>: <span class="string">"0"</span>, <span class="attr">"ref"</span>: <span class="string">"0"</span>&#125;</span><br></pre></td></tr></table></figure>
-<p>有时候服务器会返回非标准的json字符串，如：</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;<span class="attr">error</span>: <span class="number">0</span>, <span class="attr">id</span>: <span class="number">1</span>, <span class="attr">time</span>: <span class="number">1526541587</span>, <span class="attr">acc</span>: <span class="number">0</span>, <span class="attr">ref</span>: <span class="number">0</span>&#125;</span><br></pre></td></tr></table></figure>
-<h4 id="2-处理非标准的json字符串"><a href="#2-处理非标准的json字符串" class="headerlink" title="2.  处理非标准的json字符串"></a>2.  处理非标准的json字符串</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">success: <span class="function"><span class="keyword">function</span> (<span class="params">msg</span>) </span>&#123;</span><br><span class="line">     <span class="keyword">var</span> obj = <span class="built_in">eval</span>(<span class="string">"("</span>+msg+<span class="string">")"</span>);    <span class="comment">//对非标准或标准的json字符串都适用，都能转化为标准的json对象</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>msg的前后要加上(  、) ，强制转换为一个对象，不然会已字符串的形式解析</p>
-<p>eval()对于标准的json对象同样适用</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/28/js--ajax通过xml返回数据/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="HJP">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="HJinPeng">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/03/28/js--ajax通过xml返回数据/" itemprop="url">js--ajax通过xml返回数据</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-03-28T21:44:00+08:00">
-                2019-03-28
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/JavaScript/" itemprop="url" rel="index">
-                    <span itemprop="name">JavaScript</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h4 id="1-编写xml文档"><a href="#1-编写xml文档" class="headerlink" title="1.  编写xml文档"></a>1.  编写xml文档</h4><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">products</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">nz</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">title</span>&gt;</span>甜美女装<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">des</span>&gt;</span>美妆系列，这是一个女装专区<span class="tag">&lt;/<span class="name">des</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">image</span>&gt;</span>imgs/1.jpg<span class="tag">&lt;/<span class="name">image</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">nz</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">bb</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">title</span>&gt;</span>名牌包包<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">des</span>&gt;</span>名牌包包 ， 这是一个包包专区<span class="tag">&lt;/<span class="name">des</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">image</span>&gt;</span>imgs/2.jpg<span class="tag">&lt;/<span class="name">image</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">bb</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">tx</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">title</span>&gt;</span>人字拖鞋<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">des</span>&gt;</span>这是一个拖鞋专区<span class="tag">&lt;/<span class="name">des</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">image</span>&gt;</span>imgs/3.jpg<span class="tag">&lt;/<span class="name">image</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">tx</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">products</span>&gt;</span></span><br></pre></td></tr></table></figure>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2019/03/28/js--ajax通过xml返回数据/#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/28/js--ajax通过json返回数据/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="HJP">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="HJinPeng">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/03/28/js--ajax通过json返回数据/" itemprop="url">js--ajax通过json返回数据</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-03-28T21:40:00+08:00">
-                2019-03-28
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/JavaScript/" itemprop="url" rel="index">
-                    <span itemprop="name">JavaScript</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h4 id="1-编写json文件"><a href="#1-编写json文件" class="headerlink" title="1.  编写json文件"></a>1.  编写json文件</h4><figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="attr">"nz"</span>: &#123;</span><br><span class="line">        <span class="attr">"title"</span>: <span class="string">"甜美女装"</span>,</span><br><span class="line">        <span class="attr">"des"</span>: <span class="string">"美妆系列，这是一个女装专区"</span>,</span><br><span class="line">        <span class="attr">"image"</span>: <span class="string">"imgs/1.jpg"</span></span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="attr">"bb"</span>: &#123;</span><br><span class="line">        <span class="attr">"title"</span>: <span class="string">"名牌包包"</span>,</span><br><span class="line">        <span class="attr">"des"</span>: <span class="string">"名牌包包 ， 这是一个包包专区"</span>,</span><br><span class="line">        <span class="attr">"image"</span>: <span class="string">"imgs/2.jpg"</span></span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="attr">"tx"</span>: &#123;</span><br><span class="line">        <span class="attr">"title"</span>: <span class="string">"人字拖鞋"</span>,</span><br><span class="line">        <span class="attr">"des"</span>: <span class="string">"这是一个拖鞋专区"</span>,</span><br><span class="line">        <span class="attr">"image"</span>: <span class="string">"imgs/3.jpg"</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2019/03/28/js--ajax通过json返回数据/#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/28/js--ajax-post封装(终板)/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="HJP">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="HJinPeng">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/03/28/js--ajax-post封装(终板)/" itemprop="url">js--ajax-post封装(终板)</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-03-28T16:53:00+08:00">
-                2019-03-28
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/JavaScript/" itemprop="url" rel="index">
-                    <span itemprop="name">JavaScript</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h4 id="1-ajax-post封装（终板）"><a href="#1-ajax-post封装（终板）" class="headerlink" title="1.  ajax-post封装（终板）"></a>1.  ajax-post封装（终板）</h4><p>使用对象传参，对象中的参数可以随意变动位置（jquery的ajax实现原理）</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">window</span>.onload = <span class="function"><span class="keyword">function</span>(<span class="params">ev</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> btn = <span class="built_in">document</span>.querySelector(<span class="string">"button"</span>);</span><br><span class="line">    btn.onclick = <span class="function"><span class="keyword">function</span>(<span class="params">ev1</span>) </span>&#123;</span><br><span class="line">        ajax(&#123;</span><br><span class="line">            type: <span class="string">"POST"</span>,</span><br><span class="line">            url: <span class="string">"ajax-post.php"</span>,</span><br><span class="line">            data: &#123;</span><br><span class="line">                <span class="string">"userName"</span>: <span class="string">"HJP"</span>,</span><br><span class="line">                <span class="string">"password"</span>: <span class="string">"1234"</span></span><br><span class="line">            &#125;,</span><br><span class="line">            timeout: <span class="number">3000</span>,</span><br><span class="line">            success: <span class="function"><span class="keyword">function</span>(<span class="params">xhr</span>) </span>&#123;</span><br><span class="line">                alert(xhr.responseText);</span><br><span class="line">            &#125;,</span><br><span class="line">            error: <span class="function"><span class="keyword">function</span>(<span class="params">xhr</span>) </span>&#123;</span><br><span class="line">                alert(<span class="string">"error"</span>);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2019/03/28/js--ajax-post封装(终板)/#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/7/">7</a><a class="extend next" rel="next" href="/page/3/"><i class="fa fa-angle-right"></i></a>
+    <a class="extend prev" rel="prev" href="/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/8/">8</a><a class="extend next" rel="next" href="/page/3/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 
@@ -1783,7 +1755,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">62</span>
+                  <span class="site-state-item-count">71</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -1794,7 +1766,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">12</span>
+                  <span class="site-state-item-count">13</span>
                   <span class="site-state-item-name">categories</span>
                 </a>
               </div>
@@ -1805,7 +1777,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">12</span>
+                  <span class="site-state-item-count">13</span>
                   <span class="site-state-item-name">tags</span>
                 </a>
               </div>
