@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="数组扩展Array.from()转换为数组Array.of()将输入数据转换为数组1234567&amp;lt;ul&amp;gt;    &amp;lt;li&amp;gt;aa&amp;lt;/li&amp;gt;    &amp;lt;li&amp;gt;bb&amp;lt;/li&amp;gt;    &amp;lt;li&amp;gt;cc&amp;lt;/li&amp;gt;    &amp;lt;li&amp;gt;dd&amp;lt;/li&amp;gt;    &amp;lt;li&amp;gt;ee&amp;lt;/li&amp;gt;&amp;lt;/ul">
+<meta name="description" content="数组去重 使用Set()生成集合，自动去重 使用延展操作符[...arr]或者Array.from(arr)生成新数组123456789101112//去重,把它转换成Set集合，就会自动去重//1. 使用延展操作符[...arr]let myArr = [1,2,10,20,20,5,2,1];console.log(new Set(myArr));   //Set(5) &amp;#123;1, 2,">
 <meta name="keywords" content="ES6">
 <meta property="og:type" content="article">
-<meta property="og:title" content="es6--数组扩展">
-<meta property="og:url" content="http://yoursite.com/2019/04/13/es6--数组扩展/index.html">
+<meta property="og:title" content="es6--数组去重">
+<meta property="og:url" content="http://yoursite.com/2019/04/13/es6--数组去重/index.html">
 <meta property="og:site_name" content="HJinPeng">
-<meta property="og:description" content="数组扩展Array.from()转换为数组Array.of()将输入数据转换为数组1234567&amp;lt;ul&amp;gt;    &amp;lt;li&amp;gt;aa&amp;lt;/li&amp;gt;    &amp;lt;li&amp;gt;bb&amp;lt;/li&amp;gt;    &amp;lt;li&amp;gt;cc&amp;lt;/li&amp;gt;    &amp;lt;li&amp;gt;dd&amp;lt;/li&amp;gt;    &amp;lt;li&amp;gt;ee&amp;lt;/li&amp;gt;&amp;lt;/ul">
+<meta property="og:description" content="数组去重 使用Set()生成集合，自动去重 使用延展操作符[...arr]或者Array.from(arr)生成新数组123456789101112//去重,把它转换成Set集合，就会自动去重//1. 使用延展操作符[...arr]let myArr = [1,2,10,20,20,5,2,1];console.log(new Set(myArr));   //Set(5) &amp;#123;1, 2,">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-04-13T09:45:11.160Z">
+<meta property="og:updated_time" content="2019-04-13T10:20:32.295Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="es6--数组扩展">
-<meta name="twitter:description" content="数组扩展Array.from()转换为数组Array.of()将输入数据转换为数组1234567&amp;lt;ul&amp;gt;    &amp;lt;li&amp;gt;aa&amp;lt;/li&amp;gt;    &amp;lt;li&amp;gt;bb&amp;lt;/li&amp;gt;    &amp;lt;li&amp;gt;cc&amp;lt;/li&amp;gt;    &amp;lt;li&amp;gt;dd&amp;lt;/li&amp;gt;    &amp;lt;li&amp;gt;ee&amp;lt;/li&amp;gt;&amp;lt;/ul">
+<meta name="twitter:title" content="es6--数组去重">
+<meta name="twitter:description" content="数组去重 使用Set()生成集合，自动去重 使用延展操作符[...arr]或者Array.from(arr)生成新数组123456789101112//去重,把它转换成Set集合，就会自动去重//1. 使用延展操作符[...arr]let myArr = [1,2,10,20,20,5,2,1];console.log(new Set(myArr));   //Set(5) &amp;#123;1, 2,">
 
 
 
@@ -120,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2019/04/13/es6--数组扩展/">
+  <link rel="canonical" href="http://yoursite.com/2019/04/13/es6--数组去重/">
 
 
 
 
 
-  <title>es6--数组扩展 | HJinPeng</title>
+  <title>es6--数组去重 | HJinPeng</title>
   
 
 
@@ -263,7 +263,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/04/13/es6--数组扩展/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/04/13/es6--数组去重/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="HJP">
@@ -280,7 +280,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">es6--数组扩展</h1>
+          <h1 class="post-title" itemprop="name headline">es6--数组去重</h1>
         
 
         <div class="post-meta">
@@ -292,7 +292,7 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-04-13T17:40:50+08:00">
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-04-13T18:17:08+08:00">
                 2019-04-13
               </time>
             
@@ -352,8 +352,10 @@
       
 
       
-        <h4 id="数组扩展"><a href="#数组扩展" class="headerlink" title="数组扩展"></a>数组扩展</h4><p>Array.from()转换为数组<br>Array.of()将输入数据转换为数组<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">ul</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span>&gt;</span>aa<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span>&gt;</span>bb<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span>&gt;</span>cc<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span>&gt;</span>dd<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span>&gt;</span>ee<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 数组的扩展</span></span><br><span class="line"><span class="keyword">let</span> allLis = <span class="built_in">document</span>.querySelectorAll(<span class="string">'li'</span>);</span><br><span class="line"><span class="built_in">console</span>.log(allLis);</span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">Array</span>.isArray(allLis));  <span class="comment">//false，不是数组</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//Array.from() 转换为数组</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">Array</span>.from(allLis));</span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">Array</span>.isArray(<span class="built_in">Array</span>.from(allLis)));  <span class="comment">//true，是数组</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//Array.of()生成数组</span></span><br><span class="line"><span class="keyword">let</span> arr = <span class="built_in">Array</span>.of(<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>);     <span class="comment">//生成数组</span></span><br><span class="line"><span class="built_in">console</span>.log(arr);</span><br></pre></td></tr></table></figure>
+        <h4 id="数组去重"><a href="#数组去重" class="headerlink" title="数组去重"></a>数组去重</h4><ol>
+<li>使用Set()生成集合，自动去重</li>
+<li>使用延展操作符<code>[...arr]</code>或者<code>Array.from(arr)</code>生成新数组<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//去重,把它转换成Set集合，就会自动去重</span></span><br><span class="line"><span class="comment">//1. 使用延展操作符[...arr]</span></span><br><span class="line"><span class="keyword">let</span> myArr = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">10</span>,<span class="number">20</span>,<span class="number">20</span>,<span class="number">5</span>,<span class="number">2</span>,<span class="number">1</span>];</span><br><span class="line"><span class="built_in">console</span>.log(<span class="keyword">new</span> <span class="built_in">Set</span>(myArr));   <span class="comment">//Set(5) &#123;1, 2, 10, 20, 5&#125;</span></span><br><span class="line"><span class="keyword">let</span> arr1 = [...new <span class="built_in">Set</span>(myArr)];</span><br><span class="line"><span class="built_in">console</span>.log(arr1);  <span class="comment">//(5) [1, 2, 10, 20, 5]</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//2. 使用Array.from(arr)</span></span><br><span class="line"><span class="keyword">let</span> arr3 = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">10</span>,<span class="number">20</span>,<span class="number">20</span>,<span class="number">5</span>,<span class="number">2</span>,<span class="number">1</span>];</span><br><span class="line"><span class="built_in">console</span>.log(<span class="keyword">new</span> <span class="built_in">Set</span>(arr3));</span><br><span class="line"><span class="keyword">let</span> arr4 = <span class="built_in">Array</span>.from(<span class="keyword">new</span> <span class="built_in">Set</span>(arr3));</span><br><span class="line"><span class="built_in">console</span>.log(arr4);</span><br></pre></td></tr></table></figure></li>
+</ol>
 
       
     </div>
@@ -384,8 +386,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/04/13/es6--模板字符串/" rel="next" title="es6--模板字符串">
-                <i class="fa fa-chevron-left"></i> es6--模板字符串
+              <a href="/2019/04/13/es6--函数扩展/" rel="next" title="es6--函数扩展">
+                <i class="fa fa-chevron-left"></i> es6--函数扩展
               </a>
             
           </div>
@@ -393,10 +395,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/04/13/es6--对象扩展/" rel="prev" title="es6--对象扩展">
-                es6--对象扩展 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -528,7 +526,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#数组扩展"><span class="nav-text">数组扩展</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#数组去重"><span class="nav-text">数组去重</span></a></li></ol></div>
             
 
           </div>
