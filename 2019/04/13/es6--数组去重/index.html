@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="数组去重 使用Set()生成集合，自动去重 使用延展操作符[...arr]或者Array.from(arr)生成新数组123456789101112//去重,把它转换成Set集合，就会自动去重//1. 使用延展操作符[...arr]let myArr = [1,2,10,20,20,5,2,1];console.log(new Set(myArr));   //Set(5) &amp;#123;1, 2,">
+<meta name="description" content="数组去重 使用Set()生成集合，自动去重 使用延展操作符[...arr]或者Array.from(arr)生成新数组  123456789101112//去重,把它转换成Set集合，就会自动去重//1. 使用延展操作符[...arr]let myArr = [1,2,10,20,20,5,2,1];console.log(new Set(myArr));   //Set(5) &amp;#123;1,">
 <meta name="keywords" content="ES6">
 <meta property="og:type" content="article">
 <meta property="og:title" content="es6--数组去重">
 <meta property="og:url" content="http://yoursite.com/2019/04/13/es6--数组去重/index.html">
 <meta property="og:site_name" content="HJinPeng">
-<meta property="og:description" content="数组去重 使用Set()生成集合，自动去重 使用延展操作符[...arr]或者Array.from(arr)生成新数组123456789101112//去重,把它转换成Set集合，就会自动去重//1. 使用延展操作符[...arr]let myArr = [1,2,10,20,20,5,2,1];console.log(new Set(myArr));   //Set(5) &amp;#123;1, 2,">
+<meta property="og:description" content="数组去重 使用Set()生成集合，自动去重 使用延展操作符[...arr]或者Array.from(arr)生成新数组  123456789101112//去重,把它转换成Set集合，就会自动去重//1. 使用延展操作符[...arr]let myArr = [1,2,10,20,20,5,2,1];console.log(new Set(myArr));   //Set(5) &amp;#123;1,">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-04-13T10:20:32.295Z">
+<meta property="og:updated_time" content="2019-04-13T10:22:51.270Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="es6--数组去重">
-<meta name="twitter:description" content="数组去重 使用Set()生成集合，自动去重 使用延展操作符[...arr]或者Array.from(arr)生成新数组123456789101112//去重,把它转换成Set集合，就会自动去重//1. 使用延展操作符[...arr]let myArr = [1,2,10,20,20,5,2,1];console.log(new Set(myArr));   //Set(5) &amp;#123;1, 2,">
+<meta name="twitter:description" content="数组去重 使用Set()生成集合，自动去重 使用延展操作符[...arr]或者Array.from(arr)生成新数组  123456789101112//去重,把它转换成Set集合，就会自动去重//1. 使用延展操作符[...arr]let myArr = [1,2,10,20,20,5,2,1];console.log(new Set(myArr));   //Set(5) &amp;#123;1,">
 
 
 
@@ -354,9 +354,9 @@
       
         <h4 id="数组去重"><a href="#数组去重" class="headerlink" title="数组去重"></a>数组去重</h4><ol>
 <li>使用Set()生成集合，自动去重</li>
-<li>使用延展操作符<code>[...arr]</code>或者<code>Array.from(arr)</code>生成新数组<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//去重,把它转换成Set集合，就会自动去重</span></span><br><span class="line"><span class="comment">//1. 使用延展操作符[...arr]</span></span><br><span class="line"><span class="keyword">let</span> myArr = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">10</span>,<span class="number">20</span>,<span class="number">20</span>,<span class="number">5</span>,<span class="number">2</span>,<span class="number">1</span>];</span><br><span class="line"><span class="built_in">console</span>.log(<span class="keyword">new</span> <span class="built_in">Set</span>(myArr));   <span class="comment">//Set(5) &#123;1, 2, 10, 20, 5&#125;</span></span><br><span class="line"><span class="keyword">let</span> arr1 = [...new <span class="built_in">Set</span>(myArr)];</span><br><span class="line"><span class="built_in">console</span>.log(arr1);  <span class="comment">//(5) [1, 2, 10, 20, 5]</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//2. 使用Array.from(arr)</span></span><br><span class="line"><span class="keyword">let</span> arr3 = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">10</span>,<span class="number">20</span>,<span class="number">20</span>,<span class="number">5</span>,<span class="number">2</span>,<span class="number">1</span>];</span><br><span class="line"><span class="built_in">console</span>.log(<span class="keyword">new</span> <span class="built_in">Set</span>(arr3));</span><br><span class="line"><span class="keyword">let</span> arr4 = <span class="built_in">Array</span>.from(<span class="keyword">new</span> <span class="built_in">Set</span>(arr3));</span><br><span class="line"><span class="built_in">console</span>.log(arr4);</span><br></pre></td></tr></table></figure></li>
+<li>使用延展操作符<code>[...arr]</code>或者<code>Array.from(arr)</code>生成新数组</li>
 </ol>
-
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//去重,把它转换成Set集合，就会自动去重</span></span><br><span class="line"><span class="comment">//1. 使用延展操作符[...arr]</span></span><br><span class="line"><span class="keyword">let</span> myArr = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">10</span>,<span class="number">20</span>,<span class="number">20</span>,<span class="number">5</span>,<span class="number">2</span>,<span class="number">1</span>];</span><br><span class="line"><span class="built_in">console</span>.log(<span class="keyword">new</span> <span class="built_in">Set</span>(myArr));   <span class="comment">//Set(5) &#123;1, 2, 10, 20, 5&#125;</span></span><br><span class="line"><span class="keyword">let</span> arr1 = [...new <span class="built_in">Set</span>(myArr)];</span><br><span class="line"><span class="built_in">console</span>.log(arr1);  <span class="comment">//(5) [1, 2, 10, 20, 5]</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//2. 使用Array.from(arr)</span></span><br><span class="line"><span class="keyword">let</span> arr3 = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">10</span>,<span class="number">20</span>,<span class="number">20</span>,<span class="number">5</span>,<span class="number">2</span>,<span class="number">1</span>];</span><br><span class="line"><span class="built_in">console</span>.log(<span class="keyword">new</span> <span class="built_in">Set</span>(arr3));</span><br><span class="line"><span class="keyword">let</span> arr4 = <span class="built_in">Array</span>.from(<span class="keyword">new</span> <span class="built_in">Set</span>(arr3));</span><br><span class="line"><span class="built_in">console</span>.log(arr4);</span><br></pre></td></tr></table></figure>
       
     </div>
     
