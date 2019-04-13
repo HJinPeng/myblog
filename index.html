@@ -259,7 +259,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/04/11/es6--新增数据类型set1/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/04/12/es6--新增语法糖class/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="HJP">
@@ -278,7 +278,293 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2019/04/11/es6--新增数据类型set1/" itemprop="url">es6--新增数据类型map</a></h1>
+                <a class="post-title-link" href="/2019/04/12/es6--新增语法糖class/" itemprop="url">es6--新增语法糖class</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-04-12T11:07:29+08:00">
+                2019-04-12
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/ES6/" itemprop="url" rel="index">
+                    <span itemprop="name">ES6</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h4 id="新增语法糖class"><a href="#新增语法糖class" class="headerlink" title="新增语法糖class"></a>新增语法糖class</h4><h5 id="0-构造函数"><a href="#0-构造函数" class="headerlink" title="0. 构造函数"></a>0. 构造函数</h5><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span>(<span class="params">name,age</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.name = name ;</span><br><span class="line">    <span class="keyword">this</span>.age = age ;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">Person.prototype = &#123;</span><br><span class="line">    <span class="keyword">constructor</span>: Person,</span><br><span class="line">    print()&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">'my name is '</span> + name + <span class="string">',my age is '</span> + age);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> xm = <span class="keyword">new</span> Person(<span class="string">'xiaoming'</span>,<span class="number">18</span>);</span><br><span class="line"><span class="built_in">console</span>.log(xm);</span><br></pre></td></tr></table></figure>
+<h5 id="1-通过class面向对象"><a href="#1-通过class面向对象" class="headerlink" title="1. 通过class面向对象"></a>1. 通过class面向对象</h5><p>底层是上面的方法实现的<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Person</span></span>&#123;</span><br><span class="line">    <span class="keyword">constructor</span>(name, age)&#123;</span><br><span class="line">        <span class="keyword">this</span>.name = name ;</span><br><span class="line">        <span class="keyword">this</span>.age = age;</span><br><span class="line">    &#125;</span><br><span class="line">    print()&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">'my name is '</span> + <span class="keyword">this</span>.name + <span class="string">',my age is '</span> + <span class="keyword">this</span>.age);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> xm = <span class="keyword">new</span> Person(<span class="string">'xiaoming'</span>,<span class="number">18</span>);</span><br><span class="line"><span class="built_in">console</span>.log(xm);</span><br><span class="line">xm.print();</span><br></pre></td></tr></table></figure></p>
+<h5 id="2-继承"><a href="#2-继承" class="headerlink" title="2. 继承"></a>2. 继承</h5><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Person</span></span>&#123;</span><br><span class="line">    <span class="keyword">constructor</span>(name, age)&#123;</span><br><span class="line">        <span class="keyword">this</span>.name = name ;</span><br><span class="line">        <span class="keyword">this</span>.age = age;</span><br><span class="line">    &#125;</span><br><span class="line">    print()&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">'my name is '</span> + <span class="keyword">this</span>.name + <span class="string">',my age is '</span> + <span class="keyword">this</span>.age);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// let xm = new Person('xiaoming',18);</span></span><br><span class="line"><span class="comment">// console.log(xm);</span></span><br><span class="line"><span class="comment">// xm.print();</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">children</span> <span class="keyword">extends</span> <span class="title">Person</span></span>&#123;</span><br><span class="line">    <span class="keyword">constructor</span>(name,age,height,gender)&#123;</span><br><span class="line">        <span class="keyword">super</span>(name,age);   <span class="comment">//传给父类的属性</span></span><br><span class="line">        <span class="keyword">this</span>.height = height;</span><br><span class="line">        <span class="keyword">this</span>.gender = gender;</span><br><span class="line">    &#125;</span><br><span class="line">    say()&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">'my height is '</span>+<span class="keyword">this</span>.height);</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">'I am a '</span>+ <span class="keyword">this</span>.gender);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> wangwu = <span class="keyword">new</span> children(<span class="string">'wangwu'</span>,<span class="number">20</span>,<span class="number">175</span>,<span class="string">'boy'</span>);</span><br><span class="line">wangwu.print();</span><br><span class="line">wangwu.say();</span><br></pre></td></tr></table></figure>
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/04/12/es6--Symbol/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="HJP">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="HJinPeng">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/04/12/es6--Symbol/" itemprop="url">es6--Symbol</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-04-12T11:02:52+08:00">
+                2019-04-12
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/ES6/" itemprop="url" rel="index">
+                    <span itemprop="name">ES6</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h4 id="Symbol"><a href="#Symbol" class="headerlink" title="Symbol"></a>Symbol</h4><p><code>Symbol()</code>主要用于属性的对象名，可以重复，但表示不同对象</p>
+<h4 id="Symbol使用"><a href="#Symbol使用" class="headerlink" title="Symbol使用"></a>Symbol使用</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//1. 定义</span></span><br><span class="line"><span class="keyword">let</span> str1 = <span class="built_in">Symbol</span>();</span><br><span class="line"><span class="keyword">let</span> str2 = <span class="built_in">Symbol</span>();</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(str1 === str2);  <span class="comment">//false</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="keyword">typeof</span> str1);    <span class="comment">//symbol</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="keyword">typeof</span> str2);   <span class="comment">//symbol</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 2. 描述</span></span><br><span class="line"><span class="keyword">let</span> str3 = <span class="built_in">Symbol</span>(<span class="string">'name'</span>);  </span><br><span class="line"><span class="keyword">let</span> str4 = <span class="built_in">Symbol</span>(<span class="string">'name'</span>);  </span><br><span class="line"><span class="built_in">console</span>.log(str3);    <span class="comment">//Symbol(name)</span></span><br><span class="line"><span class="built_in">console</span>.log(str4);    <span class="comment">//Symbol(name)</span></span><br><span class="line"><span class="built_in">console</span>.log(str3 === str4);    <span class="comment">//false</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 3. 对象属性名</span></span><br><span class="line"><span class="keyword">const</span> obj = &#123;&#125;;</span><br><span class="line"><span class="comment">//obj.name = 'zhangsan';  </span></span><br><span class="line"><span class="comment">//obj.name = 'lisi';      //name的值会被替换</span></span><br><span class="line">obj[<span class="built_in">Symbol</span>(<span class="string">'name'</span>)] = <span class="string">'zhangsan'</span>;</span><br><span class="line">obj[<span class="built_in">Symbol</span>(<span class="string">'name'</span>)] = <span class="string">'lisi'</span>;</span><br><span class="line"><span class="built_in">console</span>.log(obj);  <span class="comment">//Symbol(name): "zhangsan"   Symbol(name): "lisi"</span></span><br></pre></td></tr></table></figure>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/04/11/es6--新增数据类型map/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="HJP">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="HJinPeng">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/04/11/es6--新增数据类型map/" itemprop="url">es6--新增数据类型map</a></h1>
         
 
         <div class="post-meta">
@@ -356,7 +642,7 @@
 <h5 id="1-属性size，长度"><a href="#1-属性size，长度" class="headerlink" title="1. 属性size，长度"></a>1. 属性size，长度</h5><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> obj1 = &#123;<span class="attr">a</span>:<span class="number">1</span>&#125; , obj2=&#123;<span class="attr">b</span>:<span class="number">2</span>&#125;;       </span><br><span class="line"><span class="keyword">const</span> map = <span class="keyword">new</span> <span class="built_in">Map</span>([</span><br><span class="line">    [<span class="string">'name'</span>,<span class="string">'zhangsan'</span>],</span><br><span class="line">    [<span class="string">'age'</span>,<span class="number">16</span>],</span><br><span class="line">    [<span class="string">'sex'</span>,<span class="string">'男'</span>],</span><br><span class="line">    [obj1,<span class="string">'今天天气不错'</span>],</span><br><span class="line">    [obj2,<span class="string">'适合打码'</span>],</span><br><span class="line">    [[<span class="number">1</span>,<span class="number">2</span>],[<span class="number">1</span>,<span class="number">3</span>]],</span><br><span class="line">    [<span class="string">'name'</span>,<span class="string">'lisi'</span>],</span><br><span class="line">    [<span class="string">'age'</span>,<span class="number">18</span>],</span><br><span class="line">]);</span><br><span class="line"><span class="built_in">console</span>.log(map.size); <span class="comment">//相同的key会替换value,size=6</span></span><br></pre></td></tr></table></figure>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2019/04/11/es6--新增数据类型set1/#more" rel="contents">
+            <a class="btn" href="/2019/04/11/es6--新增数据类型map/#more" rel="contents">
               Read more &raquo;
             </a>
           </div>
@@ -1422,294 +1708,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/04/07/表严肃学Vue--混合mixins/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="HJP">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="HJinPeng">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/04/07/表严肃学Vue--混合mixins/" itemprop="url">表严肃学Vue--混合mixins</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-04-07T11:03:52+08:00">
-                2019-04-07
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/Vue/" itemprop="url" rel="index">
-                    <span itemprop="name">Vue</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h4 id="混合mixins"><a href="#混合mixins" class="headerlink" title="混合mixins"></a>混合mixins</h4><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">"en"</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"UTF-8"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"viewport"</span> <span class="attr">content</span>=<span class="string">"width=device-width, initial-scale=1.0"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">http-equiv</span>=<span class="string">"X-UA-Compatible"</span> <span class="attr">content</span>=<span class="string">"ie=edge"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>Document<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"app"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">tooltip</span>&gt;</span><span class="tag">&lt;/<span class="name">tooltip</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">popup</span>&gt;</span><span class="tag">&lt;/<span class="name">popup</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"https://cdn.jsdelivr.net/npm/vue/dist/vue.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="undefined">        var base = &#123;</span></span><br><span class="line"><span class="undefined">            methods: &#123;</span></span><br><span class="line"><span class="undefined">                show: function() &#123;</span></span><br><span class="line"><span class="undefined">                    this.visible = true;</span></span><br><span class="line"><span class="undefined">                &#125;,</span></span><br><span class="line"><span class="undefined">                hide: function() &#123;</span></span><br><span class="line"><span class="undefined">                    this.visible = false;</span></span><br><span class="line"><span class="undefined">                &#125;,</span></span><br><span class="line"><span class="undefined">                toggle: function() &#123;</span></span><br><span class="line"><span class="undefined">                    this.visible = !this.visible;</span></span><br><span class="line"><span class="undefined">                &#125;</span></span><br><span class="line"><span class="undefined">            &#125;,</span></span><br><span class="line"><span class="undefined">            data: function() &#123;</span></span><br><span class="line"><span class="undefined">                return &#123;</span></span><br><span class="line"><span class="undefined">                    visible: false,</span></span><br><span class="line"><span class="undefined">                &#125;</span></span><br><span class="line"><span class="undefined">            &#125;</span></span><br><span class="line"><span class="undefined">        &#125;</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="undefined">        Vue.component('tooltip', &#123;</span></span><br><span class="line"><span class="undefined">            template: `</span></span><br><span class="line"><span class="xml">            <span class="tag">&lt;<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="xml">                <span class="tag">&lt;<span class="name">span</span> @<span class="attr">mouseenter</span>=<span class="string">"show"</span> @<span class="attr">mouseleave</span>=<span class="string">"hide"</span>&gt;</span>sdf<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span></span><br><span class="line"><span class="xml">                <span class="tag">&lt;<span class="name">div</span> <span class="attr">v-if</span>=<span class="string">"visible"</span>&gt;</span></span></span><br><span class="line"><span class="undefined">                huayngjhinasldgj    </span></span><br><span class="line"><span class="xml">                <span class="tag">&lt;/<span class="name">div</span>&gt;</span>    </span></span><br><span class="line"><span class="xml">            <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="undefined">            `,</span></span><br><span class="line"><span class="undefined">            mixins: [base],</span></span><br><span class="line"><span class="undefined">            //覆盖封装的方法</span></span><br><span class="line"><span class="undefined">            data: function() &#123;</span></span><br><span class="line"><span class="undefined">                return &#123;</span></span><br><span class="line"><span class="undefined">                    visible: true</span></span><br><span class="line"><span class="undefined">                &#125;</span></span><br><span class="line"><span class="undefined">            &#125;,</span></span><br><span class="line"><span class="undefined">        &#125;)</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="undefined">        Vue.component('popup', &#123;</span></span><br><span class="line"><span class="undefined">            template: `</span></span><br><span class="line"><span class="xml">            <span class="tag">&lt;<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="xml">                <span class="tag">&lt;<span class="name">button</span> @<span class="attr">click</span>=<span class="string">"toggle"</span>&gt;</span>Popup<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span></span><br><span class="line"><span class="xml">                <span class="tag">&lt;<span class="name">div</span> <span class="attr">v-if</span>=<span class="string">"visible"</span>&gt;</span></span></span><br><span class="line"><span class="xml">                    <span class="tag">&lt;<span class="name">span</span> @<span class="attr">click</span>=<span class="string">"hide"</span>&gt;</span>X<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span></span><br><span class="line"><span class="xml">                    <span class="tag">&lt;<span class="name">h4</span>&gt;</span>1231231<span class="tag">&lt;/<span class="name">h4</span>&gt;</span></span></span><br><span class="line"><span class="undefined">                    sabfihasfhlasfjlj</span></span><br><span class="line"><span class="xml">                <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="xml">            <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="undefined">            `,</span></span><br><span class="line"><span class="undefined">            mixins: [base],</span></span><br><span class="line"><span class="undefined">            data: function() &#123;</span></span><br><span class="line"><span class="undefined">                return &#123;</span></span><br><span class="line"><span class="undefined">                    visible: true</span></span><br><span class="line"><span class="undefined">                &#125;</span></span><br><span class="line"><span class="undefined">            &#125;,</span></span><br><span class="line"><span class="undefined">        &#125;)</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="undefined">        new Vue(&#123;</span></span><br><span class="line"><span class="undefined">            el: '#app',</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="undefined">        &#125;)</span></span><br><span class="line"><span class="undefined">    </span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/04/07/表严肃学Vue--自定义指令/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="HJP">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="HJinPeng">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/04/07/表严肃学Vue--自定义指令/" itemprop="url">表严肃学Vue--自定义指令</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-04-07T11:00:23+08:00">
-                2019-04-07
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/Vue/" itemprop="url" rel="index">
-                    <span itemprop="name">Vue</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h4 id="1-基础配置"><a href="#1-基础配置" class="headerlink" title="1. 基础配置"></a>1. 基础配置</h4><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">"en"</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"UTF-8"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"viewport"</span> <span class="attr">content</span>=<span class="string">"width=device-width, initial-scale=1.0"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">http-equiv</span>=<span class="string">"X-UA-Compatible"</span> <span class="attr">content</span>=<span class="string">"ie=edge"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>Document<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="undefined">        .card &#123;</span></span><br><span class="line"><span class="undefined">            width: 200px;</span></span><br><span class="line"><span class="undefined">            height: 200px;</span></span><br><span class="line"><span class="undefined">            line-height: 10px;</span></span><br><span class="line"><span class="undefined">            border: 1px solid black;</span></span><br><span class="line"><span class="undefined">            background-color: #e0e0e0;</span></span><br><span class="line"><span class="undefined">        &#125;</span></span><br><span class="line"><span class="undefined">    </span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"app"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">v-pin</span>=<span class="string">"card1.pinned"</span> <span class="attr">class</span>=<span class="string">"card"</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">button</span> @<span class="attr">click</span>=<span class="string">"card1.pinned = !card1.pinned"</span>&gt;</span>钉住/取消<span class="tag">&lt;/<span class="name">button</span>&gt;</span> shifhlskhfklashdflkhdaslkfhslkahflksf</span><br><span class="line">        <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">v-pin</span>=<span class="string">"card2.pinned"</span> <span class="attr">class</span>=<span class="string">"card"</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">a</span> @<span class="attr">click</span>=<span class="string">"card2.pinned = !card2.pinned"</span> <span class="attr">href</span>=<span class="string">"#"</span>&gt;</span>钉住/取消<span class="tag">&lt;/<span class="name">a</span>&gt;</span> 12313123123123123123123</span><br><span class="line">        <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">div</span>&gt;</span>shifhlskhfklashdflkhdaslkfhsl kahflksfshifhlskhfklashdfl khdaslkfhslkahflksfshifhlskhfklashdflkhdaslkfhslkahflksf<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">div</span>&gt;</span>shifhlskhfklashdflkhdaslkf hslkahflksfshifhlskhfklashdflkhdaslkfhsl kahflksfshifhlskhfklashdflkhdaslkfhslkahflksf<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">div</span>&gt;</span>shifhlskhfklashdflkhdaslkfhslkahfl ksfshifhlskhfklashdflkhdaslkfhslkahflksfshifhlskhfklashdflkhdaslkfhslkahflksf<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">div</span>&gt;</span>shifhlskhfklashdflkhdaslk fhslkahfl ksfshifhlskhfklashdflkhdaslkfh lkahflksfshifhlskhfklashdflkhdaslkfhslkahflksf<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">div</span>&gt;</span>shifhlskhfklashdflkhdaslkfhslkahflksfshi fhlskhfklashdflkhdaslkfhslkahflksfshifhlskhfklashdflkhdaslkfhslkahflksf<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"https://cdn.jsdelivr.net/npm/vue/dist/vue.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="undefined">        Vue.directive('pin', function(el, binding) &#123;</span></span><br><span class="line"><span class="undefined">            var pinned = binding.value;</span></span><br><span class="line"><span class="undefined">            if (pinned) &#123;</span></span><br><span class="line"><span class="undefined">                el.style.position = 'fixed';</span></span><br><span class="line"><span class="undefined">                el.style.left = '10px';</span></span><br><span class="line"><span class="undefined">                el.style.top = '10px';</span></span><br><span class="line"><span class="undefined">            &#125; else &#123;</span></span><br><span class="line"><span class="undefined">                el.style.position = 'static';</span></span><br><span class="line"><span class="undefined">            &#125;</span></span><br><span class="line"><span class="undefined">        &#125;)</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="undefined">        new Vue(&#123;</span></span><br><span class="line"><span class="undefined">            el: '#app',</span></span><br><span class="line"><span class="undefined">            data: &#123;</span></span><br><span class="line"><span class="undefined">                card1: &#123;</span></span><br><span class="line"><span class="undefined">                    pinned: false,</span></span><br><span class="line"><span class="undefined">                &#125;,</span></span><br><span class="line"><span class="undefined">                card2: &#123;</span></span><br><span class="line"><span class="undefined">                    pinned: false,</span></span><br><span class="line"><span class="undefined">                &#125;</span></span><br><span class="line"><span class="undefined">            &#125;</span></span><br><span class="line"><span class="undefined">        &#125;)</span></span><br><span class="line"><span class="undefined">    </span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2019/04/07/表严肃学Vue--自定义指令/#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -1760,7 +1758,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">77</span>
+                  <span class="site-state-item-count">79</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
