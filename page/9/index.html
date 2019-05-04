@@ -259,7 +259,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/16/css-display的inline,inline-block,block/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/17/jquery--attr(),prop()/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="HJP">
@@ -278,7 +278,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2019/03/16/css-display的inline,inline-block,block/" itemprop="url">css-display的inline,inline-block,block</a></h1>
+                <a class="post-title-link" href="/2019/03/17/jquery--attr(),prop()/" itemprop="url">jquery--attr(),prop()</a></h1>
         
 
         <div class="post-meta">
@@ -290,8 +290,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-03-16T00:00:00+08:00">
-                2019-03-16
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-03-17T00:00:00+08:00">
+                2019-03-17
               </time>
             
 
@@ -313,8 +313,8 @@
               
               
                 <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/css/" itemprop="url" rel="index">
-                    <span itemprop="name">css</span>
+                  <a href="/categories/jquery/" itemprop="url" rel="index">
+                    <span itemprop="name">jquery</span>
                   </a>
                 </span>
 
@@ -352,18 +352,19 @@
       
         
           
-            <h4 id="1-display-block"><a href="#1-display-block" class="headerlink" title="1. display: block"></a>1. <code>display: block</code></h4><ol>
-<li>设置为块级元素，独占一行</li>
-<li>可以设置width,height,margin,padding</li>
+            <h4 id="1-attr-和-removeAttr"><a href="#1-attr-和-removeAttr" class="headerlink" title="1. attr() 和 removeAttr()"></a>1. attr() 和 removeAttr()</h4><ol>
+<li>attr()传入一个参数，表示获取属性节点的值。无论找到多少个元素，都只返回第一个</li>
+<li>attr()传入两个参数，表示设置某属性的值。无论多少个元素，都一起设置。如果参数存在，则改变属性值，参数不存在，则新增属性和值。</li>
+<li>removeAttr() 删除多个参数用空格隔开</li>
 </ol>
-<h4 id="2-display-inline"><a href="#2-display-inline" class="headerlink" title="2 .display: inline"></a>2 .<code>display: inline</code></h4><ol>
-<li>设置为行内元素，和其他行内元素共享一行，当一行拍不下才会换行</li>
-<li>不可设置width,height</li>
-<li>margin-top,margin-bottom,padding-top,padding-bottom不会产生效果</li>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">var</span> att = $(<span class="string">"div"</span>).attr(<span class="string">"class"</span>);</span><br><span class="line">    <span class="built_in">console</span>.log(att);</span><br><span class="line">    $(<span class="string">"div"</span>).attr(<span class="string">"class"</span>,<span class="string">"test2"</span>);</span><br><span class="line">    $(<span class="string">"p"</span>).attr(<span class="string">"abc"</span>,<span class="string">"add"</span>);</span><br><span class="line">    $(<span class="string">"p"</span>).attr(<span class="string">"class"</span>,<span class="string">"add_class"</span>);</span><br><span class="line">    $(<span class="string">"p"</span>).removeAttr(<span class="string">"abc class"</span>);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<h4 id="2-prop-和-removeProp"><a href="#2-prop-和-removeProp" class="headerlink" title="2. prop() 和 removeProp()"></a>2. prop() 和 removeProp()</h4><ol>
+<li>prop()和attr()方法一样</li>
+<li>removeProp()和removeAttr()方法一样</li>
+<li>重点： prop()和attr()基本一样，但是当属性返回值为true / false 时，使用prop();如selected,checked,disabled</li>
 </ol>
-<h4 id="3-display-inline-block"><a href="#3-display-inline-block" class="headerlink" title="3. display: inline-block"></a>3. <code>display: inline-block</code></h4><ol>
-<li>作为一个行内元素，但是具有block的属性特征，如有width,height</li>
-</ol>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">"input"</span>).prop(<span class="string">"checked"</span>);</span><br></pre></td></tr></table></figure>
+<p>返回值为 true / false</p>
 
           
         
@@ -568,7 +569,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/15/jquery--静态方法/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/16/css-display的inline,inline-block,block/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="HJP">
@@ -587,7 +588,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2019/03/15/jquery--静态方法/" itemprop="url">jquery--静态方法</a></h1>
+                <a class="post-title-link" href="/2019/03/16/css-display的inline,inline-block,block/" itemprop="url">css-display的inline,inline-block,block</a></h1>
         
 
         <div class="post-meta">
@@ -599,8 +600,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-03-15T00:00:00+08:00">
-                2019-03-15
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-03-16T00:00:00+08:00">
+                2019-03-16
               </time>
             
 
@@ -622,8 +623,8 @@
               
               
                 <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/jquery/" itemprop="url" rel="index">
-                    <span itemprop="name">jquery</span>
+                  <a href="/categories/css/" itemprop="url" rel="index">
+                    <span itemprop="name">css</span>
                   </a>
                 </span>
 
@@ -660,14 +661,21 @@
 
       
         
-          <h4 id="1-each-数组对象，回调函数"><a href="#1-each-数组对象，回调函数" class="headerlink" title="1.  $.each(数组对象，回调函数);"></a>1.  $.each(数组对象，回调函数);</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//数组</span></span><br><span class="line"><span class="keyword">var</span> arr = [<span class="number">1</span>,<span class="number">3</span>,<span class="number">5</span>,<span class="number">7</span>,<span class="number">9</span>];</span><br><span class="line"><span class="comment">//伪数组</span></span><br><span class="line"><span class="keyword">var</span> obj = &#123;<span class="number">0</span>:<span class="number">2</span>, <span class="number">1</span>:<span class="number">4</span>, <span class="number">2</span>:<span class="number">6</span>, <span class="number">3</span>:<span class="number">8</span>, <span class="number">4</span>:<span class="number">10</span>, <span class="attr">length</span>:<span class="number">5</span>&#125;;  </span><br><span class="line"><span class="comment">//each函数的第一个参数是要遍历的数组对象，第二个参数是回调函数</span></span><br><span class="line"><span class="comment">//回调函数的第一个参数是数组索引，第二个参数是索引对应的值</span></span><br><span class="line">$.each(arr, <span class="function"><span class="keyword">function</span>(<span class="params">index,value</span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(index, value);</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">$.each(obj, <span class="function"><span class="keyword">function</span>(<span class="params">i,v</span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(i,v);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2019/03/15/jquery--静态方法/#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
+          
+            <h4 id="1-display-block"><a href="#1-display-block" class="headerlink" title="1. display: block"></a>1. <code>display: block</code></h4><ol>
+<li>设置为块级元素，独占一行</li>
+<li>可以设置width,height,margin,padding</li>
+</ol>
+<h4 id="2-display-inline"><a href="#2-display-inline" class="headerlink" title="2 .display: inline"></a>2 .<code>display: inline</code></h4><ol>
+<li>设置为行内元素，和其他行内元素共享一行，当一行拍不下才会换行</li>
+<li>不可设置width,height</li>
+<li>margin-top,margin-bottom,padding-top,padding-bottom不会产生效果</li>
+</ol>
+<h4 id="3-display-inline-block"><a href="#3-display-inline-block" class="headerlink" title="3. display: inline-block"></a>3. <code>display: inline-block</code></h4><ol>
+<li>作为一个行内元素，但是具有block的属性特征，如有width,height</li>
+</ol>
+
+          
         
       
     </div>
@@ -811,6 +819,152 @@
 <h4 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 1. 释放$的使用权</span></span><br><span class="line"><span class="comment">// jQuery.noConflict();</span></span><br><span class="line"><span class="comment">// 2. 自定义一个符号作为访问符</span></span><br><span class="line"><span class="comment">// 如下访问符改为jq</span></span><br><span class="line">        <span class="keyword">var</span> jq = jQuery.noConflict();</span><br><span class="line">        jq(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">            alert(<span class="string">'123'</span>);</span><br><span class="line">        &#125;);</span><br></pre></td></tr></table></figure>
 
           
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/15/jquery--静态方法/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="HJP">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="HJinPeng">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/03/15/jquery--静态方法/" itemprop="url">jquery--静态方法</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-03-15T00:00:00+08:00">
+                2019-03-15
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/jquery/" itemprop="url" rel="index">
+                    <span itemprop="name">jquery</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <h4 id="1-each-数组对象，回调函数"><a href="#1-each-数组对象，回调函数" class="headerlink" title="1.  $.each(数组对象，回调函数);"></a>1.  $.each(数组对象，回调函数);</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//数组</span></span><br><span class="line"><span class="keyword">var</span> arr = [<span class="number">1</span>,<span class="number">3</span>,<span class="number">5</span>,<span class="number">7</span>,<span class="number">9</span>];</span><br><span class="line"><span class="comment">//伪数组</span></span><br><span class="line"><span class="keyword">var</span> obj = &#123;<span class="number">0</span>:<span class="number">2</span>, <span class="number">1</span>:<span class="number">4</span>, <span class="number">2</span>:<span class="number">6</span>, <span class="number">3</span>:<span class="number">8</span>, <span class="number">4</span>:<span class="number">10</span>, <span class="attr">length</span>:<span class="number">5</span>&#125;;  </span><br><span class="line"><span class="comment">//each函数的第一个参数是要遍历的数组对象，第二个参数是回调函数</span></span><br><span class="line"><span class="comment">//回调函数的第一个参数是数组索引，第二个参数是索引对应的值</span></span><br><span class="line">$.each(arr, <span class="function"><span class="keyword">function</span>(<span class="params">index,value</span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(index, value);</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">$.each(obj, <span class="function"><span class="keyword">function</span>(<span class="params">i,v</span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(i,v);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2019/03/15/jquery--静态方法/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -1310,7 +1464,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">87</span>
+                  <span class="site-state-item-count">88</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -1332,7 +1486,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">16</span>
+                  <span class="site-state-item-count">17</span>
                   <span class="site-state-item-name">tags</span>
                 </a>
               </div>
