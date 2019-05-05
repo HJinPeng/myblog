@@ -259,6 +259,152 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/29/HTTP--添加获取删除cookie封装/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="HJP">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="HJinPeng">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/03/29/HTTP--添加获取删除cookie封装/" itemprop="url">HTTP--添加获取删除cookie封装</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-03-29T21:26:48+08:00">
+                2019-03-29
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/HTTP/" itemprop="url" rel="index">
+                    <span itemprop="name">HTTP</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h4 id="封装cookie"><a href="#封装cookie" class="headerlink" title="封装cookie"></a>封装cookie</h4><h5 id="1-添加cookie"><a href="#1-添加cookie" class="headerlink" title="1. 添加cookie"></a>1. 添加cookie</h5><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">addCookie(<span class="string">"ku"</span>, <span class="string">"321"</span>, <span class="number">1</span>, <span class="string">"/"</span>, <span class="string">"127.0.0.1"</span>);</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">addCookie</span>(<span class="params">key, value, day, path, domain</span>) </span>&#123;</span><br><span class="line">    <span class="comment">//1. 处理默认保存路径</span></span><br><span class="line">    <span class="comment">//找到当前路径下的到最后一个/的地址</span></span><br><span class="line">    <span class="keyword">var</span> index = <span class="built_in">window</span>.location.pathname.lastIndexOf(<span class="string">"/"</span>);</span><br><span class="line">    <span class="keyword">var</span> currentPath = <span class="built_in">window</span>.location.pathname.slice(<span class="number">0</span>, index);</span><br><span class="line">    <span class="comment">//如果有传入path，则使用path，如果没有传入path，则使用currentPath</span></span><br><span class="line">    path = path || currentPath;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//2. 处理默认保存的domain</span></span><br><span class="line">    domain = domain || <span class="built_in">document</span>.domain;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//3. 处理默认的过期时间</span></span><br><span class="line">    <span class="keyword">if</span> (!day) &#123;</span><br><span class="line">        <span class="built_in">document</span>.cookie = key + <span class="string">"="</span> + value + <span class="string">";path="</span> + path + <span class="string">";domain="</span> + domain + <span class="string">";"</span>;</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="keyword">var</span> date = <span class="keyword">new</span> <span class="built_in">Date</span>();</span><br><span class="line">        date.setDate(date.getDate() + day);</span><br><span class="line">        <span class="built_in">document</span>.cookie = key + <span class="string">"="</span> + value + <span class="string">";expires="</span> + date.toGMTString() + <span class="string">";path="</span> + path + <span class="string">";domain="</span> + domain + <span class="string">";"</span>;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+<p>特别注意：<br>domain的值设置错误的会导致cookie设置不成功</p>
+<h5 id="2-获取cookie值"><a href="#2-获取cookie值" class="headerlink" title="2. 获取cookie值"></a>2. 获取cookie值</h5><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">getCookie</span>(<span class="params">key</span>) </span>&#123;</span><br><span class="line">    <span class="comment">//将获取的字符串以;分割成数组</span></span><br><span class="line">    <span class="keyword">var</span> res = <span class="built_in">document</span>.cookie.split(<span class="string">";"</span>);</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; res.length; i++) &#123;</span><br><span class="line">        <span class="keyword">var</span> temp = res[i].split(<span class="string">"="</span>);</span><br><span class="line">        <span class="comment">// 将每一个key=value以=分割成数组，temp[0]是key，temp[1]是value</span></span><br><span class="line">        <span class="keyword">if</span> (temp[<span class="number">0</span>].trim() === key) &#123;</span><br><span class="line">            <span class="keyword">return</span> temp[<span class="number">1</span>]</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="built_in">console</span>.log(getCookie(<span class="string">"age"</span>));</span><br></pre></td></tr></table></figure>
+<h5 id="3-删除cookie"><a href="#3-删除cookie" class="headerlink" title="3. 删除cookie"></a>3. 删除cookie</h5><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">deleteCookie</span>(<span class="params">key, path</span>) </span>&#123;</span><br><span class="line">    addCookie(key, getCookie(key), <span class="number">-1</span>, path);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">deleteCookie(<span class="string">"age"</span>, <span class="string">"/"</span>);</span><br></pre></td></tr></table></figure>
+<p>注意：默认只能删除默认路径中保存的cookie，如果想删除指定路径下保存的cookie，需要在删除的时候指定路径</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/29/HTTP--cookie/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
@@ -1456,7 +1602,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/27/js--ajax-get/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/27/php--基本语法/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="HJP">
@@ -1475,7 +1621,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2019/03/27/js--ajax-get/" itemprop="url">js--ajax-get</a></h1>
+                <a class="post-title-link" href="/2019/03/27/php--基本语法/" itemprop="url">php--基本语法</a></h1>
         
 
         <div class="post-meta">
@@ -1510,8 +1656,8 @@
               
               
                 <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/JavaScript/" itemprop="url" rel="index">
-                    <span itemprop="name">JavaScript</span>
+                  <a href="/categories/php/" itemprop="url" rel="index">
+                    <span itemprop="name">php</span>
                   </a>
                 </span>
 
@@ -1549,164 +1695,7 @@
       
         
           
-            <h4 id="1-ajax-get"><a href="#1-ajax-get" class="headerlink" title="1.  ajax-get"></a>1.  ajax-get</h4><p>5个步骤</p>
-<ol>
-<li>创建一个异步对象</li>
-<li>设置请求方式和请求地址</li>
-<li>发送请求</li>
-<li>监听状态的变化（请求已完成 ，值等于4）<ol>
-<li>判断请求成功（&gt;=200 &amp;&amp; &lt;=300 || ===304)</li>
-<li>请求失败</li>
-</ol>
-</li>
-<li>在4.1中处理返回数据</li>
-</ol>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">window</span>.onload = <span class="function"><span class="keyword">function</span>(<span class="params">ev</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> btn = <span class="built_in">document</span>.querySelector(<span class="string">"button"</span>);</span><br><span class="line">    btn.onclick = <span class="function"><span class="keyword">function</span>(<span class="params">ev1</span>) </span>&#123;</span><br><span class="line">        <span class="comment">// 1. 创建一个异步对象，兼容ie5/6</span></span><br><span class="line">        <span class="keyword">var</span> xmlhttp;</span><br><span class="line">        <span class="keyword">if</span> (<span class="built_in">window</span>.XMLHttpRequest) &#123; <span class="comment">// code for IE7+, Firefox, Chrome, Opera, Safari</span></span><br><span class="line">            xmlhttp = <span class="keyword">new</span> XMLHttpRequest();</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123; <span class="comment">// code for IE6, IE5</span></span><br><span class="line">            xmlhttp = <span class="keyword">new</span> ActiveXObject(<span class="string">"Microsoft.XMLHTTP"</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">// 2. 设置请求方式和请求地址</span></span><br><span class="line">        <span class="comment">/*</span></span><br><span class="line"><span class="comment">        method：请求的类型；GET 或 POST</span></span><br><span class="line"><span class="comment">        url：文件在服务器上的位置</span></span><br><span class="line"><span class="comment">        async：true（异步）或 false（同步）</span></span><br><span class="line"><span class="comment">        */</span></span><br><span class="line">        <span class="comment">//ie浏览器的缓存问题，同一个地址只能有一个数据，为了修改数据后能够被访问到，故每次都要修改地址，通过使用 ?t=new Date().getTime() 可以解决兼容性问题</span></span><br><span class="line">         xmlhttp.open(<span class="string">"GET"</span>, <span class="string">"ajax-get.php?t="</span> + (<span class="keyword">new</span> <span class="built_in">Date</span>().getTime()), <span class="literal">true</span>);</span><br><span class="line">        <span class="comment">// 3. 发送请求</span></span><br><span class="line">        xmlhttp.send();</span><br><span class="line">        <span class="comment">// 4. 监听状态的变化</span></span><br><span class="line">        xmlhttp.onreadystatechange = <span class="function"><span class="keyword">function</span>(<span class="params">ev2</span>) </span>&#123;</span><br><span class="line">            <span class="comment">/*</span></span><br><span class="line"><span class="comment">            0: 请求未初始化</span></span><br><span class="line"><span class="comment">            1: 服务器连接已建立</span></span><br><span class="line"><span class="comment">            2: 请求已接收</span></span><br><span class="line"><span class="comment">            3: 请求处理中</span></span><br><span class="line"><span class="comment">            4: 请求已完成，且响应已就绪</span></span><br><span class="line"><span class="comment">            */</span></span><br><span class="line">            <span class="keyword">if</span> (xmlhttp.readyState === <span class="number">4</span>) &#123;</span><br><span class="line">                <span class="comment">//判断是否请求成功</span></span><br><span class="line">                <span class="keyword">if</span> (xmlhttp.status &gt;= <span class="number">200</span> &amp;&amp; xmlhttp.status &lt;= <span class="number">300</span> || xmlhttp.status === <span class="number">304</span>) &#123;</span><br><span class="line">                    <span class="comment">// 5. 处理返回的结果</span></span><br><span class="line">                    <span class="built_in">console</span>.log(<span class="string">"接受到服务器返回的数据了"</span>);</span><br><span class="line">                &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                    <span class="built_in">console</span>.log(<span class="string">"没有接受到服务器返回的数据"</span>);</span><br><span class="line">                &#125;</span><br><span class="line"></span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/27/js--push,join/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="HJP">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="HJinPeng">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/03/27/js--push,join/" itemprop="url">js--push(),join()</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-03-27T00:00:00+08:00">
-                2019-03-27
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/JavaScript/" itemprop="url" rel="index">
-                    <span itemprop="name">JavaScript</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h4 id="1-push"><a href="#1-push" class="headerlink" title="1. .push()"></a>1. <code>.push()</code></h4><p>push() 方法可向数组的末尾添加一个或多个元素，并返回新的长度。 </p>
-<h4 id="2-join-separator"><a href="#2-join-separator" class="headerlink" title="2.  .join(separator)"></a>2.  <code>.join(separator)</code></h4><p>join() 方法用于把数组中的所有元素放入一个字符串。</p>
-<p>元素是通过指定的分隔符进行分隔的。</p>
-<p><code>separator</code> : 可选。指定要使用的分隔符。如果省略该参数，则使用逗号作为分隔符。</p>
+            <h4 id="1-基本语法"><a href="#1-基本语法" class="headerlink" title="1. 基本语法"></a>1. 基本语法</h4><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"><span class="comment">/* 多行注释 */</span></span><br><span class="line"><span class="comment">//单行注释</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//1. 定义变量</span></span><br><span class="line">$num = <span class="number">1</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">//2. 打印内容</span></span><br><span class="line"><span class="keyword">echo</span> $num;</span><br><span class="line"></span><br><span class="line"><span class="comment">//3. 数组</span></span><br><span class="line">$arr = <span class="keyword">array</span>(<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>);</span><br><span class="line"><span class="keyword">echo</span> <span class="string">"&lt;br&gt;"</span>;</span><br><span class="line">print_r($arr);</span><br><span class="line"><span class="keyword">echo</span> $arr[<span class="number">1</span>];</span><br><span class="line"></span><br><span class="line"><span class="comment">//4. 对象(字典)</span></span><br><span class="line">$dict = <span class="keyword">array</span>(<span class="string">"name"</span>=&gt;<span class="string">"hjp"</span>,<span class="string">"age"</span>=&gt;<span class="string">"21"</span>);</span><br><span class="line">print_r($dict);   <span class="comment">//打印数组</span></span><br><span class="line"><span class="keyword">echo</span> $dict[<span class="string">"name"</span>];</span><br><span class="line"></span><br><span class="line"><span class="comment">//5. 分支循环if switch 三目  for while</span></span><br><span class="line">$age =<span class="number">18</span>;</span><br><span class="line"><span class="keyword">if</span>($age&gt;=<span class="number">18</span>)&#123;</span><br><span class="line">    <span class="keyword">echo</span> <span class="string">"成年人"</span>;</span><br><span class="line">&#125;<span class="keyword">else</span>&#123;</span><br><span class="line">    <span class="keyword">echo</span> <span class="string">"未成年"</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">$res = ($age&gt;=<span class="number">18</span>?<span class="string">"成年人"</span>:<span class="string">"未成年"</span>);</span><br><span class="line"><span class="keyword">echo</span> $res;</span><br><span class="line"></span><br><span class="line"><span class="keyword">switch</span> ($age)&#123;</span><br><span class="line">    <span class="keyword">case</span> <span class="number">0</span>:</span><br><span class="line">        <span class="keyword">echo</span> <span class="string">"0"</span>;</span><br><span class="line">        <span class="keyword">break</span>;</span><br><span class="line">    <span class="keyword">case</span> <span class="number">18</span>:</span><br><span class="line">        <span class="keyword">echo</span> <span class="string">"成年人"</span>;</span><br><span class="line">        <span class="keyword">break</span>;</span><br><span class="line">    <span class="keyword">default</span>:</span><br><span class="line">        <span class="keyword">echo</span> <span class="string">"未成年人"</span>;</span><br><span class="line">        <span class="keyword">break</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span>($i = <span class="number">0</span>;$i&lt;count($arr);$i++)&#123;</span><br><span class="line">    <span class="keyword">echo</span> $arr[$i];</span><br><span class="line">    <span class="keyword">echo</span> <span class="string">"&lt;br&gt;"</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">$i=<span class="number">0</span>;</span><br><span class="line"><span class="keyword">while</span>($i&lt;count($arr))&#123;</span><br><span class="line">    <span class="keyword">echo</span> $arr[$i];</span><br><span class="line">    <span class="keyword">echo</span> <span class="string">"&lt;br&gt;"</span>;</span><br><span class="line">    $i++;</span><br><span class="line">&#125;</span><br><span class="line"><span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure>
 
           
         
@@ -1792,7 +1781,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">88</span>
+                  <span class="site-state-item-count">89</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -1814,7 +1803,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">17</span>
+                  <span class="site-state-item-count">18</span>
                   <span class="site-state-item-name">tags</span>
                 </a>
               </div>
