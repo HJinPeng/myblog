@@ -259,7 +259,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/26/js--原型/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/28/js--通过eval()将非标准的JSON字符串转换为标准的JSON字符串/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="HJP">
@@ -278,7 +278,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2019/03/26/js--原型/" itemprop="url">js--原型</a></h1>
+                <a class="post-title-link" href="/2019/03/28/js--通过eval()将非标准的JSON字符串转换为标准的JSON字符串/" itemprop="url">js--通过eval()将非标准的JSON字符串转换为标准的JSON字符串</a></h1>
         
 
         <div class="post-meta">
@@ -290,8 +290,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-03-26T00:00:00+08:00">
-                2019-03-26
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-03-28T22:26:00+08:00">
+                2019-03-28
               </time>
             
 
@@ -352,8 +352,12 @@
       
         
           
-            <h4 id="1-原型代码"><a href="#1-原型代码" class="headerlink" title="1. 原型代码"></a>1. 原型代码</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">Dog</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">new</span> Dog.prototype.init();</span><br><span class="line">    &#125;</span><br><span class="line">    Dog.prototype = &#123;</span><br><span class="line">        <span class="keyword">constructor</span>: Dog,</span><br><span class="line">        init: function() &#123;</span><br><span class="line">            <span class="keyword">this</span>.name = <span class="string">"xiaohuang"</span>;</span><br><span class="line">            <span class="keyword">this</span>.age = <span class="number">1</span>;</span><br><span class="line">        &#125;,</span><br><span class="line">        say: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">            <span class="built_in">console</span>.log(<span class="keyword">this</span>.name);</span><br><span class="line">            <span class="built_in">console</span>.log(<span class="keyword">this</span>.age);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//将Dog原型中的init的原型指向Dog的原型，于是init的原型失效了</span></span><br><span class="line">    Dog.prototype.init.prototype = Dog.prototype;</span><br><span class="line">		   </span><br><span class="line">    <span class="comment">//new了一个Dog的init()对象，有name和age值</span></span><br><span class="line">    <span class="keyword">var</span> dog = <span class="keyword">new</span> Dog();  </span><br><span class="line">    dog.say();</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-<p>每一个函数都有一个原型prototype，如Dog有一个原型，init，say都各自有一个原型</p>
+            <h4 id="1-标准的json对象"><a href="#1-标准的json对象" class="headerlink" title="1.  标准的json对象"></a>1.  标准的json对象</h4><figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;<span class="attr">"error"</span>: <span class="string">"0"</span>, <span class="attr">"id"</span>: <span class="string">"1"</span>, <span class="attr">"time"</span>: <span class="string">"1526541587"</span>, <span class="attr">"acc"</span>: <span class="string">"0"</span>, <span class="attr">"ref"</span>: <span class="string">"0"</span>&#125;</span><br></pre></td></tr></table></figure>
+<p>有时候服务器会返回非标准的json字符串，如：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;<span class="attr">error</span>: <span class="number">0</span>, <span class="attr">id</span>: <span class="number">1</span>, <span class="attr">time</span>: <span class="number">1526541587</span>, <span class="attr">acc</span>: <span class="number">0</span>, <span class="attr">ref</span>: <span class="number">0</span>&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="2-处理非标准的json字符串"><a href="#2-处理非标准的json字符串" class="headerlink" title="2.  处理非标准的json字符串"></a>2.  处理非标准的json字符串</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">success: <span class="function"><span class="keyword">function</span> (<span class="params">msg</span>) </span>&#123;</span><br><span class="line">     <span class="keyword">var</span> obj = <span class="built_in">eval</span>(<span class="string">"("</span>+msg+<span class="string">")"</span>);    <span class="comment">//对非标准或标准的json字符串都适用，都能转化为标准的json对象</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>msg的前后要加上(  、) ，强制转换为一个对象，不然会已字符串的形式解析</p>
+<p>eval()对于标准的json对象同样适用</p>
 
           
         
@@ -402,7 +406,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/25/hexo--post_img/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/28/js--ajax通过xml返回数据/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="HJP">
@@ -421,7 +425,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2019/03/25/hexo--post_img/" itemprop="url">hexo--post_img</a></h1>
+                <a class="post-title-link" href="/2019/03/28/js--ajax通过xml返回数据/" itemprop="url">js--ajax通过xml返回数据</a></h1>
         
 
         <div class="post-meta">
@@ -433,8 +437,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-03-25T00:00:00+08:00">
-                2019-03-25
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-03-28T21:44:00+08:00">
+                2019-03-28
               </time>
             
 
@@ -456,8 +460,596 @@
               
               
                 <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/hexo/" itemprop="url" rel="index">
-                    <span itemprop="name">hexo</span>
+                  <a href="/categories/JavaScript/" itemprop="url" rel="index">
+                    <span itemprop="name">JavaScript</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <h4 id="1-编写xml文档"><a href="#1-编写xml文档" class="headerlink" title="1.  编写xml文档"></a>1.  编写xml文档</h4><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">products</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">nz</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">title</span>&gt;</span>甜美女装<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">des</span>&gt;</span>美妆系列，这是一个女装专区<span class="tag">&lt;/<span class="name">des</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">image</span>&gt;</span>imgs/1.jpg<span class="tag">&lt;/<span class="name">image</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">nz</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">bb</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">title</span>&gt;</span>名牌包包<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">des</span>&gt;</span>名牌包包 ， 这是一个包包专区<span class="tag">&lt;/<span class="name">des</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">image</span>&gt;</span>imgs/2.jpg<span class="tag">&lt;/<span class="name">image</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">bb</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">tx</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">title</span>&gt;</span>人字拖鞋<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">des</span>&gt;</span>这是一个拖鞋专区<span class="tag">&lt;/<span class="name">des</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">image</span>&gt;</span>imgs/3.jpg<span class="tag">&lt;/<span class="name">image</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">tx</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">products</span>&gt;</span></span><br></pre></td></tr></table></figure>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2019/03/28/js--ajax通过xml返回数据/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/28/js--ajax通过json返回数据/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="HJP">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="HJinPeng">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/03/28/js--ajax通过json返回数据/" itemprop="url">js--ajax通过json返回数据</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-03-28T21:40:00+08:00">
+                2019-03-28
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/JavaScript/" itemprop="url" rel="index">
+                    <span itemprop="name">JavaScript</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <h4 id="1-编写json文件"><a href="#1-编写json文件" class="headerlink" title="1.  编写json文件"></a>1.  编写json文件</h4><figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="attr">"nz"</span>: &#123;</span><br><span class="line">        <span class="attr">"title"</span>: <span class="string">"甜美女装"</span>,</span><br><span class="line">        <span class="attr">"des"</span>: <span class="string">"美妆系列，这是一个女装专区"</span>,</span><br><span class="line">        <span class="attr">"image"</span>: <span class="string">"imgs/1.jpg"</span></span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="attr">"bb"</span>: &#123;</span><br><span class="line">        <span class="attr">"title"</span>: <span class="string">"名牌包包"</span>,</span><br><span class="line">        <span class="attr">"des"</span>: <span class="string">"名牌包包 ， 这是一个包包专区"</span>,</span><br><span class="line">        <span class="attr">"image"</span>: <span class="string">"imgs/2.jpg"</span></span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="attr">"tx"</span>: &#123;</span><br><span class="line">        <span class="attr">"title"</span>: <span class="string">"人字拖鞋"</span>,</span><br><span class="line">        <span class="attr">"des"</span>: <span class="string">"这是一个拖鞋专区"</span>,</span><br><span class="line">        <span class="attr">"image"</span>: <span class="string">"imgs/3.jpg"</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2019/03/28/js--ajax通过json返回数据/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/28/js--ajax-post封装(终板)/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="HJP">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="HJinPeng">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/03/28/js--ajax-post封装(终板)/" itemprop="url">js--ajax-post封装(终板)</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-03-28T16:53:00+08:00">
+                2019-03-28
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/JavaScript/" itemprop="url" rel="index">
+                    <span itemprop="name">JavaScript</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <h4 id="1-ajax-post封装（终板）"><a href="#1-ajax-post封装（终板）" class="headerlink" title="1.  ajax-post封装（终板）"></a>1.  ajax-post封装（终板）</h4><p>使用对象传参，对象中的参数可以随意变动位置（jquery的ajax实现原理）</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">window</span>.onload = <span class="function"><span class="keyword">function</span>(<span class="params">ev</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> btn = <span class="built_in">document</span>.querySelector(<span class="string">"button"</span>);</span><br><span class="line">    btn.onclick = <span class="function"><span class="keyword">function</span>(<span class="params">ev1</span>) </span>&#123;</span><br><span class="line">        ajax(&#123;</span><br><span class="line">            type: <span class="string">"POST"</span>,</span><br><span class="line">            url: <span class="string">"ajax-post.php"</span>,</span><br><span class="line">            data: &#123;</span><br><span class="line">                <span class="string">"userName"</span>: <span class="string">"HJP"</span>,</span><br><span class="line">                <span class="string">"password"</span>: <span class="string">"1234"</span></span><br><span class="line">            &#125;,</span><br><span class="line">            timeout: <span class="number">3000</span>,</span><br><span class="line">            success: <span class="function"><span class="keyword">function</span>(<span class="params">xhr</span>) </span>&#123;</span><br><span class="line">                alert(xhr.responseText);</span><br><span class="line">            &#125;,</span><br><span class="line">            error: <span class="function"><span class="keyword">function</span>(<span class="params">xhr</span>) </span>&#123;</span><br><span class="line">                alert(<span class="string">"error"</span>);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2019/03/28/js--ajax-post封装(终板)/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/28/js--ajax-post封装/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="HJP">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="HJinPeng">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/03/28/js--ajax-post封装/" itemprop="url">js--ajax-post封装</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-03-28T16:51:00+08:00">
+                2019-03-28
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/JavaScript/" itemprop="url" rel="index">
+                    <span itemprop="name">JavaScript</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <h4 id="1-ajax-post封装"><a href="#1-ajax-post封装" class="headerlink" title="1.  ajax-post封装"></a>1.  ajax-post封装</h4><p>function ajax(type, url, obj, timeout, success, error)中</p>
+<p>type为”get”时：<code>xmlhttp.open(type, url + &quot;?&quot; + str, true);</code>  <code>xmlhttp.send();</code></p>
+<p>type为”post”时：<code>xmlhttp.open(type, url, true);</code> <code>xmlhttp.setRequestHeader(&quot;Content-type&quot;, &quot;application/x-www-form-urlencoded&quot;);</code> <code>xmlhttp.send(str);</code></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">window</span>.onload = <span class="function"><span class="keyword">function</span>(<span class="params">ev</span>) </span>&#123;</span><br><span class="line">            <span class="keyword">var</span> btn = <span class="built_in">document</span>.querySelector(<span class="string">"button"</span>);</span><br><span class="line">            btn.onclick = <span class="function"><span class="keyword">function</span>(<span class="params">ev1</span>) </span>&#123;</span><br><span class="line">                ajax(<span class="string">"POST"</span>, <span class="string">"ajax-post.php"</span>, &#123;</span><br><span class="line">                    <span class="string">"userName"</span>: <span class="string">"HJP"</span>,</span><br><span class="line">                    <span class="string">"password"</span>: <span class="string">"123456"</span></span><br><span class="line">                &#125;, <span class="number">3000</span>, <span class="function"><span class="keyword">function</span>(<span class="params">xhr</span>) </span>&#123;</span><br><span class="line">                    alert(xhr.responseText);</span><br><span class="line">                &#125;, <span class="function"><span class="keyword">function</span>(<span class="params">xhr</span>) </span>&#123;</span><br><span class="line">                    alert(<span class="string">"error"</span>);</span><br><span class="line">                &#125;)</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;;</span><br></pre></td></tr></table></figure>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2019/03/28/js--ajax-post封装/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/28/js--ajax-post/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="HJP">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="HJinPeng">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/03/28/js--ajax-post/" itemprop="url">js--ajax-post</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-03-28T00:00:00+08:00">
+                2019-03-28
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/JavaScript/" itemprop="url" rel="index">
+                    <span itemprop="name">JavaScript</span>
                   </a>
                 </span>
 
@@ -495,21 +1087,20 @@
       
         
           
-            <h4 id="1-编辑hexo目录下的-config-yml文件"><a href="#1-编辑hexo目录下的-config-yml文件" class="headerlink" title="1. 编辑hexo目录下的_config.yml文件"></a>1. 编辑hexo目录下的_config.yml文件</h4><p>查找post_asset_folder,设置为true，如<code>post_asset_folder: true</code></p>
-<h4 id="2-安装插件"><a href="#2-安装插件" class="headerlink" title="2. 安装插件"></a>2. 安装插件</h4><p>在hexo下打开gitBash，输入：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install [https://github.com/CodeFalling/hexo-asset-image](https://link.jianshu.com/?t=https%3A%2F%2Fgithub.com%2FCodeFalling%2Fhexo-asset-image)--save</span><br></pre></td></tr></table></figure>
-<h4 id="3-创建文章和文件夹"><a href="#3-创建文章和文件夹" class="headerlink" title="3. 创建文章和文件夹"></a>3. 创建文章和文件夹</h4><p>文件夹名称==文章名称</p>
-<h4 id="4-在md文件中插入图片"><a href="#4-在md文件中插入图片" class="headerlink" title="4. 在md文件中插入图片"></a>4. 在md文件中插入图片</h4><p>使用html的img标签，可设置宽高，对齐方式（设置left/right会导致排版错乱，故直接不适用align属性居中显示即可）</p>
-<p><code>&lt;img src=&quot;./hexo--post_img/IMG_0380.JPG&quot; width=&quot;500&quot; hegiht=&quot;313&quot; align=&quot;left&quot; /&gt;</code></p>
-<p><img src="/2019/03/25/hexo--post_img/IMG_0380.JPG" width="200" hegiht="400" align="left"></p>
-<p><br><br><br><br><br><br></p>
-<p><code>&lt;img src=&quot;./hexo--post_img/IMG_0380.JPG&quot; width=&quot;200&quot; hegiht=&quot;200&quot;/&gt;</code></p>
-<p><img src="/2019/03/25/hexo--post_img/IMG_0380.JPG" width="200" hegiht="400"></p>
-<p>强烈推荐使用以上这种方式</p>
-<p><code>&lt;img src=&quot;./hexo--post_img/IMG_0380.JPG&quot; width=&quot;200&quot; hegiht=&quot;200&quot; align=&quot;right&quot; /&gt;</code></p>
-<p><img src="/2019/03/25/hexo--post_img/IMG_0380.JPG" width="200" hegiht="400" align="right"></p>
-<p><br><br><br><br><br><br></p>
-<h4 id="5-部署上传博客"><a href="#5-部署上传博客" class="headerlink" title="5. 部署上传博客"></a>5. 部署上传博客</h4><p>在hexo下的gitBash中输入<code>hexo g -d</code></p>
+            <h4 id="1-ajax-post"><a href="#1-ajax-post" class="headerlink" title="1.  ajax-post"></a>1.  ajax-post</h4><p>5个步骤</p>
+<ol>
+<li>创建一个异步对象</li>
+<li>设置请求方式和请求地址</li>
+<li>使用 setRequestHeader() 来添加 HTTP 头 </li>
+<li>发送请求,传递数据</li>
+<li>监听状态的变化（请求已完成 ，值等于4）<ol>
+<li>判断请求成功（&gt;=200 &amp;&amp; &lt;=300 || ===304)</li>
+<li>请求失败</li>
+</ol>
+</li>
+<li>在4.1中处理返回数据</li>
+</ol>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">window</span>.onload = <span class="function"><span class="keyword">function</span>(<span class="params">ev</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> btn = <span class="built_in">document</span>.querySelector(<span class="string">"button"</span>);</span><br><span class="line">    btn.onclick = <span class="function"><span class="keyword">function</span>(<span class="params">ev1</span>) </span>&#123;</span><br><span class="line">        <span class="comment">// 1. 创建一个异步对象</span></span><br><span class="line">        <span class="keyword">var</span> xmlhttp;</span><br><span class="line">        <span class="keyword">if</span> (<span class="built_in">window</span>.XMLHttpRequest) &#123; <span class="comment">// code for IE7+, Firefox, Chrome, Opera, Safari</span></span><br><span class="line">            xmlhttp = <span class="keyword">new</span> XMLHttpRequest();</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123; <span class="comment">// code for IE6, IE5</span></span><br><span class="line">            xmlhttp = <span class="keyword">new</span> ActiveXObject(<span class="string">"Microsoft.XMLHTTP"</span>);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 2. 获取请求方式和请求地址</span></span><br><span class="line">        xmlhttp.open(<span class="string">"POST"</span>, <span class="string">"ajax-post.php?t="</span> + (<span class="keyword">new</span> <span class="built_in">Date</span>().getTime()), <span class="literal">true</span>);</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 3. 以下代码必须放在open和send之间</span></span><br><span class="line">        xmlhttp.setRequestHeader(<span class="string">"Content-type"</span>, <span class="string">"application/x-www-form-urlencoded"</span>);</span><br><span class="line">        <span class="comment">// 4. 发送请求</span></span><br><span class="line">        xmlhttp.send(<span class="string">"userName=hjp&amp;password=123"</span>);</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 5. 监听状态的变化</span></span><br><span class="line">        xmlhttp.onreadystatechange = <span class="function"><span class="keyword">function</span>(<span class="params">ev2</span>) </span>&#123;</span><br><span class="line">            <span class="keyword">if</span> (xmlhttp.readyState === <span class="number">4</span>) &#123;</span><br><span class="line">                <span class="keyword">if</span> (xmlhttp.status &gt;= <span class="number">200</span> &amp;&amp; xmlhttp.status &lt;= <span class="number">300</span> || xmlhttp.status === <span class="number">304</span>) &#123;</span><br><span class="line">                    alert(xmlhttp.responseText);</span><br><span class="line">                &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                    alert(<span class="string">"2"</span>);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 
           
         
@@ -558,7 +1149,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/24/jquery--ajax/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/27/js--ajax-get封装/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="HJP">
@@ -577,7 +1168,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2019/03/24/jquery--ajax/" itemprop="url">jquery--ajax</a></h1>
+                <a class="post-title-link" href="/2019/03/27/js--ajax-get封装/" itemprop="url">js--ajax-get封装</a></h1>
         
 
         <div class="post-meta">
@@ -589,8 +1180,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-03-24T00:00:00+08:00">
-                2019-03-24
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-03-27T00:00:00+08:00">
+                2019-03-27
               </time>
             
 
@@ -612,8 +1203,8 @@
               
               
                 <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/jquery/" itemprop="url" rel="index">
-                    <span itemprop="name">jquery</span>
+                  <a href="/categories/JavaScript/" itemprop="url" rel="index">
+                    <span itemprop="name">JavaScript</span>
                   </a>
                 </span>
 
@@ -651,9 +1242,10 @@
       
         
           
-            <h4 id="1-ajax的url"><a href="#1-ajax的url" class="headerlink" title="1. ajax的url"></a>1. ajax的url</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$.ajax(&#123;</span><br><span class="line">   url: .<span class="comment">/***/</span>*** </span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-<p>相对于html的路径，不是相对js的路径</p>
-<h4 id="2-ajax使用"><a href="#2-ajax使用" class="headerlink" title="2. ajax使用"></a>2. ajax使用</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    $(<span class="string">"button"</span>).click(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">        $.ajax(&#123;</span><br><span class="line">            type: <span class="string">"GET"</span>,</span><br><span class="line">            url: <span class="string">"ajax-jquery.php"</span>,</span><br><span class="line">            data: <span class="string">"userName=HJP&amp;password=123456"</span>,</span><br><span class="line">            success: <span class="function"><span class="keyword">function</span>(<span class="params">msg</span>) </span>&#123;</span><br><span class="line">                alert(msg);</span><br><span class="line">            &#125;,</span><br><span class="line">            error: <span class="function"><span class="keyword">function</span>(<span class="params">xhr</span>) </span>&#123;</span><br><span class="line">                alert(xhr.status);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;);</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+            <h4 id="1-ajax-get封装"><a href="#1-ajax-get封装" class="headerlink" title="1.  ajax-get封装"></a>1.  ajax-get封装</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">window</span>.onload = <span class="function"><span class="keyword">function</span>(<span class="params">ev</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> btn = <span class="built_in">document</span>.querySelector(<span class="string">"button"</span>);</span><br><span class="line">    btn.onclick = <span class="function"><span class="keyword">function</span>(<span class="params">ev1</span>) </span>&#123;</span><br><span class="line">        ajax(<span class="string">"ajax-get.php"</span>, &#123;</span><br><span class="line">            <span class="string">"userName"</span>: <span class="string">"HJP"</span>,</span><br><span class="line">            <span class="string">"password"</span>: <span class="string">"123456"</span></span><br><span class="line">        &#125;, <span class="number">3000</span>, <span class="function"><span class="keyword">function</span>(<span class="params">xhr</span>) </span>&#123;</span><br><span class="line">            alert(xhr.responseText);</span><br><span class="line">        &#125;, <span class="function"><span class="keyword">function</span>(<span class="params">xhr</span>) </span>&#123;</span><br><span class="line">            alert(<span class="string">"error"</span>);</span><br><span class="line">        &#125;);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p>封装了ajax，传入参数为：地址，对象（json对象），超时时间，成功回调函数，失败回调函数</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//对传入的json对象进行格式化处理为url中的数据格式</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">obj2str</span>(<span class="params">obj</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> res = [];</span><br><span class="line">    <span class="comment">//给传进来的obj对象加一个t属性，可以让每次请求地址都不一样，兼容ie的缓存问题</span></span><br><span class="line">    obj.t = <span class="keyword">new</span> <span class="built_in">Date</span>().getTime();     </span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">var</span> key <span class="keyword">in</span> obj) &#123;</span><br><span class="line">        <span class="comment">//在url中不可出现中文，只可以出现字母/数字/下划线/ASCII</span></span><br><span class="line">        <span class="comment">//调用encodeURIComponent将中文转化为其他字符</span></span><br><span class="line">        res.push(<span class="built_in">encodeURIComponent</span>(key) + <span class="string">"="</span> + <span class="built_in">encodeURIComponent</span>(obj[key])); <span class="comment">// [userName=HJP,password=123456,t=1231654613156]</span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> res.join(<span class="string">"&amp;"</span>); <span class="comment">//userName=HJP&amp;password=123456&amp;t=1321456132321321</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">ajax</span>(<span class="params">url, obj, timeout, success, error</span>) </span>&#123;</span><br><span class="line">    <span class="comment">// 0. 将对象转换为字符串</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">var</span> str = obj2str(obj); <span class="comment">//key=value&amp;key=value</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">// 1. 创建一个异步对象</span></span><br><span class="line">    <span class="keyword">var</span> xmlhttp, timer;</span><br><span class="line">    <span class="keyword">if</span> (<span class="built_in">window</span>.XMLHttpRequest) &#123; <span class="comment">// code for IE7+, Firefox, Chrome, Opera, Safari</span></span><br><span class="line">        xmlhttp = <span class="keyword">new</span> XMLHttpRequest();</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123; <span class="comment">// code for IE6, IE5</span></span><br><span class="line">        xmlhttp = <span class="keyword">new</span> ActiveXObject(<span class="string">"Microsoft.XMLHTTP"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// 2. 设置请求方式和请求地址</span></span><br><span class="line">    <span class="comment">/*</span></span><br><span class="line"><span class="comment">    method：请求的类型；GET 或 POST</span></span><br><span class="line"><span class="comment">    url：文件在服务器上的位置</span></span><br><span class="line"><span class="comment">    async：true（异步）或 false（同步）</span></span><br><span class="line"><span class="comment">    */</span></span><br><span class="line">    xmlhttp.open(<span class="string">"GET"</span>, url + <span class="string">"?"</span> + str, <span class="literal">true</span>);</span><br><span class="line">    <span class="comment">// 3. 发送请求</span></span><br><span class="line">    xmlhttp.send();</span><br><span class="line">    <span class="comment">// 4. 监听状态的变化</span></span><br><span class="line">    xmlhttp.onreadystatechange = <span class="function"><span class="keyword">function</span>(<span class="params">ev2</span>) </span>&#123;</span><br><span class="line">        <span class="comment">/*</span></span><br><span class="line"><span class="comment">        0: 请求未初始化</span></span><br><span class="line"><span class="comment">        1: 服务器连接已建立</span></span><br><span class="line"><span class="comment">        2: 请求已接收</span></span><br><span class="line"><span class="comment">        3: 请求处理中</span></span><br><span class="line"><span class="comment">        4: 请求已完成，且响应已就绪</span></span><br><span class="line"><span class="comment">        */</span></span><br><span class="line">        <span class="keyword">if</span> (xmlhttp.readyState === <span class="number">4</span>) &#123;</span><br><span class="line">            clearInterval(timer);    <span class="comment">//当请求完成时，删除定时器</span></span><br><span class="line">            <span class="comment">//判断是否请求成功</span></span><br><span class="line">            <span class="keyword">if</span> (xmlhttp.status &gt;= <span class="number">200</span> &amp;&amp; xmlhttp.status &lt;= <span class="number">300</span> || xmlhttp.status === <span class="number">304</span>) &#123;</span><br><span class="line">                <span class="comment">// 5. 处理返回的结果</span></span><br><span class="line">                success(xmlhttp);</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                error(xmlhttp);</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 判断外界是否传入了超时时间</span></span><br><span class="line">    <span class="keyword">if</span> (timeout) &#123;</span><br><span class="line">        <span class="comment">//创建定时器，第一个是超过第二个参数的时间就执行的回调函数，第二个是时间</span></span><br><span class="line">        timer = setInterval(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">            xmlhttp.abort(); <span class="comment">//中断请求</span></span><br><span class="line">            clearInterval(timer); <span class="comment">//删除定时器</span></span><br><span class="line">        &#125;, timeout);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>在url中不可出现中文，只可以出现字母/数字/下划线/ASCII<br>调用encodeURIComponent将中文转化为其他字符</p>
 
           
         
@@ -702,7 +1294,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/24/jquery--indexOf和lastIndexOf/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/27/php--GET,POST/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="HJP">
@@ -721,7 +1313,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2019/03/24/jquery--indexOf和lastIndexOf/" itemprop="url">jquery--indexOf和lastIndexOf</a></h1>
+                <a class="post-title-link" href="/2019/03/27/php--GET,POST/" itemprop="url">php--GET,POST</a></h1>
         
 
         <div class="post-meta">
@@ -733,8 +1325,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-03-24T00:00:00+08:00">
-                2019-03-24
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-03-27T00:00:00+08:00">
+                2019-03-27
               </time>
             
 
@@ -756,8 +1348,8 @@
               
               
                 <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/jquery/" itemprop="url" rel="index">
-                    <span itemprop="name">jquery</span>
+                  <a href="/categories/php/" itemprop="url" rel="index">
+                    <span itemprop="name">php</span>
                   </a>
                 </span>
 
@@ -795,12 +1387,12 @@
       
         
           
-            <h4 id="1-indexOf"><a href="#1-indexOf" class="headerlink" title="1. indexOf"></a>1. indexOf</h4><p>是查某个指定的字符串在字符串首次出现的位置（索引值） </p>
-<p>也就是从前往后查</p>
-<h4 id="2-lastIndexOf"><a href="#2-lastIndexOf" class="headerlink" title="2. lastIndexOf"></a>2. lastIndexOf</h4><p>是从右向左查某个指定的字符串在字符串中最后一次出现的位置 </p>
-<p>也就是从后往前查 </p>
-<h4 id="3-例子"><a href="#3-例子" class="headerlink" title="3. 例子"></a>3. 例子</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> arr = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>];</span><br><span class="line"><span class="built_in">console</span>.log(arr.indexOf(<span class="number">4</span>));  <span class="comment">// 3</span></span><br><span class="line"><span class="built_in">console</span>.log(arr.lastIndexOf(<span class="number">4</span>));   <span class="comment">//4</span></span><br></pre></td></tr></table></figure>
-<p>不论哪种方法，返回的下标都是从0开始计算。</p>
+            <h4 id="1-GET请求"><a href="#1-GET请求" class="headerlink" title="1. GET请求"></a>1. GET请求</h4><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">form</span> <span class="attr">action</span>=<span class="string">"get.php"</span> <span class="attr">method</span>=<span class="string">"GET"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">name</span>=<span class="string">"username"</span>&gt;</span><span class="tag">&lt;<span class="name">br</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"password"</span> <span class="attr">name</span>=<span class="string">"password"</span>&gt;</span><span class="tag">&lt;<span class="name">br</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"submit"</span> <span class="attr">value</span>=<span class="string">"提交"</span>&gt;</span><span class="tag">&lt;<span class="name">br</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">form</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line">print_r($_GET);</span><br><span class="line"><span class="keyword">echo</span> <span class="string">"&lt;br&gt;"</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">echo</span> $_GET[<span class="string">"username"</span>];</span><br><span class="line"><span class="keyword">echo</span> <span class="string">"&lt;br&gt;"</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">echo</span> $_GET[<span class="string">"password"</span>];</span><br><span class="line"><span class="keyword">echo</span> <span class="string">"&lt;br&gt;"</span>;</span><br><span class="line"></span><br><span class="line"><span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure>
+<h4 id="2-POST请求"><a href="#2-POST请求" class="headerlink" title="2. POST请求"></a>2. POST请求</h4><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">form</span> <span class="attr">action</span>=<span class="string">"post.php"</span> <span class="attr">method</span>=<span class="string">"POST"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">name</span>=<span class="string">"username"</span>&gt;</span><span class="tag">&lt;<span class="name">br</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"password"</span> <span class="attr">name</span>=<span class="string">"password"</span>&gt;</span><span class="tag">&lt;<span class="name">br</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"submit"</span> <span class="attr">value</span>=<span class="string">"提交"</span>&gt;</span><span class="tag">&lt;<span class="name">br</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">form</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line">print_r($_POST);</span><br><span class="line"><span class="keyword">echo</span> <span class="string">"&lt;br&gt;"</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">echo</span> $_POST[<span class="string">"username"</span>];</span><br><span class="line"><span class="keyword">echo</span> <span class="string">"&lt;br&gt;"</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">echo</span> $_POST[<span class="string">"password"</span>];</span><br><span class="line"><span class="keyword">echo</span> <span class="string">"&lt;br&gt;"</span>;</span><br><span class="line"></span><br><span class="line"><span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure>
+<h4 id="3-POST-文件上传"><a href="#3-POST-文件上传" class="headerlink" title="3. POST-文件上传"></a>3. POST-文件上传</h4><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- enctype="multipart/form-data" php上传文件要添加该属性 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">form</span> <span class="attr">action</span>=<span class="string">"post_file.php"</span> <span class="attr">method</span>=<span class="string">"POST"</span> <span class="attr">enctype</span>=<span class="string">"multipart/form-data"</span>&gt;</span></span><br><span class="line">     <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"file"</span> <span class="attr">name</span>=<span class="string">"upfile"</span>&gt;</span></span><br><span class="line">     <span class="tag">&lt;<span class="name">br</span>&gt;</span></span><br><span class="line">     <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"submit"</span> <span class="attr">value</span>=<span class="string">"上传"</span>&gt;</span></span><br><span class="line">     <span class="tag">&lt;<span class="name">br</span>&gt;</span></span><br><span class="line"> <span class="tag">&lt;/<span class="name">form</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line">    <span class="comment">// print_r($_FILES);</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">//1. 获取上传文件对应的字典</span></span><br><span class="line">    $fileInfo = $_FILES[<span class="string">"upfile"</span>];</span><br><span class="line">    <span class="comment">//2. 获取上传文件的名称</span></span><br><span class="line">    $fileName = $fileInfo[<span class="string">"name"</span>];</span><br><span class="line">    <span class="comment">//2. 获取上传文件保存的临时路径</span></span><br><span class="line">    $filePath = $fileInfo[<span class="string">"tmp_name"</span>];</span><br><span class="line">    <span class="comment">// echo $fileName;</span></span><br><span class="line">    <span class="comment">// echo "&lt;br&gt;";</span></span><br><span class="line">    <span class="comment">// echo $filePath;</span></span><br><span class="line">    <span class="comment">// move_uploaded_file(旧路径,新路径); php的连接不是通过+,而是通过.</span></span><br><span class="line">    move_uploaded_file($filePath,<span class="string">"./source/"</span>.$fileName);</span><br><span class="line"><span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure>
 
           
         
@@ -849,7 +1441,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/23/css-制作进度条/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/27/php--基本语法/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="HJP">
@@ -868,7 +1460,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2019/03/23/css-制作进度条/" itemprop="url">css-制作进度条</a></h1>
+                <a class="post-title-link" href="/2019/03/27/php--基本语法/" itemprop="url">php--基本语法</a></h1>
         
 
         <div class="post-meta">
@@ -880,8 +1472,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-03-23T00:00:00+08:00">
-                2019-03-23
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-03-27T00:00:00+08:00">
+                2019-03-27
               </time>
             
 
@@ -903,8 +1495,8 @@
               
               
                 <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/css/" itemprop="url" rel="index">
-                    <span itemprop="name">css</span>
+                  <a href="/categories/php/" itemprop="url" rel="index">
+                    <span itemprop="name">php</span>
                   </a>
                 </span>
 
@@ -942,8 +1534,7 @@
       
         
           
-            <h4 id="1-html"><a href="#1-html" class="headerlink" title="1. html"></a>1. html</h4><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"music_progress_info"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"music_progress_top"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">"music_progress_name"</span>&gt;</span>空空如也 / 汪峰<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">"music_progress_time"</span>&gt;</span>00:00 / 04:18<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">     </span><br><span class="line">      <span class="comment">&lt;!-- 进度条的底色，即整条进度条 --&gt;</span>        </span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"music_progress_bar"</span>&gt;</span></span><br><span class="line">        <span class="comment">&lt;!-- 当前进度 --&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"music_progress_line"</span>&gt;</span></span><br><span class="line">            <span class="comment">&lt;!--当前进度的末端圆点--&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"music_progress_dot"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<h4 id="2-css"><a href="#2-css" class="headerlink" title="2. css"></a>2. css</h4><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.music_progress_info</span> <span class="selector-class">.music_progress_bar</span> &#123;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">100%</span>;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">4px</span>;</span><br><span class="line">    <span class="attribute">background</span>: <span class="built_in">rgba</span>(255, 255, 255, 0.5);</span><br><span class="line">    <span class="attribute">margin-top</span>: <span class="number">5px</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.music_progress_bar</span> <span class="selector-class">.music_progress_line</span> &#123;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">100px</span>;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">100%</span>;</span><br><span class="line">    <span class="attribute">background</span>: white;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.music_progress_line</span> <span class="selector-class">.music_progress_dot</span> &#123;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">14px</span>;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">14px</span>;</span><br><span class="line">    <span class="attribute">border-radius</span>: <span class="number">50%</span>;</span><br><span class="line">    <span class="attribute">background</span>: <span class="number">#fff</span>;</span><br><span class="line">    <span class="attribute">position</span>: relative;</span><br><span class="line">    <span class="attribute">top</span>: -<span class="number">5px</span>;</span><br><span class="line">    <span class="attribute">left</span>: <span class="number">100px</span>;    <span class="comment">/*当前进度长100px,圆点位置也为100px*/</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+            <h4 id="1-基本语法"><a href="#1-基本语法" class="headerlink" title="1. 基本语法"></a>1. 基本语法</h4><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"><span class="comment">/* 多行注释 */</span></span><br><span class="line"><span class="comment">//单行注释</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//1. 定义变量</span></span><br><span class="line">$num = <span class="number">1</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">//2. 打印内容</span></span><br><span class="line"><span class="keyword">echo</span> $num;</span><br><span class="line"></span><br><span class="line"><span class="comment">//3. 数组</span></span><br><span class="line">$arr = <span class="keyword">array</span>(<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>);</span><br><span class="line"><span class="keyword">echo</span> <span class="string">"&lt;br&gt;"</span>;</span><br><span class="line">print_r($arr);</span><br><span class="line"><span class="keyword">echo</span> $arr[<span class="number">1</span>];</span><br><span class="line"></span><br><span class="line"><span class="comment">//4. 对象(字典)</span></span><br><span class="line">$dict = <span class="keyword">array</span>(<span class="string">"name"</span>=&gt;<span class="string">"hjp"</span>,<span class="string">"age"</span>=&gt;<span class="string">"21"</span>);</span><br><span class="line">print_r($dict);   <span class="comment">//打印数组</span></span><br><span class="line"><span class="keyword">echo</span> $dict[<span class="string">"name"</span>];</span><br><span class="line"></span><br><span class="line"><span class="comment">//5. 分支循环if switch 三目  for while</span></span><br><span class="line">$age =<span class="number">18</span>;</span><br><span class="line"><span class="keyword">if</span>($age&gt;=<span class="number">18</span>)&#123;</span><br><span class="line">    <span class="keyword">echo</span> <span class="string">"成年人"</span>;</span><br><span class="line">&#125;<span class="keyword">else</span>&#123;</span><br><span class="line">    <span class="keyword">echo</span> <span class="string">"未成年"</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">$res = ($age&gt;=<span class="number">18</span>?<span class="string">"成年人"</span>:<span class="string">"未成年"</span>);</span><br><span class="line"><span class="keyword">echo</span> $res;</span><br><span class="line"></span><br><span class="line"><span class="keyword">switch</span> ($age)&#123;</span><br><span class="line">    <span class="keyword">case</span> <span class="number">0</span>:</span><br><span class="line">        <span class="keyword">echo</span> <span class="string">"0"</span>;</span><br><span class="line">        <span class="keyword">break</span>;</span><br><span class="line">    <span class="keyword">case</span> <span class="number">18</span>:</span><br><span class="line">        <span class="keyword">echo</span> <span class="string">"成年人"</span>;</span><br><span class="line">        <span class="keyword">break</span>;</span><br><span class="line">    <span class="keyword">default</span>:</span><br><span class="line">        <span class="keyword">echo</span> <span class="string">"未成年人"</span>;</span><br><span class="line">        <span class="keyword">break</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span>($i = <span class="number">0</span>;$i&lt;count($arr);$i++)&#123;</span><br><span class="line">    <span class="keyword">echo</span> $arr[$i];</span><br><span class="line">    <span class="keyword">echo</span> <span class="string">"&lt;br&gt;"</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">$i=<span class="number">0</span>;</span><br><span class="line"><span class="keyword">while</span>($i&lt;count($arr))&#123;</span><br><span class="line">    <span class="keyword">echo</span> $arr[$i];</span><br><span class="line">    <span class="keyword">echo</span> <span class="string">"&lt;br&gt;"</span>;</span><br><span class="line">    $i++;</span><br><span class="line">&#125;</span><br><span class="line"><span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure>
 
           
         
@@ -992,7 +1583,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/23/css-高斯模糊背景设置/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/27/js--push,join/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="HJP">
@@ -1011,7 +1602,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2019/03/23/css-高斯模糊背景设置/" itemprop="url">css-高斯模糊背景设置</a></h1>
+                <a class="post-title-link" href="/2019/03/27/js--push,join/" itemprop="url">js--push(),join()</a></h1>
         
 
         <div class="post-meta">
@@ -1023,8 +1614,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-03-23T00:00:00+08:00">
-                2019-03-23
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-03-27T00:00:00+08:00">
+                2019-03-27
               </time>
             
 
@@ -1046,8 +1637,8 @@
               
               
                 <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/css/" itemprop="url" rel="index">
-                    <span itemprop="name">css</span>
+                  <a href="/categories/JavaScript/" itemprop="url" rel="index">
+                    <span itemprop="name">JavaScript</span>
                   </a>
                 </span>
 
@@ -1085,596 +1676,10 @@
       
         
           
-            <h4 id="如何使用高斯背景图"><a href="#如何使用高斯背景图" class="headerlink" title="如何使用高斯背景图"></a>如何使用高斯背景图</h4><h6 id="步骤1：设置两个div"><a href="#步骤1：设置两个div" class="headerlink" title="步骤1：设置两个div"></a>步骤1：设置两个div</h6><p>一个设置高斯模糊，一个设置灰色蒙版</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"mask_bg"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"mask"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<h6 id="步骤2：设置css"><a href="#步骤2：设置css" class="headerlink" title="步骤2：设置css"></a>步骤2：设置css</h6><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.mask_bg</span> &#123;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">100%</span>;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">100%</span>;</span><br><span class="line">    <span class="attribute">position</span>: absolute;</span><br><span class="line">    <span class="attribute">top</span>: <span class="number">0</span>;</span><br><span class="line">    <span class="attribute">left</span>: <span class="number">0</span>;</span><br><span class="line">    <span class="attribute">background</span>: <span class="built_in">url</span>(../imgs/lnj.jpg) no-repeat <span class="number">0</span> <span class="number">0</span>;</span><br><span class="line">    <span class="attribute">background-size</span>: cover;    <span class="comment">/*根据图片比例充满整个背景*/</span></span><br><span class="line">    <span class="attribute">z-index</span>: -<span class="number">2</span>;               <span class="comment">/*高斯背景图片层级最低*/</span></span><br><span class="line">    <span class="attribute">filter</span>: <span class="built_in">blur</span>(100px);       <span class="comment">/*滤镜属性，设置高斯模糊，数值越高越模糊*/</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.mask</span> &#123;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">100%</span>;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">100%</span>;</span><br><span class="line">    <span class="attribute">position</span>: absolute;</span><br><span class="line">    <span class="attribute">top</span>: <span class="number">0</span>;</span><br><span class="line">    <span class="attribute">left</span>: <span class="number">0</span>;</span><br><span class="line">    <span class="attribute">z-index</span>: -<span class="number">1</span>;                             <span class="comment">/*比高斯背景高一层*/</span></span><br><span class="line">    <span class="attribute">background</span>: <span class="built_in">rgba</span>(0, 0, 0, 0.35);         <span class="comment">/*设置灰色蒙版，好看，可避免两边太白*/</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/23/jquery--滚动条插件/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="HJP">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="HJinPeng">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/03/23/jquery--滚动条插件/" itemprop="url">jquery--滚动条插件</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-03-23T00:00:00+08:00">
-                2019-03-23
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/jquery/" itemprop="url" rel="index">
-                    <span itemprop="name">jquery</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h4 id="1-滚动条"><a href="#1-滚动条" class="headerlink" title="1. 滚动条"></a>1. 滚动条</h4><p>设置 <code>overflow: auto</code> ，内容超出区域会出现滚动条</p>
-<h4 id="2-jquery的滚动条插件"><a href="#2-jquery的滚动条插件" class="headerlink" title="2. jquery的滚动条插件"></a>2. jquery的滚动条插件</h4><p>插件地址：<a href="http://manos.malihu.gr/jquery-custom-content-scroller/" target="_blank" rel="noopener">http://manos.malihu.gr/jquery-custom-content-scroller/</a></p>
-<h4 id="3-如何使用"><a href="#3-如何使用" class="headerlink" title="3. 如何使用"></a>3. 如何使用</h4><h6 id="步骤1：下载插件"><a href="#步骤1：下载插件" class="headerlink" title="步骤1：下载插件"></a>步骤1：下载插件</h6><p>官网下载压缩包，可获得文件<code>jquery.mCustomScrollbar.css</code> 和<code>jquery.mCustomScrollbar.concat.min.js</code></p>
-<h6 id="步骤2：-在html中引入"><a href="#步骤2：-在html中引入" class="headerlink" title="步骤2： 在html中引入"></a>步骤2： 在html中引入</h6><p>引入的插件应放在自定义样式或js文件之前，且滚动条的js文件应放在jq之后</p>
-<h6 id="步骤3：在js中添加事件"><a href="#步骤3：在js中添加事件" class="headerlink" title="步骤3：在js中添加事件"></a>步骤3：在js中添加事件</h6><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//0. 自定义滚动条</span></span><br><span class="line">    $(<span class="string">".content_list"</span>).mCustomScrollbar();</span><br></pre></td></tr></table></figure>
-<h6 id="步骤4：修改样式，添加属性"><a href="#步骤4：修改样式，添加属性" class="headerlink" title="步骤4：修改样式，添加属性"></a>步骤4：修改样式，添加属性</h6><p>修改样式：上面插件地址提供了修改默认样式的方法，如：</p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*滚动条宽度设置*/</span></span><br><span class="line"><span class="selector-class">._mCS_1</span> <span class="selector-class">.mCSB_dragger</span> <span class="selector-class">.mCSB_dragger_bar</span> &#123;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">8px</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>添加属性：在滚动窗口设置属性，主题可参阅上面插件链接中的主题名称</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">data-mcs-theme</span>=<span class="string">"minimal-dark"</span>&gt;</span></span><br><span class="line">     <span class="tag">&lt;<span class="name">ul</span>&gt;</span></span><br><span class="line">         <span class="tag">&lt;<span class="name">li</span>&gt;</span>..<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">         <span class="tag">&lt;<span class="name">li</span>&gt;</span>..<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">         <span class="tag">&lt;<span class="name">li</span>&gt;</span>..<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">     <span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br><span class="line"> <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/22/css-user-select/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="HJP">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="HJinPeng">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/03/22/css-user-select/" itemprop="url">css-user-select</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-03-22T00:00:00+08:00">
-                2019-03-22
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/css/" itemprop="url" rel="index">
-                    <span itemprop="name">css</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h4 id="1-介绍"><a href="#1-介绍" class="headerlink" title="1. 介绍"></a>1. 介绍</h4><p>设置或检索是否允许用户选中文本</p>
-<h4 id="2-使用场景"><a href="#2-使用场景" class="headerlink" title="2. 使用场景"></a>2. 使用场景</h4><p>不希望用户可以粘贴文本，如p中的文本，li的文本等等</p>
-<h4 id="3-取值"><a href="#3-取值" class="headerlink" title="3. 取值"></a>3. 取值</h4><p><code>user-select: none</code> 文本不能被选择</p>
-<p><code>user-select: text</code> 可以选择文本，默认为text</p>
-<p><code>user-select: all</code>当所有内容作为一个整体时可以被选择。如果双击或者在上下文上点击子元素，那么被选择的部分将是以该子元素向上回溯的最高祖先元素 </p>
-<p><code>user-select: element</code>可以选择文本，但选择范围受元素边界的约束</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/22/css-设置hover透明度/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="HJP">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="HJinPeng">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/03/22/css-设置hover透明度/" itemprop="url">css-设置hover透明度</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-03-22T00:00:00+08:00">
-                2019-03-22
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/css/" itemprop="url" rel="index">
-                    <span itemprop="name">css</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h4 id="1-使用背景"><a href="#1-使用背景" class="headerlink" title="1. 使用背景"></a>1. 使用背景</h4><p>当鼠标悬浮在元素上时，改变元素的透明度</p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">div</span>&#123;</span><br><span class="line">    <span class="attribute">opacity</span>: <span class="number">0.5</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-tag">div</span><span class="selector-pseudo">:hover</span>&#123;</span><br><span class="line">    <span class="attribute">opacity</span>: <span class="number">1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>注意：通过rgba()最后一个参数设置的颜色透明度，无法使hover中设置的opacity生效</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/22/css-vertical-align/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="HJP">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="HJinPeng">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/03/22/css-vertical-align/" itemprop="url">css-vertical-align</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-03-22T00:00:00+08:00">
-                2019-03-22
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/css/" itemprop="url" rel="index">
-                    <span itemprop="name">css</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h4 id="1-介绍"><a href="#1-介绍" class="headerlink" title="1. 介绍"></a>1. 介绍</h4><p>vertical-align 属性设置元素的垂直对齐方式。</p>
-<p>该属性定义行内元素的基线相对于该元素所在行的基线的垂直对齐。</p>
-<p>允许指定负长度值和百分比值。这会使元素降低而不是升高。</p>
-<p>在表单元格中，这个属性会设置单元格框中的单元格内容的对齐方式。 </p>
-<h4 id="2-代码"><a href="#2-代码" class="headerlink" title="2. 代码"></a>2. 代码</h4><p><code>vertical-align: -5px</code> 向下移动5个像素</p>
+            <h4 id="1-push"><a href="#1-push" class="headerlink" title="1. .push()"></a>1. <code>.push()</code></h4><p>push() 方法可向数组的末尾添加一个或多个元素，并返回新的长度。 </p>
+<h4 id="2-join-separator"><a href="#2-join-separator" class="headerlink" title="2.  .join(separator)"></a>2.  <code>.join(separator)</code></h4><p>join() 方法用于把数组中的所有元素放入一个字符串。</p>
+<p>元素是通过指定的分隔符进行分隔的。</p>
+<p><code>separator</code> : 可选。指定要使用的分隔符。如果省略该参数，则使用逗号作为分隔符。</p>
 
           
         
@@ -1714,7 +1719,7 @@
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/6/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/6/">6</a><span class="page-number current">7</span><a class="page-number" href="/page/8/">8</a><span class="space">&hellip;</span><a class="page-number" href="/page/10/">10</a><a class="extend next" rel="next" href="/page/8/"><i class="fa fa-angle-right"></i></a>
+    <a class="extend prev" rel="prev" href="/page/6/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/6/">6</a><span class="page-number current">7</span><a class="page-number" href="/page/8/">8</a><span class="space">&hellip;</span><a class="page-number" href="/page/11/">11</a><a class="extend next" rel="next" href="/page/8/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 
@@ -1760,7 +1765,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">95</span>
+                  <span class="site-state-item-count">106</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -1771,7 +1776,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">15</span>
+                  <span class="site-state-item-count">16</span>
                   <span class="site-state-item-name">categories</span>
                 </a>
               </div>
@@ -1782,7 +1787,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">20</span>
+                  <span class="site-state-item-count">21</span>
                   <span class="site-state-item-name">tags</span>
                 </a>
               </div>
