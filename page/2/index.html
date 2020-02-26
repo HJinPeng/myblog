@@ -259,6 +259,303 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/05/21/css--盒模型/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="HJP">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="HJinPeng">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/05/21/css--盒模型/" itemprop="url">css--盒模型</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-05-21T18:15:20+08:00">
+                2019-05-21
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/css/" itemprop="url" rel="index">
+                    <span itemprop="name">css</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="盒模型"><a href="#盒模型" class="headerlink" title="盒模型"></a>盒模型</h2><p>标准盒子是：content(width和height)+padding+border+margin</p>
+<h3 id="0-清除margin和padding的默认值"><a href="#0-清除margin和padding的默认值" class="headerlink" title="0. 清除margin和padding的默认值"></a>0. 清除margin和padding的默认值</h3><p>像h标签就有默认的margin值，为了不影响后面的计算，首先要清除所有元素的margin和padding值<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">*&#123;</span><br><span class="line">    <span class="attribute">margin</span>:<span class="number">0</span>;</span><br><span class="line">    <span class="attribute">padding</span>:<span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h3 id="1-width和height"><a href="#1-width和height" class="headerlink" title="1. width和height"></a>1. width和height</h3><p>宽度和高度其实是content的宽高，content外面是padding，border，margin</p>
+<h3 id="2-padding-和-border-撑大容器"><a href="#2-padding-和-border-撑大容器" class="headerlink" title="2. padding 和 border 撑大容器"></a>2. padding 和 border 撑大容器</h3><p>添加 padding 和 border 都会撑大原来的块的大小，为了保证原来的块大小不变，所以要把width（其实就是content的宽和高）减掉padding(border)的左右宽度之和<br>把height减掉padding(border)的上下高度之和</p>
+<h3 id="3-margin"><a href="#3-margin" class="headerlink" title="3. margin"></a>3. margin</h3><ul>
+<li><p>相邻兄弟在垂直方向上的margin值会出现融合的情况，融合后会取两个元素中较大的值作为融合后的值</p>
+</li>
+<li><p>当父元素和第一个子元素都设置了margin-top时，第一个子元素的margin-top值会传递到父元素，然后按最大的值进行设置，解决方法是在父元素上添加<code>overflow:hidden;</code>  </p>
+</li>
+</ul>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"box2"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"box3"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"box4"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.box2</span>&#123;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">300px</span>;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">300px</span>;</span><br><span class="line">    <span class="attribute">background-color</span>: <span class="number">#ff0</span>;</span><br><span class="line">    <span class="attribute">overflow</span>: hidden;</span><br><span class="line">    <span class="attribute">margin-top</span>: <span class="number">50px</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.box3</span>&#123;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">100px</span>;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">100px</span>;</span><br><span class="line">    <span class="attribute">background-color</span>: <span class="number">#00f</span>;</span><br><span class="line">    <span class="attribute">margin-top</span>: <span class="number">70px</span>;     <span class="comment">/*如果没有overflow:hidden会使得box2的margin-top变成70px;而box3距离box2还是0px*/</span> </span><br><span class="line">    <span class="attribute">margin-left</span>: <span class="number">20px</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.box4</span>&#123;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">100px</span>;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">100px</span>;</span><br><span class="line">    <span class="attribute">background-color</span>: <span class="number">#f0f</span>;</span><br><span class="line">    <span class="attribute">margin-top</span>: <span class="number">10px</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/05/21/css--ul-li-的文本溢出和li前面样式/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="HJP">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="HJinPeng">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/05/21/css--ul-li-的文本溢出和li前面样式/" itemprop="url">css--ul li 的文本溢出和li前面样式</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-05-21T18:14:23+08:00">
+                2019-05-21
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/css/" itemprop="url" rel="index">
+                    <span itemprop="name">css</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="使li溢出文本显示…和设置li前面样式"><a href="#使li溢出文本显示…和设置li前面样式" class="headerlink" title="使li溢出文本显示…和设置li前面样式"></a>使li溢出文本显示…和设置li前面样式</h2><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">ul</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span>&gt;</span>优点：浏览器支持好，不容易出现怪问题（目前：大型网站都有使用，如：腾迅，网易，新浪等等）<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span>&gt;</span>优点：浏览器支持好，不容易出现怪问题（目前：大型网站都有使用，如：腾迅，网易，新浪等等）<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span>&gt;</span>优点：浏览器支持好，不容易出现怪问题（目前：大型网站都有使用，如：腾迅，网易，新浪等等）<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">ul</span> <span class="selector-tag">li</span>&#123;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">300px</span>;</span><br><span class="line">    <span class="attribute">white-space</span>: nowrap;</span><br><span class="line">    <span class="attribute">overflow</span>: hidden;      <span class="comment">/*会使li前面的点或者其他样式消失*/</span> </span><br><span class="line">    <span class="attribute">text-overflow</span>: ellipsis;      <span class="comment">/* 显示 ... */</span></span><br><span class="line">    <span class="attribute">background</span>: <span class="built_in">url</span>(../../imgs/ditu.png)  no-repeat left center;    <span class="comment">/*li标签前面的样式一般用背景图的形式*/</span></span><br><span class="line">    <span class="attribute">background-size</span>: <span class="number">5%</span>;</span><br><span class="line">    <span class="attribute">padding-left</span>: <span class="number">20px</span>;</span><br><span class="line">    <span class="attribute">font-size</span>: <span class="number">48px</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="补充"><a href="#补充" class="headerlink" title="补充"></a>补充</h2><p>list-style-position默认值是outside，当li设置了<code>overflow:hidden;</code> 前面的样式会不见<br>当list-style-position的值为inside, 就像是li中放在前面的行内元素，当在不同浏览器下会显示不一样，所以一般使用背景图片来设置li前面的样式</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/05/21/css--文本溢出显示省略号/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
@@ -1427,332 +1724,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/05/04/vue--axios配置/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="HJP">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="HJinPeng">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/05/04/vue--axios配置/" itemprop="url">vue--axios配置</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-05-04T16:09:38+08:00">
-                2019-05-04
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/Vue/" itemprop="url" rel="index">
-                    <span itemprop="name">Vue</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h4 id="1-添加axios插件"><a href="#1-添加axios插件" class="headerlink" title="1. 添加axios插件"></a>1. 添加axios插件</h4><p><code>vue add axios</code></p>
-<h4 id="2-在src-main-js中添加"><a href="#2-在src-main-js中添加" class="headerlink" title="2. 在src/main.js中添加"></a>2. 在src/main.js中添加</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Object</span>.defineProperty(Vue.prototype, <span class="string">'$http'</span>, &#123;</span><br><span class="line">    value: axios</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-<h4 id="3-在根目录新建vue-config-js"><a href="#3-在根目录新建vue-config-js" class="headerlink" title="3. 在根目录新建vue.config.js"></a>3. 在根目录新建vue.config.js</h4> <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">export const devServer = &#123;</span></span><br><span class="line"><span class="comment">    proxy: &#123;</span></span><br><span class="line"><span class="comment">        '/apis': &#123;</span></span><br><span class="line"><span class="comment">            target: 'http://localhost:3000/',</span></span><br><span class="line"><span class="comment">            ws: true,</span></span><br><span class="line"><span class="comment">            changeOrigin: true,</span></span><br><span class="line"><span class="comment">            pathRewrite: &#123;</span></span><br><span class="line"><span class="comment">                '^/apis': ''</span></span><br><span class="line"><span class="comment">            &#125;</span></span><br><span class="line"><span class="comment">        &#125;</span></span><br><span class="line"><span class="comment">    &#125;</span></span><br><span class="line"><span class="comment">&#125;;</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">const</span> devServer = &#123;</span><br><span class="line">    proxy: &#123;</span><br><span class="line">        <span class="string">'/apis'</span>: &#123;</span><br><span class="line">            target: <span class="string">'http://localhost:3000/'</span>,</span><br><span class="line">            ws: <span class="literal">true</span>,</span><br><span class="line">            changeOrigin: <span class="literal">true</span>,</span><br><span class="line">            pathRewrite: &#123;</span><br><span class="line">                <span class="string">'^/apis'</span>: <span class="string">''</span></span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-<h4 id="4-使用"><a href="#4-使用" class="headerlink" title="4. 使用"></a>4. 使用</h4><p> <code>this.$axios.post()</code></p>
-<h4 id="5-重启服务器"><a href="#5-重启服务器" class="headerlink" title="5. 重启服务器"></a>5. 重启服务器</h4><p> <code>npm run serve</code></p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/04/22/json-server/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="HJP">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="HJinPeng">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/04/22/json-server/" itemprop="url">json-server</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-04-22T11:16:34+08:00">
-                2019-04-22
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/json/" itemprop="url" rel="index">
-                    <span itemprop="name">json</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h4 id="1-安装"><a href="#1-安装" class="headerlink" title="1. 安装"></a>1. 安装</h4><p><code>npm install -g json-server</code></p>
-<h4 id="2-任意位置创建一个文件夹：JSONSERVER"><a href="#2-任意位置创建一个文件夹：JSONSERVER" class="headerlink" title="2. 任意位置创建一个文件夹：JSONSERVER"></a>2. 任意位置创建一个文件夹：JSONSERVER</h4><p>键入命令<br><code>npm init</code></p>
-<h4 id="3-输入命令"><a href="#3-输入命令" class="headerlink" title="3. 输入命令"></a>3. 输入命令</h4><p><code>npm install json-server --save</code></p>
-<h4 id="4-修改JSONSERVER中的package-json"><a href="#4-修改JSONSERVER中的package-json" class="headerlink" title="4. 修改JSONSERVER中的package.json"></a>4. 修改JSONSERVER中的package.json</h4><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">"scripts": &#123;</span><br><span class="line">    </span><br><span class="line">"test": "echo \"Error: no test specified\" &amp;&amp; exit 1"</span><br><span class="line">  </span><br><span class="line">&#125;,</span><br></pre></td></tr></table></figure>
-<p>修改为：<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">  "scripts": &#123;</span><br><span class="line">    </span><br><span class="line">"json:server": "json-server --watch db.json"</span><br><span class="line"> </span><br><span class="line"> &#125;,</span><br></pre></td></tr></table></figure></p>
-<h4 id="5-在JSONSERVER下创建文件db-json"><a href="#5-在JSONSERVER下创建文件db-json" class="headerlink" title="5. 在JSONSERVER下创建文件db.json"></a>5. 在JSONSERVER下创建文件db.json</h4><figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="attr">"users"</span>:[</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="attr">"name"</span>:<span class="string">"henrry"</span>,</span><br><span class="line">            <span class="attr">"phone"</span>:<span class="string">"333-44-555"</span>,</span><br><span class="line">            <span class="attr">"email"</span>:<span class="string">"henrry@qq.com"</span>,</span><br><span class="line">            <span class="attr">"id"</span>:<span class="number">1</span>,</span><br><span class="line">            <span class="attr">"age"</span>:<span class="number">30</span>,</span><br><span class="line">            <span class="attr">"companyId"</span>:<span class="number">1</span></span><br><span class="line">        &#125;,</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="attr">"name"</span>:<span class="string">"garry"</span>,</span><br><span class="line">            <span class="attr">"phone"</span>:<span class="string">"333-44-555"</span>,</span><br><span class="line">            <span class="attr">"email"</span>:<span class="string">"garry@qq.com"</span>,</span><br><span class="line">            <span class="attr">"id"</span>:<span class="number">2</span>,</span><br><span class="line">            <span class="attr">"age"</span>:<span class="number">30</span>,</span><br><span class="line">            <span class="attr">"companyId"</span>:<span class="number">2</span></span><br><span class="line">        &#125;,</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="attr">"name"</span>:<span class="string">"wenli"</span>,</span><br><span class="line">            <span class="attr">"phone"</span>:<span class="string">"333-44-555"</span>,</span><br><span class="line">            <span class="attr">"email"</span>:<span class="string">"wenli@qq.com"</span>,</span><br><span class="line">            <span class="attr">"id"</span>:<span class="number">3</span>,</span><br><span class="line">            <span class="attr">"age"</span>:<span class="number">30</span>,</span><br><span class="line">            <span class="attr">"companyId"</span>:<span class="number">3</span></span><br><span class="line">        &#125;,</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="attr">"name"</span>:<span class="string">"lali"</span>,</span><br><span class="line">            <span class="attr">"phone"</span>:<span class="string">"333-44-555"</span>,</span><br><span class="line">            <span class="attr">"email"</span>:<span class="string">"lali@qq.com"</span>,</span><br><span class="line">            <span class="attr">"id"</span>:<span class="number">4</span>,</span><br><span class="line">            <span class="attr">"age"</span>:<span class="number">30</span>,</span><br><span class="line">            <span class="attr">"companyId"</span>:<span class="number">3</span></span><br><span class="line">        &#125;</span><br><span class="line">    ],</span><br><span class="line">    <span class="attr">"companies"</span>:[</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="attr">"id"</span>:<span class="number">1</span>,</span><br><span class="line">            <span class="attr">"name"</span>:<span class="string">"APPLE"</span>,</span><br><span class="line">            <span class="attr">"description"</span>:<span class="string">"apple is gui!"</span></span><br><span class="line">        &#125;,</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="attr">"id"</span>:<span class="number">2</span>,</span><br><span class="line">            <span class="attr">"name"</span>:<span class="string">"Microsoft"</span>,</span><br><span class="line">            <span class="attr">"description"</span>:<span class="string">"Microsoft is cheap!"</span></span><br><span class="line">        &#125;,</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="attr">"id"</span>:<span class="number">3</span>,</span><br><span class="line">            <span class="attr">"name"</span>:<span class="string">"GOOGLE"</span>,</span><br><span class="line">            <span class="attr">"description"</span>:<span class="string">"GOOGLE is good!"</span></span><br><span class="line">        &#125;</span><br><span class="line">    ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h4 id="6-键入命令"><a href="#6-键入命令" class="headerlink" title="6. 键入命令"></a>6. 键入命令</h4><p><code>npm run json:server</code></p>
-<h4 id="7-打开连接"><a href="#7-打开连接" class="headerlink" title="7. 打开连接"></a>7. 打开连接</h4><p><code>localhost:3000</code></p>
-<h4 id="8-使用"><a href="#8-使用" class="headerlink" title="8. 使用"></a>8. 使用</h4><ul>
-<li><p>获取所有用户信息：<br><a href="http://localhost:3000/users" target="_blank" rel="noopener">http://localhost:3000/users</a></p>
-</li>
-<li><p>获取id为1的用户信息：<br><a href="http://localhost:3000/users/1" target="_blank" rel="noopener">http://localhost:3000/users/1</a></p>
-</li>
-<li><p>获取公司的所有信息<br><a href="http://localhost:3000/companies" target="_blank" rel="noopener">http://localhost:3000/companies</a></p>
-</li>
-<li><p>获取公司id为1的信息<br><a href="http://localhost:3000/companies/1" target="_blank" rel="noopener">http://localhost:3000/companies/1</a></p>
-</li>
-<li><p>获取所有公司id为3的用户信息<br><a href="http://localhost:3000/companies/3/users" target="_blank" rel="noopener">http://localhost:3000/companies/3/users</a></p>
-</li>
-<li><p>根据公司名字获取公司信息<br><a href="http://localhost:3000/companies?name=Microsoft" target="_blank" rel="noopener">http://localhost:3000/companies?name=Microsoft</a></p>
-</li>
-<li><p>根据多个公司名字获取公司信息<br><a href="http://localhost:3000/companies?name=Microsoft&amp;name=APPLE" target="_blank" rel="noopener">http://localhost:3000/companies?name=Microsoft&amp;name=APPLE</a></p>
-</li>
-<li><p>获取一页中只有两条数据<br><a href="http://localhost:3000/companies?_page=1&amp;_limit=2" target="_blank" rel="noopener">http://localhost:3000/companies?_page=1&amp;_limit=2</a></p>
-</li>
-<li><p>升序asc  降序desc<br><a href="http://localhost:3000/companies?_sort=id&amp;_order=desc" target="_blank" rel="noopener">http://localhost:3000/companies?_sort=id&amp;_order=desc</a></p>
-</li>
-<li><p>获取年龄30及30以上的用户信息<br><a href="http://localhost:3000/users?age_gte=30" target="_blank" rel="noopener">http://localhost:3000/users?age_gte=30</a></p>
-</li>
-<li><p>获取年龄在30-40的用户信息<br><a href="http://localhost:3000/users?age_gte=30&amp;age_lte=40" target="_blank" rel="noopener">http://localhost:3000/users?age_gte=30&amp;age_lte=40</a></p>
-</li>
-<li><p>根据搜索信息找<br><a href="http://localhost:3000/users?q=wen" target="_blank" rel="noopener">http://localhost:3000/users?q=wen</a></p>
-</li>
-</ul>
-<h4 id="9-通过postman进行post，delete，patch"><a href="#9-通过postman进行post，delete，patch" class="headerlink" title="9.通过postman进行post，delete，patch"></a>9.通过postman进行post，delete，patch</h4><p>设置请求头：Headers<br><code>key: Content-Type</code><br><code>value:application/json</code></p>
-<p>设置Body,内容<br>添加地址：     <a href="http://localhost:3000/users" target="_blank" rel="noopener">http://localhost:3000/users</a><br>body内容：<br>{“name”:”hjp”,”age”:18,”gender”:”male”}<br>删除地址：    <a href="http://localhost:3000/users/id" target="_blank" rel="noopener">http://localhost:3000/users/id</a><br>修改地址:      <a href="http://localhost:3000/users/id" target="_blank" rel="noopener">http://localhost:3000/users/id</a><br>{“name”:”whj”}</p>
-<h4 id="10-拉取jsonplaceholder的资源"><a href="#10-拉取jsonplaceholder的资源" class="headerlink" title="10. 拉取jsonplaceholder的资源"></a>10. 拉取jsonplaceholder的资源</h4><p>在package.json中<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">"scripts": &#123;</span><br><span class="line">    "json:server": "json-server --watch db.json",</span><br><span class="line">    "json:server:remote":"json-server http://jsonplaceholder.typicode.com/db"</span><br><span class="line">  &#125;,</span><br></pre></td></tr></table></figure></p>
-<p>启动服务：<br><code>npm run json:server:remote</code></p>
-<h4 id="链接"><a href="#链接" class="headerlink" title="链接"></a>链接</h4><p><a href="https://github.com/typicode/json-server" target="_blank" rel="noopener">github地址</a><br><a href="http://jsonplaceholder.typicode.com/" target="_blank" rel="noopener">jsonplaceholder</a></p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -1803,7 +1774,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">106</span>
+                  <span class="site-state-item-count">108</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -1862,7 +1833,7 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2020</span>
   <span class="with-love">
     <i class="fa fa-user"></i>
   </span>

@@ -259,6 +259,313 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/29/HTTP--cookie/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="HJP">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="HJinPeng">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/03/29/HTTP--cookie/" itemprop="url">HTTP--cookie</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-03-29T18:29:49+08:00">
+                2019-03-29
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/HTTP/" itemprop="url" rel="index">
+                    <span itemprop="name">HTTP</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h4 id="1-什么是cookie？"><a href="#1-什么是cookie？" class="headerlink" title="1. 什么是cookie？"></a>1. 什么是cookie？</h4><p>cookie是会话跟踪技术，是用在客户端的<br>session也是会话跟踪技术，但是是用在服务器端的</p>
+<h4 id="2-cookie有什么作用？"><a href="#2-cookie有什么作用？" class="headerlink" title="2. cookie有什么作用？"></a>2. cookie有什么作用？</h4><p>cookie可以将网页的数据保存在浏览器本地</p>
+<h4 id="3-cookie的生命周期"><a href="#3-cookie的生命周期" class="headerlink" title="3. cookie的生命周期"></a>3. cookie的生命周期</h4><p>默认情况下，cookie是属于一次会话（即浏览器关闭就消失），但是可以通过设置<code>expires = 过期时间</code> 设置过期时间</p>
+<h4 id="4-注意点"><a href="#4-注意点" class="headerlink" title="4. 注意点"></a>4. 注意点</h4><ol>
+<li>cookie默认不会保存任何数据</li>
+<li>cookie不能一次性设置多条数据，要想保存多条数据，只能一条一条的设置</li>
+<li>cookie有大小限制： 4kb左右，小于4KB</li>
+<li>cookie有个数限制： 20~50</li>
+</ol>
+<h4 id="5-cookie的作用范围"><a href="#5-cookie的作用范围" class="headerlink" title="5. cookie的作用范围"></a>5. cookie的作用范围</h4><p>同一个浏览器下的同一个路径。<br>如果在同一个浏览器下，路径的下级也可以访问cookie，而上级路径不可以访问到cookie，但可设置path使整个网站都能访问到cookie</p>
+<p>如：<br><code>http://localhost:8081/php_learn/cookie.html</code><br><code>http://localhost:8081/php_learn/cookie2.html</code><br>是属于同一浏览器下的同一路径，路径都是<code>http://localhost:8081/php_learn/</code><br>而<code>http://localhost:8081/php_learn/test/index.html</code><br>也可以访问到cookie。</p>
+<h5 id="设置cookie路径"><a href="#设置cookie路径" class="headerlink" title="设置cookie路径"></a>设置cookie路径</h5><p><code>document.cookie = &quot;name = 123; path:/; domain=hjinpeng.top&quot;;</code><br>设置了cookie在根目录下，根目录下的所有文件都可以访问到cookie，并且在一级域名相同情况下，二级域名也可以访问到cookie</p>
+<h4 id="6-通过浏览器查看网站的cookie"><a href="#6-通过浏览器查看网站的cookie" class="headerlink" title="6. 通过浏览器查看网站的cookie"></a>6. 通过浏览器查看网站的cookie</h4><ol>
+<li>F12进入控制台</li>
+<li>切换到Application</li>
+<li>找到Storage下的Cookies<br>如图所示：<br><img src="https://i.loli.net/2019/03/29/5c9df66c9f8da.png" alt=""></li>
+</ol>
+<h4 id="7-代码"><a href="#7-代码" class="headerlink" title="7. 代码"></a>7. 代码</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">window</span>.onload = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="comment">//获取当前时间</span></span><br><span class="line">    <span class="keyword">var</span> date = <span class="keyword">new</span> <span class="built_in">Date</span>();</span><br><span class="line">    <span class="comment">//设置date保存时间为明天</span></span><br><span class="line">    date.setDate(date.getDate() + <span class="number">1</span>);</span><br><span class="line">    <span class="comment">//通过document.cookie设置</span></span><br><span class="line">    <span class="built_in">document</span>.cookie = <span class="string">"age = 21;expires="</span> + date.toGMTString() + <span class="string">";"</span>;</span><br><span class="line">    alert(<span class="built_in">document</span>.cookie);</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/29/hexo--hexoEditor编辑器/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="HJP">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="HJinPeng">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/03/29/hexo--hexoEditor编辑器/" itemprop="url">hexo--hexoEditor编辑器</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-03-29T11:13:29+08:00">
+                2019-03-29
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/hexo/" itemprop="url" rel="index">
+                    <span itemprop="name">hexo</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h4 id="1-开源项目下载地址"><a href="#1-开源项目下载地址" class="headerlink" title="1. 开源项目下载地址"></a>1. 开源项目下载地址</h4><p><a href="https://github.com/zhuzhuyule/HexoEditor" target="_blank" rel="noopener">开源项目下载地址</a></p>
+<h4 id="2-上传图片"><a href="#2-上传图片" class="headerlink" title="2. 上传图片"></a>2. 上传图片</h4><ol>
+<li>截图</li>
+<li>右键点击粘贴</li>
+<li>上传图床<br><img src="https://i.loli.net/2019/03/29/5c9d93a42ef3a.png" alt=""></li>
+</ol>
+<h4 id="3-同步文件名，一键部署"><a href="#3-同步文件名，一键部署" class="headerlink" title="3. 同步文件名，一键部署"></a>3. 同步文件名，一键部署</h4><p><img src="https://i.loli.net/2019/03/29/5c9d93a4361e8.png" alt=""></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/28/js--通过eval()将非标准的JSON字符串转换为标准的JSON字符串/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
@@ -1149,298 +1456,6 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/27/js--ajax-get封装/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="HJP">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="HJinPeng">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/03/27/js--ajax-get封装/" itemprop="url">js--ajax-get封装</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-03-27T00:00:00+08:00">
-                2019-03-27
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/JavaScript/" itemprop="url" rel="index">
-                    <span itemprop="name">JavaScript</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h4 id="1-ajax-get封装"><a href="#1-ajax-get封装" class="headerlink" title="1.  ajax-get封装"></a>1.  ajax-get封装</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">window</span>.onload = <span class="function"><span class="keyword">function</span>(<span class="params">ev</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> btn = <span class="built_in">document</span>.querySelector(<span class="string">"button"</span>);</span><br><span class="line">    btn.onclick = <span class="function"><span class="keyword">function</span>(<span class="params">ev1</span>) </span>&#123;</span><br><span class="line">        ajax(<span class="string">"ajax-get.php"</span>, &#123;</span><br><span class="line">            <span class="string">"userName"</span>: <span class="string">"HJP"</span>,</span><br><span class="line">            <span class="string">"password"</span>: <span class="string">"123456"</span></span><br><span class="line">        &#125;, <span class="number">3000</span>, <span class="function"><span class="keyword">function</span>(<span class="params">xhr</span>) </span>&#123;</span><br><span class="line">            alert(xhr.responseText);</span><br><span class="line">        &#125;, <span class="function"><span class="keyword">function</span>(<span class="params">xhr</span>) </span>&#123;</span><br><span class="line">            alert(<span class="string">"error"</span>);</span><br><span class="line">        &#125;);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-<p>封装了ajax，传入参数为：地址，对象（json对象），超时时间，成功回调函数，失败回调函数</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//对传入的json对象进行格式化处理为url中的数据格式</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">obj2str</span>(<span class="params">obj</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> res = [];</span><br><span class="line">    <span class="comment">//给传进来的obj对象加一个t属性，可以让每次请求地址都不一样，兼容ie的缓存问题</span></span><br><span class="line">    obj.t = <span class="keyword">new</span> <span class="built_in">Date</span>().getTime();     </span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">var</span> key <span class="keyword">in</span> obj) &#123;</span><br><span class="line">        <span class="comment">//在url中不可出现中文，只可以出现字母/数字/下划线/ASCII</span></span><br><span class="line">        <span class="comment">//调用encodeURIComponent将中文转化为其他字符</span></span><br><span class="line">        res.push(<span class="built_in">encodeURIComponent</span>(key) + <span class="string">"="</span> + <span class="built_in">encodeURIComponent</span>(obj[key])); <span class="comment">// [userName=HJP,password=123456,t=1231654613156]</span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> res.join(<span class="string">"&amp;"</span>); <span class="comment">//userName=HJP&amp;password=123456&amp;t=1321456132321321</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">ajax</span>(<span class="params">url, obj, timeout, success, error</span>) </span>&#123;</span><br><span class="line">    <span class="comment">// 0. 将对象转换为字符串</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">var</span> str = obj2str(obj); <span class="comment">//key=value&amp;key=value</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">// 1. 创建一个异步对象</span></span><br><span class="line">    <span class="keyword">var</span> xmlhttp, timer;</span><br><span class="line">    <span class="keyword">if</span> (<span class="built_in">window</span>.XMLHttpRequest) &#123; <span class="comment">// code for IE7+, Firefox, Chrome, Opera, Safari</span></span><br><span class="line">        xmlhttp = <span class="keyword">new</span> XMLHttpRequest();</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123; <span class="comment">// code for IE6, IE5</span></span><br><span class="line">        xmlhttp = <span class="keyword">new</span> ActiveXObject(<span class="string">"Microsoft.XMLHTTP"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// 2. 设置请求方式和请求地址</span></span><br><span class="line">    <span class="comment">/*</span></span><br><span class="line"><span class="comment">    method：请求的类型；GET 或 POST</span></span><br><span class="line"><span class="comment">    url：文件在服务器上的位置</span></span><br><span class="line"><span class="comment">    async：true（异步）或 false（同步）</span></span><br><span class="line"><span class="comment">    */</span></span><br><span class="line">    xmlhttp.open(<span class="string">"GET"</span>, url + <span class="string">"?"</span> + str, <span class="literal">true</span>);</span><br><span class="line">    <span class="comment">// 3. 发送请求</span></span><br><span class="line">    xmlhttp.send();</span><br><span class="line">    <span class="comment">// 4. 监听状态的变化</span></span><br><span class="line">    xmlhttp.onreadystatechange = <span class="function"><span class="keyword">function</span>(<span class="params">ev2</span>) </span>&#123;</span><br><span class="line">        <span class="comment">/*</span></span><br><span class="line"><span class="comment">        0: 请求未初始化</span></span><br><span class="line"><span class="comment">        1: 服务器连接已建立</span></span><br><span class="line"><span class="comment">        2: 请求已接收</span></span><br><span class="line"><span class="comment">        3: 请求处理中</span></span><br><span class="line"><span class="comment">        4: 请求已完成，且响应已就绪</span></span><br><span class="line"><span class="comment">        */</span></span><br><span class="line">        <span class="keyword">if</span> (xmlhttp.readyState === <span class="number">4</span>) &#123;</span><br><span class="line">            clearInterval(timer);    <span class="comment">//当请求完成时，删除定时器</span></span><br><span class="line">            <span class="comment">//判断是否请求成功</span></span><br><span class="line">            <span class="keyword">if</span> (xmlhttp.status &gt;= <span class="number">200</span> &amp;&amp; xmlhttp.status &lt;= <span class="number">300</span> || xmlhttp.status === <span class="number">304</span>) &#123;</span><br><span class="line">                <span class="comment">// 5. 处理返回的结果</span></span><br><span class="line">                success(xmlhttp);</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                error(xmlhttp);</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 判断外界是否传入了超时时间</span></span><br><span class="line">    <span class="keyword">if</span> (timeout) &#123;</span><br><span class="line">        <span class="comment">//创建定时器，第一个是超过第二个参数的时间就执行的回调函数，第二个是时间</span></span><br><span class="line">        timer = setInterval(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">            xmlhttp.abort(); <span class="comment">//中断请求</span></span><br><span class="line">            clearInterval(timer); <span class="comment">//删除定时器</span></span><br><span class="line">        &#125;, timeout);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>在url中不可出现中文，只可以出现字母/数字/下划线/ASCII<br>调用encodeURIComponent将中文转化为其他字符</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/27/php--GET,POST/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="HJP">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="HJinPeng">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/03/27/php--GET,POST/" itemprop="url">php--GET,POST</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-03-27T00:00:00+08:00">
-                2019-03-27
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/php/" itemprop="url" rel="index">
-                    <span itemprop="name">php</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h4 id="1-GET请求"><a href="#1-GET请求" class="headerlink" title="1. GET请求"></a>1. GET请求</h4><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">form</span> <span class="attr">action</span>=<span class="string">"get.php"</span> <span class="attr">method</span>=<span class="string">"GET"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">name</span>=<span class="string">"username"</span>&gt;</span><span class="tag">&lt;<span class="name">br</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"password"</span> <span class="attr">name</span>=<span class="string">"password"</span>&gt;</span><span class="tag">&lt;<span class="name">br</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"submit"</span> <span class="attr">value</span>=<span class="string">"提交"</span>&gt;</span><span class="tag">&lt;<span class="name">br</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">form</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line">print_r($_GET);</span><br><span class="line"><span class="keyword">echo</span> <span class="string">"&lt;br&gt;"</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">echo</span> $_GET[<span class="string">"username"</span>];</span><br><span class="line"><span class="keyword">echo</span> <span class="string">"&lt;br&gt;"</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">echo</span> $_GET[<span class="string">"password"</span>];</span><br><span class="line"><span class="keyword">echo</span> <span class="string">"&lt;br&gt;"</span>;</span><br><span class="line"></span><br><span class="line"><span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure>
-<h4 id="2-POST请求"><a href="#2-POST请求" class="headerlink" title="2. POST请求"></a>2. POST请求</h4><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">form</span> <span class="attr">action</span>=<span class="string">"post.php"</span> <span class="attr">method</span>=<span class="string">"POST"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">name</span>=<span class="string">"username"</span>&gt;</span><span class="tag">&lt;<span class="name">br</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"password"</span> <span class="attr">name</span>=<span class="string">"password"</span>&gt;</span><span class="tag">&lt;<span class="name">br</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"submit"</span> <span class="attr">value</span>=<span class="string">"提交"</span>&gt;</span><span class="tag">&lt;<span class="name">br</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">form</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line">print_r($_POST);</span><br><span class="line"><span class="keyword">echo</span> <span class="string">"&lt;br&gt;"</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">echo</span> $_POST[<span class="string">"username"</span>];</span><br><span class="line"><span class="keyword">echo</span> <span class="string">"&lt;br&gt;"</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">echo</span> $_POST[<span class="string">"password"</span>];</span><br><span class="line"><span class="keyword">echo</span> <span class="string">"&lt;br&gt;"</span>;</span><br><span class="line"></span><br><span class="line"><span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure>
-<h4 id="3-POST-文件上传"><a href="#3-POST-文件上传" class="headerlink" title="3. POST-文件上传"></a>3. POST-文件上传</h4><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- enctype="multipart/form-data" php上传文件要添加该属性 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">form</span> <span class="attr">action</span>=<span class="string">"post_file.php"</span> <span class="attr">method</span>=<span class="string">"POST"</span> <span class="attr">enctype</span>=<span class="string">"multipart/form-data"</span>&gt;</span></span><br><span class="line">     <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"file"</span> <span class="attr">name</span>=<span class="string">"upfile"</span>&gt;</span></span><br><span class="line">     <span class="tag">&lt;<span class="name">br</span>&gt;</span></span><br><span class="line">     <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"submit"</span> <span class="attr">value</span>=<span class="string">"上传"</span>&gt;</span></span><br><span class="line">     <span class="tag">&lt;<span class="name">br</span>&gt;</span></span><br><span class="line"> <span class="tag">&lt;/<span class="name">form</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line">    <span class="comment">// print_r($_FILES);</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">//1. 获取上传文件对应的字典</span></span><br><span class="line">    $fileInfo = $_FILES[<span class="string">"upfile"</span>];</span><br><span class="line">    <span class="comment">//2. 获取上传文件的名称</span></span><br><span class="line">    $fileName = $fileInfo[<span class="string">"name"</span>];</span><br><span class="line">    <span class="comment">//2. 获取上传文件保存的临时路径</span></span><br><span class="line">    $filePath = $fileInfo[<span class="string">"tmp_name"</span>];</span><br><span class="line">    <span class="comment">// echo $fileName;</span></span><br><span class="line">    <span class="comment">// echo "&lt;br&gt;";</span></span><br><span class="line">    <span class="comment">// echo $filePath;</span></span><br><span class="line">    <span class="comment">// move_uploaded_file(旧路径,新路径); php的连接不是通过+,而是通过.</span></span><br><span class="line">    move_uploaded_file($filePath,<span class="string">"./source/"</span>.$fileName);</span><br><span class="line"><span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/27/php--基本语法/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
@@ -1765,7 +1780,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">106</span>
+                  <span class="site-state-item-count">108</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -1824,7 +1839,7 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2020</span>
   <span class="with-love">
     <i class="fa fa-user"></i>
   </span>
