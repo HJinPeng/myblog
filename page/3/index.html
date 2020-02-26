@@ -259,6 +259,160 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/05/05/vue--刷新当前页/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="HJP">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="HJinPeng">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/05/05/vue--刷新当前页/" itemprop="url">vue--刷新当前页</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-05-05T21:41:09+08:00">
+                2019-05-05
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/Vue/" itemprop="url" rel="index">
+                    <span itemprop="name">Vue</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h4 id="方法1："><a href="#方法1：" class="headerlink" title="方法1："></a>方法1：</h4><p><code>window.location.href window.location.replace() window.location.reload()</code><br>会出现空白</p>
+<h4 id="方法2："><a href="#方法2：" class="headerlink" title="方法2："></a>方法2：</h4><p>先进入一个空路由，再返回，刷新后点击浏览器的前进按钮会出现空白页<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">reflashPage()&#123;</span><br><span class="line">    <span class="keyword">let</span> NewPage = <span class="string">'_empty'</span> + <span class="string">'?time='</span> + <span class="keyword">new</span> <span class="built_in">Date</span>().getTime()/<span class="number">500</span>;</span><br><span class="line">    <span class="keyword">this</span>.$router.push(NewPage);</span><br><span class="line">    <span class="keyword">this</span>.$router.go(<span class="number">-1</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h4 id="方法3："><a href="#方法3：" class="headerlink" title="方法3："></a>方法3：</h4><p>使用<code>provide</code> 和<code>inject</code></p>
+<ol>
+<li><p>在父组件中App.vue</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"app"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">router-view</span> <span class="attr">v-if</span>=<span class="string">"isRouterAlive"</span>&gt;</span><span class="tag">&lt;/<span class="name">router-view</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="javascript"><span class="keyword">export</span> <span class="keyword">default</span> &#123;</span></span><br><span class="line"><span class="javascript">  name: <span class="string">'App'</span>,</span></span><br><span class="line"><span class="undefined">  provide()&#123;</span></span><br><span class="line"><span class="javascript">    <span class="keyword">return</span>&#123;</span></span><br><span class="line"><span class="javascript">      reload:<span class="keyword">this</span>.reload</span></span><br><span class="line"><span class="undefined">    &#125;</span></span><br><span class="line"><span class="undefined">  &#125;,</span></span><br><span class="line"><span class="undefined">  data()&#123;</span></span><br><span class="line"><span class="javascript">    <span class="keyword">return</span>&#123;</span></span><br><span class="line"><span class="javascript">      isRouterAlive:<span class="literal">true</span></span></span><br><span class="line"><span class="undefined">    &#125;</span></span><br><span class="line"><span class="undefined">  &#125;,</span></span><br><span class="line"><span class="undefined">  methods:&#123;</span></span><br><span class="line"><span class="undefined">    reload()&#123;</span></span><br><span class="line"><span class="javascript">      <span class="keyword">this</span>.isRouterAlive = <span class="literal">false</span>;</span></span><br><span class="line"><span class="javascript">      <span class="keyword">this</span>.$nextTick(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span></span><br><span class="line"><span class="javascript">        <span class="keyword">this</span>.isRouterAlive = <span class="literal">true</span>;</span></span><br><span class="line"><span class="undefined">      &#125;)</span></span><br><span class="line"><span class="undefined">    &#125;</span></span><br><span class="line"><span class="undefined">  &#125;</span></span><br><span class="line"><span class="undefined">&#125;</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>在需要刷新的页面：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> &#123;</span><br><span class="line">    inject:[<span class="string">'reload'</span>],</span><br><span class="line">    data () &#123;</span><br><span class="line">        <span class="keyword">return</span> &#123;</span><br><span class="line">        ...</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;,</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>刷新的方法：<br><code>this.reload();</code></p>
+</li>
+</ol>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/05/04/vue--axios配置/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
@@ -1576,149 +1730,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/04/12/es6--新增语法糖class/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="HJP">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="HJinPeng">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/04/12/es6--新增语法糖class/" itemprop="url">es6--新增语法糖class</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-04-12T11:07:29+08:00">
-                2019-04-12
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/ES6/" itemprop="url" rel="index">
-                    <span itemprop="name">ES6</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h4 id="新增语法糖class"><a href="#新增语法糖class" class="headerlink" title="新增语法糖class"></a>新增语法糖class</h4><h5 id="0-构造函数"><a href="#0-构造函数" class="headerlink" title="0. 构造函数"></a>0. 构造函数</h5><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span>(<span class="params">name,age</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.name = name ;</span><br><span class="line">    <span class="keyword">this</span>.age = age ;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">Person.prototype = &#123;</span><br><span class="line">    <span class="keyword">constructor</span>: Person,</span><br><span class="line">    print()&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">'my name is '</span> + name + <span class="string">',my age is '</span> + age);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> xm = <span class="keyword">new</span> Person(<span class="string">'xiaoming'</span>,<span class="number">18</span>);</span><br><span class="line"><span class="built_in">console</span>.log(xm);</span><br></pre></td></tr></table></figure>
-<h5 id="1-通过class面向对象"><a href="#1-通过class面向对象" class="headerlink" title="1. 通过class面向对象"></a>1. 通过class面向对象</h5><p>底层是上面的方法实现的<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Person</span></span>&#123;</span><br><span class="line">    <span class="keyword">constructor</span>(name, age)&#123;</span><br><span class="line">        <span class="keyword">this</span>.name = name ;</span><br><span class="line">        <span class="keyword">this</span>.age = age;</span><br><span class="line">    &#125;</span><br><span class="line">    print()&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">'my name is '</span> + <span class="keyword">this</span>.name + <span class="string">',my age is '</span> + <span class="keyword">this</span>.age);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> xm = <span class="keyword">new</span> Person(<span class="string">'xiaoming'</span>,<span class="number">18</span>);</span><br><span class="line"><span class="built_in">console</span>.log(xm);</span><br><span class="line">xm.print();</span><br></pre></td></tr></table></figure></p>
-<h5 id="2-继承"><a href="#2-继承" class="headerlink" title="2. 继承"></a>2. 继承</h5><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Person</span></span>&#123;</span><br><span class="line">    <span class="keyword">constructor</span>(name, age)&#123;</span><br><span class="line">        <span class="keyword">this</span>.name = name ;</span><br><span class="line">        <span class="keyword">this</span>.age = age;</span><br><span class="line">    &#125;</span><br><span class="line">    print()&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">'my name is '</span> + <span class="keyword">this</span>.name + <span class="string">',my age is '</span> + <span class="keyword">this</span>.age);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// let xm = new Person('xiaoming',18);</span></span><br><span class="line"><span class="comment">// console.log(xm);</span></span><br><span class="line"><span class="comment">// xm.print();</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">children</span> <span class="keyword">extends</span> <span class="title">Person</span></span>&#123;</span><br><span class="line">    <span class="keyword">constructor</span>(name,age,height,gender)&#123;</span><br><span class="line">        <span class="keyword">super</span>(name,age);   <span class="comment">//传给父类的属性</span></span><br><span class="line">        <span class="keyword">this</span>.height = height;</span><br><span class="line">        <span class="keyword">this</span>.gender = gender;</span><br><span class="line">    &#125;</span><br><span class="line">    say()&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">'my height is '</span>+<span class="keyword">this</span>.height);</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">'I am a '</span>+ <span class="keyword">this</span>.gender);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> wangwu = <span class="keyword">new</span> children(<span class="string">'wangwu'</span>,<span class="number">20</span>,<span class="number">175</span>,<span class="string">'boy'</span>);</span><br><span class="line">wangwu.print();</span><br><span class="line">wangwu.say();</span><br></pre></td></tr></table></figure>
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -1769,7 +1780,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">108</span>
+                  <span class="site-state-item-count">109</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -1780,7 +1791,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">16</span>
+                  <span class="site-state-item-count">17</span>
                   <span class="site-state-item-name">categories</span>
                 </a>
               </div>
@@ -1791,7 +1802,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">21</span>
+                  <span class="site-state-item-count">22</span>
                   <span class="site-state-item-name">tags</span>
                 </a>
               </div>

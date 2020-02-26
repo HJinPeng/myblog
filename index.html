@@ -259,6 +259,176 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/10/23/计网--TCP,UDP/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="HJP">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="HJinPeng">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/10/23/计网--TCP,UDP/" itemprop="url">计网--TCP,UDP</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-10-23T21:36:07+08:00">
+                2019-10-23
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/计网/" itemprop="url" rel="index">
+                    <span itemprop="name">计网</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h4 id="1-OSI-7层模型，TCP-IP-5层模型"><a href="#1-OSI-7层模型，TCP-IP-5层模型" class="headerlink" title="1. OSI 7层模型，TCP/IP 5层模型"></a>1. OSI 7层模型，TCP/IP 5层模型</h4><p>OSI 7 层模型：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">// 由低向上</span><br><span class="line">应用层</span><br><span class="line">表示层</span><br><span class="line">会话层</span><br><span class="line"></span><br><span class="line">传输层（TCP、UDP协议：提供“面向连接”和“面向无接连”的两种服务。）</span><br><span class="line">网络层（路由器：通过路由选择算法，为报文或分组通过通信子网选择最适当的路径。）</span><br><span class="line">数据链路层（网桥，交换机：通过差错控制、流量控制方法，使有差错的物理线路变为无差错的数据链路，即提供可靠的通过物理介质传输数据的方法）</span><br><span class="line">物理层（网卡，网线，集线器，中继器，调制解调器：利用传输介质为数据链路层提供物理连接，实现比特流的透明传输。）</span><br></pre></td></tr></table></figure></p>
+<p>TCP/IP 5层模型：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">第五层：应用层（DNS、FTP、TELNET）</span><br><span class="line">第四层：传输层（TCP、UDP）</span><br><span class="line">第三层：网络层 （ICMP、IP）</span><br><span class="line">第二层：数据链路层</span><br><span class="line">第一层：物理层</span><br></pre></td></tr></table></figure></p>
+<h4 id="2-TCP和UDF的区别"><a href="#2-TCP和UDF的区别" class="headerlink" title="2. TCP和UDF的区别"></a>2. TCP和UDF的区别</h4><p><strong>相同点：</strong><br>TCP和UDP都是传输层协议。  </p>
+<ul>
+<li>TCP是<strong>面向连接</strong>，<strong>可靠</strong>的字节流服务。能提供超时重发，丢弃重复数据，检验数据，流量控制等功能，保证数据能从一端到另一端。  </li>
+<li>UDP是<strong>面向数据报</strong>的<strong>不可靠</strong>运输层协议。它只是把数据报发送出去，但是不能保证它们能到达目的地，由于UDP在传输数据报前不用再客户端和服务器端之间建立一个连接，且没有超时重发等机制，所以传输很快。    </li>
+</ul>
+<p><strong>不同点：</strong>    </p>
+<ol>
+<li>报头不同</li>
+<li>特点不同</li>
+<li>协议不同  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">1. 报头</span><br><span class="line">2. 特点</span><br><span class="line">    1. TCP:面向连接：三次握手、四次挥手；</span><br><span class="line">       UDP:无连接</span><br><span class="line">    2. TCP可靠传输：确认应答、超时重传、拥塞控制；</span><br><span class="line">       UDP不可靠。</span><br><span class="line">    3. TCP面向字节流</span><br><span class="line">       UDP面向数据报</span><br><span class="line">    4. TCP有粘包问题要解决</span><br><span class="line">       UDP不粘包</span><br><span class="line">3. 协议</span><br><span class="line">    1. TCP:HTTP、HTTPS、SSH、TELNET、FTP、SMTP；</span><br><span class="line">       UDP:NFS、TFTP、DHCP、DNS</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h4 id="3-TCP三次握手、四次挥手"><a href="#3-TCP三次握手、四次挥手" class="headerlink" title="3. TCP三次握手、四次挥手"></a>3. TCP三次握手、四次挥手</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">6位标志位:</span><br><span class="line">    1. URG: 紧急指针是否有效</span><br><span class="line">    2. ACK：确认号是否有效</span><br><span class="line">    3. PSH：提示接收端应用程序立刻从TCP缓冲区把数据读走</span><br><span class="line">    4. RST：对方要求重新建立连接</span><br><span class="line">    5. SYN：请求建立连接，我们把携带SYN标识的称为同步报文段</span><br><span class="line">    6. FIN：通知对方，本端要关闭了，结束报文段</span><br></pre></td></tr></table></figure>
+<ol>
+<li>三次握手过程  </li>
+</ol>
+<p><img src="https://img-blog.csdn.net/20180717202520531?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM4OTUwMzE2/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt="image"><br><strong>第一次握手：</strong> 客户端发送SYN=1（请求连接）给服务端。  </p>
+<p><strong>第二次握手：</strong> 服务端收到建立连接请求，也发送SYN=1（请求连接）和ACK=1（确认有效）给客户端。【客户端就知道了服务端能收到消息】   </p>
+<p><strong>第三次握手：</strong> 客户端收到服务端发来的SYN=1和ACK=1，知道了服务端收到了请求，于是发送了ACK=1给服务端，告诉服务端也收到了。【服务端就知道了客户端能收到消息】</p>
+<ol start="2">
+<li>四次挥手过程<br><img src="https://img-blog.csdn.net/20180717204202563?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM4OTUwMzE2/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt="image">   </li>
+</ol>
+<p><strong>第一次握手：</strong>    当客户端完成数据传输后，将FIN=1，提出停止TCP连接的请求。  </p>
+<p><strong>第二次握手：</strong>  服务端收到FIN=1，发送ACK=1，确认这方向上的TCP连接将关闭  </p>
+<p><strong>第三次握手：</strong>  服务器端再发送关闭请求，FIN=1     </p>
+<p><strong>第四次握手：</strong>  客户端发送ACK=1到服务端，双方关闭。</p>
+<h4 id="4-为什么连接的时候是三次握手，关闭的时候却是四次握手？"><a href="#4-为什么连接的时候是三次握手，关闭的时候却是四次握手？" class="headerlink" title="4. 为什么连接的时候是三次握手，关闭的时候却是四次握手？"></a>4. 为什么连接的时候是三次握手，关闭的时候却是四次握手？</h4><p>因为连接时，服务端收到客户端的SYN连接请求报文后，可以直接发送SYN同步和ACK应答。但是关闭连接时，当服务端收到FIN结束报文时，很可能一些报文还没发送完，所以先回复了一个ACK应答报文，告诉浏览器：我已经收到FIN报文。只有服务端的所有报文都发送完毕后，服务端才会再发送一个FIN报文给客户端。故需要四次握手（挥手）</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/05/27/PS切图--01/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
@@ -1548,177 +1718,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/05/21/css--浏览器兼容/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="HJP">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="HJinPeng">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/05/21/css--浏览器兼容/" itemprop="url">css--浏览器兼容</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-05-21T18:16:24+08:00">
-                2019-05-21
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/css/" itemprop="url" rel="index">
-                    <span itemprop="name">css</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h2 id="1-图片"><a href="#1-图片" class="headerlink" title="1. 图片"></a>1. 图片</h2><p>img的默认属性inline-block会使得下面有个间隙<br>解决方法：<br>将img设置为block<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">img</span>&#123;</span><br><span class="line">    <span class="attribute">display</span>: block;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<h2 id="2-双倍边距"><a href="#2-双倍边距" class="headerlink" title="2. 双倍边距"></a>2. 双倍边距</h2><p>当ie6及更低版本浏览器在解析浮动元素的时候，会错误的把浮动边界加倍显示<br>解决方法：<br>给浮动元素添加声明: display: inline;<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">div</span>&#123;</span><br><span class="line">    <span class="attribute">float</span>: left;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">100px</span>;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">100px</span>;</span><br><span class="line">    <span class="attribute">background-color</span>: red;</span><br><span class="line">    <span class="attribute">margin-left</span>: <span class="number">100px</span>;</span><br><span class="line">    <span class="attribute">_display</span>: inline;   <span class="comment">/*下划线表示只被ie浏览器识别，因为ie浏览器下会加倍浮动边界*/</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<h2 id="3-默认高度（ie6）"><a href="#3-默认高度（ie6）" class="headerlink" title="3. 默认高度（ie6）"></a>3. 默认高度（ie6）</h2><p>ie6及其以下版本中，部分块元素拥有默认高度（18px高度）<br>解决方案：  </p>
-<ol>
-<li>给元素添加声明：<code>font-size:0</code></li>
-<li>给元素添加声明：<code>overflow:hidden</code></li>
-</ol>
-<h2 id="4-表单元素的行高不一致"><a href="#4-表单元素的行高不一致" class="headerlink" title="4. 表单元素的行高不一致"></a>4. 表单元素的行高不一致</h2><p>在ie6下表单元素的高度不一致，如按钮文字的高度和input中文字的高度不一致<br>解决方案：<br>给表单元素添加<code>float:left</code></p>
-<h2 id="5-按钮元素默认大小不一样"><a href="#5-按钮元素默认大小不一样" class="headerlink" title="5. 按钮元素默认大小不一样"></a>5. 按钮元素默认大小不一样</h2><p>解决方案：  </p>
-<ol>
-<li>使用a标签制作按钮</li>
-<li>在input上写按钮的样式，要把input的边框去掉</li>
-<li>如果按钮是一张图片，直接把图片作为按钮的背景图</li>
-</ol>
-<h2 id="6-百分比bug"><a href="#6-百分比bug" class="headerlink" title="6. 百分比bug"></a>6. 百分比bug</h2><p>在ie6及以下浏览器中解析百分比时，会按四舍五入计算，导致50%+50%&gt;100%<br>解决方法：  </p>
-<ol>
-<li>给右边的浮动元素添加声明：<code>clear:right</code><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"box1"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"box2"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
-</li>
-</ol>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">*&#123;</span><br><span class="line">    <span class="attribute">margin</span>: <span class="number">0</span>;</span><br><span class="line">    <span class="attribute">padding</span>: <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-tag">html</span>,<span class="selector-tag">body</span>&#123;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">100%</span>;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">100%</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.box1</span>&#123;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">50%</span>;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">100px</span>;</span><br><span class="line">    <span class="attribute">background-color</span>: red;</span><br><span class="line">    <span class="attribute">float</span>: left;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.box2</span>&#123;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">50%</span>;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">100px</span>;</span><br><span class="line">    <span class="attribute">background-color</span>: green;</span><br><span class="line">    <span class="attribute">float</span>: left;</span><br><span class="line">    <span class="attribute">clear</span>: right; <span class="comment">/*解决50+50&gt;100的问题*/</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="7-鼠标cursor"><a href="#7-鼠标cursor" class="headerlink" title="7. 鼠标cursor"></a>7. 鼠标cursor</h2><p>cursor: hand只有ie浏览器能识别，cursor: pointer;在ie6以上能识别<br>解决方案：<br>使用兼容更多浏览器的属性<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">a</span>&#123;</span><br><span class="line">    <span class="attribute">cursor</span>: pointer; <span class="comment">/*兼容ie6及以上*/</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<h2 id="8-透明属性"><a href="#8-透明属性" class="headerlink" title="8. 透明属性"></a>8. 透明属性</h2><p>ie浏览器的写法：<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">div</span>&#123;</span><br><span class="line">    <span class="attribute">opacity</span>: <span class="number">0.5</span>;   <span class="comment">/*会继承给子元素*/</span></span><br><span class="line">    <span class="attribute">filter</span>:<span class="built_in">alpha</span>(opacity=50);   <span class="comment">/*兼容ie浏览器*/</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<h2 id="9-过滤器"><a href="#9-过滤器" class="headerlink" title="9. 过滤器"></a>9. 过滤器</h2><ol>
-<li><p>下划线过滤器<br>当在一个属性前加了下划线，符合标准的浏览器不能识别带下划线的属性，于是忽略了这个属性，但是ie6及更低版本的浏览器会继续识别并解析</p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">div</span>&#123;</span><br><span class="line">    <span class="attribute">background-color</span>: red;</span><br><span class="line">    <span class="attribute">_background-color</span>: green;   <span class="comment">/*ie6及以下版本识别*/</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p><em>属性过滤器<br>当一个属性加了</em>号，只能被ie7浏览器识别，其他浏览器会忽略  </p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">div</span>&#123;</span><br><span class="line">    <span class="attribute">background-color</span>: red;</span><br><span class="line">    *background-color: green;   /*ie7识别*/</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-</ol>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -1769,7 +1768,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">108</span>
+                  <span class="site-state-item-count">109</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -1780,7 +1779,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">16</span>
+                  <span class="site-state-item-count">17</span>
                   <span class="site-state-item-name">categories</span>
                 </a>
               </div>
@@ -1791,7 +1790,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">21</span>
+                  <span class="site-state-item-count">22</span>
                   <span class="site-state-item-name">tags</span>
                 </a>
               </div>
