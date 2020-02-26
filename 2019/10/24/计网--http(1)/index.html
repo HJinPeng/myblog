@@ -1,0 +1,785 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/2.jpg?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/2.jpg?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/2.jpg?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/2.jpg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="计网,http,">
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="1. 说一下http和https（1）什么是http和https？12http: 超文本传输协议。是一个客户端和服务器端请求和响应的标准。  https: 是http+SSL。在http下加入了SSL层。建立一个安全的信息通道，确保网站的真实性。 （2）http和https的区别？12341. http是超文本传输协议，传输的数据都是未加密的。而https是具有安全性的ssl加密传输协议。  2.">
+<meta name="keywords" content="计网,http">
+<meta property="og:type" content="article">
+<meta property="og:title" content="计网--http(1)">
+<meta property="og:url" content="http://yoursite.com/2019/10/24/计网--http(1)/index.html">
+<meta property="og:site_name" content="HJinPeng">
+<meta property="og:description" content="1. 说一下http和https（1）什么是http和https？12http: 超文本传输协议。是一个客户端和服务器端请求和响应的标准。  https: 是http+SSL。在http下加入了SSL层。建立一个安全的信息通道，确保网站的真实性。 （2）http和https的区别？12341. http是超文本传输协议，传输的数据都是未加密的。而https是具有安全性的ssl加密传输协议。  2.">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2020-02-26T15:27:47.042Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="计网--http(1)">
+<meta name="twitter:description" content="1. 说一下http和https（1）什么是http和https？12http: 超文本传输协议。是一个客户端和服务器端请求和响应的标准。  https: 是http+SSL。在http下加入了SSL层。建立一个安全的信息通道，确保网站的真实性。 （2）http和https的区别？12341. http是超文本传输协议，传输的数据都是未加密的。而https是具有安全性的ssl加密传输协议。  2.">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2019/10/24/计网--http(1)/">
+
+
+
+
+
+  <title>计网--http(1) | HJinPeng</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope="" itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">HJinPeng</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            Tags
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            Categories
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            Archives
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            About
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/10/24/计网--http(1)/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="HJP">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="HJinPeng">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">计网--http(1)</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-10-24T00:00:00+08:00">
+                2019-10-24
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/计网/" itemprop="url" rel="index">
+                    <span itemprop="name">计网</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h4 id="1-说一下http和https"><a href="#1-说一下http和https" class="headerlink" title="1. 说一下http和https"></a>1. 说一下http和https</h4><p>（1）什么是http和https？<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">http: 超文本传输协议。是一个客户端和服务器端请求和响应的标准。  </span><br><span class="line">https: 是http+SSL。在http下加入了SSL层。建立一个安全的信息通道，确保网站的真实性。</span><br></pre></td></tr></table></figure></p>
+<p>（2）http和https的区别？<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">1. http是超文本传输协议，传输的数据都是未加密的。</span><br><span class="line">而https是具有安全性的ssl加密传输协议。  </span><br><span class="line">2. http端口为80，https端口为443</span><br><span class="line">3. http的连接是无状态的，而httos是由http+ssl协议构建的可进行加密传输、身份验证的网络协议，比http安全。</span><br></pre></td></tr></table></figure></p>
+<p>（3）https的工作原理？<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">1. 客户使用https url访问服务器，则要求web 服务器建立ssl链接。</span><br><span class="line">2. web服务器接收到客户端的请求之后，会将网站的证书（证书中包含了公钥），返回或者说传输给客户端。</span><br><span class="line">3. 客户端和web服务器端开始协商SSL链接的安全等级，也就是加密等级。</span><br><span class="line">4. 客户端浏览器通过双方协商一致的安全等级，建立会话密钥，然后通过网站的公钥来加密会话密钥，并传送给网站。</span><br><span class="line">5. web服务器通过自己的私钥解密出会话密钥。</span><br><span class="line">6. web服务器通过会话密钥加密与客户端之间的通信。</span><br></pre></td></tr></table></figure></p>
+<p>(4) https的优缺点？<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">优点：</span><br><span class="line">    1. 安全，不被窃取</span><br><span class="line">    2. 确保数据发到正确的客户端和服务器端</span><br><span class="line">缺点：</span><br><span class="line">    1. 耗时耗电</span><br><span class="line">    2. 缓存不如http高效</span><br><span class="line">    3. 要钱</span><br><span class="line">    4. SSL需要绑定ip，不能在同一个ip上绑定多个域名</span><br></pre></td></tr></table></figure></p>
+<h4 id="2-HTTP版本和请求方法"><a href="#2-HTTP版本和请求方法" class="headerlink" title="2. HTTP版本和请求方法"></a>2. HTTP版本和请求方法</h4><h5 id="2-1-HTTP版本"><a href="#2-1-HTTP版本" class="headerlink" title="2.1 HTTP版本"></a>2.1 HTTP版本</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">HTTP/0.9 : 只有GET一种请求方法</span><br><span class="line">HTTP/1.0 : 支持GET、POST、HEAD三种HTTP请求方法</span><br><span class="line">HTTP/1.1 : 新增了OPTIONS、PUT、DELETE、TRACE、CONNECT五种HTTP请求方法</span><br><span class="line">HTTP/2   : 支持请求与相应的多路重用来减少延迟，通过压缩HTTP头字段将协议开销降到最低，同时增加了对请求优先级和服务器端推送的支持</span><br></pre></td></tr></table></figure>
+<h5 id="2-2-HTTP请求方法"><a href="#2-2-HTTP请求方法" class="headerlink" title="2.2 HTTP请求方法"></a>2.2 HTTP请求方法</h5><p><code>GET</code>：会显示请求的指定资源。一般<code>GET</code>方法应该只用于数据的读取。<code>GET</code>方法会返回响应主体，<code>GET</code>被认为是不安全的方法。  </p>
+<p><code>HEAD</code>: 服务器在响应<code>HEAD</code>请求时不会回传资源的内容部分（响应主体），而是回传响应头。这个方法一般用来客户端查看服务器的性能。    </p>
+<p><code>POST</code>: <code>POST</code>请求会向指定资源提交数据，请求服务器进行处理：表单提交，文件上传…请求数据会被包含在请求体中  </p>
+<p><code>PUT</code>: 该方法客户端可以将指定资源的最新数据传送到服务器取代对应的资源内容。  </p>
+<p><code>DELETE</code>: 请求服务器删除所请求的URI所标识对的资源。  </p>
+<p><code>CONNECT</code>：能够将连接改为管道方式的代理服务器。通常用于SSL加密服务器和未加密的HTTP代理服务器的通信。  </p>
+<p><code>OPTIONS</code>：<code>OPTIONS</code>请求和<code>HEAD</code>请求类似，一般也是用于查看服务器的性能。这个方法会请求服务器返回该资源所支持的所有HTTP请求方法，该方法会用<code>*</code>来代替资源名称，向服务器发送<code>OPTIONS</code>请求，可以测试服务器功能是否正常。JS的XMLHttpRequest对象进行CORS跨域资源共享时，就是使用OPTOINS方法发送嗅探请求，以判断是否对资源有访问权限。  </p>
+<p><code>TRACE</code>： TRACE请求服务器回显其收到的请求信息，该方法主要用于HTTP请求的测试或诊断。  </p>
+<p><code>PATCH</code>: PATCH请求与PUT请求类似，同样用于资源的更新。二者有以下两点不同：1.PATCH一般用于资源的部分更新，而PUT一般用于资源的整体更新。2.当资源不存在时，PATCH会创建一个新的资源，而PUT只会对已在资源进行更新。  </p>
+<h5 id="2-3-POST请求"><a href="#2-3-POST请求" class="headerlink" title="2.3 POST请求"></a>2.3 POST请求</h5><p>服务端通常是根据请求头（headers）中的 Content-Type 字段来获知请求中的消息主体是用何种方式编码，再对主体进行解析。所以说到 POST 提交数据方案，包含了 Content-Type 和消息主体编码方式两部分。数据格式有：    </p>
+<p><strong>1. application/x-www-form-urlencoded</strong><br>这应该是最常见的 POST 提交数据的方式了。浏览器的原生 <code>&lt;form&gt;</code> 表单，如果不设置 <code>enctype</code> 属性，那么最终就会以 <code>application/x-www-form-urlencoded</code> 方式提交数据。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">POST http://www.example.com HTTP/1.1</span><br><span class="line">Content-Type: application/x-www-form-urlencoded;charset=utf-8</span><br><span class="line"></span><br><span class="line">title=test&amp;sub%5B%5D=1&amp;sub%5B%5D=2&amp;sub%5B%5D=3</span><br></pre></td></tr></table></figure></p>
+<p><strong>2. multipart/form-data</strong><br>这又是一个常见的 POST 数据提交的方式。我们使用表单上传文件时，必须让<code>&lt;form&gt;</code> 表单的 <code>enctype</code> 等于 <code>multipart/form-data</code>。  </p>
+<p><strong>3. application/json</strong><br>现在越来越多的人把它作为请求头，用来告诉服务端消息主体是序列化后的 JSON 字符串<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">POST http://www.example.com HTTP/1.1 </span><br><span class="line">Content-Type: application/json;charset=utf-8</span><br><span class="line"></span><br><span class="line">&#123;&quot;title&quot;:&quot;test&quot;,&quot;sub&quot;:[1,2,3]&#125;</span><br></pre></td></tr></table></figure></p>
+<p><strong>4. text/xml</strong><br>它是一种使用 HTTP 作为传输协议，XML 作为编码方式的远程调用规范。  </p>
+<h4 id="3-WebSocket的实现和应用"><a href="#3-WebSocket的实现和应用" class="headerlink" title="3. WebSocket的实现和应用"></a>3. WebSocket的实现和应用</h4><p>见【3. WebSocket的实现和应用】</p>
+<h4 id="4-影响HTTP-网络请求的因素"><a href="#4-影响HTTP-网络请求的因素" class="headerlink" title="4. 影响HTTP 网络请求的因素"></a>4. 影响HTTP 网络请求的因素</h4><p>影响一个 HTTP 网络请求的因素主要有两个：带宽和延迟。  </p>
+<ul>
+<li><p>带宽</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">现在不是问题</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>延迟</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">1. 浏览器阻塞（HOL blocking）：浏览器会因为一些原因阻塞请求。浏览器对于同一个域名，同时只能有 4 个连接（这个根据浏览器内核不同可能会有所差异），超过浏览器最大连接数限制，后续请求就会被阻塞。</span><br><span class="line">2. DNS 查询（DNS Lookup）：浏览器需要知道目标服务器的 IP 才能建立连接。将域名解析为 IP 的这个系统就是 DNS。这个通常可以利用DNS缓存结果来达到减少这个时间的目的。</span><br><span class="line">3. 建立连接（Initial connection）：HTTP 是基于 TCP 协议的，浏览器最快也要在第三次握手时才能捎带 HTTP 请求报文，达到真正的建立连接，但是这些连接无法复用会导致每次请求都经历三次握手和慢启动。三次握手在高延迟的场景下影响较明显，慢启动则对文件类大请求影响较大。</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h4 id="5-http2-0-优点"><a href="#5-http2-0-优点" class="headerlink" title="5. http2.0 优点"></a>5. http2.0 优点</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">1. 新的二进制格式</span><br><span class="line">2. 多路复用 : 一个request对应一个id，这样一个连接上可以有多个request，每个连接的request可以随机的混杂在一起，接收方可以根据request的 id将request再归属到各自不同的服务端请求里面。</span><br><span class="line">3. header压缩: HTTP1.x的header带有大量信息，而且每次都要重复发送，HTTP2.0使用encoder来减少需要传输的header大小，通讯双方各自cache一份header fields表，既避免了重复header的传输，又减小了需要传输的大小。  </span><br><span class="line">4. 服务端推送</span><br></pre></td></tr></table></figure>
+<h4 id="6-GET和POST的区别"><a href="#6-GET和POST的区别" class="headerlink" title="6. GET和POST的区别"></a>6. GET和POST的区别</h4><ol>
+<li><code>GET</code> 和 <code>POST</code> 方法没有实质区别，只是报文格式不同。 </li>
+<li>没有传参的GET和POST请求只有请求报文第一行的前几个字符不同(GET和POST这几个字符不同)</li>
+<li>传参的GET的参数在第一行的URL中，POST的参数在body中</li>
+<li>POST方法和GET方法都不安全，因为是明文传输的，可以通过抓包获取参数。要安全使用https</li>
+<li>GET长度限制可能是浏览器限制和服务器的限制。POST长度无限制</li>
+<li>点击后退按钮，GET没问题，POST的数据会被重新提交。</li>
+<li>GET能缓存，POST不可以</li>
+<li>编码类型，GET使用application/x-www-form-urlencoded,POST可用多种</li>
+<li>GET的参数可见，保存在历史记录，POST的不显示在URL中，不会保存到浏览器历史</li>
+</ol>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/计网/" rel="tag"># 计网</a>
+          
+            <a href="/tags/http/" rel="tag"># http</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/10/24/计网--http(2)/" rel="next" title="计网--http(2)">
+                <i class="fa fa-chevron-left"></i> 计网--http(2)
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/10/25/HTML5--websocket/" rel="prev" title="HTML5--websocket">
+                HTML5--websocket <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">HJP</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">137</span>
+                  <span class="site-state-item-name">posts</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">18</span>
+                  <span class="site-state-item-name">categories</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">23</span>
+                  <span class="site-state-item-name">tags</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-说一下http和https"><span class="nav-text">1. 说一下http和https</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-HTTP版本和请求方法"><span class="nav-text">2. HTTP版本和请求方法</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#2-1-HTTP版本"><span class="nav-text">2.1 HTTP版本</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#2-2-HTTP请求方法"><span class="nav-text">2.2 HTTP请求方法</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#2-3-POST请求"><span class="nav-text">2.3 POST请求</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-WebSocket的实现和应用"><span class="nav-text">3. WebSocket的实现和应用</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-影响HTTP-网络请求的因素"><span class="nav-text">4. 影响HTTP 网络请求的因素</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5-http2-0-优点"><span class="nav-text">5. http2.0 优点</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#6-GET和POST的区别"><span class="nav-text">6. GET和POST的区别</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">HJP</span>
+
+  
+</div>
+
+
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

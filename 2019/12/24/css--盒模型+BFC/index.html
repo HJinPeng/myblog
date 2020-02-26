@@ -1,0 +1,788 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/2.jpg?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/2.jpg?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/2.jpg?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/2.jpg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="css,">
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="一、 W3C标准盒模型和IE盒模型主要理解width的区别：标准只包含content，IE包含content+padding+border      1. W3C标准盒模型盒子的大小为：content+padding+border 盒子占据的位置：content+padding+border+margin   属性：width 和 height 只包含了 content  部分，不包含 borde">
+<meta name="keywords" content="css">
+<meta property="og:type" content="article">
+<meta property="og:title" content="css--盒模型+BFC">
+<meta property="og:url" content="http://yoursite.com/2019/12/24/css--盒模型+BFC/index.html">
+<meta property="og:site_name" content="HJinPeng">
+<meta property="og:description" content="一、 W3C标准盒模型和IE盒模型主要理解width的区别：标准只包含content，IE包含content+padding+border      1. W3C标准盒模型盒子的大小为：content+padding+border 盒子占据的位置：content+padding+border+margin   属性：width 和 height 只包含了 content  部分，不包含 borde">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https://user-gold-cdn.xitu.io/2017/10/25/a6a8e2bd6929e6b1a420b711b6504259?imageView2/0/w/1280/h/960/format/webp/ignore-error/1">
+<meta property="og:image" content="https://pic4.zhimg.com/v2-0a9ca8952c83141250a2d9002e6d2047_r.jpg">
+<meta property="og:image" content="https://pic2.zhimg.com/80/v2-5b8d6e8b2b507352900c1ece00018855_hd.png">
+<meta property="og:image" content="https://pic4.zhimg.com/80/v2-371eb702274af831df909b2c55d6a14b_hd.png">
+<meta property="og:image" content="https://pic4.zhimg.com/80/v2-cc8365db5c9cc5ca003ce9afe88592e7_hd.png">
+<meta property="og:image" content="https://pic4.zhimg.com/80/v2-dd3e636d73682140bf4a781bcd6f576b_hd.png">
+<meta property="og:image" content="https://pic3.zhimg.com/80/v2-5ebd48f09fac875f0bd25823c76ba7fa_hd.png">
+<meta property="og:updated_time" content="2020-02-26T15:43:17.036Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="css--盒模型+BFC">
+<meta name="twitter:description" content="一、 W3C标准盒模型和IE盒模型主要理解width的区别：标准只包含content，IE包含content+padding+border      1. W3C标准盒模型盒子的大小为：content+padding+border 盒子占据的位置：content+padding+border+margin   属性：width 和 height 只包含了 content  部分，不包含 borde">
+<meta name="twitter:image" content="https://user-gold-cdn.xitu.io/2017/10/25/a6a8e2bd6929e6b1a420b711b6504259?imageView2/0/w/1280/h/960/format/webp/ignore-error/1">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2019/12/24/css--盒模型+BFC/">
+
+
+
+
+
+  <title>css--盒模型+BFC | HJinPeng</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope="" itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">HJinPeng</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            Tags
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            Categories
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            Archives
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            About
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/12/24/css--盒模型+BFC/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="HJP">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="HJinPeng">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">css--盒模型+BFC</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-12-24T18:15:20+08:00">
+                2019-12-24
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/css/" itemprop="url" rel="index">
+                    <span itemprop="name">css</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h3 id="一、-W3C标准盒模型和IE盒模型"><a href="#一、-W3C标准盒模型和IE盒模型" class="headerlink" title="一、 W3C标准盒模型和IE盒模型"></a>一、 W3C标准盒模型和IE盒模型</h3><p>主要理解width的区别：<br>标准只包含content，<br>IE包含content+padding+border    </p>
+<p><img src="https://user-gold-cdn.xitu.io/2017/10/25/a6a8e2bd6929e6b1a420b711b6504259?imageView2/0/w/1280/h/960/format/webp/ignore-error/1" alt="image"></p>
+<h4 id="1-W3C标准盒模型"><a href="#1-W3C标准盒模型" class="headerlink" title="1. W3C标准盒模型"></a>1. W3C标准盒模型</h4><p>盒子的大小为：<strong><code>content</code>+<code>padding</code>+<code>border</code></strong></p>
+<p>盒子占据的位置：<strong><code>content</code>+<code>padding</code>+<code>border</code>+<code>margin</code></strong>  </p>
+<p>属性：<strong><code>width</code></strong> 和 <strong><code>height</code></strong> 只包含了 <strong><code>content</code></strong>  部分，不包含 <strong><code>border</code>,<code>padding</code></strong> 。即盒子的大小的宽 = <strong><code>width</code> + <code>padding-left</code> + <code>padding-right</code> + <code>border-left</code> + <code>border-right</code></strong></p>
+<h4 id="2-IE盒模型"><a href="#2-IE盒模型" class="headerlink" title="2. IE盒模型"></a>2. IE盒模型</h4><p>盒子的大小：<strong><code>content</code>+<code>padding</code>+<code>border</code></strong>    </p>
+<p>盒子占据的位置：<strong><code>content</code>+<code>padding</code>+<code>border</code>+<code>margin</code></strong>    </p>
+<p>属性：<strong><code>width</code>,<code>height</code></strong> 包含了 <strong><code>content</code>,<code>border</code>,<code>padding</code></strong> 。即盒子的大小的宽 = <strong><code>width</code> = <code>content（宽）</code>+ <code>padding-left</code> + <code>padding-right</code> + <code>border-left</code> + <code>border-right</code></strong>  </p>
+<p>IE盒子下，加上padding，和border，盒子的content会变小  </p>
+<h4 id="3-盒模型的切换"><a href="#3-盒模型的切换" class="headerlink" title="3. 盒模型的切换"></a>3. 盒模型的切换</h4><p>可以通过 <strong><code>box-sizing</code></strong> 属性进行控制。默认值是 <strong><code>content-box</code></strong>，即W3C标准盒模型。而IE盒模型值为 <strong><code>border-box</code></strong></p>
+<h3 id="二、-BFC-块级格式化上下文"><a href="#二、-BFC-块级格式化上下文" class="headerlink" title="二、 BFC(块级格式化上下文)"></a>二、 BFC(块级格式化上下文)</h3><h4 id="1-常见定位方案"><a href="#1-常见定位方案" class="headerlink" title="1. 常见定位方案"></a>1. 常见定位方案</h4><ul>
+<li>普通流</li>
+<li>浮动</li>
+<li>绝对定位</li>
+</ul>
+<h4 id="2-BFC概念"><a href="#2-BFC概念" class="headerlink" title="2. BFC概念"></a>2. BFC概念</h4><p>BFC 即 Block Formatting Contexts (块级格式化上下文)，它属于上述定位方案的普通流。  </p>
+<p><strong>具有 BFC 特性的元素可以看作是隔离了的独立容器，容器里面的元素不会在布局上影响到外面的元素，并且 BFC 具有普通容器所没有的一些特性。</strong>  </p>
+<p>通俗一点来讲，可以把 BFC 理解为一个封闭的大箱子，箱子内部的元素无论如何翻江倒海，都不会影响到外部。</p>
+<h4 id="3-如何触发BFC"><a href="#3-如何触发BFC" class="headerlink" title="3. 如何触发BFC"></a>3. 如何触发BFC</h4><p>只要元素满足以下任一条件即可触发BFC特性：  </p>
+<ul>
+<li>body(html)这个根元素</li>
+<li>浮动元素：float为left/right</li>
+<li>绝对定位元素：position:absolute/fixed</li>
+<li>display: inline-block/table-cells/flex</li>
+<li>overflow: hidden/ auto / scroll  </li>
+</ul>
+<h4 id="4-BFC特性及其应用"><a href="#4-BFC特性及其应用" class="headerlink" title="4. BFC特性及其应用"></a>4. BFC特性及其应用</h4><h5 id="4-1-在一个BFC中，里面的元素外边距会发生折叠"><a href="#4-1-在一个BFC中，里面的元素外边距会发生折叠" class="headerlink" title="4.1 在一个BFC中，里面的元素外边距会发生折叠"></a>4.1 在一个BFC中，里面的元素外边距会发生折叠</h5><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="undefined">div&#123;</span></span><br><span class="line"><span class="undefined">    width: 100px;</span></span><br><span class="line"><span class="undefined">    height: 100px;</span></span><br><span class="line"><span class="undefined">    background: lightblue;</span></span><br><span class="line"><span class="undefined">    margin: 100px;</span></span><br><span class="line"><span class="undefined">&#125;</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p><img src="https://pic4.zhimg.com/v2-0a9ca8952c83141250a2d9002e6d2047_r.jpg" alt="image"><br>因为两个DIV元素都在同一个BFC容器下（即body元素），所以两个DIV的外边距发生了重叠，两个盒子之间的距离只有100px，而不是200px。  </p>
+<p>这是一个规范，如果想要避免外边距重叠，可以将两个DIV（下面用p元素）放在不同的BFC容器中。<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="css"><span class="selector-class">.container</span> &#123;</span></span><br><span class="line"><span class="undefined">    overflow: hidden;</span></span><br><span class="line"><span class="undefined">&#125;</span></span><br><span class="line"><span class="undefined">p &#123;</span></span><br><span class="line"><span class="undefined">    width: 100px;</span></span><br><span class="line"><span class="undefined">    height: 100px;</span></span><br><span class="line"><span class="undefined">    background: lightblue;</span></span><br><span class="line"><span class="undefined">    margin: 100px;</span></span><br><span class="line"><span class="undefined">&#125;</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"container"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">p</span>&gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"container"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">p</span>&gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p><img src="https://pic2.zhimg.com/80/v2-5b8d6e8b2b507352900c1ece00018855_hd.png" alt="image"><br>现在两个p元素在不同的BFC容器中，故距离为200px。  </p>
+<h5 id="4-2-BFC可以包含浮动元素（清除浮动）"><a href="#4-2-BFC可以包含浮动元素（清除浮动）" class="headerlink" title="4.2 BFC可以包含浮动元素（清除浮动）"></a>4.2 BFC可以包含浮动元素（清除浮动）</h5><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">style</span>=<span class="string">"border: 1px solid #000;"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">style</span>=<span class="string">"width: 100px;height: 100px;background: #eee;float: left;"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p><img src="https://pic4.zhimg.com/80/v2-371eb702274af831df909b2c55d6a14b_hd.png" alt="image"><br>由于容器内元素浮动，脱离了文档流，所以容器只剩下 2px 的边距高度。如果使触发容器的 BFC，那么容器将会包裹着浮动元素。</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">style</span>=<span class="string">"border: 1px solid #000;overflow: hidden"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">style</span>=<span class="string">"width: 100px;height: 100px;background: #eee;float: left;"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p><img src="https://pic4.zhimg.com/80/v2-cc8365db5c9cc5ca003ce9afe88592e7_hd.png" alt="image"></p>
+<h5 id="4-3-BFC-可以阻止元素被浮动元素覆盖"><a href="#4-3-BFC-可以阻止元素被浮动元素覆盖" class="headerlink" title="4.3 BFC 可以阻止元素被浮动元素覆盖"></a>4.3 BFC 可以阻止元素被浮动元素覆盖</h5><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">style</span>=<span class="string">"height: 100px;width: 100px;float: left;background: lightblue"</span>&gt;</span></span><br><span class="line">我是一个左浮动的元素</span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">style</span>=<span class="string">"width: 200px; height: 200px;background: #eee"</span>&gt;</span></span><br><span class="line">我是一个没有设置浮动, </span><br><span class="line">也没有触发 BFC 元素, width: 200px; height:200px; background: #eee;</span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p><img src="https://pic4.zhimg.com/80/v2-dd3e636d73682140bf4a781bcd6f576b_hd.png" alt="image"><br>这时候其实第二个元素有部分被浮动元素所覆盖，(但是文本信息不会被浮动元素所覆盖) 如果想避免元素被覆盖，可触第二个元素的 BFC 特性，在第二个元素中加入 overflow: hidden，就会变成：<br><img src="https://pic3.zhimg.com/80/v2-5ebd48f09fac875f0bd25823c76ba7fa_hd.png" alt="image"><br>这个方法可以用来实现两列自适应布局，效果不错，这时候左边的宽度固定，右边的内容自适应宽度(去掉上面右边内容的宽度)。  </p>
+<h4 id="5-参考文章"><a href="#5-参考文章" class="headerlink" title="5. 参考文章"></a>5. 参考文章</h4><p><a href="https://zhuanlan.zhihu.com/p/25321647" target="_blank" rel="noopener">10 分钟理解 BFC 原理 - 林东洲的文章 - 知乎
+</a></p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/css/" rel="tag"># css</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/12/21/css--弹性盒子/" rel="next" title="css--flex布局(弹性盒子)">
+                <i class="fa fa-chevron-left"></i> css--flex布局(弹性盒子)
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/12/27/css--重绘回流/" rel="prev" title="css--重绘回流">
+                css--重绘回流 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">HJP</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">137</span>
+                  <span class="site-state-item-name">posts</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">18</span>
+                  <span class="site-state-item-name">categories</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">23</span>
+                  <span class="site-state-item-name">tags</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#一、-W3C标准盒模型和IE盒模型"><span class="nav-text">一、 W3C标准盒模型和IE盒模型</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-W3C标准盒模型"><span class="nav-text">1. W3C标准盒模型</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-IE盒模型"><span class="nav-text">2. IE盒模型</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-盒模型的切换"><span class="nav-text">3. 盒模型的切换</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#二、-BFC-块级格式化上下文"><span class="nav-text">二、 BFC(块级格式化上下文)</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-常见定位方案"><span class="nav-text">1. 常见定位方案</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-BFC概念"><span class="nav-text">2. BFC概念</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-如何触发BFC"><span class="nav-text">3. 如何触发BFC</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-BFC特性及其应用"><span class="nav-text">4. BFC特性及其应用</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#4-1-在一个BFC中，里面的元素外边距会发生折叠"><span class="nav-text">4.1 在一个BFC中，里面的元素外边距会发生折叠</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#4-2-BFC可以包含浮动元素（清除浮动）"><span class="nav-text">4.2 BFC可以包含浮动元素（清除浮动）</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#4-3-BFC-可以阻止元素被浮动元素覆盖"><span class="nav-text">4.3 BFC 可以阻止元素被浮动元素覆盖</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5-参考文章"><span class="nav-text">5. 参考文章</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">HJP</span>
+
+  
+</div>
+
+
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
