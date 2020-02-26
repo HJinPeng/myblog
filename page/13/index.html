@@ -259,7 +259,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/18/jquery--动画/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/24/jquery--indexOf和lastIndexOf/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="HJP">
@@ -278,7 +278,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2019/03/18/jquery--动画/" itemprop="url">jquery--动画</a></h1>
+                <a class="post-title-link" href="/2019/03/24/jquery--indexOf和lastIndexOf/" itemprop="url">jquery--indexOf和lastIndexOf</a></h1>
         
 
         <div class="post-meta">
@@ -290,8 +290,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-03-18T00:00:00+08:00">
-                2019-03-18
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-03-24T00:00:00+08:00">
+                2019-03-24
               </time>
             
 
@@ -352,22 +352,12 @@
       
         
           
-            <ol>
-<li>jquery有一个动画队列，建议在执行动画之前先调用 <code>.stop()</code> ，在执行动画</li>
-</ol>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">".ad"</span>).stop().slideDown(<span class="number">1000</span>).fadeOut(<span class="number">1000</span>).fadeIn(<span class="number">1000</span>);</span><br></pre></td></tr></table></figure>
-<ol start="2">
-<li>自定义动画</li>
-</ol>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">            $(<span class="string">"button"</span>).eq(<span class="number">0</span>).click(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">                $(<span class="string">".one"</span>).animate(&#123;</span><br><span class="line">                    width: <span class="string">"200"</span>,</span><br><span class="line">                    height: <span class="string">"200"</span></span><br><span class="line">                &#125;, <span class="number">1000</span>, <span class="string">"linear"</span>,<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">                    alert(<span class="string">"ok"</span>);</span><br><span class="line">                &#125;);</span><br><span class="line">            &#125;);</span><br><span class="line">            </span><br><span class="line">            $(<span class="string">"button"</span>).eq(<span class="number">1</span>).click(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">                $(<span class="string">".one"</span>).animate(&#123;</span><br><span class="line">                    width: <span class="string">"+=100"</span></span><br><span class="line">                &#125;, <span class="number">1000</span>, <span class="string">"linear"</span>,<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">                    alert(<span class="string">"ok"</span>);</span><br><span class="line">                &#125;);</span><br><span class="line">            &#125;);</span><br><span class="line">        &#125;);</span><br></pre></td></tr></table></figure>
-<ol start="3">
-<li>delay()延迟执行</li>
-</ol>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    $(<span class="string">"button"</span>).eq(<span class="number">0</span>).click(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">        $(<span class="string">".one"</span>).animate(&#123;</span><br><span class="line">            width: <span class="number">300</span></span><br><span class="line">        &#125;,<span class="number">1000</span>).delay(<span class="number">2000</span>).animate(&#123;</span><br><span class="line">            height: <span class="number">300</span></span><br><span class="line">        &#125;,<span class="number">1000</span>);</span><br><span class="line">    &#125;);</span><br><span class="line"></span><br><span class="line">    $(<span class="string">"button"</span>).eq(<span class="number">1</span>).click(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">        $(<span class="string">".one"</span>).animate(&#123;</span><br><span class="line">            width: <span class="string">"+=100"</span></span><br><span class="line">        &#125;, <span class="number">1000</span>, <span class="string">"linear"</span>,<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">            alert(<span class="string">"ok"</span>);</span><br><span class="line">        &#125;);</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-<ol start="4">
-<li>stop（）</li>
-</ol>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//立即停止当前动画，继续执行之后的动画</span></span><br><span class="line">$(<span class="string">"div"</span>).stop();  </span><br><span class="line">$(<span class="string">"div"</span>).stop(<span class="literal">false</span>);</span><br><span class="line">$(<span class="string">"div"</span>).stop(<span class="literal">false</span>,<span class="literal">false</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">//立即停止当前和后续所有动画</span></span><br><span class="line">$(<span class="string">"div"</span>).stop(<span class="literal">true</span>);</span><br><span class="line">$(<span class="string">"div"</span>).stop(<span class="literal">true</span>,<span class="literal">false</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">//立即完成当前动画，并继续执行后续动画</span></span><br><span class="line">$(<span class="string">"div"</span>).stop(<span class="literal">false</span>,<span class="literal">true</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">//立即完成当前的动画，并且停止所有后续动画</span></span><br><span class="line">$(<span class="string">"div"</span>).stop(<span class="literal">true</span>,<span class="literal">true</span>);</span><br></pre></td></tr></table></figure>
+            <h4 id="1-indexOf"><a href="#1-indexOf" class="headerlink" title="1. indexOf"></a>1. indexOf</h4><p>是查某个指定的字符串在字符串首次出现的位置（索引值） </p>
+<p>也就是从前往后查</p>
+<h4 id="2-lastIndexOf"><a href="#2-lastIndexOf" class="headerlink" title="2. lastIndexOf"></a>2. lastIndexOf</h4><p>是从右向左查某个指定的字符串在字符串中最后一次出现的位置 </p>
+<p>也就是从后往前查 </p>
+<h4 id="3-例子"><a href="#3-例子" class="headerlink" title="3. 例子"></a>3. 例子</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> arr = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>];</span><br><span class="line"><span class="built_in">console</span>.log(arr.indexOf(<span class="number">4</span>));  <span class="comment">// 3</span></span><br><span class="line"><span class="built_in">console</span>.log(arr.lastIndexOf(<span class="number">4</span>));   <span class="comment">//4</span></span><br></pre></td></tr></table></figure>
+<p>不论哪种方法，返回的下标都是从0开始计算。</p>
 
           
         
@@ -416,7 +406,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/18/jquery--事件委托/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/24/jquery--ajax/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="HJP">
@@ -435,7 +425,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2019/03/18/jquery--事件委托/" itemprop="url">jquery--事件委托</a></h1>
+                <a class="post-title-link" href="/2019/03/24/jquery--ajax/" itemprop="url">jquery--ajax</a></h1>
         
 
         <div class="post-meta">
@@ -447,8 +437,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-03-18T00:00:00+08:00">
-                2019-03-18
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-03-24T00:00:00+08:00">
+                2019-03-24
               </time>
             
 
@@ -509,13 +499,9 @@
       
         
           
-            <h4 id="什么情况下要用到事件委托？"><a href="#什么情况下要用到事件委托？" class="headerlink" title="什么情况下要用到事件委托？"></a>什么情况下要用到事件委托？</h4><p>我们知道，在dom元素加载完毕后就会加载jq。如果一些元素是在通过各类事件（点击事件）才生成的，那么这些元素可能会没有给绑定事件。因为加载jq的时候并没有给后来生成的元素添加事件。</p>
-<p>如：新增加的li元素没有点击事件</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    </span><br><span class="line">    $(<span class="string">"button"</span>).click(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        $(<span class="string">"ul"</span>).append(<span class="string">"&lt;li&gt;这是一个新的li&lt;/li&gt;"</span>);</span><br><span class="line">    &#125;);</span><br><span class="line"></span><br><span class="line">    $(<span class="string">"li"</span>).click(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log($(<span class="keyword">this</span>).text());</span><br><span class="line">    &#125;);</span><br><span class="line"> &#125;);</span><br></pre></td></tr></table></figure>
-<p>为了解决这种现象，我们用到了事件委托</p>
-<h4 id="怎么使用事件委托？"><a href="#怎么使用事件委托？" class="headerlink" title="怎么使用事件委托？"></a>怎么使用事件委托？</h4><p>通过能够刚开始就被加载的父元素（父元素以上），进行事件委托</p>
-<p>如：</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    </span><br><span class="line">    $(<span class="string">"button"</span>).click(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        $(<span class="string">"ul"</span>).append(<span class="string">"&lt;li&gt;这是一个新的li&lt;/li&gt;"</span>);</span><br><span class="line">    &#125;);</span><br><span class="line"></span><br><span class="line">    <span class="comment">// $("li").click(function()&#123;</span></span><br><span class="line">    <span class="comment">//     console.log($(this).text());</span></span><br><span class="line">    <span class="comment">// &#125;);</span></span><br><span class="line"></span><br><span class="line">    $(<span class="string">"ul"</span>).delegate(<span class="string">"li"</span>,<span class="string">"click"</span>,<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log($(<span class="keyword">this</span>).text());</span><br><span class="line">    &#125;);</span><br><span class="line">  &#125;);</span><br></pre></td></tr></table></figure>
+            <h4 id="1-ajax的url"><a href="#1-ajax的url" class="headerlink" title="1. ajax的url"></a>1. ajax的url</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$.ajax(&#123;</span><br><span class="line">   url: .<span class="comment">/***/</span>*** </span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<p>相对于html的路径，不是相对js的路径</p>
+<h4 id="2-ajax使用"><a href="#2-ajax使用" class="headerlink" title="2. ajax使用"></a>2. ajax使用</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    $(<span class="string">"button"</span>).click(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">        $.ajax(&#123;</span><br><span class="line">            type: <span class="string">"GET"</span>,</span><br><span class="line">            url: <span class="string">"ajax-jquery.php"</span>,</span><br><span class="line">            data: <span class="string">"userName=HJP&amp;password=123456"</span>,</span><br><span class="line">            success: <span class="function"><span class="keyword">function</span>(<span class="params">msg</span>) </span>&#123;</span><br><span class="line">                alert(msg);</span><br><span class="line">            &#125;,</span><br><span class="line">            error: <span class="function"><span class="keyword">function</span>(<span class="params">xhr</span>) </span>&#123;</span><br><span class="line">                alert(xhr.status);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;);</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
 
           
         
@@ -564,7 +550,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/18/git--远程仓库/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/23/css-高斯模糊背景设置/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="HJP">
@@ -583,7 +569,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2019/03/18/git--远程仓库/" itemprop="url">git--远程仓库</a></h1>
+                <a class="post-title-link" href="/2019/03/23/css-高斯模糊背景设置/" itemprop="url">css-高斯模糊背景设置</a></h1>
         
 
         <div class="post-meta">
@@ -595,307 +581,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-03-18T00:00:00+08:00">
-                2019-03-18
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/git/" itemprop="url" rel="index">
-                    <span itemprop="name">git</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h4 id="1-关联远程库"><a href="#1-关联远程库" class="headerlink" title="1. 关联远程库"></a>1. 关联远程库</h4><p><code>git remote add origin https://github.com/账号名/仓库名</code></p>
-<h4 id="2-关联后第一次推送master分支"><a href="#2-关联后第一次推送master分支" class="headerlink" title="2. 关联后第一次推送master分支"></a>2. 关联后第一次推送master分支</h4><p><code>git push -u origin master</code></p>
-<h4 id="3-本地提交后，再推送到远程"><a href="#3-本地提交后，再推送到远程" class="headerlink" title="3. 本地提交后，再推送到远程"></a>3. 本地提交后，再推送到远程</h4><p><code>git push origin master</code></p>
-<h4 id="4-克隆仓库"><a href="#4-克隆仓库" class="headerlink" title="4. 克隆仓库"></a>4. 克隆仓库</h4><p><code>git clone https://github.com/账号名/仓库名</code></p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/18/git--基本指令/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="HJP">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="HJinPeng">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/03/18/git--基本指令/" itemprop="url">git--基本指令</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-03-18T00:00:00+08:00">
-                2019-03-18
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/git/" itemprop="url" rel="index">
-                    <span itemprop="name">git</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h4 id="1-创建版本库"><a href="#1-创建版本库" class="headerlink" title="1. 创建版本库"></a>1. 创建版本库</h4><ol>
-<li><p>初始化Git仓库</p>
-<p>在一个文件夹中使用<code>git init</code>，就可以变成git可以管理的仓库，会生成默认隐藏的.git文件夹</p>
-</li>
-<li><p>添加文件到Git仓库</p>
-<p> 2.1 <code>git add &lt;file&gt;</code>，可反复使用多次，添加多个文件</p>
-<p> 2.2 <code>git commit -m &lt;message&gt; ，一次提交</code></p>
-</li>
-</ol>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2019/03/18/git--基本指令/#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/17/css-透明的img背景设置+圆角/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="HJP">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="HJinPeng">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/03/17/css-透明的img背景设置+圆角/" itemprop="url">css-透明img背景设置</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-03-17T00:00:00+08:00">
-                2019-03-17
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-03-23T00:00:00+08:00">
+                2019-03-23
               </time>
             
 
@@ -956,15 +643,9 @@
       
         
           
-            <h4 id="1-圆形img图片，可以设置背景颜色，边框弧度"><a href="#1-圆形img图片，可以设置背景颜色，边框弧度" class="headerlink" title="1. 圆形img图片，可以设置背景颜色，边框弧度"></a>1. 圆形img图片，可以设置背景颜色，边框弧度</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">img&#123;</span><br><span class="line">    width: 100px;</span><br><span class="line">    background-color: white;</span><br><span class="line">    border-radius: 50%;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>在这里，<code>border-radius: 50%</code> 设置成大于50%的值都可以，理解如下：</p>
-<ol>
-<li><code>border-radius</code> 同时设置了四个角</li>
-<li>百分比 =  取点的地方 / 边长 ， 比方：<code>border-top-right-radius: 70%;</code> 是取元素的上边框的边长70%和右边框的70%的两个位置做一个弧形。</li>
-<li>当边框是一个正方形时，<code>border-radius: 50%;</code>（&gt;50%）可以形成一个圆形</li>
-<li>当边框是一个长方形时，<code>border-radius: 50%;</code>（&gt;50%）可以形成一个正椭圆形</li>
-<li>若左右 / 上下 两个弧度百分比 相等 且 相加&gt;100%，则会自动变成100%，两边都变成50%</li>
-</ol>
+            <h4 id="如何使用高斯背景图"><a href="#如何使用高斯背景图" class="headerlink" title="如何使用高斯背景图"></a>如何使用高斯背景图</h4><h6 id="步骤1：设置两个div"><a href="#步骤1：设置两个div" class="headerlink" title="步骤1：设置两个div"></a>步骤1：设置两个div</h6><p>一个设置高斯模糊，一个设置灰色蒙版</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"mask_bg"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"mask"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h6 id="步骤2：设置css"><a href="#步骤2：设置css" class="headerlink" title="步骤2：设置css"></a>步骤2：设置css</h6><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.mask_bg</span> &#123;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">100%</span>;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">100%</span>;</span><br><span class="line">    <span class="attribute">position</span>: absolute;</span><br><span class="line">    <span class="attribute">top</span>: <span class="number">0</span>;</span><br><span class="line">    <span class="attribute">left</span>: <span class="number">0</span>;</span><br><span class="line">    <span class="attribute">background</span>: <span class="built_in">url</span>(../imgs/lnj.jpg) no-repeat <span class="number">0</span> <span class="number">0</span>;</span><br><span class="line">    <span class="attribute">background-size</span>: cover;    <span class="comment">/*根据图片比例充满整个背景*/</span></span><br><span class="line">    <span class="attribute">z-index</span>: -<span class="number">2</span>;               <span class="comment">/*高斯背景图片层级最低*/</span></span><br><span class="line">    <span class="attribute">filter</span>: <span class="built_in">blur</span>(100px);       <span class="comment">/*滤镜属性，设置高斯模糊，数值越高越模糊*/</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.mask</span> &#123;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">100%</span>;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">100%</span>;</span><br><span class="line">    <span class="attribute">position</span>: absolute;</span><br><span class="line">    <span class="attribute">top</span>: <span class="number">0</span>;</span><br><span class="line">    <span class="attribute">left</span>: <span class="number">0</span>;</span><br><span class="line">    <span class="attribute">z-index</span>: -<span class="number">1</span>;                             <span class="comment">/*比高斯背景高一层*/</span></span><br><span class="line">    <span class="attribute">background</span>: <span class="built_in">rgba</span>(0, 0, 0, 0.35);         <span class="comment">/*设置灰色蒙版，好看，可避免两边太白*/</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
           
         
@@ -1013,7 +694,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/17/jquery--scrollTop()/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/23/css-制作进度条/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="HJP">
@@ -1032,7 +713,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2019/03/17/jquery--scrollTop()/" itemprop="url">jquery--scrollTop()</a></h1>
+                <a class="post-title-link" href="/2019/03/23/css-制作进度条/" itemprop="url">css-制作进度条</a></h1>
         
 
         <div class="post-meta">
@@ -1044,153 +725,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-03-17T00:00:00+08:00">
-                2019-03-17
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/jquery/" itemprop="url" rel="index">
-                    <span itemprop="name">jquery</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h4 id="1-获取网页滚动的偏移位置"><a href="#1-获取网页滚动的偏移位置" class="headerlink" title="1. 获取网页滚动的偏移位置"></a>1. 获取网页滚动的偏移位置</h4><p>为了保证浏览器的兼容性（ie和其他浏览器），获取如下</p>
-<p><code>console.log($(&quot;body&quot;).scrollTop()+$(&quot;html&quot;).scrollTop());</code></p>
-<h4 id="2-设置网页滚动的偏移位置"><a href="#2-设置网页滚动的偏移位置" class="headerlink" title="2. 设置网页滚动的偏移位置"></a>2. 设置网页滚动的偏移位置</h4><p>为了保证浏览器的兼容性（ie和其他浏览器），设置如下</p>
-<p><code>$(&quot;html,body&quot;).srcollTop(300);</code></p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/17/css-居中显示/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="HJP">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="HJinPeng">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/03/17/css-居中显示/" itemprop="url">css-居中显示</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-03-17T00:00:00+08:00">
-                2019-03-17
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-03-23T00:00:00+08:00">
+                2019-03-23
               </time>
             
 
@@ -1251,10 +787,8 @@
       
         
           
-            <h4 id="1-利用display-flex"><a href="#1-利用display-flex" class="headerlink" title="1. 利用display: flex"></a>1. 利用<code>display: flex</code></h4><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">h</span>&#123;</span><br><span class="line">    <span class="attribute">display</span>: flex;</span><br><span class="line">    <span class="attribute">flex-direction</span>: column;</span><br><span class="line">    <span class="attribute">justify-content</span>: center;</span><br><span class="line">    <span class="attribute">align-items</span>: center;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h4 id="2-通过line-height"><a href="#2-通过line-height" class="headerlink" title="2. 通过line-height"></a>2. 通过<code>line-height</code></h4><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">ul</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">li</span>&gt;</span>1<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">li</span>&gt;</span>1<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">div</span>&#123;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">100%</span>;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">45px</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-tag">ul</span>&#123;</span><br><span class="line">    <span class="attribute">line-height</span>: <span class="number">45px</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-tag">li</span>&#123;</span><br><span class="line">    <span class="attribute">list-style</span>: none;</span><br><span class="line">    <span class="attribute">display</span>: inline;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>li为行内元素，ul设置高度和父元素相同，可以实现文本居中</p>
+            <h4 id="1-html"><a href="#1-html" class="headerlink" title="1. html"></a>1. html</h4><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"music_progress_info"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"music_progress_top"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">"music_progress_name"</span>&gt;</span>空空如也 / 汪峰<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">"music_progress_time"</span>&gt;</span>00:00 / 04:18<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">     </span><br><span class="line">      <span class="comment">&lt;!-- 进度条的底色，即整条进度条 --&gt;</span>        </span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"music_progress_bar"</span>&gt;</span></span><br><span class="line">        <span class="comment">&lt;!-- 当前进度 --&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"music_progress_line"</span>&gt;</span></span><br><span class="line">            <span class="comment">&lt;!--当前进度的末端圆点--&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"music_progress_dot"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h4 id="2-css"><a href="#2-css" class="headerlink" title="2. css"></a>2. css</h4><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.music_progress_info</span> <span class="selector-class">.music_progress_bar</span> &#123;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">100%</span>;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">4px</span>;</span><br><span class="line">    <span class="attribute">background</span>: <span class="built_in">rgba</span>(255, 255, 255, 0.5);</span><br><span class="line">    <span class="attribute">margin-top</span>: <span class="number">5px</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.music_progress_bar</span> <span class="selector-class">.music_progress_line</span> &#123;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">100px</span>;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">100%</span>;</span><br><span class="line">    <span class="attribute">background</span>: white;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.music_progress_line</span> <span class="selector-class">.music_progress_dot</span> &#123;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">14px</span>;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">14px</span>;</span><br><span class="line">    <span class="attribute">border-radius</span>: <span class="number">50%</span>;</span><br><span class="line">    <span class="attribute">background</span>: <span class="number">#fff</span>;</span><br><span class="line">    <span class="attribute">position</span>: relative;</span><br><span class="line">    <span class="attribute">top</span>: -<span class="number">5px</span>;</span><br><span class="line">    <span class="attribute">left</span>: <span class="number">100px</span>;    <span class="comment">/*当前进度长100px,圆点位置也为100px*/</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
           
         
@@ -1303,7 +837,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/17/css-positon/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/23/jquery--滚动条插件/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="HJP">
@@ -1322,7 +856,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2019/03/17/css-positon/" itemprop="url">css-position</a></h1>
+                <a class="post-title-link" href="/2019/03/23/jquery--滚动条插件/" itemprop="url">jquery--滚动条插件</a></h1>
         
 
         <div class="post-meta">
@@ -1334,8 +868,158 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-03-17T00:00:00+08:00">
-                2019-03-17
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-03-23T00:00:00+08:00">
+                2019-03-23
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/jquery/" itemprop="url" rel="index">
+                    <span itemprop="name">jquery</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h4 id="1-滚动条"><a href="#1-滚动条" class="headerlink" title="1. 滚动条"></a>1. 滚动条</h4><p>设置 <code>overflow: auto</code> ，内容超出区域会出现滚动条</p>
+<h4 id="2-jquery的滚动条插件"><a href="#2-jquery的滚动条插件" class="headerlink" title="2. jquery的滚动条插件"></a>2. jquery的滚动条插件</h4><p>插件地址：<a href="http://manos.malihu.gr/jquery-custom-content-scroller/" target="_blank" rel="noopener">http://manos.malihu.gr/jquery-custom-content-scroller/</a></p>
+<h4 id="3-如何使用"><a href="#3-如何使用" class="headerlink" title="3. 如何使用"></a>3. 如何使用</h4><h6 id="步骤1：下载插件"><a href="#步骤1：下载插件" class="headerlink" title="步骤1：下载插件"></a>步骤1：下载插件</h6><p>官网下载压缩包，可获得文件<code>jquery.mCustomScrollbar.css</code> 和<code>jquery.mCustomScrollbar.concat.min.js</code></p>
+<h6 id="步骤2：-在html中引入"><a href="#步骤2：-在html中引入" class="headerlink" title="步骤2： 在html中引入"></a>步骤2： 在html中引入</h6><p>引入的插件应放在自定义样式或js文件之前，且滚动条的js文件应放在jq之后</p>
+<h6 id="步骤3：在js中添加事件"><a href="#步骤3：在js中添加事件" class="headerlink" title="步骤3：在js中添加事件"></a>步骤3：在js中添加事件</h6><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//0. 自定义滚动条</span></span><br><span class="line">    $(<span class="string">".content_list"</span>).mCustomScrollbar();</span><br></pre></td></tr></table></figure>
+<h6 id="步骤4：修改样式，添加属性"><a href="#步骤4：修改样式，添加属性" class="headerlink" title="步骤4：修改样式，添加属性"></a>步骤4：修改样式，添加属性</h6><p>修改样式：上面插件地址提供了修改默认样式的方法，如：</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*滚动条宽度设置*/</span></span><br><span class="line"><span class="selector-class">._mCS_1</span> <span class="selector-class">.mCSB_dragger</span> <span class="selector-class">.mCSB_dragger_bar</span> &#123;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">8px</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>添加属性：在滚动窗口设置属性，主题可参阅上面插件链接中的主题名称</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">data-mcs-theme</span>=<span class="string">"minimal-dark"</span>&gt;</span></span><br><span class="line">     <span class="tag">&lt;<span class="name">ul</span>&gt;</span></span><br><span class="line">         <span class="tag">&lt;<span class="name">li</span>&gt;</span>..<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">         <span class="tag">&lt;<span class="name">li</span>&gt;</span>..<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">         <span class="tag">&lt;<span class="name">li</span>&gt;</span>..<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">     <span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br><span class="line"> <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/22/css-设置hover透明度/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="HJP">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="HJinPeng">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/03/22/css-设置hover透明度/" itemprop="url">css-设置hover透明度</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-03-22T00:00:00+08:00">
+                2019-03-22
               </time>
             
 
@@ -1396,14 +1080,9 @@
       
         
           
-            <h4 id="1-利用position-relative-和-position-absolute-和-z-index-1-做出上下层级效果"><a href="#1-利用position-relative-和-position-absolute-和-z-index-1-做出上下层级效果" class="headerlink" title="1. 利用position: relative 和 position: absolute 和 z-index: -1 做出上下层级效果"></a>1. 利用<code>position: relative</code> 和 <code>position: absolute</code> 和 <code>z-index: -1</code> 做出上下层级效果</h4><ol>
-<li>父元素设置position属性</li>
-<li>子元素设置<code>position: absolute</code> ，absolute是相对于最近的上级设置了position的元素左上角进行定位的，设置top/left/right/bottom值定位</li>
-<li>利用<code>z-index</code>设置层级。</li>
-</ol>
-<h4 id="2-position-absolute中的-lt-h-gt-lt-h-gt-文本居中"><a href="#2-position-absolute中的-lt-h-gt-lt-h-gt-文本居中" class="headerlink" title="2. position: absolute中的&lt;h&gt;&lt;/h&gt; 文本居中"></a>2. <code>position: absolute</code>中的<code>&lt;h&gt;&lt;/h&gt;</code> 文本居中</h4><p>解决方案:</p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">h</span>&#123;</span><br><span class="line">    <span class="attribute">position</span>: absolute;</span><br><span class="line">    <span class="attribute">top</span>: <span class="number">100px</span>;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">100%</span>;  </span><br><span class="line">    <span class="attribute">text-align</span>: center;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>其中 <code>width: 100%;</code>  令h标签的长度为父容器的宽</p>
+            <h4 id="1-使用背景"><a href="#1-使用背景" class="headerlink" title="1. 使用背景"></a>1. 使用背景</h4><p>当鼠标悬浮在元素上时，改变元素的透明度</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">div</span>&#123;</span><br><span class="line">    <span class="attribute">opacity</span>: <span class="number">0.5</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-tag">div</span><span class="selector-pseudo">:hover</span>&#123;</span><br><span class="line">    <span class="attribute">opacity</span>: <span class="number">1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>注意：通过rgba()最后一个参数设置的颜色透明度，无法使hover中设置的opacity生效</p>
 
           
         
@@ -1452,7 +1131,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/17/jquery--attr(),prop()/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/22/css-user-select/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="HJP">
@@ -1471,7 +1150,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2019/03/17/jquery--attr(),prop()/" itemprop="url">jquery--attr(),prop()</a></h1>
+                <a class="post-title-link" href="/2019/03/22/css-user-select/" itemprop="url">css-user-select</a></h1>
         
 
         <div class="post-meta">
@@ -1483,8 +1162,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-03-17T00:00:00+08:00">
-                2019-03-17
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-03-22T00:00:00+08:00">
+                2019-03-22
               </time>
             
 
@@ -1506,8 +1185,8 @@
               
               
                 <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/jquery/" itemprop="url" rel="index">
-                    <span itemprop="name">jquery</span>
+                  <a href="/categories/css/" itemprop="url" rel="index">
+                    <span itemprop="name">css</span>
                   </a>
                 </span>
 
@@ -1545,19 +1224,12 @@
       
         
           
-            <h4 id="1-attr-和-removeAttr"><a href="#1-attr-和-removeAttr" class="headerlink" title="1. attr() 和 removeAttr()"></a>1. attr() 和 removeAttr()</h4><ol>
-<li>attr()传入一个参数，表示获取属性节点的值。无论找到多少个元素，都只返回第一个</li>
-<li>attr()传入两个参数，表示设置某属性的值。无论多少个元素，都一起设置。如果参数存在，则改变属性值，参数不存在，则新增属性和值。</li>
-<li>removeAttr() 删除多个参数用空格隔开</li>
-</ol>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">var</span> att = $(<span class="string">"div"</span>).attr(<span class="string">"class"</span>);</span><br><span class="line">    <span class="built_in">console</span>.log(att);</span><br><span class="line">    $(<span class="string">"div"</span>).attr(<span class="string">"class"</span>,<span class="string">"test2"</span>);</span><br><span class="line">    $(<span class="string">"p"</span>).attr(<span class="string">"abc"</span>,<span class="string">"add"</span>);</span><br><span class="line">    $(<span class="string">"p"</span>).attr(<span class="string">"class"</span>,<span class="string">"add_class"</span>);</span><br><span class="line">    $(<span class="string">"p"</span>).removeAttr(<span class="string">"abc class"</span>);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-<h4 id="2-prop-和-removeProp"><a href="#2-prop-和-removeProp" class="headerlink" title="2. prop() 和 removeProp()"></a>2. prop() 和 removeProp()</h4><ol>
-<li>prop()和attr()方法一样</li>
-<li>removeProp()和removeAttr()方法一样</li>
-<li>重点： prop()和attr()基本一样，但是当属性返回值为true / false 时，使用prop();如selected,checked,disabled</li>
-</ol>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">"input"</span>).prop(<span class="string">"checked"</span>);</span><br></pre></td></tr></table></figure>
-<p>返回值为 true / false</p>
+            <h4 id="1-介绍"><a href="#1-介绍" class="headerlink" title="1. 介绍"></a>1. 介绍</h4><p>设置或检索是否允许用户选中文本</p>
+<h4 id="2-使用场景"><a href="#2-使用场景" class="headerlink" title="2. 使用场景"></a>2. 使用场景</h4><p>不希望用户可以粘贴文本，如p中的文本，li的文本等等</p>
+<h4 id="3-取值"><a href="#3-取值" class="headerlink" title="3. 取值"></a>3. 取值</h4><p><code>user-select: none</code> 文本不能被选择</p>
+<p><code>user-select: text</code> 可以选择文本，默认为text</p>
+<p><code>user-select: all</code>当所有内容作为一个整体时可以被选择。如果双击或者在上下文上点击子元素，那么被选择的部分将是以该子元素向上回溯的最高祖先元素 </p>
+<p><code>user-select: element</code>可以选择文本，但选择范围受元素边界的约束</p>
 
           
         
@@ -1606,7 +1278,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/17/jquery--事件：绑定、解绑、阻止默认行为、自动触发/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/22/css-vertical-align/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="HJP">
@@ -1625,7 +1297,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2019/03/17/jquery--事件：绑定、解绑、阻止默认行为、自动触发/" itemprop="url">jquery--事件：绑定、解绑、阻止默认行为、自动触发</a></h1>
+                <a class="post-title-link" href="/2019/03/22/css-vertical-align/" itemprop="url">css-vertical-align</a></h1>
         
 
         <div class="post-meta">
@@ -1637,8 +1309,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-03-17T00:00:00+08:00">
-                2019-03-17
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-03-22T00:00:00+08:00">
+                2019-03-22
               </time>
             
 
@@ -1660,8 +1332,8 @@
               
               
                 <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/jquery/" itemprop="url" rel="index">
-                    <span itemprop="name">jquery</span>
+                  <a href="/categories/css/" itemprop="url" rel="index">
+                    <span itemprop="name">css</span>
                   </a>
                 </span>
 
@@ -1698,18 +1370,302 @@
 
       
         
-          <h4 id="1-绑定事件"><a href="#1-绑定事件" class="headerlink" title="1. 绑定事件"></a>1. 绑定事件</h4><h5 id="方式1：-eventName-function"><a href="#方式1：-eventName-function" class="headerlink" title="方式1： .eventName(function(){})"></a>方式1： <code>.eventName(function(){})</code></h5><p>特点：编写效率高，但jq只支持几个事件</p>
-<h5 id="方式2：-on-quot-eventName-quot-function"><a href="#方式2：-on-quot-eventName-quot-function" class="headerlink" title="方式2：.on(&quot;eventName&quot;,function(){})"></a>方式2：<code>.on(&quot;eventName&quot;,function(){})</code></h5><p>特点：编写效率略低，但支持所有js事件</p>
-<p>代码：</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    $(<span class="string">"button"</span>).click(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        alert(<span class="string">"1"</span>);</span><br><span class="line">    &#125;);</span><br><span class="line"></span><br><span class="line">    $(<span class="string">"button"</span>).on(<span class="string">"click"</span>,<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        alert(<span class="string">"2"</span>);</span><br><span class="line">    &#125;);</span><br><span class="line"></span><br><span class="line">    $(<span class="string">"button"</span>).mouseleave(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        alert(<span class="string">"mouseleave"</span>);</span><br><span class="line">    &#125;);</span><br><span class="line">    </span><br><span class="line">    $(<span class="string">"button"</span>).mouseenter(test);</span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">test</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        alert(<span class="string">"mouseenter"</span>);</span><br><span class="line">    &#125;</span><br><span class="line"> &#125;);</span><br></pre></td></tr></table></figure>
-<p>同一个元素可以绑定多个相同或者不同事件，不会覆盖</p>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2019/03/17/jquery--事件：绑定、解绑、阻止默认行为、自动触发/#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
+          
+            <h4 id="1-介绍"><a href="#1-介绍" class="headerlink" title="1. 介绍"></a>1. 介绍</h4><p>vertical-align 属性设置元素的垂直对齐方式。</p>
+<p>该属性定义行内元素的基线相对于该元素所在行的基线的垂直对齐。</p>
+<p>允许指定负长度值和百分比值。这会使元素降低而不是升高。</p>
+<p>在表单元格中，这个属性会设置单元格框中的单元格内容的对齐方式。 </p>
+<h4 id="2-代码"><a href="#2-代码" class="headerlink" title="2. 代码"></a>2. 代码</h4><p><code>vertical-align: -5px</code> 向下移动5个像素</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/22/css-雪碧图的使用/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="HJP">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="HJinPeng">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/03/22/css-雪碧图的使用/" itemprop="url">css-雪碧图的使用</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-03-22T00:00:00+08:00">
+                2019-03-22
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/css/" itemprop="url" rel="index">
+                    <span itemprop="name">css</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h4 id="1-什么是雪碧图？"><a href="#1-什么是雪碧图？" class="headerlink" title="1. 什么是雪碧图？"></a>1. 什么是雪碧图？</h4><p>将很多很多的小图标放在一张图片上，称之为雪碧图 </p>
+<h4 id="2-作用"><a href="#2-作用" class="headerlink" title="2. 作用"></a>2. 作用</h4><p>不但减少http请求，而且还降低了图片的大小，加快图片的加载速度</p>
+<h4 id="3-代码"><a href="#3-代码" class="headerlink" title="3. 代码"></a>3. 代码</h4><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"content_toolbar"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">span</span>&gt;</span><span class="tag">&lt;<span class="name">i</span>&gt;</span><span class="tag">&lt;/<span class="name">i</span>&gt;</span>收藏<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">span</span>&gt;</span><span class="tag">&lt;<span class="name">i</span>&gt;</span><span class="tag">&lt;/<span class="name">i</span>&gt;</span>添加到<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">span</span>&gt;</span><span class="tag">&lt;<span class="name">i</span>&gt;</span><span class="tag">&lt;/<span class="name">i</span>&gt;</span>下载<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">span</span>&gt;</span><span class="tag">&lt;<span class="name">i</span>&gt;</span><span class="tag">&lt;/<span class="name">i</span>&gt;</span>删除<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">span</span>&gt;</span><span class="tag">&lt;<span class="name">i</span>&gt;</span><span class="tag">&lt;/<span class="name">i</span>&gt;</span>清空列表<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.content_toolbar</span> <span class="selector-tag">span</span> <span class="selector-tag">i</span> &#123;</span><br><span class="line">    <span class="attribute">display</span>: inline-block;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">18px</span>;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">18px</span>;</span><br><span class="line">    <span class="attribute">background</span>: <span class="built_in">url</span>(../imgs/icon_sprite.png) no-repeat <span class="number">0</span> <span class="number">0</span>;</span><br><span class="line">    <span class="attribute">margin-right</span>: <span class="number">10px</span>;</span><br><span class="line">    <span class="attribute">vertical-align</span>: -<span class="number">5px</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.content_toolbar</span> <span class="selector-tag">span</span><span class="selector-pseudo">:nth-child(1)</span> <span class="selector-tag">i</span> &#123;</span><br><span class="line">    <span class="attribute">background-position</span>: -<span class="number">60px</span> -<span class="number">20px</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.content_toolbar</span> <span class="selector-tag">span</span><span class="selector-pseudo">:nth-child(2)</span> <span class="selector-tag">i</span> &#123;</span><br><span class="line">    <span class="attribute">background-position</span>: -<span class="number">20px</span> -<span class="number">20px</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.content_toolbar</span> <span class="selector-tag">span</span><span class="selector-pseudo">:nth-child(3)</span> <span class="selector-tag">i</span> &#123;</span><br><span class="line">    <span class="attribute">background-position</span>: -<span class="number">40px</span> -<span class="number">240px</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.content_toolbar</span> <span class="selector-tag">span</span><span class="selector-pseudo">:nth-child(4)</span> <span class="selector-tag">i</span> &#123;</span><br><span class="line">    <span class="attribute">background-position</span>: -<span class="number">100px</span> -<span class="number">20px</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.content_toolbar</span> <span class="selector-tag">span</span><span class="selector-pseudo">:nth-child(5)</span> <span class="selector-tag">i</span> &#123;</span><br><span class="line">    <span class="attribute">background-position</span>: -<span class="number">40px</span> -<span class="number">300px</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/21/css-textarea的属性/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="HJP">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="HJinPeng">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/03/21/css-textarea的属性/" itemprop="url">css-textarea的属性</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-03-21T00:00:00+08:00">
+                2019-03-21
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/css/" itemprop="url" rel="index">
+                    <span itemprop="name">css</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>textarea默认可以拖拉方法缩小，使用resize可以设置禁止拖拽</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">textareacss</span>&#123;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">570px</span>;   <span class="comment">/*文本框的宽*/</span></span><br><span class="line">    <span class="attribute">height</span>: <span class="number">73px</span>;   <span class="comment">/*文本框的高*/</span></span><br><span class="line">    <span class="attribute">background-color</span>: red;</span><br><span class="line">    <span class="attribute">margin-top</span>: <span class="number">45px</span>;</span><br><span class="line">    <span class="attribute">margin-left</span>: <span class="number">15px</span>;</span><br><span class="line">    <span class="attribute">resize</span>: none;   <span class="comment">/*禁止拖拽*/</span></span><br><span class="line">    <span class="attribute">border</span>: none;</span><br><span class="line">    <span class="attribute">outline</span>: none;    <span class="comment">/*获得焦点时边框颜色*/</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+          
         
       
     </div>
@@ -1747,7 +1703,7 @@
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/12/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/12/">12</a><span class="page-number current">13</span><a class="page-number" href="/page/14/">14</a><a class="extend next" rel="next" href="/page/14/"><i class="fa fa-angle-right"></i></a>
+    <a class="extend prev" rel="prev" href="/page/12/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/12/">12</a><span class="page-number current">13</span><a class="page-number" href="/page/14/">14</a><span class="space">&hellip;</span><a class="page-number" href="/page/16/">16</a><a class="extend next" rel="next" href="/page/14/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 
@@ -1793,7 +1749,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">137</span>
+                  <span class="site-state-item-count">152</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -1804,7 +1760,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">18</span>
+                  <span class="site-state-item-count">19</span>
                   <span class="site-state-item-name">categories</span>
                 </a>
               </div>
@@ -1815,7 +1771,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">23</span>
+                  <span class="site-state-item-count">24</span>
                   <span class="site-state-item-name">tags</span>
                 </a>
               </div>

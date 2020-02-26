@@ -1009,7 +1009,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/10/26/HTML--cookie,session,webstorage/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/11/21/数据结构--排序算法2/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="HJP">
@@ -1028,7 +1028,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2019/10/26/HTML--cookie,session,webstorage/" itemprop="url">HTML--cookie,session,webstorage</a></h1>
+                <a class="post-title-link" href="/2019/11/21/数据结构--排序算法2/" itemprop="url">数据结构--排序算法2</a></h1>
         
 
         <div class="post-meta">
@@ -1040,8 +1040,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-10-26T00:00:00+08:00">
-                2019-10-26
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-11-21T00:00:00+08:00">
+                2019-11-21
               </time>
             
 
@@ -1063,8 +1063,8 @@
               
               
                 <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/HTML5/" itemprop="url" rel="index">
-                    <span itemprop="name">HTML5</span>
+                  <a href="/categories/数据结构/" itemprop="url" rel="index">
+                    <span itemprop="name">数据结构</span>
                   </a>
                 </span>
 
@@ -1102,39 +1102,322 @@
       
         
           
-            <h4 id="1-cookie-session区别"><a href="#1-cookie-session区别" class="headerlink" title="1. cookie session区别"></a>1. cookie session区别</h4><h5 id="1-1-区别"><a href="#1-1-区别" class="headerlink" title="1.1 区别"></a>1.1 区别</h5><ul>
-<li><p>1.存取方式不同</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cookie存放在浏览器中，且单个cookie保存的数据不能超过4k，很多浏览器限制一个站点最多保存20个cookie。</span><br><span class="line">而session的数据存放在服务器上，能存储任何类型的数据。</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>2.安全性</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cookie存放在客户端，别人可以利用cookie做一些不安全的操作。</span><br><span class="line">session存放在服务端，客户端是不可见的，相对安全。</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>3.服务器压力不同</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">session存放在服务端，每个用户都会产生一个session。故当并发访问用户十分多时，会浪费大量内存。</span><br><span class="line">而cookie在客户端，不占用服务器资源。对于Google、baidu，一般使用cookie。</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>4.有效期不同</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cookie可以设置有效期，浏览器关闭后仍可存在</span><br><span class="line">而session在关闭浏览器就失效了</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>5.浏览器支持的不同</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cookie需要浏览器支持，可以被禁用。如果客户端不支持cookie，则需要用session以及url地址重写（带sessionid）。  </span><br><span class="line">session只能在浏览器窗口及其子窗口内有效，如果两个窗口互不相关，则可使用两个session。</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>6.跨域支持上的不同</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Cookie支持跨域名访问</span><br><span class="line">而Session则不会支持跨域名访问。Session仅在他所在的域名内有效</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<h5 id="1-2-cookie机制"><a href="#1-2-cookie机制" class="headerlink" title="1.2 cookie机制"></a>1.2 cookie机制</h5><p>Cookies是服务器在本地机器上存储的小段文本并<strong>随每一个请求发送至同一个服务器</strong>  </p>
-<p>cookies正常是服务器在http的响应头中添加一些提示让浏览器按照提示生成的，也可以通过js生成cookie  </p>
-<p>cookie的内容主要包括：名字，值，过期时间，路径和域  </p>
-<p>由于采用服务器端保存状态（session）的方案也需要在客户端保存一个标识，也需要用cookie</p>
-<h5 id="1-3-session机制"><a href="#1-3-session机制" class="headerlink" title="1.3 session机制"></a>1.3 session机制</h5><p>当程序需要为某个客户端的请求创建一个session时，服务器首先检查这个客户端的请求里是否已包含了一个session标识（称为session id），如果已包含则说明以前已经为此客户端创建过session，服务器就按照session id把这个session检索出来使用（检索不到，会新建一个），如果客户端请求不包含session id，则为此客户端创建一个session并且生成一个与此session相关联的session id，session id的值应该是一个既不会重复，又不容易被找到规律以仿造的字符串，这个session id将被在本次响应中返回给客户端保存。</p>
-<p>保存这个session id的方式可以采用cookie，这样在交互过程中浏览器可以自动的按照规则把这个标识发挥给服务器。</p>
-<h4 id="2-cookie-sessionStorage-localStorage区别和使用"><a href="#2-cookie-sessionStorage-localStorage区别和使用" class="headerlink" title="2. cookie sessionStorage localStorage区别和使用"></a>2. cookie sessionStorage localStorage区别和使用</h4><h5 id="2-1-区别"><a href="#2-1-区别" class="headerlink" title="2.1 区别"></a>2.1 区别</h5><table><br><thead><br>    <tr><br>        <th>特性</th><br>        <th>cookie</th><br>        <th>localStorage</th><br>        <th>sessionStorage</th><br>    </tr><br></thead><br><tbody><br>    <tr><br>        <th>数据的生命周期</th><br>        <td>一般由服务器生成，可设置失效时间，如果在浏览器端生成的cookie,默认是关闭浏览器失效</td><br>        <td>除非被清除，否则永久保存</td><br>        <td>仅在当前会话下有效，关闭页面或浏览器后被清除</td><br>    </tr><br>    <tr><br>        <th>存放数据大小</th><br>        <td>4K左右</td><br>        <td colspan="2">一般为5MB</td><br>    </tr><br>    <tr><br>        <th>与服务器端通信</th><br>        <td>每次都会携带在http头中，如果使用cookie保存过多数据，会有性能问题</td><br>        <td colspan="2">仅在客户端（即浏览器）中保存，不参与和服务器的通信</td><br>    </tr><br>    <tr><br>        <th>易用性    </th><br>        <td>需要程序员自己封装，源生的Cookie接口不友好</td><br>        <td colspan="2">源生接口可以接受，亦可再次封装来对Object和Array有更好的支持</td><br>    </tr><br></tbody><br></table>
+            <h4 id="1-冒泡"><a href="#1-冒泡" class="headerlink" title="1. 冒泡"></a>1. 冒泡</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 冒泡排序</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">bubbleSort</span>(<span class="params">arr</span>)</span>&#123;</span><br><span class="line">	<span class="keyword">let</span> length = arr.length;</span><br><span class="line">	<span class="keyword">let</span> temp ;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">let</span> j = length - <span class="number">1</span>; j &gt;= <span class="number">0</span>; j--) &#123;</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">let</span> i = <span class="number">0</span> ; i &lt; j; i++) &#123;</span><br><span class="line">			<span class="keyword">if</span>(arr[i]&gt;arr[i+<span class="number">1</span>]) &#123;</span><br><span class="line">				temp = arr[i];</span><br><span class="line">				arr[i] = arr[i+<span class="number">1</span>];</span><br><span class="line">				arr[i+<span class="number">1</span>] = temp;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">console</span>.log(<span class="string">"冒泡排序："</span>,arr);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="2-选择"><a href="#2-选择" class="headerlink" title="2. 选择"></a>2. 选择</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 选择排序</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">selectionSort</span>(<span class="params">arr</span>)</span>&#123;</span><br><span class="line">	<span class="keyword">let</span> length = arr.length;</span><br><span class="line">	<span class="keyword">let</span> temp;</span><br><span class="line">	<span class="keyword">let</span> min;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">let</span> j = <span class="number">0</span> ; j &lt; length - <span class="number">1</span>; j++) &#123;</span><br><span class="line">		min = j;</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">let</span> i  = j + <span class="number">1</span>; i &lt; length ; i++) &#123;</span><br><span class="line">			<span class="keyword">if</span>(arr[i] &lt; arr[min]) &#123;</span><br><span class="line">				min = i;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		temp = arr[j];</span><br><span class="line">		arr[j] = arr[min];</span><br><span class="line">		arr[min] = temp;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">console</span>.log(<span class="string">'选择排序：'</span>,arr);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="3-插入"><a href="#3-插入" class="headerlink" title="3. 插入"></a>3. 插入</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 插入排序</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">insertSort</span>(<span class="params">arr</span>)</span>&#123;</span><br><span class="line">	<span class="keyword">let</span> length = arr.length;</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">let</span> i = <span class="number">1</span> ; i &lt; length ; i++) &#123;</span><br><span class="line">		<span class="keyword">let</span> j = i;</span><br><span class="line">		<span class="comment">// 要插入的值</span></span><br><span class="line">		<span class="keyword">let</span> temp = arr[i];</span><br><span class="line">		<span class="keyword">while</span>(arr[j<span class="number">-1</span>] &gt; temp &amp;&amp; j &gt; <span class="number">0</span>)&#123;</span><br><span class="line">			arr[j] = arr[j<span class="number">-1</span>];</span><br><span class="line">			j--;</span><br><span class="line">		&#125;</span><br><span class="line">		arr[j] = temp;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">console</span>.log(<span class="string">"插入排序："</span>,arr);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="4-希尔"><a href="#4-希尔" class="headerlink" title="4. 希尔"></a>4. 希尔</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 希尔排序</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">shellSort</span>(<span class="params">arr</span>)</span>&#123;</span><br><span class="line">	<span class="keyword">let</span> length = arr.length;</span><br><span class="line">	<span class="keyword">let</span> gap = <span class="built_in">Math</span>.floor(arr.length/<span class="number">2</span>);</span><br><span class="line">	<span class="keyword">while</span>(gap &gt;= <span class="number">1</span>) &#123;</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">let</span> i  = gap ; i &lt; length ; i++) &#123;</span><br><span class="line">			<span class="keyword">let</span> j = i;</span><br><span class="line">			<span class="keyword">let</span> temp = arr[i];</span><br><span class="line">			<span class="keyword">while</span>(arr[j-gap] &gt; temp &amp;&amp; j &gt; gap<span class="number">-1</span>) &#123;</span><br><span class="line">				arr[j] = arr[j-gap];</span><br><span class="line">				j -= gap;</span><br><span class="line">			&#125;</span><br><span class="line">			arr[j] = temp;</span><br><span class="line">		&#125;</span><br><span class="line">		gap = <span class="built_in">Math</span>.floor(gap/<span class="number">2</span>);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">console</span>.log(<span class="string">"希尔排序："</span>,arr);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="5-快排"><a href="#5-快排" class="headerlink" title="5. 快排"></a>5. 快排</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">swap</span>(<span class="params">arr,i,j</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">let</span> temp = arr[i];</span><br><span class="line">    arr[i] = arr[j];</span><br><span class="line">    arr[j] = temp;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">media</span>(<span class="params">arr,left,right</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">let</span> center = <span class="built_in">Math</span>.floor((left+right)/<span class="number">2</span>);</span><br><span class="line">    <span class="keyword">if</span>(arr[left] &gt; arr[center]) &#123;</span><br><span class="line">    	swap(arr,left,center);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span>(arr[left] &gt; arr[right]) &#123;</span><br><span class="line">    	swap(arr,left,right);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span>(arr[center] &gt; arr[right]) &#123;</span><br><span class="line">    	swap(arr,center,right);</span><br><span class="line">    &#125;</span><br><span class="line">    swap(arr,center,right<span class="number">-1</span>);</span><br><span class="line">    <span class="keyword">return</span> arr[right<span class="number">-1</span>];</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">quick</span>(<span class="params">arr,left,right</span>)</span>&#123;</span><br><span class="line">	<span class="keyword">if</span>(left &gt;= right) <span class="keyword">return</span>;</span><br><span class="line">	<span class="keyword">let</span> pivot = media(arr,left,right);</span><br><span class="line">	<span class="keyword">let</span> i = left;</span><br><span class="line">	<span class="keyword">let</span> j = right - <span class="number">1</span>;</span><br><span class="line">	<span class="keyword">while</span>(i &lt; j) &#123;</span><br><span class="line">		<span class="keyword">while</span>(arr[++i] &lt; pivot)&#123;&#125;;</span><br><span class="line">		<span class="keyword">while</span>(arr[--j] &gt; pivot)&#123;&#125;;</span><br><span class="line">		<span class="keyword">if</span>(i &lt; j)&#123;</span><br><span class="line">			swap(arr,i,j);</span><br><span class="line">		&#125;<span class="keyword">else</span>&#123;</span><br><span class="line">		    <span class="keyword">break</span>;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">    swap(arr,i,right<span class="number">-1</span>);</span><br><span class="line">    quick(arr,left,i<span class="number">-1</span>);</span><br><span class="line">    quick(arr,i+<span class="number">1</span>,right);</span><br><span class="line"> &#125;</span><br><span class="line">	</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">quickSort</span>(<span class="params">arr</span>)</span>&#123;</span><br><span class="line">	<span class="keyword">if</span>(arr.length &gt; <span class="number">1</span>) &#123;</span><br><span class="line">		quick(arr,<span class="number">0</span>,arr.length<span class="number">-1</span>);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">console</span>.log(<span class="string">"快速排序"</span>,arr);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="6-测试"><a href="#6-测试" class="headerlink" title="6. 测试"></a>6. 测试</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> arr = [<span class="number">1</span>,<span class="number">55</span>,<span class="number">22</span>,<span class="number">13</span>,<span class="number">14</span>,<span class="number">63</span>,<span class="number">12</span>,<span class="number">76</span>,<span class="number">21</span>,<span class="number">34</span>,<span class="number">66</span>,<span class="number">246</span>,<span class="number">3</span>,<span class="number">15</span>];</span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">"原始数组："</span>,arr);</span><br><span class="line">quickSort(arr)</span><br></pre></td></tr></table></figure>
+          
+        
+      
+    </div>
+    
+    
+    
 
-<h5 id="2-2-使用"><a href="#2-2-使用" class="headerlink" title="2.2 使用"></a>2.2 使用</h5><h6 id="2-2-1-cookie"><a href="#2-2-1-cookie" class="headerlink" title="2.2.1 cookie"></a>2.2.1 cookie</h6><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//创建cookie</span></span><br><span class="line"><span class="built_in">document</span>.cookie=<span class="string">"username=John Doe; expires=Thu, 18 Dec 2043 12:00:00 GMT; path=/"</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">//读取</span></span><br><span class="line"><span class="keyword">var</span> x = <span class="built_in">document</span>.cookie;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 修改,旧的 cookie 将被覆盖</span></span><br><span class="line"><span class="built_in">document</span>.cookie=<span class="string">"username=John Smith; expires=Thu, 18 Dec 2043 12:00:00 GMT; path=/"</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 删除只需要设置 expires 参数为以前的时间即可</span></span><br><span class="line"><span class="built_in">document</span>.cookie = <span class="string">"username=; expires=Thu, 01 Jan 1970 00:00:00 GMT"</span>;</span><br></pre></td></tr></table></figure>
-<h6 id="2-2-2-localStorage"><a href="#2-2-2-localStorage" class="headerlink" title="2.2.2 localStorage"></a>2.2.2 localStorage</h6><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 把一个用户名(lilei)存储到 name 的键上</span></span><br><span class="line">localStorage.setItem(<span class="string">'name'</span>, <span class="string">'lilei'</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 把一个用户存储到user的键上,需要注意的是，key和value值必须是字符串形式的，如果不是字符串，会调用它们相应的toString() 方法来转换成字符串再存储。当我们要存储对象是，应先转换成我们可识别的字符串格式（比如JSON格式）再进行存储。</span></span><br><span class="line">localStorage.setItem(<span class="string">'user'</span>, <span class="built_in">JSON</span>.stringify(id:<span class="number">1</span>, <span class="attr">name</span>:<span class="string">'lilei'</span>));</span><br><span class="line"></span><br><span class="line"><span class="comment">// 获取存储到 name 的键上的值</span></span><br><span class="line"><span class="keyword">var</span> name = localStorage.getItem(<span class="string">'name'</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 获取存储到user的键上的值</span></span><br><span class="line"><span class="keyword">var</span> user = <span class="built_in">JSON</span>.parse(localStorage.getItem(<span class="string">'user'</span>));</span><br><span class="line"></span><br><span class="line"><span class="comment">// 删除存储到 name 的键上的值</span></span><br><span class="line">localStorage.removeItem(<span class="string">'name'</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 清除 localStorage</span></span><br><span class="line">localStorage.clear();</span><br><span class="line"><span class="keyword">var</span> len = localStorage.length; <span class="comment">// 0</span></span><br></pre></td></tr></table></figure>
-<p><strong>Web Storage 事件</strong><br>storage 事件当存储的数据发生变化时，会触发 storage 事件。但要注意的是它不同于click类的事件会事件捕获和冒泡，storage 事件更像是一个通知，不可取消。<strong>触发这个事件会调用同域下其他窗口的storage事件，不过触发storage的窗口（即当前窗口）不触发这个事件</strong>。storage 的 event 对象的常用属性如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">oldValue：更新前的值。如果该键为新增加，则这个属性为null。</span><br><span class="line">newValue：更新后的值。如果该键被删除，则这个属性为null。</span><br><span class="line">url：原始触发storage事件的那个网页的网址。</span><br><span class="line">key：存储store的key名</span><br></pre></td></tr></table></figure></p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">storageChanged</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="built_in">arguments</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="built_in">window</span>.addEventListener(<span class="string">'storage'</span>, storageChanged, <span class="literal">false</span>);</span><br></pre></td></tr></table></figure>
-<p>基于 storage 事件特点，Web Storage 还可以用于同域不同窗口间的通信。</p>
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/11/20/数据结构--排序算法/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="HJP">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="HJinPeng">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/11/20/数据结构--排序算法/" itemprop="url">数据结构--排序算法</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-11-20T00:00:00+08:00">
+                2019-11-20
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/数据结构/" itemprop="url" rel="index">
+                    <span itemprop="name">数据结构</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p><img src="https://upload-images.jianshu.io/upload_images/6881750-c64c200d06d2f68c.png?imageMogr2/auto-orient/strip|imageView2/2/w/966/format/webp" alt="image"></p>
+<h4 id="0-封装列表"><a href="#0-封装列表" class="headerlink" title="0. 封装列表"></a>0. 封装列表</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">ArrayList</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">	<span class="keyword">this</span>.array = [];</span><br><span class="line">	</span><br><span class="line">	ArrayList.prototype.insert = <span class="function"><span class="keyword">function</span> (<span class="params">item</span>) </span>&#123;</span><br><span class="line">		<span class="keyword">this</span>.array.push(item);</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	ArrayList.prototype.toString = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="keyword">this</span>.array.join(<span class="string">'-'</span>)</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="comment">// 交换两个数据</span></span><br><span class="line">	ArrayList.prototype.swap = <span class="function"><span class="keyword">function</span> (<span class="params">m,n</span>) </span>&#123;</span><br><span class="line">		<span class="keyword">var</span> temp = <span class="keyword">this</span>.array[m];</span><br><span class="line">		<span class="keyword">this</span>.array[m] = <span class="keyword">this</span>.array[n];</span><br><span class="line">		<span class="keyword">this</span>.array[n] = temp;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="1-冒泡排序"><a href="#1-冒泡排序" class="headerlink" title="1. 冒泡排序"></a>1. 冒泡排序</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 冒泡:平均时间复杂度O(n^2)，空间复杂度O(1),稳定的排序</span></span><br><span class="line"><span class="comment">// 相邻两个进行比较，高的在后面，一趟排序下来最高的在最后。</span></span><br><span class="line">ArrayList.prototype.bubbleSort = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">	<span class="keyword">let</span> length = <span class="keyword">this</span>.array.length;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">let</span> j = length - <span class="number">1</span>; j &gt;= <span class="number">0</span> ; j--) &#123;</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; j; i++) &#123;</span><br><span class="line">			<span class="keyword">if</span>(<span class="keyword">this</span>.array[i] &gt; <span class="keyword">this</span>.array[i+<span class="number">1</span>]) &#123;</span><br><span class="line">				<span class="keyword">this</span>.swap(i,i+<span class="number">1</span>);</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="2-选择排序"><a href="#2-选择排序" class="headerlink" title="2. 选择排序"></a>2. 选择排序</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 选择排序：不稳定，时间O(n^2),空间O(1),交换O(n)次。比冒泡好在一次循环只有一次交换</span></span><br><span class="line"><span class="comment">// 在未排序中找到最小的值的下标，和未排序的第一个交换值</span></span><br><span class="line">ArrayList.prototype.selectionSort = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">	<span class="keyword">let</span> length = <span class="keyword">this</span>.array.length;</span><br><span class="line">	<span class="keyword">let</span> min = <span class="number">0</span>;</span><br><span class="line">	<span class="comment">// 最后一个不用比较，所以到length-1</span></span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">let</span> j = <span class="number">0</span> ; j &lt; length - <span class="number">1</span> ; j++) &#123;</span><br><span class="line">		min = j;</span><br><span class="line">		<span class="comment">// 内层循环从j+1的位置开始比较</span></span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">let</span> i = j + <span class="number">1</span> ; i &lt; length; i++) &#123;</span><br><span class="line">			<span class="keyword">if</span>(<span class="keyword">this</span>.array[min] &gt; <span class="keyword">this</span>.array[i]) &#123;</span><br><span class="line">				min = i;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">this</span>.swap(j,min);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="3-插入排序"><a href="#3-插入排序" class="headerlink" title="3. 插入排序"></a>3. 插入排序</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 插入排序，稳定。时间复杂度O(n^2)，空间O(1)</span></span><br><span class="line">ArrayList.prototype.insertSort = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">	<span class="keyword">let</span> length = <span class="keyword">this</span>.array.length;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">let</span> i = <span class="number">1</span>; i &lt; length ; i++) &#123;</span><br><span class="line">		<span class="keyword">let</span> j = i;</span><br><span class="line">		<span class="comment">// 拿到要比较的元素</span></span><br><span class="line">		<span class="keyword">let</span> temp = <span class="keyword">this</span>.array[i];</span><br><span class="line">		<span class="keyword">while</span>(<span class="keyword">this</span>.array[j<span class="number">-1</span>] &gt; temp &amp;&amp; j &gt; <span class="number">0</span>) &#123;</span><br><span class="line">			<span class="keyword">this</span>.array[j] = <span class="keyword">this</span>.array[j<span class="number">-1</span>];</span><br><span class="line">			j--;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="comment">// 因为j-1位置的值已经不比temp大了，所以temp放在j的位置</span></span><br><span class="line">		<span class="keyword">this</span>.array[j] = temp;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="4-希尔排序"><a href="#4-希尔排序" class="headerlink" title="4. 希尔排序"></a>4. 希尔排序</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 希尔排序：不稳定。O(nlogn) O(1)</span></span><br><span class="line">ArrayList.prototype.shellSort = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">	<span class="keyword">let</span> length = <span class="keyword">this</span>.array.length;</span><br><span class="line">	<span class="keyword">let</span> gap = <span class="built_in">Math</span>.floor(length/<span class="number">2</span>);</span><br><span class="line">	<span class="comment">// 控制gap（间隔的减少）</span></span><br><span class="line">	<span class="keyword">while</span>(gap &gt;= <span class="number">1</span>) &#123;</span><br><span class="line">		<span class="comment">// 从gap开始比较</span></span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">let</span> i = gap; i &lt; length; i++) &#123;</span><br><span class="line">			<span class="keyword">let</span> j = i;</span><br><span class="line">			<span class="keyword">let</span> temp = <span class="keyword">this</span>.array[i];</span><br><span class="line">			<span class="keyword">while</span>(<span class="keyword">this</span>.array[j-gap] &gt; temp &amp;&amp; j &gt; gap<span class="number">-1</span>) &#123;</span><br><span class="line">				<span class="keyword">this</span>.array[j] = <span class="keyword">this</span>.array[j-gap];</span><br><span class="line">				j -= gap;</span><br><span class="line">			&#125;</span><br><span class="line">			<span class="comment">// 将j位置赋值temp</span></span><br><span class="line">			<span class="keyword">this</span>.array[j] = temp;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="comment">// 增量变化，除2</span></span><br><span class="line">		gap = <span class="built_in">Math</span>.floor(gap/<span class="number">2</span>);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="5-快速排序"><a href="#5-快速排序" class="headerlink" title="5. 快速排序"></a>5. 快速排序</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 1. 选择枢纽，中位数</span></span><br><span class="line">ArrayList.prototype.media = <span class="function"><span class="keyword">function</span>(<span class="params">left,right</span>) </span>&#123;</span><br><span class="line">	<span class="keyword">let</span> center = <span class="built_in">Math</span>.floor((left+right)/<span class="number">2</span>);</span><br><span class="line">	<span class="comment">// 将取出来的三个数排序。</span></span><br><span class="line">	<span class="keyword">if</span>(<span class="keyword">this</span>.array[left] &gt; <span class="keyword">this</span>.array[center]) &#123;</span><br><span class="line">		<span class="keyword">this</span>.swap(left,center);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">if</span>(<span class="keyword">this</span>.array[left] &gt; <span class="keyword">this</span>.array[right]) &#123;</span><br><span class="line">		<span class="keyword">this</span>.swap(left,right);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">if</span>(<span class="keyword">this</span>.array[center] &gt; <span class="keyword">this</span>.array[right]) &#123;</span><br><span class="line">		<span class="keyword">this</span>.swap(center,right);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="comment">// 将中间的数放到倒数第二个位置</span></span><br><span class="line">	<span class="keyword">this</span>.swap(center,right<span class="number">-1</span>);</span><br><span class="line">	<span class="comment">// 返回枢纽值</span></span><br><span class="line">	<span class="keyword">return</span> <span class="keyword">this</span>.array[right<span class="number">-1</span>]</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">ArrayList.prototype.quickSort = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">	<span class="keyword">let</span> length = <span class="keyword">this</span>.array.length;</span><br><span class="line">	<span class="keyword">this</span>.quick(<span class="number">0</span>,length<span class="number">-1</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">ArrayList.prototype.quick = <span class="function"><span class="keyword">function</span> (<span class="params">left,right</span>) </span>&#123;</span><br><span class="line">	<span class="comment">// 1. 结束条件</span></span><br><span class="line">	<span class="keyword">if</span>(left &gt;= right) <span class="keyword">return</span>;</span><br><span class="line">	<span class="comment">// 2. 获取枢纽</span></span><br><span class="line">	<span class="keyword">let</span> pivot = <span class="keyword">this</span>.media(left,right);</span><br><span class="line">	</span><br><span class="line">	<span class="comment">// 3. 定义变量，记录当前找到的位置</span></span><br><span class="line">	<span class="keyword">let</span> i = left;</span><br><span class="line">	<span class="keyword">let</span> j = right - <span class="number">1</span>;</span><br><span class="line">	<span class="keyword">while</span>(i&lt;j) &#123;</span><br><span class="line">		<span class="keyword">while</span>(<span class="keyword">this</span>.array[++i] &lt; pivot)&#123;&#125;;</span><br><span class="line">		<span class="keyword">while</span>(<span class="keyword">this</span>.array[--j] &gt; pivot)&#123;&#125;;</span><br><span class="line">		<span class="keyword">if</span>(i &lt; j)&#123;</span><br><span class="line">			<span class="keyword">this</span>.swap(i,j);</span><br><span class="line">		&#125;<span class="keyword">else</span>&#123;</span><br><span class="line">			<span class="keyword">break</span>;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="comment">// 4. 将枢纽放到正确的位置i</span></span><br><span class="line">	<span class="keyword">this</span>.swap(i,right<span class="number">-1</span>);</span><br><span class="line">	<span class="comment">// 5. 递归调用左边</span></span><br><span class="line">	<span class="keyword">this</span>.quick(left,i<span class="number">-1</span>);</span><br><span class="line">	<span class="comment">// 6. 递归调用右边</span></span><br><span class="line">	<span class="keyword">this</span>.quick(i+<span class="number">1</span>,right);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="6-测试"><a href="#6-测试" class="headerlink" title="6. 测试"></a>6. 测试</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> list = <span class="keyword">new</span> ArrayList();</span><br><span class="line">list.insert(<span class="number">66</span>);</span><br><span class="line">list.insert(<span class="number">88</span>);</span><br><span class="line">list.insert(<span class="number">12</span>);</span><br><span class="line">list.insert(<span class="number">87</span>);</span><br><span class="line">list.insert(<span class="number">6</span>);</span><br><span class="line">list.insert(<span class="number">5</span>);</span><br><span class="line">list.insert(<span class="number">555</span>);</span><br><span class="line">list.insert(<span class="number">33</span>);</span><br><span class="line"><span class="built_in">console</span>.log(list.toString());</span><br><span class="line"><span class="comment">//list.bubbleSort();</span></span><br><span class="line"><span class="comment">//list.selectionSort();</span></span><br><span class="line"><span class="comment">//list.insertSort();</span></span><br><span class="line"><span class="comment">//list.shellSort();</span></span><br><span class="line">list.quickSort()</span><br><span class="line"><span class="built_in">console</span>.log(list.toString());</span><br></pre></td></tr></table></figure>
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/11/18/数据结构--红黑树/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="HJP">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="HJinPeng">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/11/18/数据结构--红黑树/" itemprop="url">数据结构--图论</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-11-18T00:00:00+08:00">
+                2019-11-18
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/数据结构/" itemprop="url" rel="index">
+                    <span itemprop="name">数据结构</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h4 id="1-图"><a href="#1-图" class="headerlink" title="1. 图"></a>1. 图</h4><ul>
+<li>顶点（Vertex）表示事物  </li>
+<li>边（Edge）表示关系，可以是无向边，也可以是有向边</li>
+</ul>
+<h4 id="2-图的术语"><a href="#2-图的术语" class="headerlink" title="2. 图的术语"></a>2. 图的术语</h4><ul>
+<li>顶点</li>
+<li>边</li>
+<li>相邻顶点</li>
+<li>度：相邻顶点的数量</li>
+<li>路径：<ul>
+<li>普通路径：不包含重复的顶点</li>
+<li>回路：起点和终点是相同的路径</li>
+</ul>
+</li>
+<li>无向图</li>
+<li>有向图</li>
+<li>无权图</li>
+<li>带权图：边有一定的权重，比如距离/时间/票价</li>
+</ul>
+<h4 id="3-图的表示"><a href="#3-图的表示" class="headerlink" title="3. 图的表示"></a>3. 图的表示</h4><p><img src="https://img2018.cnblogs.com/blog/819930/201901/819930-20190112115354331-2067367992.png" alt="image"></p>
+<h5 id="3-1-邻接矩阵"><a href="#3-1-邻接矩阵" class="headerlink" title="3.1 邻接矩阵"></a>3.1 邻接矩阵</h5><p>问题：稀疏图，存在大量的0，即很多顶点没有联系，造成空间浪费。<br><img src="https://img2018.cnblogs.com/blog/819930/201901/819930-20190112115519109-435014760.png" alt="image"></p>
+<h5 id="3-2-邻接表"><a href="#3-2-邻接表" class="headerlink" title="3.2 邻接表"></a>3.2 邻接表</h5><p><img src="https://img2018.cnblogs.com/blog/819930/201901/819930-20190112120134818-502447163.png" alt="image"><br>计算<strong>出度</strong>很简单，计算<strong>入度</strong>麻烦</p>
 
           
         
@@ -1183,7 +1466,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/10/25/HTML5--websocket/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/11/18/数据结构--图封装，广度深度优先遍历/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="HJP">
@@ -1202,7 +1485,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2019/10/25/HTML5--websocket/" itemprop="url">HTML5--websocket</a></h1>
+                <a class="post-title-link" href="/2019/11/18/数据结构--图封装，广度深度优先遍历/" itemprop="url">数据结构--图封装，广度深度优先遍历</a></h1>
         
 
         <div class="post-meta">
@@ -1214,8 +1497,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-10-25T00:00:00+08:00">
-                2019-10-25
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-11-18T00:00:00+08:00">
+                2019-11-18
               </time>
             
 
@@ -1237,8 +1520,8 @@
               
               
                 <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/HTML5/" itemprop="url" rel="index">
-                    <span itemprop="name">HTML5</span>
+                  <a href="/categories/数据结构/" itemprop="url" rel="index">
+                    <span itemprop="name">数据结构</span>
                   </a>
                 </span>
 
@@ -1276,51 +1559,29 @@
       
         
           
-            <h3 id="一、WebSocket的实现和应用"><a href="#一、WebSocket的实现和应用" class="headerlink" title="一、WebSocket的实现和应用"></a>一、WebSocket的实现和应用</h3><h4 id="0、前提"><a href="#0、前提" class="headerlink" title="0、前提"></a>0、前提</h4><p>HTTP协议只能由客户端向服务器端发起请求。如果要知道服务器端是否有持续变化，只能使用轮询 ++<em>(每个一段时间发送一个询问，了解服务器端有没有新消息)</em>++  </p>
-<h4 id="1、-什么是WebSocket"><a href="#1、-什么是WebSocket" class="headerlink" title="1、 什么是WebSocket"></a>1、 什么是WebSocket</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">WebSocket是HTML5开始提供的一种浏览器与服务器进行全双工通讯的网络技术，属于应用层协议。它基于TCP传输协议，并复用HTTP的握手通道。 </span><br><span class="line">1. WebSocket可以在浏览器里使用</span><br><span class="line">2. 支持双向通信</span><br><span class="line">3. 使用很简单</span><br></pre></td></tr></table></figure>
-<h4 id="2-WebSocket-协议的特点"><a href="#2-WebSocket-协议的特点" class="headerlink" title="2. WebSocket 协议的特点"></a>2. WebSocket 协议的特点</h4><p><strong>最大特点</strong> 就是，服务器可以主动向客户端推送信息，客户端也可以主动向服务器发送信息，是真正的双向平等对话，属于服务器推送技术的一种。  </p>
-<p><strong>其他特点：</strong> </p>
-<ol>
-<li>建立在tcp协议上，服务器端实现比较容易。</li>
-<li>与http有良好的兼容性，默认端口80,443，握手阶段采用http协议，不容易屏蔽。</li>
-<li>数据格式轻量，性能开销小</li>
-<li>可以发送文本，也可以发二进制数据</li>
-<li>没有同源限制，客户端可以与任意服务器通信</li>
-<li>协议标识符是ws(如果加密是wss) <code>ws://example.com:80/some/path</code></li>
-</ol>
-<h4 id="3-有什么优点？"><a href="#3-有什么优点？" class="headerlink" title="3. 有什么优点？"></a>3. 有什么优点？</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">1. 支持双向通信，实时性更强</span><br><span class="line">2. 更好的二进制支持</span><br><span class="line">3. 较少的控制开销。http协议每次通信都要携带完整的头部</span><br><span class="line">4. 支持扩展。用户可以扩展协议。</span><br></pre></td></tr></table></figure>
-<h4 id="4-应用"><a href="#4-应用" class="headerlink" title="4. 应用"></a>4. 应用</h4><h5 id="4-1-阮一峰：客户端"><a href="#4-1-阮一峰：客户端" class="headerlink" title="4.1 阮一峰：客户端"></a>4.1 阮一峰：客户端</h5><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> ws = <span class="keyword">new</span> WebSocket(<span class="string">"wss://echo.websocket.org"</span>);</span><br><span class="line"></span><br><span class="line">ws.onopen = <span class="function"><span class="keyword">function</span>(<span class="params">evt</span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">"Connection open ..."</span>); </span><br><span class="line">  ws.send(<span class="string">"Hello WebSockets!"</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">ws.onmessage = <span class="function"><span class="keyword">function</span>(<span class="params">evt</span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log( <span class="string">"Received Message: "</span> + evt.data);</span><br><span class="line">  ws.close();</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">ws.onclose = <span class="function"><span class="keyword">function</span>(<span class="params">evt</span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">"Connection closed."</span>);</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-<h5 id="4-2-服务端-客户端"><a href="#4-2-服务端-客户端" class="headerlink" title="4.2 服务端+客户端"></a>4.2 服务端+客户端</h5><p><strong>服务端</strong><br>代码如下，监听8080端口。当有新的连接请求到达时，打印日志，同时向客户端发送消息。当收到到来自客户端的消息时，同样打印日志。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> app = <span class="built_in">require</span>(<span class="string">'express'</span>)();</span><br><span class="line"><span class="keyword">var</span> server = <span class="built_in">require</span>(<span class="string">'http'</span>).Server(app);</span><br><span class="line"><span class="keyword">var</span> WebSocket = <span class="built_in">require</span>(<span class="string">'ws'</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> wss = <span class="keyword">new</span> WebSocket.Server(&#123; <span class="attr">port</span>: <span class="number">8080</span> &#125;);</span><br><span class="line"></span><br><span class="line">wss.on(<span class="string">'connection'</span>, <span class="function"><span class="keyword">function</span> <span class="title">connection</span>(<span class="params">ws</span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'server: receive connection.'</span>);</span><br><span class="line">    </span><br><span class="line">    ws.on(<span class="string">'message'</span>, <span class="function"><span class="keyword">function</span> <span class="title">incoming</span>(<span class="params">message</span>) </span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">'server: received: %s'</span>, message);</span><br><span class="line">    &#125;);</span><br><span class="line"></span><br><span class="line">    ws.send(<span class="string">'world'</span>);</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">app.get(<span class="string">'/'</span>, <span class="function"><span class="keyword">function</span> (<span class="params">req, res</span>) </span>&#123;</span><br><span class="line">  res.sendfile(__dirname + <span class="string">'/index.html'</span>);</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">app.listen(<span class="number">3000</span>);</span><br></pre></td></tr></table></figure></p>
-<p><strong>客户端</strong><br>代码如下，向8080端口发起WebSocket连接。连接建立后，打印日志，同时向服务端发送消息。接收到来自服务端的消息后，同样打印日志。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> ws = <span class="keyword">new</span> WebSocket(<span class="string">'ws://localhost:8080'</span>);</span><br><span class="line">ws.onopen = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">'ws onopen'</span>);</span><br><span class="line">  ws.send(<span class="string">'from client: hello'</span>);</span><br><span class="line">&#125;;</span><br><span class="line">ws.onmessage = <span class="function"><span class="keyword">function</span> (<span class="params">e</span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">'ws onmessage'</span>);</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">'from server: '</span> + e.data);</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></p>
-<p><strong>运行结果</strong><br>服务器端：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">server: receive connection.</span><br><span class="line">server: received:from client: hello</span><br></pre></td></tr></table></figure></p>
-<p>客户端：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ws onopen</span><br><span class="line">ws onmessage from server: world</span><br></pre></td></tr></table></figure></p>
-<h5 id="4-3-客户端的-API"><a href="#4-3-客户端的-API" class="headerlink" title="4.3. 客户端的 API"></a>4.3. 客户端的 API</h5><h6 id="4-3-1-WebSocket-构造函数"><a href="#4-3-1-WebSocket-构造函数" class="headerlink" title="4.3.1 WebSocket 构造函数"></a>4.3.1 WebSocket 构造函数</h6><p>WebSocket 对象作为一个构造函数，用于新建 WebSocket 实例。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> ws = <span class="keyword">new</span> WebSocket(<span class="string">'ws://localhost:8080'</span>);</span><br></pre></td></tr></table></figure></p>
-<p>执行上面语句之后，客户端就会与服务器进行连接。</p>
-<h6 id="4-3-2-webSocket-readyState"><a href="#4-3-2-webSocket-readyState" class="headerlink" title="4.3.2 webSocket.readyState"></a>4.3.2 webSocket.readyState</h6><p><code>readyState</code>属性返回实例对象的当前状态，共有四种。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">- CONNECTING：值为0，表示正在连接。</span><br><span class="line">- OPEN：值为1，表示连接成功，可以通信了。</span><br><span class="line">- CLOSING：值为2，表示连接正在关闭。</span><br><span class="line">- CLOSED：值为3，表示连接已经关闭，或者打开连接失败。</span><br></pre></td></tr></table></figure></p>
-<h6 id="4-3-3-webSocket-onopen"><a href="#4-3-3-webSocket-onopen" class="headerlink" title="4.3.3 webSocket.onopen"></a>4.3.3 webSocket.onopen</h6><p>实例对象的<code>onopen</code>属性，用于指定连接成功后的回调函数<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">ws.onopen = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">  ws.send(<span class="string">'Hello Server!'</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>如果要指定多个回调函数，可以使用<code>addEventListener</code>方法。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">ws.addEventListener(<span class="string">'open'</span>, <span class="function"><span class="keyword">function</span> (<span class="params">event</span>) </span>&#123;</span><br><span class="line">  ws.send(<span class="string">'Hello Server!'</span>);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></p>
-<h6 id="4-3-4-webSocket-onclose"><a href="#4-3-4-webSocket-onclose" class="headerlink" title="4.3.4 webSocket.onclose"></a>4.3.4 webSocket.onclose</h6><p>实例对象的<code>onclose</code>属性，用于指定连接关闭后的回调函数</p>
-<h6 id="4-3-5-webSocket-onmessage"><a href="#4-3-5-webSocket-onmessage" class="headerlink" title="4.3.5 webSocket.onmessage"></a>4.3.5 webSocket.onmessage</h6><p>实例对象的<code>onmessage</code>属性，用于指定收到服务器数据后的回调函数。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 收到的是 blob 数据</span></span><br><span class="line">ws.binaryType = <span class="string">"blob"</span>;</span><br><span class="line">ws.onmessage = <span class="function"><span class="keyword">function</span>(<span class="params">e</span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(e.data.size);</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 收到的是 ArrayBuffer 数据</span></span><br><span class="line">ws.binaryType = <span class="string">"arraybuffer"</span>;</span><br><span class="line">ws.onmessage = <span class="function"><span class="keyword">function</span>(<span class="params">e</span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(e.data.byteLength);</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></p>
-<h6 id="4-3-6-webSocket-send"><a href="#4-3-6-webSocket-send" class="headerlink" title="4.3.6 webSocket.send()"></a>4.3.6 webSocket.send()</h6><p>实例对象的<code>send()</code>方法用于向服务器发送数据。</p>
-<p>发送文本的例子。</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ws.send(<span class="string">'your message'</span>);</span><br></pre></td></tr></table></figure>
-<p>发送 <code>Blob</code> 对象的例子。</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> file = <span class="built_in">document</span></span><br><span class="line">  .querySelector(<span class="string">'input[type="file"]'</span>)</span><br><span class="line">  .files[<span class="number">0</span>];</span><br><span class="line">ws.send(file);</span><br></pre></td></tr></table></figure>
-<p>发送 <code>ArrayBuffer</code> 对象的例子。</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Sending canvas ImageData as ArrayBuffer</span></span><br><span class="line"><span class="keyword">var</span> img = canvas_context.getImageData(<span class="number">0</span>, <span class="number">0</span>, <span class="number">400</span>, <span class="number">320</span>);</span><br><span class="line"><span class="keyword">var</span> binary = <span class="keyword">new</span> <span class="built_in">Uint8Array</span>(img.data.length);</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; img.data.length; i++) &#123;</span><br><span class="line">  binary[i] = img.data[i];</span><br><span class="line">&#125;</span><br><span class="line">ws.send(binary.buffer);</span><br></pre></td></tr></table></figure>
-<h6 id="4-3-7-webSocket-bufferedAmount"><a href="#4-3-7-webSocket-bufferedAmount" class="headerlink" title="4.3.7 webSocket.bufferedAmount"></a>4.3.7 webSocket.bufferedAmount</h6><p>实例对象的<code>bufferedAmount</code>属性，表示还有多少字节的二进制数据没有发送出去。它可以用来判断发送是否结束。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> data = <span class="keyword">new</span> <span class="built_in">ArrayBuffer</span>(<span class="number">10000000</span>);</span><br><span class="line">socket.send(data);</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> (socket.bufferedAmount === <span class="number">0</span>) &#123;</span><br><span class="line">  <span class="comment">// 发送完毕</span></span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">  <span class="comment">// 发送还没结束</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<h6 id="4-3-8-webSocket-onerror"><a href="#4-3-8-webSocket-onerror" class="headerlink" title="4.3.8 webSocket.onerror"></a>4.3.8 webSocket.onerror</h6><p>实例对象的<code>onerror</code>属性，用于指定报错时的回调函数。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">socket.onerror = <span class="function"><span class="keyword">function</span>(<span class="params">event</span>) </span>&#123;</span><br><span class="line">  <span class="comment">// handle error event</span></span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">socket.addEventListener(<span class="string">"error"</span>, <span class="function"><span class="keyword">function</span>(<span class="params">event</span>) </span>&#123;</span><br><span class="line">  <span class="comment">// handle error event</span></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></p>
-<h4 id="5-如何建立连接"><a href="#5-如何建立连接" class="headerlink" title="5. 如何建立连接"></a>5. 如何建立连接</h4><h5 id="5-1-客户端：申请协议升级"><a href="#5-1-客户端：申请协议升级" class="headerlink" title="5.1 客户端：申请协议升级"></a>5.1 客户端：申请协议升级</h5><p>首先，客户端发起协议升级请求。可以看到，采用的是标准的HTTP报文格式，且只支持<code>GET</code>方法。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">GET / HTTP/1.1</span><br><span class="line">Host: localhost:8080</span><br><span class="line">Origin: http://127.0.0.1:3000</span><br><span class="line">Connection: Upgrade</span><br><span class="line">Upgrade: websocket</span><br><span class="line">Sec-WebSocket-Version: 13</span><br><span class="line">Sec-WebSocket-Key: w4v7O6xFTi36lq3RNcgctw==</span><br></pre></td></tr></table></figure></p>
-<p>重点请求首部意义如下：  </p>
+            <h4 id="1-封装"><a href="#1-封装" class="headerlink" title="1. 封装"></a>1. 封装</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Graph</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">	<span class="comment">// 属性：顶点（数组）/ 边（字典）</span></span><br><span class="line">	<span class="keyword">this</span>.vertexes =  []; <span class="comment">// 顶点</span></span><br><span class="line">	<span class="keyword">this</span>.edges = <span class="keyword">new</span> Dictionary();  <span class="comment">// 边</span></span><br><span class="line">	</span><br><span class="line">	<span class="comment">// 方法</span></span><br><span class="line">	<span class="comment">// 1. 添加顶点</span></span><br><span class="line">	Graph.prototype.addVertex = <span class="function"><span class="keyword">function</span> (<span class="params">v</span>) </span>&#123;</span><br><span class="line">		<span class="keyword">this</span>.vertexes.push(v);</span><br><span class="line">		<span class="keyword">this</span>.edges.set(v,[]);</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="comment">// 2. 添加边</span></span><br><span class="line">	Graph.prototype.addEdge = <span class="function"><span class="keyword">function</span>(<span class="params">v1,v2</span>)</span>&#123;</span><br><span class="line">		<span class="keyword">this</span>.edges.get(v1).push(v2);</span><br><span class="line">		<span class="keyword">this</span>.edges.get(v2).push(v1);</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="comment">// 3. toString</span></span><br><span class="line">	Graph.prototype.toString = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">		<span class="keyword">var</span> resultString = <span class="string">""</span>;</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">0</span> ; i &lt; <span class="keyword">this</span>.vertexes.length ;i++)&#123;</span><br><span class="line">			resultString += <span class="keyword">this</span>.vertexes[i] + <span class="string">'-&gt;'</span>;</span><br><span class="line">			<span class="keyword">var</span> vEdges = <span class="keyword">this</span>.edges.get(<span class="keyword">this</span>.vertexes[i]);</span><br><span class="line">			<span class="keyword">for</span>(<span class="keyword">var</span> j = <span class="number">0</span> ; j &lt; vEdges.length; j++)&#123;</span><br><span class="line">				resultString += vEdges[j] + <span class="string">' '</span>;</span><br><span class="line">			&#125;</span><br><span class="line">			resultString += <span class="string">'\n'</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">return</span> resultString;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="2-初始化颜色"><a href="#2-初始化颜色" class="headerlink" title="2. 初始化颜色"></a>2. 初始化颜色</h4><ul>
+<li>白色：未被访问</li>
+<li>灰色：被发现的顶点</li>
+<li>黑色：已经输出的顶点</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 4. 初始化状态颜色</span></span><br><span class="line">Graph.prototype.initializeColor = <span class="function"><span class="keyword">function</span> (<span class="params"></span>)</span>&#123;</span><br><span class="line">	<span class="keyword">var</span> colors = [];</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">0</span> ; i &lt; <span class="keyword">this</span>.vertexes.length;i++)&#123;</span><br><span class="line">		colors[<span class="keyword">this</span>.vertexes[i]] = <span class="string">'white'</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> colors;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="3-广度优先搜索"><a href="#3-广度优先搜索" class="headerlink" title="3. 广度优先搜索"></a>3. 广度优先搜索</h4><p>实现：  </p>
 <ul>
-<li><code>Connection: Upgrade</code>：表示要升级协议</li>
-<li><code>Upgrade: websocket</code>：表示要升级到websocket协议。</li>
-<li><code>Sec-WebSocket-Version: 13</code>：表示websocket的版本。如果服务端不支持该版本，需要返回一个Sec-WebSocket-Versionheader，里面包含服务端支持的版本号。</li>
-<li><code>Sec-WebSocket-Key</code>：与后面服务端响应首部的Sec-WebSocket-Accept是配套的，提供基本的防护，比如恶意的连接，或者无意的连接。</li>
+<li>创建一个队列</li>
+<li>将v标注为被发现的（灰色），并将v放入队列Q</li>
+<li>如果Q非空，执行下面的步骤：<ul>
+<li>将v从Q中取出</li>
+<li>将v标注为被发现的灰色</li>
+<li>将v所有的未被访问过的邻接点（白色），加入到队列中</li>
+<li>将v标志位黑色</li>
 </ul>
-<h5 id="5-2-服务端：响应协议升级"><a href="#5-2-服务端：响应协议升级" class="headerlink" title="5.2 服务端：响应协议升级"></a>5.2 服务端：响应协议升级</h5><p>服务端返回内容如下，状态代码<code>101</code>表示协议切换。到此完成协议升级，后续的数据交互都按照新的协议来。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">HTTP/1.1 101 Switching Protocols</span><br><span class="line">Connection:Upgrade</span><br><span class="line">Upgrade: websocket</span><br><span class="line">Sec-WebSocket-Accept: Oy4NRAQ13jhfONC7bP8dTKb4PTU=</span><br></pre></td></tr></table></figure></p>
-<h3 id="二、参考博文"><a href="#二、参考博文" class="headerlink" title="二、参考博文"></a>二、参考博文</h3><p><a href="https://www.ruanyifeng.com/blog/2017/05/websocket.html" target="_blank" rel="noopener">WebSocket 教程–阮一峰</a><br><a href="https://www.cnblogs.com/chyingp/p/websocket-deep-in.html" target="_blank" rel="noopener">WebSocket协议：5分钟从入门到精通</a></p>
-
+</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line">Graph.prototype.bfs = <span class="function"><span class="keyword">function</span>(<span class="params">initV,handler</span>)</span>&#123;</span><br><span class="line">    <span class="comment">// 1. 初始化顶点颜色</span></span><br><span class="line">    <span class="keyword">var</span> colors = <span class="keyword">this</span>.initializeColor();</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// 2. 创建队列</span></span><br><span class="line">    <span class="keyword">var</span> queue = <span class="keyword">new</span> Queue();</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// 3. 将顶点放入队列</span></span><br><span class="line">    queue.enqueue(initV);</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// 4. 循环从队列中取元素</span></span><br><span class="line">    <span class="keyword">while</span>(!queue.isEmpty)&#123;</span><br><span class="line">        <span class="comment">// 4.1 从队列中取出第一个顶点，删除</span></span><br><span class="line">        <span class="keyword">var</span> v = queue.dequeue();</span><br><span class="line">        <span class="comment">// 4.2 获取该顶点相邻的顶点</span></span><br><span class="line">        <span class="keyword">var</span> vList = <span class="keyword">this</span>.edges.get(v);</span><br><span class="line">        <span class="comment">// 4.3 将v设置为灰色</span></span><br><span class="line">        colors[v] = <span class="string">'gray'</span>;</span><br><span class="line">        <span class="comment">// 4.4 遍历vList,将vList中白色的顶点放入队列</span></span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">0</span> ; i &lt; vList.length ; i++) &#123;</span><br><span class="line">            <span class="keyword">var</span> e = vList[i];</span><br><span class="line">            <span class="keyword">if</span>(colors[e] == <span class="string">'white'</span>)&#123;</span><br><span class="line">                colors[e] = <span class="string">'gray'</span>; <span class="comment">//将颜色改为灰色，之后的结点如果不是白色就不用加入队列了</span></span><br><span class="line">                queue.enqueue(e);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">// 4.5 v已经被探测且访问了</span></span><br><span class="line">        handler(v); <span class="comment">// 回调函数处理v顶点</span></span><br><span class="line">        </span><br><span class="line">        <span class="comment">// 4.6 将v设置为黑色</span></span><br><span class="line">        colors[v] = <span class="string">'black'</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="4-深度优先搜索（DFS）"><a href="#4-深度优先搜索（DFS）" class="headerlink" title="4. 深度优先搜索（DFS）"></a>4. 深度优先搜索（DFS）</h4><p>思路：和二叉树的先序遍历有点像，递归调用  </p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">Graph.prototype.dfs = <span class="function"><span class="keyword">function</span> (<span class="params">initV,handler</span>)</span>&#123;</span><br><span class="line">    <span class="comment">// 1. 初始化颜色</span></span><br><span class="line">    <span class="keyword">var</span> colors = <span class="keyword">this</span>.initializeColor();</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// 2. 从传入的顶点开始依次递归访问</span></span><br><span class="line">    <span class="keyword">this</span>.dfsVisit(initV,colors,handler);</span><br><span class="line">    </span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">Graph.prototype.dfsVisit = <span class="function"><span class="keyword">function</span>(<span class="params">v,colors,handler</span>) </span>&#123;</span><br><span class="line">    <span class="comment">// 1. 将访问的v结点设置为灰色</span></span><br><span class="line">    colors[v] = <span class="string">'gray'</span>;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// 2. 处理v结点</span></span><br><span class="line">    handler(v);</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// 3. 访问v结点相连的顶点</span></span><br><span class="line">    <span class="keyword">var</span> vList = <span class="keyword">this</span>.edges.get(v);</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">0</span> ; i &lt; vList.length ; i++)&#123;</span><br><span class="line">        <span class="keyword">var</span> e = vList[i];</span><br><span class="line">        <span class="keyword">if</span>(colors[e] == <span class="string">'white'</span>)&#123;</span><br><span class="line">            <span class="keyword">this</span>.dfsVisit(e,colors,handler);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// 4. v结点访问完毕，设置为黑色</span></span><br><span class="line">    colors[v] = <span class="string">'black'</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="5-测试代码"><a href="#5-测试代码" class="headerlink" title="5. 测试代码"></a>5. 测试代码</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 测试代码</span></span><br><span class="line"><span class="keyword">var</span> graph = <span class="keyword">new</span> Graph();</span><br><span class="line"></span><br><span class="line"><span class="comment">// 1. 添加顶点</span></span><br><span class="line"><span class="keyword">var</span> myVertexes = [<span class="string">'A'</span>,<span class="string">'B'</span>,<span class="string">'C'</span>,<span class="string">'D'</span>,<span class="string">'E'</span>,<span class="string">'F'</span>,<span class="string">'G'</span>,<span class="string">'H'</span>,<span class="string">'I'</span>];</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">0</span> ; i &lt; myVertexes.length; i++)&#123;</span><br><span class="line">	graph.addVertex(myVertexes[i])</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 2. 添加边</span></span><br><span class="line">graph.addEdge(<span class="string">'A'</span>,<span class="string">'B'</span>);</span><br><span class="line">graph.addEdge(<span class="string">'A'</span>,<span class="string">'C'</span>);</span><br><span class="line">graph.addEdge(<span class="string">'A'</span>,<span class="string">'D'</span>);</span><br><span class="line">graph.addEdge(<span class="string">'C'</span>,<span class="string">'D'</span>);</span><br><span class="line">graph.addEdge(<span class="string">'C'</span>,<span class="string">'G'</span>);</span><br><span class="line">graph.addEdge(<span class="string">'D'</span>,<span class="string">'G'</span>);</span><br><span class="line">graph.addEdge(<span class="string">'D'</span>,<span class="string">'H'</span>);</span><br><span class="line">graph.addEdge(<span class="string">'B'</span>,<span class="string">'E'</span>);</span><br><span class="line">graph.addEdge(<span class="string">'B'</span>,<span class="string">'F'</span>);</span><br><span class="line">graph.addEdge(<span class="string">'E'</span>,<span class="string">'I'</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 3. 测试结果</span></span><br><span class="line"><span class="built_in">console</span>.log(graph.toString());</span><br><span class="line"></span><br><span class="line"><span class="comment">// 4. 测试BFS</span></span><br><span class="line"><span class="keyword">var</span> result = <span class="string">""</span>;</span><br><span class="line">graph.bfs(graph.vertexes[<span class="number">0</span>],<span class="function"><span class="keyword">function</span>(<span class="params">v</span>)</span>&#123;</span><br><span class="line">	result += v + <span class="string">' '</span>;</span><br><span class="line">&#125;);</span><br><span class="line"><span class="built_in">console</span>.log(result);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">// 5. 测试DFS</span></span><br><span class="line"><span class="keyword">var</span> result2 = <span class="string">""</span>;</span><br><span class="line">graph.dfs(graph.vertexes[<span class="number">0</span>],<span class="function"><span class="keyword">function</span>(<span class="params">v</span>)</span>&#123;</span><br><span class="line">	result2 += v + <span class="string">' '</span>;</span><br><span class="line">&#125;);</span><br><span class="line"><span class="built_in">console</span>.log(result2);</span><br></pre></td></tr></table></figure>
           
         
       
@@ -1368,7 +1629,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/10/24/计网--http(1)/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/11/17/数据结构--图论/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="HJP">
@@ -1387,7 +1648,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2019/10/24/计网--http(1)/" itemprop="url">计网--http(1)</a></h1>
+                <a class="post-title-link" href="/2019/11/17/数据结构--图论/" itemprop="url">数据结构--红黑树</a></h1>
         
 
         <div class="post-meta">
@@ -1399,8 +1660,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-10-24T00:00:00+08:00">
-                2019-10-24
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-11-17T00:00:00+08:00">
+                2019-11-17
               </time>
             
 
@@ -1422,8 +1683,8 @@
               
               
                 <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/计网/" itemprop="url" rel="index">
-                    <span itemprop="name">计网</span>
+                  <a href="/categories/数据结构/" itemprop="url" rel="index">
+                    <span itemprop="name">数据结构</span>
                   </a>
                 </span>
 
@@ -1461,348 +1722,70 @@
       
         
           
-            <h4 id="1-说一下http和https"><a href="#1-说一下http和https" class="headerlink" title="1. 说一下http和https"></a>1. 说一下http和https</h4><p>（1）什么是http和https？<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">http: 超文本传输协议。是一个客户端和服务器端请求和响应的标准。  </span><br><span class="line">https: 是http+SSL。在http下加入了SSL层。建立一个安全的信息通道，确保网站的真实性。</span><br></pre></td></tr></table></figure></p>
-<p>（2）http和https的区别？<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">1. http是超文本传输协议，传输的数据都是未加密的。</span><br><span class="line">而https是具有安全性的ssl加密传输协议。  </span><br><span class="line">2. http端口为80，https端口为443</span><br><span class="line">3. http的连接是无状态的，而httos是由http+ssl协议构建的可进行加密传输、身份验证的网络协议，比http安全。</span><br></pre></td></tr></table></figure></p>
-<p>（3）https的工作原理？<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">1. 客户使用https url访问服务器，则要求web 服务器建立ssl链接。</span><br><span class="line">2. web服务器接收到客户端的请求之后，会将网站的证书（证书中包含了公钥），返回或者说传输给客户端。</span><br><span class="line">3. 客户端和web服务器端开始协商SSL链接的安全等级，也就是加密等级。</span><br><span class="line">4. 客户端浏览器通过双方协商一致的安全等级，建立会话密钥，然后通过网站的公钥来加密会话密钥，并传送给网站。</span><br><span class="line">5. web服务器通过自己的私钥解密出会话密钥。</span><br><span class="line">6. web服务器通过会话密钥加密与客户端之间的通信。</span><br></pre></td></tr></table></figure></p>
-<p>(4) https的优缺点？<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">优点：</span><br><span class="line">    1. 安全，不被窃取</span><br><span class="line">    2. 确保数据发到正确的客户端和服务器端</span><br><span class="line">缺点：</span><br><span class="line">    1. 耗时耗电</span><br><span class="line">    2. 缓存不如http高效</span><br><span class="line">    3. 要钱</span><br><span class="line">    4. SSL需要绑定ip，不能在同一个ip上绑定多个域名</span><br></pre></td></tr></table></figure></p>
-<h4 id="2-HTTP版本和请求方法"><a href="#2-HTTP版本和请求方法" class="headerlink" title="2. HTTP版本和请求方法"></a>2. HTTP版本和请求方法</h4><h5 id="2-1-HTTP版本"><a href="#2-1-HTTP版本" class="headerlink" title="2.1 HTTP版本"></a>2.1 HTTP版本</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">HTTP/0.9 : 只有GET一种请求方法</span><br><span class="line">HTTP/1.0 : 支持GET、POST、HEAD三种HTTP请求方法</span><br><span class="line">HTTP/1.1 : 新增了OPTIONS、PUT、DELETE、TRACE、CONNECT五种HTTP请求方法</span><br><span class="line">HTTP/2   : 支持请求与相应的多路重用来减少延迟，通过压缩HTTP头字段将协议开销降到最低，同时增加了对请求优先级和服务器端推送的支持</span><br></pre></td></tr></table></figure>
-<h5 id="2-2-HTTP请求方法"><a href="#2-2-HTTP请求方法" class="headerlink" title="2.2 HTTP请求方法"></a>2.2 HTTP请求方法</h5><p><code>GET</code>：会显示请求的指定资源。一般<code>GET</code>方法应该只用于数据的读取。<code>GET</code>方法会返回响应主体，<code>GET</code>被认为是不安全的方法。  </p>
-<p><code>HEAD</code>: 服务器在响应<code>HEAD</code>请求时不会回传资源的内容部分（响应主体），而是回传响应头。这个方法一般用来客户端查看服务器的性能。    </p>
-<p><code>POST</code>: <code>POST</code>请求会向指定资源提交数据，请求服务器进行处理：表单提交，文件上传…请求数据会被包含在请求体中  </p>
-<p><code>PUT</code>: 该方法客户端可以将指定资源的最新数据传送到服务器取代对应的资源内容。  </p>
-<p><code>DELETE</code>: 请求服务器删除所请求的URI所标识对的资源。  </p>
-<p><code>CONNECT</code>：能够将连接改为管道方式的代理服务器。通常用于SSL加密服务器和未加密的HTTP代理服务器的通信。  </p>
-<p><code>OPTIONS</code>：<code>OPTIONS</code>请求和<code>HEAD</code>请求类似，一般也是用于查看服务器的性能。这个方法会请求服务器返回该资源所支持的所有HTTP请求方法，该方法会用<code>*</code>来代替资源名称，向服务器发送<code>OPTIONS</code>请求，可以测试服务器功能是否正常。JS的XMLHttpRequest对象进行CORS跨域资源共享时，就是使用OPTOINS方法发送嗅探请求，以判断是否对资源有访问权限。  </p>
-<p><code>TRACE</code>： TRACE请求服务器回显其收到的请求信息，该方法主要用于HTTP请求的测试或诊断。  </p>
-<p><code>PATCH</code>: PATCH请求与PUT请求类似，同样用于资源的更新。二者有以下两点不同：1.PATCH一般用于资源的部分更新，而PUT一般用于资源的整体更新。2.当资源不存在时，PATCH会创建一个新的资源，而PUT只会对已在资源进行更新。  </p>
-<h5 id="2-3-POST请求"><a href="#2-3-POST请求" class="headerlink" title="2.3 POST请求"></a>2.3 POST请求</h5><p>服务端通常是根据请求头（headers）中的 Content-Type 字段来获知请求中的消息主体是用何种方式编码，再对主体进行解析。所以说到 POST 提交数据方案，包含了 Content-Type 和消息主体编码方式两部分。数据格式有：    </p>
-<p><strong>1. application/x-www-form-urlencoded</strong><br>这应该是最常见的 POST 提交数据的方式了。浏览器的原生 <code>&lt;form&gt;</code> 表单，如果不设置 <code>enctype</code> 属性，那么最终就会以 <code>application/x-www-form-urlencoded</code> 方式提交数据。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">POST http://www.example.com HTTP/1.1</span><br><span class="line">Content-Type: application/x-www-form-urlencoded;charset=utf-8</span><br><span class="line"></span><br><span class="line">title=test&amp;sub%5B%5D=1&amp;sub%5B%5D=2&amp;sub%5B%5D=3</span><br></pre></td></tr></table></figure></p>
-<p><strong>2. multipart/form-data</strong><br>这又是一个常见的 POST 数据提交的方式。我们使用表单上传文件时，必须让<code>&lt;form&gt;</code> 表单的 <code>enctype</code> 等于 <code>multipart/form-data</code>。  </p>
-<p><strong>3. application/json</strong><br>现在越来越多的人把它作为请求头，用来告诉服务端消息主体是序列化后的 JSON 字符串<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">POST http://www.example.com HTTP/1.1 </span><br><span class="line">Content-Type: application/json;charset=utf-8</span><br><span class="line"></span><br><span class="line">&#123;&quot;title&quot;:&quot;test&quot;,&quot;sub&quot;:[1,2,3]&#125;</span><br></pre></td></tr></table></figure></p>
-<p><strong>4. text/xml</strong><br>它是一种使用 HTTP 作为传输协议，XML 作为编码方式的远程调用规范。  </p>
-<h4 id="3-WebSocket的实现和应用"><a href="#3-WebSocket的实现和应用" class="headerlink" title="3. WebSocket的实现和应用"></a>3. WebSocket的实现和应用</h4><p>见【3. WebSocket的实现和应用】</p>
-<h4 id="4-影响HTTP-网络请求的因素"><a href="#4-影响HTTP-网络请求的因素" class="headerlink" title="4. 影响HTTP 网络请求的因素"></a>4. 影响HTTP 网络请求的因素</h4><p>影响一个 HTTP 网络请求的因素主要有两个：带宽和延迟。  </p>
-<ul>
-<li><p>带宽</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">现在不是问题</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>延迟</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">1. 浏览器阻塞（HOL blocking）：浏览器会因为一些原因阻塞请求。浏览器对于同一个域名，同时只能有 4 个连接（这个根据浏览器内核不同可能会有所差异），超过浏览器最大连接数限制，后续请求就会被阻塞。</span><br><span class="line">2. DNS 查询（DNS Lookup）：浏览器需要知道目标服务器的 IP 才能建立连接。将域名解析为 IP 的这个系统就是 DNS。这个通常可以利用DNS缓存结果来达到减少这个时间的目的。</span><br><span class="line">3. 建立连接（Initial connection）：HTTP 是基于 TCP 协议的，浏览器最快也要在第三次握手时才能捎带 HTTP 请求报文，达到真正的建立连接，但是这些连接无法复用会导致每次请求都经历三次握手和慢启动。三次握手在高延迟的场景下影响较明显，慢启动则对文件类大请求影响较大。</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<h4 id="5-http2-0-优点"><a href="#5-http2-0-优点" class="headerlink" title="5. http2.0 优点"></a>5. http2.0 优点</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">1. 新的二进制格式</span><br><span class="line">2. 多路复用 : 一个request对应一个id，这样一个连接上可以有多个request，每个连接的request可以随机的混杂在一起，接收方可以根据request的 id将request再归属到各自不同的服务端请求里面。</span><br><span class="line">3. header压缩: HTTP1.x的header带有大量信息，而且每次都要重复发送，HTTP2.0使用encoder来减少需要传输的header大小，通讯双方各自cache一份header fields表，既避免了重复header的传输，又减小了需要传输的大小。  </span><br><span class="line">4. 服务端推送</span><br></pre></td></tr></table></figure>
-<h4 id="6-GET和POST的区别"><a href="#6-GET和POST的区别" class="headerlink" title="6. GET和POST的区别"></a>6. GET和POST的区别</h4><ol>
-<li><code>GET</code> 和 <code>POST</code> 方法没有实质区别，只是报文格式不同。 </li>
-<li>没有传参的GET和POST请求只有请求报文第一行的前几个字符不同(GET和POST这几个字符不同)</li>
-<li>传参的GET的参数在第一行的URL中，POST的参数在body中</li>
-<li>POST方法和GET方法都不安全，因为是明文传输的，可以通过抓包获取参数。要安全使用https</li>
-<li>GET长度限制可能是浏览器限制和服务器的限制。POST长度无限制</li>
-<li>点击后退按钮，GET没问题，POST的数据会被重新提交。</li>
-<li>GET能缓存，POST不可以</li>
-<li>编码类型，GET使用application/x-www-form-urlencoded,POST可用多种</li>
-<li>GET的参数可见，保存在历史记录，POST的不显示在URL中，不会保存到浏览器历史</li>
+            <p><img src="https://upload-images.jianshu.io/upload_images/2392382-abedf3ecc733ccd5.png?imageMogr2/auto-orient/strip|imageView2/2/w/772/format/webp" alt="image"></p>
+<h4 id="1-红黑树规则"><a href="#1-红黑树规则" class="headerlink" title="1. 红黑树规则"></a>1. 红黑树规则</h4><ol>
+<li>结点是红色或者黑色</li>
+<li>根节点是黑色</li>
+<li>每个叶子结点都是黑色的空结点（NIL结点）</li>
+<li>每个红色结点的两个子节点都是黑色。（从每个叶子到根的所有路径上，不能有两个连续的红色结点）</li>
+<li>从任意一个结点到其他每个叶子节点的所有路径都包含相同数目的黑色结点</li>
 </ol>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/10/24/计网--http(2)/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="HJP">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="HJinPeng">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/10/24/计网--http(2)/" itemprop="url">计网--http(2)</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-10-24T00:00:00+08:00">
-                2019-10-24
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/计网/" itemprop="url" rel="index">
-                    <span itemprop="name">计网</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h4 id="1-http状态码"><a href="#1-http状态码" class="headerlink" title="1. http状态码"></a>1. http状态码</h4><table><br><tr><br>    <td style="width:60px">100</td><br>    <td style="width:100px">Continue</td><br>    <td>继续。客户端应继续其请求</td><br></tr><br><tr><br>    <td>101</td><br>    <td>Switching Protocols</td><br>    <td>切换协议。服务器根据客户端的请求切换协议。只能切换到更高级的协议，例如，切换到HTTP的新版本协议</td><br></tr><br><tr><br>    <td>200</td><br>    <td>OK</td><br>    <td>请求成功。一般用于GET与POST请求</td><br></tr><br><tr><br>    <td>205</td><br>    <td>Reset Content</td><br>    <td>重置内容。服务器处理成功，用户终端（例如：浏览器）应重置文档视图。可通过此返回码清除浏览器的表单域</td><br></tr><br><tr><br>    <td>301</td><br>    <td>Moved Permanently</td><br>    <td>永久移动。请求的资源已被永久的移动到新URI，返回信息会包括新的URI，浏览器会自动定向到新URI。今后任何新的请求都应使用新的URI代替</td><br></tr><br><tr><br>    <td>302</td><br>    <td>Found</td><br>    <td>临时移动。与301类似。但资源只是临时被移动。客户端应继续使用原有URI</td><br></tr><br><tr><br>    <td>304</td><br>    <td>Not Modified</td><br>    <td>未修改。所请求的资源未修改，服务器返回此状态码时，不会返回任何资源。客户端通常会缓存访问过的资源，通过提供一个头信息指出客户端希望只返回在指定日期之后修改的资源</td><br></tr><br><tr><br>    <td>305</td><br>    <td>Use Proxy</td><br>    <td>使用代理。所请求的资源必须通过代理访问</td><br></tr><br><tr><br>    <td>307</td><br>    <td>Temporary Redirect</td><br>    <td>临时重定向。与302类似。使用GET请求重定向</td><br></tr><br><tr><br>    <td>400</td><br>    <td>Bad Request</td><br>    <td>客户端请求的语法错误，服务器无法理解</td><br></tr><br><tr><br>    <td>401</td><br>    <td>Unauthorized</td><br>    <td>请求要求用户的身份认证</td><br></tr><br><tr><br>    <td>403</td><br>    <td>Forbidden</td><br>    <td>服务器理解请求客户端的请求，但是拒绝执行此请求</td><br></tr><br><tr><br>    <td>404</td><br>    <td>Not Found</td><br>    <td>服务器无法根据客户端的请求找到资源（网页）。通过此代码，网站设计人员可设置”您所请求的资源无法找到”的个性页面</td><br></tr><br><tr><br>    <td>407</td><br>    <td>Proxy Authentication Required</td><br>    <td>请求要求代理的身份认证，与401类似，但请求者应当使用代理进行授权</td><br></tr><br><tr><br>    <td>500</td><br>    <td>Internal Server Error</td><br>    <td>服务器内部错误，无法完成请求</td><br></tr><br></table>
-
-<h4 id="2-http常用请求头"><a href="#2-http常用请求头" class="headerlink" title="2. http常用请求头"></a>2. http常用请求头</h4><table><br><thead><br>    <tr><br>        <th style="width:100px">请求头</th><br>        <th>说明</th><br>        <th>示例</th><br>    </tr><br></thead><br><tbody><br>    <tr><br>        <td>Accept</td><br>        <td>可接受的响应内容类型（Content-Types）。</td><br>        <td>Accept: text/plain</td><br>    </tr><br>    <tr><br>        <td>Accept-Charset</td><br>        <td>可接受的字符集</td><br>        <td>Accept-Charset: utf-8</td><br>    </tr><br>    <tr><br>        <td>Accept-Encoding</td><br>        <td>可接受的响应内容的编码方式。</td><br>        <td>Accept-Encoding: gzip, deflate</td><br>    </tr><br>    <tr><br>        <td>Cache-Control</td><br>        <td>用来指定当前的请求/回复中的，是否使用缓存机制。</td><br>        <td>Cache-Control: no-cache</td><br>    </tr><br>    <tr><br>        <td>Connection</td><br>        <td>客户端（浏览器）想要优先使用的连接类型</td><br>        <td>Connection: keep-alive<br>        Connection: Upgrade</td><br>    </tr><br>    <tr><br>        <td>Cookie</td><br>        <td>由之前服务器通过Set-Cookie 设置的一个HTTP协议Cookie</td><br>        <td>Cookie: $Version=1; Skin=new;</td><br>    </tr><br>    <tr><br>        <td>Content-Type</td><br>        <td>请求体的MIME类型 （用于POST和PUT请求中）</td><br>        <td>Content-Type: application/x-www-form-urlencoded</td><br>    </tr><br>    <tr><br>        <td>Host</td><br>        <td>表示服务器的域名以及服务器所监听的端口号。如果所请求的端口是对应的服务的标准端口（80），则端口号可以省略。</td><br>        <td>Host: <a href="http://www.itbilu.com:3000" target="_blank" rel="noopener">www.itbilu.com:3000</a></td><br>    </tr><br>    <tr><br>        <td>If-Modified-Since</td><br>        <td>允许在对应的资源未被修改的情况下返回304未修改</td><br>        <td>If-Modified-Since: Dec, 26 Dec 2015 17:30:00 GMT</td><br>    </tr><br>    <tr><br>        <td>If-None-Match</td><br>        <td>允许在对应的内容未被修改的情况下返回304未修改（ 304 Not Modified ），参考 超文本传输协议 的实体标记</td><br>        <td>If-None-Match: “9jd00cdj34pss9ejqiw39d82f20d0ikd”</td><br>    </tr><br>    <tr><br>        <td>If-Unmodified-Since</td><br>        <td>仅当该实体自某个特定时间以来未被修改的情况下，才发送回应。</td><br>        <td>If-Unmodified-Since: Dec, 26 Dec 2015 17:30:00 GMT</td><br>    </tr><br>    <tr><br>        <td>Origin</td><br>        <td>发起一个针对跨域资源共享的请求（该请求要求服务器在响应中加入一个Access-Control-Allow-Origin的消息头，表示访问控制所允许的来源）。</td><br>        <td>Origin: <a href="http://www.itbilu.com" target="_blank" rel="noopener">http://www.itbilu.com</a></td><br>    </tr><br>    <tr><br>        <td>Upgrade</td><br>        <td>要求服务器升级到一个高版本协议。</td><br>        <td>Upgrade: HTTP/2.0, SHTTP/1.3, IRC/6.9, RTA/x11</td><br>    </tr><br></tbody><br></table>
-
-<h4 id="3-http常用响应头"><a href="#3-http常用响应头" class="headerlink" title="3. http常用响应头"></a>3. http常用响应头</h4><table><br><thead><br><tr><br>    <th style="width:100px">响应头</th><br>    <th>说明</th><br>    <th>示例</th><br></tr><br></thead><br><tbody><br><tr><br>    <td>Access-Control-Allow-Origin</td><br>    <td>指定哪些网站可以<b>跨域源资源共享</b></td><br>    <td>Access-Control-Allow-Origin: *</td><br></tr><br><tr><br>    <td>Allow</td><br>    <td>对于特定资源的有效动作;</td><br>    <td>Allow: GET, HEAD</td><br></tr><br><tr><br>    <td>Cache-Control</td><br>    <td>通知从服务器到客户端内的所有缓存机制，表示它们是否可以缓存这个对象及缓存有效时间。其单位为秒</td><br>    <td>Cache-Control: max-age=3600</td><br></tr><br><tr><br>    <td>Content-Encoding</td><br>    <td>响应资源所使用的编码类型</td><br>    <td>Content-Encoding: gzip</td><br></tr><br><tr><br>    <td>Content-Type</td><br>    <td>当前内容的MIME类型</td><br>    <td>Content-Type: text/html; charset=utf-8</td><br></tr><br><tr><br>    <td>ETag</td><br>    <td>对于某个资源的某个特定版本的一个标识符，通常是一个 消息散列</td><br>    <td>ETag: “737060cd8c284d8af7ad3082f209582d”</td><br></tr><br><tr><br>    <td>Expires</td><br>    <td>指定一个日期/时间，超过该时间则认为此回应已经过期</td><br>    <td>Expires: Thu, 01 Dec 1994 16:00:00 GMT</td><br></tr><br><tr><br>    <td>Last-Modified</td><br>    <td>所请求的对象的最后修改日期(按照 RFC 7231 中定义的“超文本传输协议日期”格式来表示)</td><br>    <td>Last-Modified: Dec, 26 Dec 2015 17:30:00 GMT</td><br></tr><br><tr><br>    <td>Location</td><br>    <td>用于在进行重定向，或在创建了某个新资源时使用。</td><br>    <td>Location: <a href="http://www.itbilu.com/nodejs" target="_blank" rel="noopener">http://www.itbilu.com/nodejs</a></td><br></tr><br><tr><br>    <td>Refresh</td><br>    <td>用于重定向，或者当一个新的资源被创建时。默认会在5秒后刷新重定向。</td><br>    <td>Refresh: 5; url=<a href="http://itbilu.com" target="_blank" rel="noopener">http://itbilu.com</a></td><br></tr><br><tr><br>    <td>Set-Cookie</td><br>    <td>设置HTTP cookie</td><br>    <td>Set-Cookie: UserID=itbilu; Max-Age=3600; Version=1</td><br></tr><br><tr><br>    <td>Status</td><br>    <td>通用网关接口的响应头字段，用来说明当前HTTP连接的响应状态。</td><br>    <td>Status: 200 OK</td><br></tr><br><tr><br>    <td>Upgrade</td><br>    <td>要求客户端升级到另一个高版本协议。</td><br>    <td>Upgrade: HTTP/2.0, SHTTP/1.3, IRC/6.9, RTA/x11</td><br></tr><br></tbody><br></table>
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/10/24/计网--http(3)/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="HJP">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="HJinPeng">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/10/24/计网--http(3)/" itemprop="url">计网--http(3)</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-10-24T00:00:00+08:00">
-                2019-10-24
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/计网/" itemprop="url" rel="index">
-                    <span itemprop="name">计网</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h4 id="1-强缓存、协商缓存"><a href="#1-强缓存、协商缓存" class="headerlink" title="1. 强缓存、协商缓存"></a>1. 强缓存、协商缓存</h4><h5 id="1-1-什么是缓存？"><a href="#1-1-什么是缓存？" class="headerlink" title="1.1 什么是缓存？"></a>1.1 什么是缓存？</h5><p>浏览器缓存(Brower Caching)是浏览器对之前请求过的文件进行缓存，以便下一次访问时重复使用，节省带宽，提高访问速度，降低服务器压力。  </p>
-<p>http缓存机制主要在http响应头中设定，响应头中相关字段为 :<br><code>Expires</code>(指定一个日期/时间，超过该时间则认为此回应已经过期)、<br><code>Cache-Control</code>(通知从服务器到客户端内的所有缓存机制，表示它们是否可以缓存这个对象及缓存有效时间。其单位为秒)、<br><code>Last-Modified</code>(所请求的对象的最后修改日期)、<br><code>Etag</code>(对于某个资源的某个特定版本的一个标识符)。</p>
-<h5 id="1-2-浏览器是如何判断是否使用缓存的"><a href="#1-2-浏览器是如何判断是否使用缓存的" class="headerlink" title="1.2 浏览器是如何判断是否使用缓存的?"></a>1.2 浏览器是如何判断是否使用缓存的?</h5><p>第一次请求：  </p>
-<p><img src="https://user-gold-cdn.xitu.io/2019/5/6/16a8bbc2df77f4f6?imageView2/0/w/1280/h/960/format/webp/ignore-error/1" alt="image"></p>
-<p>第二次请求相同网页：  </p>
-<p><img src="https://user-gold-cdn.xitu.io/2019/5/6/16a8bbaefa56810f?imageView2/0/w/1280/h/960/format/webp/ignore-error/1" alt="image"></p>
-<h5 id="1-3-缓存的类别"><a href="#1-3-缓存的类别" class="headerlink" title="1.3 缓存的类别"></a>1.3 缓存的类别</h5><h6 id="1-3-1-强缓存"><a href="#1-3-1-强缓存" class="headerlink" title="1.3.1 强缓存"></a>1.3.1 强缓存</h6><p>浏览器不会像服务器发送任何请求，直接从本地缓存中读取文件并返回Status Code: 200 OK<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Expires(响应头返回): 过期时间，如果设置了时间，则浏览器会在设置的时间内直接读取缓存，不再请求  </span><br><span class="line">Cache-Control(响应头返回)：当值设为max-age=300时，则代表在这个请求正确返回时间（浏览器也会记录下来）的5分钟内再次加载资源，就会命中强缓存。</span><br></pre></td></tr></table></figure></p>
-<p>cache-control是http1.1的头字段，expires是http1.0的头字段,如果expires和cache-control同时存在，cache-control会覆盖expires，建议两个都写。</p>
-<h6 id="1-3-2-协商缓存"><a href="#1-3-2-协商缓存" class="headerlink" title="1.3.2 协商缓存"></a>1.3.2 协商缓存</h6><p>向服务器发送请求，服务器会根据这个请求的请求头中的一些参数来判断是否命中协商缓存，如果命中，则返回304状态码并带上新的响应头通知浏览器从缓存中读取资源；  </p>
-<p>Last-Modified/If-Modified-Since和Etag/If-None-Match是分别成对出现的，呈一一对应关系  </p>
-<p><strong>Etag(响应头返回)/If-None-Match(请求头发送)：</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Etag：Etag是属于HTTP 1.1属性，它是由服务器（Apache或者其他工具）生成返回给前端，用来帮助服务器控制Web端的缓存验证。  </span><br><span class="line">If-None-Match: 当资源过期时，浏览器发现响应头里有Etag,则再次向服务器请求时带上请求头if-none-match(值是Etag的值)。服务器收到请求进行比对，决定返回200或304</span><br></pre></td></tr></table></figure></p>
-<p><img src="https://user-gold-cdn.xitu.io/2019/5/6/16a8c60fb0ef49f0?imageView2/0/w/1280/h/960/format/webp/ignore-error/1" alt="image"></p>
-<p><strong>Last-Modified(响应头返回)/If-Modified-Since(请求头发送)：</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Last-Modified：浏览器向服务器发送资源最后的修改时间  </span><br><span class="line">If-Modified-Since：当资源过期时（浏览器判断Cache-Control标识的max-age过期），发现响应头具有Last-Modified声明，则再次向服务器请求时带上头if-modified-since，表示请求时间。服务器收到请求后发现有if-modified-since则与被请求资源的最后修改时间进行对比（Last-Modified）,若最后修改时间较新（大），说明资源又被改过，则返回最新资源，HTTP 200 OK;若最后修改时间较旧（小），说明资源无新修改，响应HTTP 304 走缓存。</span><br></pre></td></tr></table></figure></p>
-<p>Etag优先级是高于Last-Modified，所以服务器会优先验证Etag<br>Last-Modified/If-Modified-Since是http1.0的头字段</p>
-
+<h4 id="2-红黑树的相对平衡"><a href="#2-红黑树的相对平衡" class="headerlink" title="2. 红黑树的相对平衡"></a>2. 红黑树的相对平衡</h4><ul>
+<li>从根到叶子的最长路径，不会超过最短可能路径的两倍</li>
+<li>结果基本平衡</li>
+</ul>
+<h4 id="3-变色，左旋转，右旋转"><a href="#3-变色，左旋转，右旋转" class="headerlink" title="3. 变色，左旋转，右旋转"></a>3. 变色，左旋转，右旋转</h4><p>插入的结点默认是红色。</p>
+<h4 id="4-变换规则"><a href="#4-变换规则" class="headerlink" title="4. 变换规则"></a>4. 变换规则</h4><p><img src="https://note.youdao.com/yws/public/resource/03192ad5acd4e24a98ff33fda112ac1b/xmlnote/E7568F698317409194939B5376AA6B59/5079" alt="image"></p>
+<h5 id="4-1-情况1-和-情况2"><a href="#4-1-情况1-和-情况2" class="headerlink" title="4.1 情况1 和 情况2"></a>4.1 情况1 和 情况2</h5><p>情况1：  </p>
+<ul>
+<li>新节点N位于根上，没有父节点</li>
+</ul>
+<p>操作：  </p>
+<ul>
+<li>这时候把红色改为黑色即可</li>
+</ul>
+<p>情况2： </p>
+<ul>
+<li>新节点的父节点P是黑色</li>
+</ul>
+<p>操作：</p>
+<ul>
+<li>直接插入红色的新节点N</li>
+</ul>
+<h5 id="4-2-情况3"><a href="#4-2-情况3" class="headerlink" title="4.2 情况3"></a>4.2 情况3</h5><p>情况3：  </p>
+<ul>
+<li>P(父节点)为红色，U(叔叔结点)也为红色</li>
+<li>G(祖父结点)为黑色  </li>
+</ul>
+<p>操作：</p>
+<ul>
+<li>变成 -&gt; 父黑叔黑祖红</li>
+</ul>
+<h5 id="4-3-情况4"><a href="#4-3-情况4" class="headerlink" title="4.3 情况4"></a>4.3 情况4</h5><p>情况4：  </p>
+<ul>
+<li>父红树黑祖黑，N是左儿子</li>
+</ul>
+<p>操作：</p>
+<ul>
+<li>-&gt; 父黑</li>
+<li>-&gt; 祖红</li>
+<li>-&gt; 右旋转</li>
+</ul>
+<h5 id="4-4-情况5"><a href="#4-4-情况5" class="headerlink" title="4.4 情况5"></a>4.4 情况5</h5><p>情况5：</p>
+<ul>
+<li>父红叔黑祖黑，N是右儿子</li>
+</ul>
+<p>操作：</p>
+<ul>
+<li>-&gt; 以P为根进行左旋转</li>
+<li>将P作为新插入的红色结点考虑即可<ul>
+<li>自己变成黑色</li>
+<li>祖变成红色</li>
+<li>以祖为根，进行右旋转</li>
+</ul>
+</li>
+</ul>
+<h4 id="5-案例"><a href="#5-案例" class="headerlink" title="5. 案例"></a>5. 案例</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line">插入 10 9 8 7 6 5 4 3 2 1</span><br><span class="line">1. 插入 10 : 将 10 的结点颜色改为黑色</span><br><span class="line">2. 插入 9 ：不需要任何变化</span><br><span class="line">3. 插入 8 ：属于情况 4</span><br><span class="line">    - 9 变黑</span><br><span class="line">    - 10 变红</span><br><span class="line">    - 以 10 为轴右旋转</span><br><span class="line">4. 插入 7 ： 属于情况 3 </span><br><span class="line">    - 8，10 变黑</span><br><span class="line">    - 9 变红</span><br><span class="line">    * 不符合规则2</span><br><span class="line">    - 把 9 (根节点)变成黑</span><br><span class="line">5. 插入 6 ：属于情况 4</span><br><span class="line">    - 7 变黑</span><br><span class="line">    - 8 变红色</span><br><span class="line">    - 以 8 为轴右旋转</span><br><span class="line">6. 插入 5 ：属于情况3</span><br><span class="line">    - 6,8变黑</span><br><span class="line">    - 7变红</span><br><span class="line">7. 插入 4 ：属于情况4</span><br><span class="line">    - 5变黑</span><br><span class="line">    - 6变红</span><br><span class="line">    - 以6为轴进行右旋转</span><br><span class="line">8. 插入 3 ： 属于情况3</span><br><span class="line">    - 4,6变黑</span><br><span class="line">    - 5变红</span><br><span class="line">    * 不符合规则，故递归，将5看做插入节点，情况4</span><br><span class="line">    - 7,10变黑</span><br><span class="line">    - 9 变红</span><br><span class="line">    - 以9为轴右旋转</span><br><span class="line">    - 8作为9的左儿子</span><br><span class="line">9. 插入 2 ：属于情况4</span><br><span class="line">    - 3变黑</span><br><span class="line">    - 4变红</span><br><span class="line">    - 以4为轴进行右旋转</span><br><span class="line">10. 插入 1 ：属于情况3</span><br><span class="line">    - 2,4变黑</span><br><span class="line">    - 3变红</span><br><span class="line">    * 红红相连，不符合规则，递归，将3看做插入节点，属于情况3</span><br><span class="line">    - 5,9变黑</span><br><span class="line">    - 7变红</span><br><span class="line">    * 根必须是黑色</span><br><span class="line">    - 7变黑</span><br></pre></td></tr></table></figure>
           
         
       
@@ -1841,7 +1824,7 @@
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/2/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><span class="space">&hellip;</span><a class="page-number" href="/page/14/">14</a><a class="extend next" rel="next" href="/page/4/"><i class="fa fa-angle-right"></i></a>
+    <a class="extend prev" rel="prev" href="/page/2/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><span class="space">&hellip;</span><a class="page-number" href="/page/16/">16</a><a class="extend next" rel="next" href="/page/4/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 
@@ -1887,7 +1870,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">137</span>
+                  <span class="site-state-item-count">152</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -1898,7 +1881,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">18</span>
+                  <span class="site-state-item-count">19</span>
                   <span class="site-state-item-name">categories</span>
                 </a>
               </div>
@@ -1909,7 +1892,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">23</span>
+                  <span class="site-state-item-count">24</span>
                   <span class="site-state-item-name">tags</span>
                 </a>
               </div>

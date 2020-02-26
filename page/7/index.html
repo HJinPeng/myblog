@@ -259,7 +259,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/04/12/es6--Symbol/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/05/21/HTML--H5/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="HJP">
@@ -278,7 +278,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2019/04/12/es6--Symbol/" itemprop="url">es6--Symbol</a></h1>
+                <a class="post-title-link" href="/2019/05/21/HTML--H5/" itemprop="url">HTML--H5</a></h1>
         
 
         <div class="post-meta">
@@ -290,8 +290,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-04-12T11:02:52+08:00">
-                2019-04-12
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-05-21T18:08:16+08:00">
+                2019-05-21
               </time>
             
 
@@ -313,8 +313,8 @@
               
               
                 <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/ES6/" itemprop="url" rel="index">
-                    <span itemprop="name">ES6</span>
+                  <a href="/categories/HTML/" itemprop="url" rel="index">
+                    <span itemprop="name">HTML</span>
                   </a>
                 </span>
 
@@ -352,8 +352,9 @@
       
         
           
-            <h4 id="Symbol"><a href="#Symbol" class="headerlink" title="Symbol"></a>Symbol</h4><p><code>Symbol()</code>主要用于属性的对象名，可以重复，但表示不同对象</p>
-<h4 id="Symbol使用"><a href="#Symbol使用" class="headerlink" title="Symbol使用"></a>Symbol使用</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//1. 定义</span></span><br><span class="line"><span class="keyword">let</span> str1 = <span class="built_in">Symbol</span>();</span><br><span class="line"><span class="keyword">let</span> str2 = <span class="built_in">Symbol</span>();</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(str1 === str2);  <span class="comment">//false</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="keyword">typeof</span> str1);    <span class="comment">//symbol</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="keyword">typeof</span> str2);   <span class="comment">//symbol</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 2. 描述</span></span><br><span class="line"><span class="keyword">let</span> str3 = <span class="built_in">Symbol</span>(<span class="string">'name'</span>);  </span><br><span class="line"><span class="keyword">let</span> str4 = <span class="built_in">Symbol</span>(<span class="string">'name'</span>);  </span><br><span class="line"><span class="built_in">console</span>.log(str3);    <span class="comment">//Symbol(name)</span></span><br><span class="line"><span class="built_in">console</span>.log(str4);    <span class="comment">//Symbol(name)</span></span><br><span class="line"><span class="built_in">console</span>.log(str3 === str4);    <span class="comment">//false</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 3. 对象属性名</span></span><br><span class="line"><span class="keyword">const</span> obj = &#123;&#125;;</span><br><span class="line"><span class="comment">//obj.name = 'zhangsan';  </span></span><br><span class="line"><span class="comment">//obj.name = 'lisi';      //name的值会被替换</span></span><br><span class="line">obj[<span class="built_in">Symbol</span>(<span class="string">'name'</span>)] = <span class="string">'zhangsan'</span>;</span><br><span class="line">obj[<span class="built_in">Symbol</span>(<span class="string">'name'</span>)] = <span class="string">'lisi'</span>;</span><br><span class="line"><span class="built_in">console</span>.log(obj);  <span class="comment">//Symbol(name): "zhangsan"   Symbol(name): "lisi"</span></span><br></pre></td></tr></table></figure>
+            <h1 id="Html-5是什么"><a href="#Html-5是什么" class="headerlink" title="Html 5是什么"></a>Html 5是什么</h1><p>HTML5是HTML最新的修订版本<br>HTML5的设计目的是为了在移动设备上支持多媒体。</p>
+<h1 id="Html-5使用"><a href="#Html-5使用" class="headerlink" title="Html 5使用"></a>Html 5使用</h1><h2 id="1-声明"><a href="#1-声明" class="headerlink" title="1. 声明"></a>1. 声明</h2><p>&lt;!DOCTYPE html&gt;</p>
+<h2 id="2-兼容ie9以下的浏览器"><a href="#2-兼容ie9以下的浏览器" class="headerlink" title="2. 兼容ie9以下的浏览器"></a>2. 兼容ie9以下的浏览器</h2><p>在<code>&lt;head&gt;</code>中 添加<br><code>&lt;script src=&quot;http://cdn.static.runoob.com/libs/html5shiv/3.7/html5shiv.min.js&quot;&gt;&lt;/script&gt;</code></p>
 
           
         
@@ -402,7 +403,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/04/11/es6--新增数据类型map/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/05/21/HTML--版本声明/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="HJP">
@@ -421,7 +422,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2019/04/11/es6--新增数据类型map/" itemprop="url">es6--新增数据类型map</a></h1>
+                <a class="post-title-link" href="/2019/05/21/HTML--版本声明/" itemprop="url">HTML--版本声明</a></h1>
         
 
         <div class="post-meta">
@@ -433,8 +434,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-04-11T22:44:36+08:00">
-                2019-04-11
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-05-21T18:05:38+08:00">
+                2019-05-21
               </time>
             
 
@@ -456,8 +457,8 @@
               
               
                 <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/ES6/" itemprop="url" rel="index">
-                    <span itemprop="name">ES6</span>
+                  <a href="/categories/HTML/" itemprop="url" rel="index">
+                    <span itemprop="name">HTML</span>
                   </a>
                 </span>
 
@@ -494,16 +495,20 @@
 
       
         
-          <h4 id="map-的一个属性五个方法"><a href="#map-的一个属性五个方法" class="headerlink" title="map 的一个属性五个方法"></a>map 的一个属性五个方法</h4><h5 id="0-map可以自动去重-map的key可以是对象，数组等"><a href="#0-map可以自动去重-map的key可以是对象，数组等" class="headerlink" title="0. map可以自动去重,map的key可以是对象，数组等"></a>0. map可以自动去重,map的key可以是对象，数组等</h5><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> obj1 = &#123;<span class="attr">a</span>:<span class="number">1</span>&#125; , obj2=&#123;<span class="attr">b</span>:<span class="number">2</span>&#125;;       </span><br><span class="line"><span class="keyword">const</span> map = <span class="keyword">new</span> <span class="built_in">Map</span>([</span><br><span class="line">    [<span class="string">'name'</span>,<span class="string">'zhangsan'</span>],</span><br><span class="line">    [<span class="string">'age'</span>,<span class="number">16</span>],</span><br><span class="line">    [<span class="string">'sex'</span>,<span class="string">'男'</span>],</span><br><span class="line">    [obj1,<span class="string">'今天天气不错'</span>],</span><br><span class="line">    [obj2,<span class="string">'适合打码'</span>],</span><br><span class="line">    [[<span class="number">1</span>,<span class="number">2</span>],[<span class="number">1</span>,<span class="number">3</span>]],</span><br><span class="line">    [<span class="string">'name'</span>,<span class="string">'lisi'</span>],</span><br><span class="line">    [<span class="string">'age'</span>,<span class="number">18</span>],</span><br><span class="line">]);</span><br><span class="line"><span class="built_in">console</span>.log(map);</span><br></pre></td></tr></table></figure>
-<p><img src="https://i.loli.net/2019/04/12/5cb0a7dfc1a79.png" alt=""></p>
-<h5 id="1-属性size，长度"><a href="#1-属性size，长度" class="headerlink" title="1. 属性size，长度"></a>1. 属性size，长度</h5><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> obj1 = &#123;<span class="attr">a</span>:<span class="number">1</span>&#125; , obj2=&#123;<span class="attr">b</span>:<span class="number">2</span>&#125;;       </span><br><span class="line"><span class="keyword">const</span> map = <span class="keyword">new</span> <span class="built_in">Map</span>([</span><br><span class="line">    [<span class="string">'name'</span>,<span class="string">'zhangsan'</span>],</span><br><span class="line">    [<span class="string">'age'</span>,<span class="number">16</span>],</span><br><span class="line">    [<span class="string">'sex'</span>,<span class="string">'男'</span>],</span><br><span class="line">    [obj1,<span class="string">'今天天气不错'</span>],</span><br><span class="line">    [obj2,<span class="string">'适合打码'</span>],</span><br><span class="line">    [[<span class="number">1</span>,<span class="number">2</span>],[<span class="number">1</span>,<span class="number">3</span>]],</span><br><span class="line">    [<span class="string">'name'</span>,<span class="string">'lisi'</span>],</span><br><span class="line">    [<span class="string">'age'</span>,<span class="number">18</span>],</span><br><span class="line">]);</span><br><span class="line"><span class="built_in">console</span>.log(map.size); <span class="comment">//相同的key会替换value,size=6</span></span><br></pre></td></tr></table></figure>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2019/04/11/es6--新增数据类型map/#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
+          
+            <h1 id="Html-版本声明"><a href="#Html-版本声明" class="headerlink" title="Html 版本声明"></a>Html 版本声明</h1><h2 id="一、-html-5"><a href="#一、-html-5" class="headerlink" title="一、 html 5"></a>一、 html 5</h2><p><code>&lt;!DOCTYPE html&gt;</code></p>
+<h2 id="二、-html-4-0-1"><a href="#二、-html-4-0-1" class="headerlink" title="二、 html 4.0.1"></a>二、 html 4.0.1</h2><h3 id="1-html-4-0-1-Strict"><a href="#1-html-4-0-1-Strict" class="headerlink" title="1. html 4.0.1 Strict"></a>1. html 4.0.1 Strict</h3><p><code>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.01//EN&quot; &quot;http://www.w3.org/TR/html4/strict.dtd&quot;&gt;</code><br>该DTD包括html的元素和属性，但不包括展示性的和被弃用的元素。不允许框架集</p>
+<h3 id="2-html-4-0-1-Transitional"><a href="#2-html-4-0-1-Transitional" class="headerlink" title="2. html 4.0.1 Transitional"></a>2. html 4.0.1 Transitional</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.01 Transitional//EN&quot; </span><br><span class="line">&quot;http://www.w3.org/TR/html4/loose.dtd&quot;&gt;</span><br></pre></td></tr></table></figure>
+<p>该DTD包括html的元素和属性，包括展示性和被弃用的元素，但不允许框架集</p>
+<h3 id="3-html-4-0-1-Frameset"><a href="#3-html-4-0-1-Frameset" class="headerlink" title="3. html 4.0.1 Frameset"></a>3. html 4.0.1 Frameset</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.01 Frameset//EN&quot; </span><br><span class="line">&quot;http://www.w3.org/TR/html4/frameset.dtd&quot;&gt;</span><br></pre></td></tr></table></figure>
+<p>该DTD包括html的元素和属性，包括展示性的和被弃用的元素，也包括框架集</p>
+<h2 id="三、-XHTML-1-0"><a href="#三、-XHTML-1-0" class="headerlink" title="三、 XHTML 1.0"></a>三、 XHTML 1.0</h2><p>XHTML 1.0 和 html 4.0.1 一样有三种模式，但必须以格式正确的XML来编写标记</p>
+<h3 id="1-XHTML-1-0-Strict"><a href="#1-XHTML-1-0-Strict" class="headerlink" title="1. XHTML 1.0 Strict"></a>1. XHTML 1.0 Strict</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html PUBLIC &quot;-//W3C//DTD XHTML 1.0 Strict//EN&quot; </span><br><span class="line">&quot;http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd&quot;&gt;</span><br></pre></td></tr></table></figure>
+<h3 id="2-XHTML-1-0-Transitional"><a href="#2-XHTML-1-0-Transitional" class="headerlink" title="2. XHTML 1.0 Transitional"></a>2. XHTML 1.0 Transitional</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html PUBLIC &quot;-//W3C//DTD XHTML 1.0 Transitional//EN&quot; &quot;</span><br><span class="line">http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd&quot;&gt;</span><br></pre></td></tr></table></figure>
+<h3 id="3-XHTML-1-0-Frameset"><a href="#3-XHTML-1-0-Frameset" class="headerlink" title="3. XHTML 1.0 Frameset"></a>3. XHTML 1.0 Frameset</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html PUBLIC &quot;-//W3C//DTD XHTML 1.0 Frameset//EN&quot; </span><br><span class="line">&quot;http://www.w3.org/TR/xhtml1/DTD/xhtml1-frameset.dtd&quot;&gt;</span><br></pre></td></tr></table></figure>
+<h2 id="四、-XHTML-1-1"><a href="#四、-XHTML-1-1" class="headerlink" title="四、 XHTML 1.1"></a>四、 XHTML 1.1</h2><p>该DTD等同于XHTML1.0 Strict ，但允许添加模型<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html PUBLIC &quot;-//W3C//DTD XHTML 1.1//EN&quot; &quot;http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd&quot;&gt;</span><br></pre></td></tr></table></figure></p>
+
+          
         
       
     </div>
@@ -550,7 +555,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/04/11/es6--新增数据类型set/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/05/10/兼容性/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="HJP">
@@ -569,7 +574,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2019/04/11/es6--新增数据类型set/" itemprop="url">es6--新增数据类型set</a></h1>
+                <a class="post-title-link" href="/2019/05/10/兼容性/" itemprop="url">兼容性</a></h1>
         
 
         <div class="post-meta">
@@ -581,8 +586,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-04-11T22:32:24+08:00">
-                2019-04-11
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-05-10T19:30:03+08:00">
+                2019-05-10
               </time>
             
 
@@ -591,28 +596,6 @@
             
           </span>
 
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/ES6/" itemprop="url" rel="index">
-                    <span itemprop="name">ES6</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
           
 
           
@@ -642,18 +625,38 @@
 
       
         
-          <h4 id="set-的一个属性四个方法"><a href="#set-的一个属性四个方法" class="headerlink" title="set 的一个属性四个方法"></a>set 的一个属性四个方法</h4><h5 id="0-set可以自动去重"><a href="#0-set可以自动去重" class="headerlink" title="0. set可以自动去重"></a>0. set可以自动去重</h5><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> set = <span class="keyword">new</span> <span class="built_in">Set</span>([<span class="string">'张三'</span>,<span class="string">'李四'</span>,<span class="string">'王五'</span>,<span class="string">'张三'</span>,<span class="string">'李四'</span>]);</span><br><span class="line"><span class="built_in">console</span>.log(set);</span><br></pre></td></tr></table></figure>
-<p><img src="https://i.loli.net/2019/04/12/5cb0a44d9b3fc.png" alt=""></p>
-<h5 id="1-一个属性-size-长度"><a href="#1-一个属性-size-长度" class="headerlink" title="1. 一个属性,size 长度"></a>1. 一个属性,size 长度</h5><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> set = <span class="keyword">new</span> <span class="built_in">Set</span>([<span class="string">'张三'</span>,<span class="string">'李四'</span>,<span class="string">'王五'</span>,<span class="string">'张三'</span>,<span class="string">'李四'</span>]);</span><br><span class="line"><span class="built_in">console</span>.log(set.size);  <span class="comment">// 3</span></span><br></pre></td></tr></table></figure>
-<h5 id="2-方法add"><a href="#2-方法add" class="headerlink" title="2. 方法add"></a>2. 方法add</h5><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> set = <span class="keyword">new</span> <span class="built_in">Set</span>([<span class="string">'张三'</span>,<span class="string">'李四'</span>,<span class="string">'王五'</span>,<span class="string">'张三'</span>,<span class="string">'李四'</span>]);</span><br><span class="line">set.add(<span class="string">'刘德华'</span>);</span><br><span class="line">set.add(<span class="string">'hjp'</span>).add(<span class="string">'whj'</span>);</span><br><span class="line"><span class="built_in">console</span>.log(set);</span><br></pre></td></tr></table></figure>
-<p><img src="https://i.loli.net/2019/04/12/5cb0a44dd6096.png" alt=""></p>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2019/04/11/es6--新增数据类型set/#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
+          
+            <h2 id="1-图片"><a href="#1-图片" class="headerlink" title="1. 图片"></a>1. 图片</h2><p>img的默认属性inline-block会使得下面有个间隙<br>解决方法：<br>将img设置为block<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">img</span>&#123;</span><br><span class="line">    <span class="attribute">display</span>: block;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h2 id="2-双倍边距"><a href="#2-双倍边距" class="headerlink" title="2. 双倍边距"></a>2. 双倍边距</h2><p>当ie6及更低版本浏览器在解析浮动元素的时候，会错误的把浮动边界加倍显示<br>解决方法：<br>给浮动元素添加声明: display: inline;<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">div</span>&#123;</span><br><span class="line">    <span class="attribute">float</span>: left;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">100px</span>;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">100px</span>;</span><br><span class="line">    <span class="attribute">background-color</span>: red;</span><br><span class="line">    <span class="attribute">margin-left</span>: <span class="number">100px</span>;</span><br><span class="line">    <span class="attribute">_display</span>: inline;   <span class="comment">/*下划线表示只被ie浏览器识别，因为ie浏览器下会加倍浮动边界*/</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h2 id="3-默认高度（ie6）"><a href="#3-默认高度（ie6）" class="headerlink" title="3. 默认高度（ie6）"></a>3. 默认高度（ie6）</h2><p>ie6及其以下版本中，部分块元素拥有默认高度（18px高度）<br>解决方案：  </p>
+<ol>
+<li>给元素添加声明：<code>font-size:0</code></li>
+<li>给元素添加声明：<code>overflow:hidden</code></li>
+</ol>
+<h2 id="4-表单元素的行高不一致"><a href="#4-表单元素的行高不一致" class="headerlink" title="4. 表单元素的行高不一致"></a>4. 表单元素的行高不一致</h2><p>在ie6下表单元素的高度不一致，如按钮文字的高度和input中文字的高度不一致<br>解决方案：<br>给表单元素添加<code>float:left</code></p>
+<h2 id="5-按钮元素默认大小不一样"><a href="#5-按钮元素默认大小不一样" class="headerlink" title="5. 按钮元素默认大小不一样"></a>5. 按钮元素默认大小不一样</h2><p>解决方案：  </p>
+<ol>
+<li>使用a标签制作按钮</li>
+<li>在input上写按钮的样式，要把input的边框去掉</li>
+<li>如果按钮是一张图片，直接把图片作为按钮的背景图</li>
+</ol>
+<h2 id="6-百分比bug"><a href="#6-百分比bug" class="headerlink" title="6. 百分比bug"></a>6. 百分比bug</h2><p>在ie6及以下浏览器中解析百分比时，会按四舍五入计算，导致50%+50%&gt;100%<br>解决方法：  </p>
+<ol>
+<li>给右边的浮动元素添加声明：<code>clear:right</code><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"box1"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"box2"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">*&#123;</span><br><span class="line">    <span class="attribute">margin</span>: <span class="number">0</span>;</span><br><span class="line">    <span class="attribute">padding</span>: <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-tag">html</span>,<span class="selector-tag">body</span>&#123;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">100%</span>;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">100%</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.box1</span>&#123;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">50%</span>;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">100px</span>;</span><br><span class="line">    <span class="attribute">background-color</span>: red;</span><br><span class="line">    <span class="attribute">float</span>: left;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.box2</span>&#123;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">50%</span>;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">100px</span>;</span><br><span class="line">    <span class="attribute">background-color</span>: green;</span><br><span class="line">    <span class="attribute">float</span>: left;</span><br><span class="line">    <span class="attribute">clear</span>: right; <span class="comment">/*解决50+50&gt;100的问题*/</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="7-鼠标cursor"><a href="#7-鼠标cursor" class="headerlink" title="7. 鼠标cursor"></a>7. 鼠标cursor</h2><p>cursor: hand只有ie浏览器能识别，cursor: pointer;在ie6以上能识别<br>解决方案：<br>使用兼容更多浏览器的属性<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">a</span>&#123;</span><br><span class="line">    <span class="attribute">cursor</span>: pointer; <span class="comment">/*兼容ie6及以上*/</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h2 id="8-透明属性"><a href="#8-透明属性" class="headerlink" title="8. 透明属性"></a>8. 透明属性</h2><p>ie浏览器的写法：<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">div</span>&#123;</span><br><span class="line">    <span class="attribute">opacity</span>: <span class="number">0.5</span>;   <span class="comment">/*会继承给子元素*/</span></span><br><span class="line">    <span class="attribute">filter</span>:<span class="built_in">alpha</span>(opacity=50);   <span class="comment">/*兼容ie浏览器*/</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h2 id="9-过滤器"><a href="#9-过滤器" class="headerlink" title="9. 过滤器"></a>9. 过滤器</h2><ol>
+<li><p>下划线过滤器<br>当在一个属性前加了下划线，符合标准的浏览器不能识别带下划线的属性，于是忽略了这个属性，但是ie6及更低版本的浏览器会继续识别并解析</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">div</span>&#123;</span><br><span class="line">    <span class="attribute">background-color</span>: red;</span><br><span class="line">    <span class="attribute">_background-color</span>: green;   <span class="comment">/*ie6及以下版本识别*/</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><em>属性过滤器<br>当一个属性加了</em>号，只能被ie7浏览器识别，其他浏览器会忽略  </p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">div</span>&#123;</span><br><span class="line">    <span class="attribute">background-color</span>: red;</span><br><span class="line">    *background-color: green;   /*ie7识别*/</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+</ol>
+
+          
         
       
     </div>
@@ -700,7 +703,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/04/10/es6--解构赋值/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/05/06/git--忽略文件.gitignore/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="HJP">
@@ -719,7 +722,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2019/04/10/es6--解构赋值/" itemprop="url">es6--解构赋值</a></h1>
+                <a class="post-title-link" href="/2019/05/06/git--忽略文件.gitignore/" itemprop="url">git--忽略文件.gitignore</a></h1>
         
 
         <div class="post-meta">
@@ -731,8 +734,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-04-10T22:25:49+08:00">
-                2019-04-10
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-05-06T19:30:03+08:00">
+                2019-05-06
               </time>
             
 
@@ -754,8 +757,8 @@
               
               
                 <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/ES6/" itemprop="url" rel="index">
-                    <span itemprop="name">ES6</span>
+                  <a href="/categories/git/" itemprop="url" rel="index">
+                    <span itemprop="name">git</span>
                   </a>
                 </span>
 
@@ -792,15 +795,11 @@
 
       
         
-          <h4 id="用途"><a href="#用途" class="headerlink" title="用途"></a>用途</h4><h5 id="1-交换变量的值"><a href="#1-交换变量的值" class="headerlink" title="1. 交换变量的值"></a>1. 交换变量的值</h5><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//用途（1）交换变量的值</span></span><br><span class="line"><span class="keyword">let</span> x = <span class="number">1</span>;</span><br><span class="line"><span class="keyword">let</span> y = <span class="number">2</span>;</span><br><span class="line">[x, y] = [y, x];</span><br><span class="line"><span class="built_in">console</span>.log(x + <span class="string">','</span> + y);</span><br></pre></td></tr></table></figure>
-<h5 id="2-从函数返回多个值"><a href="#2-从函数返回多个值" class="headerlink" title="2. 从函数返回多个值"></a>2. 从函数返回多个值</h5><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//（2）从函数返回多个值</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">example</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>];</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">let</span> [a, b, c] = example();</span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">'['</span> + a + <span class="string">','</span> + b + <span class="string">','</span> + c + <span class="string">']'</span>);</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">example2</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> &#123;</span><br><span class="line">        foo: <span class="number">1</span>,</span><br><span class="line">        bar: <span class="number">2</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">let</span> &#123;foo,bar&#125; = example2();</span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">'['</span> + foo + <span class="string">','</span> + bar + <span class="string">']'</span>);</span><br></pre></td></tr></table></figure>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2019/04/10/es6--解构赋值/#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
+          
+            <h4 id="gitignore内容"><a href="#gitignore内容" class="headerlink" title=".gitignore内容"></a>.gitignore内容</h4><p>#后的内容为注释，会被忽略<br>.txt　　   #会忽略所有.txt结尾的文件<br>!test.txt　　   #test.txt除外，即不被忽略<br>/todo　　  #仅忽略项目根目录下的 TODO 文件，不包括 subdir/todo<br>build/ 　　 # 忽略 build/ 目录下的所有文件<br>doc/.txt 　　# 会忽略 doc/notes.txt 但不包括 doc/server/arch.txt</p>
+<h4 id="gitignore不生效的解决方法"><a href="#gitignore不生效的解决方法" class="headerlink" title=".gitignore不生效的解决方法"></a>.gitignore不生效的解决方法</h4><p>把某些目录或文件加入忽略规则，按照上述方法定义后发现并未生效，原因是.gitignore只能忽略那些原来没有被追踪的文件，如果某些文件已经被纳入了版本管理中，则修改.gitignore是无效的。那么解决方法就是先把本地缓存删除（改变成未被追踪状态），然后再提交：<br><code>git rm -r --cached .</code><br><code>git add .</code><br><code>git commit -m &quot;message&quot;</code></p>
+
+          
         
       
     </div>
@@ -847,7 +846,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/04/10/es6--let,const/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/05/05/vue--刷新当前页/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="HJP">
@@ -866,7 +865,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2019/04/10/es6--let,const/" itemprop="url">es6--let,const</a></h1>
+                <a class="post-title-link" href="/2019/05/05/vue--刷新当前页/" itemprop="url">vue--刷新当前页</a></h1>
         
 
         <div class="post-meta">
@@ -878,8 +877,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-04-10T22:19:09+08:00">
-                2019-04-10
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-05-05T21:41:09+08:00">
+                2019-05-05
               </time>
             
 
@@ -901,8 +900,8 @@
               
               
                 <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/ES6/" itemprop="url" rel="index">
-                    <span itemprop="name">ES6</span>
+                  <a href="/categories/Vue/" itemprop="url" rel="index">
+                    <span itemprop="name">Vue</span>
                   </a>
                 </span>
 
@@ -940,165 +939,345 @@
       
         
           
-            <h4 id="1-let声明变量"><a href="#1-let声明变量" class="headerlink" title="1. let声明变量"></a>1. let声明变量</h4><ul>
-<li>let在作用域范围内有效</li>
-<li>let不存在变量提升：即先使用再申明的话会报错</li>
-<li>let不允许重复声明</li>
+            <h4 id="方法1："><a href="#方法1：" class="headerlink" title="方法1："></a>方法1：</h4><p><code>window.location.href window.location.replace() window.location.reload()</code><br>会出现空白</p>
+<h4 id="方法2："><a href="#方法2：" class="headerlink" title="方法2："></a>方法2：</h4><p>先进入一个空路由，再返回，刷新后点击浏览器的前进按钮会出现空白页<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">reflashPage()&#123;</span><br><span class="line">    <span class="keyword">let</span> NewPage = <span class="string">'_empty'</span> + <span class="string">'?time='</span> + <span class="keyword">new</span> <span class="built_in">Date</span>().getTime()/<span class="number">500</span>;</span><br><span class="line">    <span class="keyword">this</span>.$router.push(NewPage);</span><br><span class="line">    <span class="keyword">this</span>.$router.go(<span class="number">-1</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h4 id="方法3："><a href="#方法3：" class="headerlink" title="方法3："></a>方法3：</h4><p>使用<code>provide</code> 和<code>inject</code></p>
+<ol>
+<li><p>在父组件中App.vue</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"app"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">router-view</span> <span class="attr">v-if</span>=<span class="string">"isRouterAlive"</span>&gt;</span><span class="tag">&lt;/<span class="name">router-view</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="javascript"><span class="keyword">export</span> <span class="keyword">default</span> &#123;</span></span><br><span class="line"><span class="javascript">  name: <span class="string">'App'</span>,</span></span><br><span class="line"><span class="undefined">  provide()&#123;</span></span><br><span class="line"><span class="javascript">    <span class="keyword">return</span>&#123;</span></span><br><span class="line"><span class="javascript">      reload:<span class="keyword">this</span>.reload</span></span><br><span class="line"><span class="undefined">    &#125;</span></span><br><span class="line"><span class="undefined">  &#125;,</span></span><br><span class="line"><span class="undefined">  data()&#123;</span></span><br><span class="line"><span class="javascript">    <span class="keyword">return</span>&#123;</span></span><br><span class="line"><span class="javascript">      isRouterAlive:<span class="literal">true</span></span></span><br><span class="line"><span class="undefined">    &#125;</span></span><br><span class="line"><span class="undefined">  &#125;,</span></span><br><span class="line"><span class="undefined">  methods:&#123;</span></span><br><span class="line"><span class="undefined">    reload()&#123;</span></span><br><span class="line"><span class="javascript">      <span class="keyword">this</span>.isRouterAlive = <span class="literal">false</span>;</span></span><br><span class="line"><span class="javascript">      <span class="keyword">this</span>.$nextTick(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span></span><br><span class="line"><span class="javascript">        <span class="keyword">this</span>.isRouterAlive = <span class="literal">true</span>;</span></span><br><span class="line"><span class="undefined">      &#125;)</span></span><br><span class="line"><span class="undefined">    &#125;</span></span><br><span class="line"><span class="undefined">  &#125;</span></span><br><span class="line"><span class="undefined">&#125;</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>在需要刷新的页面：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> &#123;</span><br><span class="line">    inject:[<span class="string">'reload'</span>],</span><br><span class="line">    data () &#123;</span><br><span class="line">        <span class="keyword">return</span> &#123;</span><br><span class="line">        ...</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;,</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>刷新的方法：<br><code>this.reload();</code></p>
+</li>
+</ol>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/05/04/vue--axios配置/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="HJP">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="HJinPeng">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/05/04/vue--axios配置/" itemprop="url">vue--axios配置</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-05-04T16:09:38+08:00">
+                2019-05-04
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/Vue/" itemprop="url" rel="index">
+                    <span itemprop="name">Vue</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h4 id="1-添加axios插件"><a href="#1-添加axios插件" class="headerlink" title="1. 添加axios插件"></a>1. 添加axios插件</h4><p><code>vue add axios</code></p>
+<h4 id="2-在src-main-js中添加"><a href="#2-在src-main-js中添加" class="headerlink" title="2. 在src/main.js中添加"></a>2. 在src/main.js中添加</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Object</span>.defineProperty(Vue.prototype, <span class="string">'$http'</span>, &#123;</span><br><span class="line">    value: axios</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<h4 id="3-在根目录新建vue-config-js"><a href="#3-在根目录新建vue-config-js" class="headerlink" title="3. 在根目录新建vue.config.js"></a>3. 在根目录新建vue.config.js</h4> <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">export const devServer = &#123;</span></span><br><span class="line"><span class="comment">    proxy: &#123;</span></span><br><span class="line"><span class="comment">        '/apis': &#123;</span></span><br><span class="line"><span class="comment">            target: 'http://localhost:3000/',</span></span><br><span class="line"><span class="comment">            ws: true,</span></span><br><span class="line"><span class="comment">            changeOrigin: true,</span></span><br><span class="line"><span class="comment">            pathRewrite: &#123;</span></span><br><span class="line"><span class="comment">                '^/apis': ''</span></span><br><span class="line"><span class="comment">            &#125;</span></span><br><span class="line"><span class="comment">        &#125;</span></span><br><span class="line"><span class="comment">    &#125;</span></span><br><span class="line"><span class="comment">&#125;;</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">const</span> devServer = &#123;</span><br><span class="line">    proxy: &#123;</span><br><span class="line">        <span class="string">'/apis'</span>: &#123;</span><br><span class="line">            target: <span class="string">'http://localhost:3000/'</span>,</span><br><span class="line">            ws: <span class="literal">true</span>,</span><br><span class="line">            changeOrigin: <span class="literal">true</span>,</span><br><span class="line">            pathRewrite: &#123;</span><br><span class="line">                <span class="string">'^/apis'</span>: <span class="string">''</span></span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h4 id="4-使用"><a href="#4-使用" class="headerlink" title="4. 使用"></a>4. 使用</h4><p> <code>this.$axios.post()</code></p>
+<h4 id="5-重启服务器"><a href="#5-重启服务器" class="headerlink" title="5. 重启服务器"></a>5. 重启服务器</h4><p> <code>npm run serve</code></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/04/22/json-server/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="HJP">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="HJinPeng">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/04/22/json-server/" itemprop="url">json-server</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-04-22T11:16:34+08:00">
+                2019-04-22
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/json/" itemprop="url" rel="index">
+                    <span itemprop="name">json</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h4 id="1-安装"><a href="#1-安装" class="headerlink" title="1. 安装"></a>1. 安装</h4><p><code>npm install -g json-server</code></p>
+<h4 id="2-任意位置创建一个文件夹：JSONSERVER"><a href="#2-任意位置创建一个文件夹：JSONSERVER" class="headerlink" title="2. 任意位置创建一个文件夹：JSONSERVER"></a>2. 任意位置创建一个文件夹：JSONSERVER</h4><p>键入命令<br><code>npm init</code></p>
+<h4 id="3-输入命令"><a href="#3-输入命令" class="headerlink" title="3. 输入命令"></a>3. 输入命令</h4><p><code>npm install json-server --save</code></p>
+<h4 id="4-修改JSONSERVER中的package-json"><a href="#4-修改JSONSERVER中的package-json" class="headerlink" title="4. 修改JSONSERVER中的package.json"></a>4. 修改JSONSERVER中的package.json</h4><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">"scripts": &#123;</span><br><span class="line">    </span><br><span class="line">"test": "echo \"Error: no test specified\" &amp;&amp; exit 1"</span><br><span class="line">  </span><br><span class="line">&#125;,</span><br></pre></td></tr></table></figure>
+<p>修改为：<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">  "scripts": &#123;</span><br><span class="line">    </span><br><span class="line">"json:server": "json-server --watch db.json"</span><br><span class="line"> </span><br><span class="line"> &#125;,</span><br></pre></td></tr></table></figure></p>
+<h4 id="5-在JSONSERVER下创建文件db-json"><a href="#5-在JSONSERVER下创建文件db-json" class="headerlink" title="5. 在JSONSERVER下创建文件db.json"></a>5. 在JSONSERVER下创建文件db.json</h4><figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="attr">"users"</span>:[</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="attr">"name"</span>:<span class="string">"henrry"</span>,</span><br><span class="line">            <span class="attr">"phone"</span>:<span class="string">"333-44-555"</span>,</span><br><span class="line">            <span class="attr">"email"</span>:<span class="string">"henrry@qq.com"</span>,</span><br><span class="line">            <span class="attr">"id"</span>:<span class="number">1</span>,</span><br><span class="line">            <span class="attr">"age"</span>:<span class="number">30</span>,</span><br><span class="line">            <span class="attr">"companyId"</span>:<span class="number">1</span></span><br><span class="line">        &#125;,</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="attr">"name"</span>:<span class="string">"garry"</span>,</span><br><span class="line">            <span class="attr">"phone"</span>:<span class="string">"333-44-555"</span>,</span><br><span class="line">            <span class="attr">"email"</span>:<span class="string">"garry@qq.com"</span>,</span><br><span class="line">            <span class="attr">"id"</span>:<span class="number">2</span>,</span><br><span class="line">            <span class="attr">"age"</span>:<span class="number">30</span>,</span><br><span class="line">            <span class="attr">"companyId"</span>:<span class="number">2</span></span><br><span class="line">        &#125;,</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="attr">"name"</span>:<span class="string">"wenli"</span>,</span><br><span class="line">            <span class="attr">"phone"</span>:<span class="string">"333-44-555"</span>,</span><br><span class="line">            <span class="attr">"email"</span>:<span class="string">"wenli@qq.com"</span>,</span><br><span class="line">            <span class="attr">"id"</span>:<span class="number">3</span>,</span><br><span class="line">            <span class="attr">"age"</span>:<span class="number">30</span>,</span><br><span class="line">            <span class="attr">"companyId"</span>:<span class="number">3</span></span><br><span class="line">        &#125;,</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="attr">"name"</span>:<span class="string">"lali"</span>,</span><br><span class="line">            <span class="attr">"phone"</span>:<span class="string">"333-44-555"</span>,</span><br><span class="line">            <span class="attr">"email"</span>:<span class="string">"lali@qq.com"</span>,</span><br><span class="line">            <span class="attr">"id"</span>:<span class="number">4</span>,</span><br><span class="line">            <span class="attr">"age"</span>:<span class="number">30</span>,</span><br><span class="line">            <span class="attr">"companyId"</span>:<span class="number">3</span></span><br><span class="line">        &#125;</span><br><span class="line">    ],</span><br><span class="line">    <span class="attr">"companies"</span>:[</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="attr">"id"</span>:<span class="number">1</span>,</span><br><span class="line">            <span class="attr">"name"</span>:<span class="string">"APPLE"</span>,</span><br><span class="line">            <span class="attr">"description"</span>:<span class="string">"apple is gui!"</span></span><br><span class="line">        &#125;,</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="attr">"id"</span>:<span class="number">2</span>,</span><br><span class="line">            <span class="attr">"name"</span>:<span class="string">"Microsoft"</span>,</span><br><span class="line">            <span class="attr">"description"</span>:<span class="string">"Microsoft is cheap!"</span></span><br><span class="line">        &#125;,</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="attr">"id"</span>:<span class="number">3</span>,</span><br><span class="line">            <span class="attr">"name"</span>:<span class="string">"GOOGLE"</span>,</span><br><span class="line">            <span class="attr">"description"</span>:<span class="string">"GOOGLE is good!"</span></span><br><span class="line">        &#125;</span><br><span class="line">    ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="6-键入命令"><a href="#6-键入命令" class="headerlink" title="6. 键入命令"></a>6. 键入命令</h4><p><code>npm run json:server</code></p>
+<h4 id="7-打开连接"><a href="#7-打开连接" class="headerlink" title="7. 打开连接"></a>7. 打开连接</h4><p><code>localhost:3000</code></p>
+<h4 id="8-使用"><a href="#8-使用" class="headerlink" title="8. 使用"></a>8. 使用</h4><ul>
+<li><p>获取所有用户信息：<br><a href="http://localhost:3000/users" target="_blank" rel="noopener">http://localhost:3000/users</a></p>
+</li>
+<li><p>获取id为1的用户信息：<br><a href="http://localhost:3000/users/1" target="_blank" rel="noopener">http://localhost:3000/users/1</a></p>
+</li>
+<li><p>获取公司的所有信息<br><a href="http://localhost:3000/companies" target="_blank" rel="noopener">http://localhost:3000/companies</a></p>
+</li>
+<li><p>获取公司id为1的信息<br><a href="http://localhost:3000/companies/1" target="_blank" rel="noopener">http://localhost:3000/companies/1</a></p>
+</li>
+<li><p>获取所有公司id为3的用户信息<br><a href="http://localhost:3000/companies/3/users" target="_blank" rel="noopener">http://localhost:3000/companies/3/users</a></p>
+</li>
+<li><p>根据公司名字获取公司信息<br><a href="http://localhost:3000/companies?name=Microsoft" target="_blank" rel="noopener">http://localhost:3000/companies?name=Microsoft</a></p>
+</li>
+<li><p>根据多个公司名字获取公司信息<br><a href="http://localhost:3000/companies?name=Microsoft&amp;name=APPLE" target="_blank" rel="noopener">http://localhost:3000/companies?name=Microsoft&amp;name=APPLE</a></p>
+</li>
+<li><p>获取一页中只有两条数据<br><a href="http://localhost:3000/companies?_page=1&amp;_limit=2" target="_blank" rel="noopener">http://localhost:3000/companies?_page=1&amp;_limit=2</a></p>
+</li>
+<li><p>升序asc  降序desc<br><a href="http://localhost:3000/companies?_sort=id&amp;_order=desc" target="_blank" rel="noopener">http://localhost:3000/companies?_sort=id&amp;_order=desc</a></p>
+</li>
+<li><p>获取年龄30及30以上的用户信息<br><a href="http://localhost:3000/users?age_gte=30" target="_blank" rel="noopener">http://localhost:3000/users?age_gte=30</a></p>
+</li>
+<li><p>获取年龄在30-40的用户信息<br><a href="http://localhost:3000/users?age_gte=30&amp;age_lte=40" target="_blank" rel="noopener">http://localhost:3000/users?age_gte=30&amp;age_lte=40</a></p>
+</li>
+<li><p>根据搜索信息找<br><a href="http://localhost:3000/users?q=wen" target="_blank" rel="noopener">http://localhost:3000/users?q=wen</a></p>
+</li>
 </ul>
-<h4 id="2-const声明常量"><a href="#2-const声明常量" class="headerlink" title="2. const声明常量"></a>2. const声明常量</h4><ul>
-<li>const声明的常量值不能改变</li>
-<li>const声明对象，可以在后续对对象进行操作</li>
-</ul>
-<h4 id="拒绝使用var"><a href="#拒绝使用var" class="headerlink" title="#. 拒绝使用var"></a>#. 拒绝使用var</h4>
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/04/09/js--正则表达式/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="HJP">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="HJinPeng">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/04/09/js--正则表达式/" itemprop="url">js--正则表达式</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-04-09T17:48:55+08:00">
-                2019-04-09
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/JavaScript/" itemprop="url" rel="index">
-                    <span itemprop="name">JavaScript</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h4 id="一、符号"><a href="#一、符号" class="headerlink" title="一、符号"></a>一、符号</h4><p>i - 修饰符是用来执行不区分大小写的匹配。<br>g - 修饰符是用于执行全文的搜索（而不是在找到第一个就停止查找,而是找到所有的匹配）。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> str = <span class="string">"Visit RUnoob"</span>;</span><br><span class="line"><span class="keyword">var</span> patt1 = <span class="regexp">/runoob/i</span>;</span><br><span class="line"><span class="built_in">document</span>.write(str.match(patt1)); <span class="comment">//RUnoob</span></span><br></pre></td></tr></table></figure></p>
-<h4 id="二、方法"><a href="#二、方法" class="headerlink" title="二、方法"></a>二、方法</h4><h5 id="1-test"><a href="#1-test" class="headerlink" title="1. test()"></a>1. test()</h5><p>test()方法搜索字符串指定的值，根据结果并返回真或假。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> patt1=<span class="regexp">/j/</span>;</span><br><span class="line"><span class="keyword">var</span> patt2=<span class="regexp">/e/</span>;</span><br><span class="line"><span class="built_in">document</span>.write(patt1.test(<span class="string">"The best things in life are free"</span>)); <span class="comment">//false</span></span><br><span class="line"><span class="built_in">document</span>.write(patt2.test(<span class="string">"The best things in life are free"</span>)); <span class="comment">//true</span></span><br></pre></td></tr></table></figure></p>
-<h5 id="2-exec"><a href="#2-exec" class="headerlink" title="2. exec()"></a>2. exec()</h5><p>exec() 方法检索字符串中的指定值。返回值是被找到的值。如果没有发现匹配，则返回 null<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> patt1=<span class="keyword">new</span> <span class="built_in">RegExp</span>(<span class="string">"e"</span>);</span><br><span class="line"><span class="keyword">var</span> patt2=<span class="regexp">/H/</span>;</span><br><span class="line"><span class="built_in">document</span>.write(patt1.exec(<span class="string">"The best things in life are free"</span>)); <span class="comment">//e</span></span><br><span class="line"><span class="built_in">document</span>.write(patt2.exec(<span class="string">"The best things in life are free"</span>)); <span class="comment">//null</span></span><br></pre></td></tr></table></figure></p>
-<h4 id="三、正则表达式应用"><a href="#三、正则表达式应用" class="headerlink" title="三、正则表达式应用"></a>三、正则表达式应用</h4><h5 id="1-校验登录名：只能输入5-20个以字母开头、可带数字-的字串"><a href="#1-校验登录名：只能输入5-20个以字母开头、可带数字-的字串" class="headerlink" title="1. 校验登录名：只能输入5-20个以字母开头、可带数字 _  . 的字串"></a>1. 校验登录名：只能输入5-20个以字母开头、可带数字 _  . 的字串</h5><p><code>/^[a-zA-Z]{1}([a-zA-Z0-9]|[._]{4,19})$/</code></p>
-<h5 id="2-校验密码：只能输入6-20个字母、数字、下划线"><a href="#2-校验密码：只能输入6-20个字母、数字、下划线" class="headerlink" title="2. 校验密码：只能输入6-20个字母、数字、下划线"></a>2. 校验密码：只能输入6-20个字母、数字、下划线</h5><p><code>/^(\w){6,20}$/</code><br><code>\w</code>：用户匹配字母、数字、下划线</p>
-<h5 id="3-校验URL"><a href="#3-校验URL" class="headerlink" title="3. 校验URL"></a>3. 校验URL</h5><p><code>/^http[s]{0,1}:\/\/.+$/</code><br><code>\/</code>：转义字符为/<br><code>.</code>：表示所有字符的集<br><code>+</code>：表示1到正无穷个</p>
-<h5 id="4-校验纯中文字符"><a href="#4-校验纯中文字符" class="headerlink" title="4. 校验纯中文字符"></a>4. 校验纯中文字符</h5><p><code>/^[\u4E00-\u9FA5]+$/</code></p>
-<h5 id="5-检验非负整数"><a href="#5-检验非负整数" class="headerlink" title="5. 检验非负整数"></a>5. 检验非负整数</h5><p><code>/^\d+$/</code></p>
-<h5 id="6-检验整数"><a href="#6-检验整数" class="headerlink" title="6. 检验整数"></a>6. 检验整数</h5><p><code>/^-?\d+$/</code></p>
+<h4 id="9-通过postman进行post，delete，patch"><a href="#9-通过postman进行post，delete，patch" class="headerlink" title="9.通过postman进行post，delete，patch"></a>9.通过postman进行post，delete，patch</h4><p>设置请求头：Headers<br><code>key: Content-Type</code><br><code>value:application/json</code></p>
+<p>设置Body,内容<br>添加地址：     <a href="http://localhost:3000/users" target="_blank" rel="noopener">http://localhost:3000/users</a><br>body内容：<br>{“name”:”hjp”,”age”:18,”gender”:”male”}<br>删除地址：    <a href="http://localhost:3000/users/id" target="_blank" rel="noopener">http://localhost:3000/users/id</a><br>修改地址:      <a href="http://localhost:3000/users/id" target="_blank" rel="noopener">http://localhost:3000/users/id</a><br>{“name”:”whj”}</p>
+<h4 id="10-拉取jsonplaceholder的资源"><a href="#10-拉取jsonplaceholder的资源" class="headerlink" title="10. 拉取jsonplaceholder的资源"></a>10. 拉取jsonplaceholder的资源</h4><p>在package.json中<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">"scripts": &#123;</span><br><span class="line">    "json:server": "json-server --watch db.json",</span><br><span class="line">    "json:server:remote":"json-server http://jsonplaceholder.typicode.com/db"</span><br><span class="line">  &#125;,</span><br></pre></td></tr></table></figure></p>
+<p>启动服务：<br><code>npm run json:server:remote</code></p>
+<h4 id="链接"><a href="#链接" class="headerlink" title="链接"></a>链接</h4><p><a href="https://github.com/typicode/json-server" target="_blank" rel="noopener">github地址</a><br><a href="http://jsonplaceholder.typicode.com/" target="_blank" rel="noopener">jsonplaceholder</a></p>
 
           
         
@@ -1147,7 +1326,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/04/07/php--session初体验/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/04/13/es6--箭头函数/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="HJP">
@@ -1166,7 +1345,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2019/04/07/php--session初体验/" itemprop="url">php--session初体验</a></h1>
+                <a class="post-title-link" href="/2019/04/13/es6--箭头函数/" itemprop="url">es6--箭头函数</a></h1>
         
 
         <div class="post-meta">
@@ -1178,8 +1357,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-04-07T17:59:48+08:00">
-                2019-04-07
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-04-13T21:43:40+08:00">
+                2019-04-13
               </time>
             
 
@@ -1201,154 +1380,8 @@
               
               
                 <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/php/" itemprop="url" rel="index">
-                    <span itemprop="name">php</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h4 id="session使用"><a href="#session使用" class="headerlink" title="session使用"></a>session使用</h4><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line">    session_start();  <span class="comment">//开启session才能使用，而且要结合cookie</span></span><br><span class="line">    $_SESSION[<span class="string">'user'</span>] = <span class="string">'hjp'</span>;   <span class="comment">//session的存储比cookie更安全</span></span><br><span class="line">    var_dump($_SESSION); <span class="comment">//客户端是看不到session值的，打印服务器端的session值</span></span><br><span class="line"><span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2019/04/07/php--session初体验/#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/04/07/表严肃学Vue--计算属性/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="HJP">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="HJinPeng">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/04/07/表严肃学Vue--计算属性/" itemprop="url">表严肃学Vue--计算属性</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-04-07T11:06:08+08:00">
-                2019-04-07
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/Vue/" itemprop="url" rel="index">
-                    <span itemprop="name">Vue</span>
+                  <a href="/categories/ES6/" itemprop="url" rel="index">
+                    <span itemprop="name">ES6</span>
                   </a>
                 </span>
 
@@ -1386,9 +1419,9 @@
       
         
           
-            <h4 id="计算属性"><a href="#计算属性" class="headerlink" title="计算属性"></a>计算属性</h4><h5 id="为什么需要缓存？"><a href="#为什么需要缓存？" class="headerlink" title="为什么需要缓存？"></a>为什么需要缓存？</h5><p>假设我们有一个性能开销比较大的计算属性 A，<br>它需要遍历一个巨大的数组并做大量的计算。<br>然后我们可能有其他的计算属性依赖于 A 。<br>如果没有缓存，我们将不可避免的多次执行 A 的 getter！<br>如果你不希望有缓存，请用方法来替代。</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"example"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">p</span>&gt;</span>Original message: "&#123;&#123; message &#125;&#125;"<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">p</span>&gt;</span>Computed reversed message: "&#123;&#123; reversedMessage &#125;&#125;"<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="javascript"><span class="keyword">var</span> vm = <span class="keyword">new</span> Vue(&#123;</span></span><br><span class="line"><span class="javascript">  el: <span class="string">'#example'</span>,</span></span><br><span class="line"><span class="undefined">  data: &#123;</span></span><br><span class="line"><span class="javascript">    message: <span class="string">'Hello'</span></span></span><br><span class="line"><span class="undefined">  &#125;,</span></span><br><span class="line"><span class="undefined">  computed: &#123;</span></span><br><span class="line"><span class="javascript">    <span class="comment">// 计算属性的 getter</span></span></span><br><span class="line"><span class="javascript">    reversedMessage: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span></span><br><span class="line"><span class="javascript">      <span class="comment">// `this` 指向 vm 实例</span></span></span><br><span class="line"><span class="javascript">      <span class="keyword">return</span> <span class="keyword">this</span>.message.split(<span class="string">''</span>).reverse().join(<span class="string">''</span>)</span></span><br><span class="line"><span class="undefined">    &#125;</span></span><br><span class="line"><span class="undefined">  &#125;</span></span><br><span class="line"><span class="undefined">&#125;)</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
+            <h4 id="箭头函数"><a href="#箭头函数" class="headerlink" title="箭头函数"></a>箭头函数</h4><p>箭头函数不能作为构造函数，即不能通过new 生成对象<br>需要使用arguments(参数集合)时不能使用构造函数<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//箭头函数 ()=&gt;&#123;&#125;</span></span><br><span class="line"><span class="keyword">let</span> sum = <span class="function">(<span class="params">num1 , num2</span>)=&gt;</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> num1+num2;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(sum(<span class="number">100</span>,<span class="number">200</span>));</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> nameArr = [<span class="string">'zhangsan'</span>,<span class="string">'lisi'</span>,<span class="string">'wangwu'</span>];</span><br><span class="line">nameArr.forEach(<span class="function">(<span class="params">value,index</span>)=&gt;</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(index+<span class="string">':'</span>+value);</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> zhangsan = &#123;</span><br><span class="line">    name: <span class="string">'zhangsan'</span>,</span><br><span class="line">    hobbies:[<span class="string">'coding'</span>,<span class="string">'writing'</span>,<span class="string">'thinking'</span>],</span><br><span class="line">    printHobbies:<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.hobbies.map(<span class="function"><span class="params">hobby</span>=&gt;</span>&#123;</span><br><span class="line">            <span class="built_in">console</span>.log(<span class="keyword">this</span>.name + <span class="string">' love '</span> + hobby);</span><br><span class="line">        &#125;)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">zhangsan.printHobbies();</span><br></pre></td></tr></table></figure>
           
         
       
@@ -1436,7 +1469,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/04/07/表严肃学Vue--插槽slots/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/04/13/es6--数组去重/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="HJP">
@@ -1455,7 +1488,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2019/04/07/表严肃学Vue--插槽slots/" itemprop="url">表严肃学Vue--插槽slots</a></h1>
+                <a class="post-title-link" href="/2019/04/13/es6--数组去重/" itemprop="url">es6--数组去重</a></h1>
         
 
         <div class="post-meta">
@@ -1467,8 +1500,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-04-07T11:04:52+08:00">
-                2019-04-07
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-04-13T18:17:08+08:00">
+                2019-04-13
               </time>
             
 
@@ -1490,8 +1523,8 @@
               
               
                 <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/Vue/" itemprop="url" rel="index">
-                    <span itemprop="name">Vue</span>
+                  <a href="/categories/ES6/" itemprop="url" rel="index">
+                    <span itemprop="name">ES6</span>
                   </a>
                 </span>
 
@@ -1529,8 +1562,11 @@
       
         
           
-            <h4 id="插槽slots"><a href="#插槽slots" class="headerlink" title="插槽slots"></a>插槽slots</h4><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">"en"</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"UTF-8"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"viewport"</span> <span class="attr">content</span>=<span class="string">"width=device-width, initial-scale=1.0"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">http-equiv</span>=<span class="string">"X-UA-Compatible"</span> <span class="attr">content</span>=<span class="string">"ie=edge"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>Document<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="css">        <span class="selector-class">.panel</span> &#123;</span></span><br><span class="line"><span class="undefined">            max-width: 300px;</span></span><br><span class="line"><span class="undefined">            line-height: 30px;</span></span><br><span class="line"><span class="css">            <span class="selector-tag">background-color</span>: <span class="selector-id">#e0e0e0</span>;</span></span><br><span class="line"><span class="undefined">            border: 1px solid black;</span></span><br><span class="line"><span class="undefined">            margin-bottom: 15px;</span></span><br><span class="line"><span class="undefined">        &#125;</span></span><br><span class="line"><span class="undefined">        </span></span><br><span class="line"><span class="css">        <span class="selector-class">.panel</span> <span class="selector-class">.title</span> &#123;</span></span><br><span class="line"><span class="undefined">            border-bottom: 1px solid black;</span></span><br><span class="line"><span class="undefined">        &#125;</span></span><br><span class="line"><span class="undefined">        </span></span><br><span class="line"><span class="css">        <span class="selector-class">.panel</span> <span class="selector-class">.content</span> &#123;</span></span><br><span class="line"><span class="css">            <span class="selector-tag">border-bottom</span>: 1<span class="selector-tag">px</span> <span class="selector-tag">solid</span> <span class="selector-id">#000</span>;</span></span><br><span class="line"><span class="undefined">            height: 200px;</span></span><br><span class="line"><span class="undefined">            overflow: visible</span></span><br><span class="line"><span class="undefined">        &#125;</span></span><br><span class="line"><span class="undefined">    </span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"app"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">panel</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">p</span> <span class="attr">slot</span>=<span class="string">"title"</span>&gt;</span>1111<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">p</span> <span class="attr">slot</span>=<span class="string">"content"</span>&gt;</span>222222<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">p</span> <span class="attr">slot</span>=<span class="string">"footer"</span>&gt;</span>3333333<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">panel</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">panel</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">div</span> <span class="attr">slot</span>=<span class="string">"title"</span>&gt;</span>2132423<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">div</span> <span class="attr">slot</span>=<span class="string">"content"</span>&gt;</span>123124123<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"></span><br><span class="line">        <span class="tag">&lt;/<span class="name">panel</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="name">template</span> <span class="attr">id</span>=<span class="string">"panel-tpl"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"panel"</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"title"</span>&gt;</span> <span class="tag">&lt;<span class="name">slot</span> <span class="attr">name</span>=<span class="string">"title"</span>&gt;</span><span class="tag">&lt;/<span class="name">slot</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"content"</span>&gt;</span></span><br><span class="line">                    <span class="tag">&lt;<span class="name">slot</span> <span class="attr">name</span>=<span class="string">"content"</span>&gt;</span><span class="tag">&lt;/<span class="name">slot</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"footer"</span>&gt;</span></span><br><span class="line">                        <span class="tag">&lt;<span class="name">slot</span> <span class="attr">name</span>=<span class="string">"footer"</span>&gt;</span>更多信息<span class="tag">&lt;/<span class="name">slot</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">         <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"https://cdn.jsdelivr.net/npm/vue/dist/vue.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="javascript">        Vue.component(<span class="string">'panel'</span>, &#123;</span></span><br><span class="line"><span class="javascript">            template: <span class="string">'#panel-tpl'</span></span></span><br><span class="line"><span class="undefined">        &#125;)</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="javascript">        <span class="keyword">new</span> Vue(&#123;</span></span><br><span class="line"><span class="javascript">            el: <span class="string">'#app'</span></span></span><br><span class="line"><span class="undefined">        &#125;)</span></span><br><span class="line"><span class="undefined">    </span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
+            <h4 id="数组去重"><a href="#数组去重" class="headerlink" title="数组去重"></a>数组去重</h4><ol>
+<li>使用Set()生成集合，自动去重</li>
+<li>使用延展操作符<code>[...arr]</code>或者<code>Array.from(arr)</code>生成新数组</li>
+</ol>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//去重,把它转换成Set集合，就会自动去重</span></span><br><span class="line"><span class="comment">//1. 使用延展操作符[...arr]</span></span><br><span class="line"><span class="keyword">let</span> myArr = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">10</span>,<span class="number">20</span>,<span class="number">20</span>,<span class="number">5</span>,<span class="number">2</span>,<span class="number">1</span>];</span><br><span class="line"><span class="built_in">console</span>.log(<span class="keyword">new</span> <span class="built_in">Set</span>(myArr));   <span class="comment">//Set(5) &#123;1, 2, 10, 20, 5&#125;</span></span><br><span class="line"><span class="keyword">let</span> arr1 = [...new <span class="built_in">Set</span>(myArr)];</span><br><span class="line"><span class="built_in">console</span>.log(arr1);  <span class="comment">//(5) [1, 2, 10, 20, 5]</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//2. 使用Array.from(arr)</span></span><br><span class="line"><span class="keyword">let</span> arr3 = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">10</span>,<span class="number">20</span>,<span class="number">20</span>,<span class="number">5</span>,<span class="number">2</span>,<span class="number">1</span>];</span><br><span class="line"><span class="built_in">console</span>.log(<span class="keyword">new</span> <span class="built_in">Set</span>(arr3));</span><br><span class="line"><span class="keyword">let</span> arr4 = <span class="built_in">Array</span>.from(<span class="keyword">new</span> <span class="built_in">Set</span>(arr3));</span><br><span class="line"><span class="built_in">console</span>.log(arr4);</span><br></pre></td></tr></table></figure>
           
         
       
@@ -1578,7 +1614,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/04/07/表严肃学Vue--混合mixins/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/04/13/es6--函数扩展/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="HJP">
@@ -1597,7 +1633,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2019/04/07/表严肃学Vue--混合mixins/" itemprop="url">表严肃学Vue--混合mixins</a></h1>
+                <a class="post-title-link" href="/2019/04/13/es6--函数扩展/" itemprop="url">es6--函数扩展</a></h1>
         
 
         <div class="post-meta">
@@ -1609,8 +1645,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-04-07T11:03:52+08:00">
-                2019-04-07
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-04-13T18:05:32+08:00">
+                2019-04-13
               </time>
             
 
@@ -1632,8 +1668,8 @@
               
               
                 <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/Vue/" itemprop="url" rel="index">
-                    <span itemprop="name">Vue</span>
+                  <a href="/categories/ES6/" itemprop="url" rel="index">
+                    <span itemprop="name">ES6</span>
                   </a>
                 </span>
 
@@ -1671,7 +1707,32 @@
       
         
           
-            <h4 id="混合mixins"><a href="#混合mixins" class="headerlink" title="混合mixins"></a>混合mixins</h4><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">"en"</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"UTF-8"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"viewport"</span> <span class="attr">content</span>=<span class="string">"width=device-width, initial-scale=1.0"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">http-equiv</span>=<span class="string">"X-UA-Compatible"</span> <span class="attr">content</span>=<span class="string">"ie=edge"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>Document<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"app"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">tooltip</span>&gt;</span><span class="tag">&lt;/<span class="name">tooltip</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">popup</span>&gt;</span><span class="tag">&lt;/<span class="name">popup</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"https://cdn.jsdelivr.net/npm/vue/dist/vue.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="javascript">        <span class="keyword">var</span> base = &#123;</span></span><br><span class="line"><span class="undefined">            methods: &#123;</span></span><br><span class="line"><span class="javascript">                show: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span></span><br><span class="line"><span class="javascript">                    <span class="keyword">this</span>.visible = <span class="literal">true</span>;</span></span><br><span class="line"><span class="undefined">                &#125;,</span></span><br><span class="line"><span class="javascript">                hide: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span></span><br><span class="line"><span class="javascript">                    <span class="keyword">this</span>.visible = <span class="literal">false</span>;</span></span><br><span class="line"><span class="undefined">                &#125;,</span></span><br><span class="line"><span class="javascript">                toggle: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span></span><br><span class="line"><span class="javascript">                    <span class="keyword">this</span>.visible = !<span class="keyword">this</span>.visible;</span></span><br><span class="line"><span class="undefined">                &#125;</span></span><br><span class="line"><span class="undefined">            &#125;,</span></span><br><span class="line"><span class="javascript">            data: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span></span><br><span class="line"><span class="javascript">                <span class="keyword">return</span> &#123;</span></span><br><span class="line"><span class="javascript">                    visible: <span class="literal">false</span>,</span></span><br><span class="line"><span class="undefined">                &#125;</span></span><br><span class="line"><span class="undefined">            &#125;</span></span><br><span class="line"><span class="undefined">        &#125;</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="javascript">        Vue.component(<span class="string">'tooltip'</span>, &#123;</span></span><br><span class="line"><span class="undefined">            template: `</span></span><br><span class="line"><span class="xml">            <span class="tag">&lt;<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="xml">                <span class="tag">&lt;<span class="name">span</span> @<span class="attr">mouseenter</span>=<span class="string">"show"</span> @<span class="attr">mouseleave</span>=<span class="string">"hide"</span>&gt;</span>sdf<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span></span><br><span class="line"><span class="javascript">                &lt;div v-<span class="keyword">if</span>=<span class="string">"visible"</span>&gt;</span></span><br><span class="line"><span class="undefined">                huayngjhinasldgj    </span></span><br><span class="line"><span class="xml">                <span class="tag">&lt;/<span class="name">div</span>&gt;</span>    </span></span><br><span class="line"><span class="xml">            <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="undefined">            `,</span></span><br><span class="line"><span class="undefined">            mixins: [base],</span></span><br><span class="line"><span class="javascript">            <span class="comment">//覆盖封装的方法</span></span></span><br><span class="line"><span class="javascript">            data: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span></span><br><span class="line"><span class="javascript">                <span class="keyword">return</span> &#123;</span></span><br><span class="line"><span class="javascript">                    visible: <span class="literal">true</span></span></span><br><span class="line"><span class="undefined">                &#125;</span></span><br><span class="line"><span class="undefined">            &#125;,</span></span><br><span class="line"><span class="undefined">        &#125;)</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="javascript">        Vue.component(<span class="string">'popup'</span>, &#123;</span></span><br><span class="line"><span class="undefined">            template: `</span></span><br><span class="line"><span class="xml">            <span class="tag">&lt;<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="xml">                <span class="tag">&lt;<span class="name">button</span> @<span class="attr">click</span>=<span class="string">"toggle"</span>&gt;</span>Popup<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span></span><br><span class="line"><span class="javascript">                &lt;div v-<span class="keyword">if</span>=<span class="string">"visible"</span>&gt;</span></span><br><span class="line"><span class="xml">                    <span class="tag">&lt;<span class="name">span</span> @<span class="attr">click</span>=<span class="string">"hide"</span>&gt;</span>X<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span></span><br><span class="line"><span class="xml">                    <span class="tag">&lt;<span class="name">h4</span>&gt;</span>1231231<span class="tag">&lt;/<span class="name">h4</span>&gt;</span></span></span><br><span class="line"><span class="undefined">                    sabfihasfhlasfjlj</span></span><br><span class="line"><span class="xml">                <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="xml">            <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="undefined">            `,</span></span><br><span class="line"><span class="undefined">            mixins: [base],</span></span><br><span class="line"><span class="javascript">            data: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span></span><br><span class="line"><span class="javascript">                <span class="keyword">return</span> &#123;</span></span><br><span class="line"><span class="javascript">                    visible: <span class="literal">true</span></span></span><br><span class="line"><span class="undefined">                &#125;</span></span><br><span class="line"><span class="undefined">            &#125;,</span></span><br><span class="line"><span class="undefined">        &#125;)</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="javascript">        <span class="keyword">new</span> Vue(&#123;</span></span><br><span class="line"><span class="javascript">            el: <span class="string">'#app'</span>,</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="undefined">        &#125;)</span></span><br><span class="line"><span class="undefined">    </span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+            <h4 id="1-基本用法"><a href="#1-基本用法" class="headerlink" title="1. 基本用法"></a>1. 基本用法</h4><p>ES6前不能直接为函数的参数指定默认值。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">log</span>(<span class="params">x,y</span>) </span>&#123;</span><br><span class="line">    y = y || <span class="string">'World'</span></span><br><span class="line">    <span class="built_in">console</span>.log(x,y);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">log(<span class="string">'Hello'</span>); <span class="comment">//Hello World</span></span><br><span class="line">log(<span class="string">'Hello'</span>,<span class="string">'China'</span>); <span class="comment">//Hello China</span></span><br><span class="line">log(<span class="string">'Hello'</span>,<span class="string">''</span>); <span class="comment">//Hello World</span></span><br></pre></td></tr></table></figure></p>
+<p>重点看最后一句，当传入y=’’时，但是y的布尔值时false，所以使用了’World’。为了避免这种情况，通常要先判断一下参数y是否被赋值。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span>(<span class="keyword">typeof</span> y === <span class="string">'undefined'</span>)&#123;</span><br><span class="line">    y = <span class="string">'World'</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>ES6允许给参数默认赋值。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">log</span>(<span class="params">a=<span class="number">1</span>,b=<span class="number">2</span></span>)</span>&#123;&#125;</span><br></pre></td></tr></table></figure></p>
+<p>注意：<br>参数变量是默认声明的，所以不能用let 和 const 再次声明<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params">x = <span class="number">5</span></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">let</span> x = <span class="number">1</span>; <span class="comment">//error</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>使用参数默认值时，函数不能有同名参数<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params">x,x,y=<span class="number">1</span></span>)</span>&#123;&#125;  <span class="comment">//error</span></span><br></pre></td></tr></table></figure></p>
+<p>参数默认值不是传值，而是每次都会重新计算，也就是说，是惰性求值的。</p>
+<h4 id="2-与解构赋值结合"><a href="#2-与解构赋值结合" class="headerlink" title="2. 与解构赋值结合"></a>2. 与解构赋值结合</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 写法1</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">m1</span>(<span class="params">&#123;x=<span class="number">0</span>,y=<span class="number">0</span>&#125;=&#123;&#125;</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> [x,y];</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 写法2</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">m2</span>(<span class="params">&#123;x,y&#125;=&#123;x:<span class="number">0</span>,y:<span class="number">0</span>&#125;</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> [x,y];</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 函数没有参数的情况</span></span><br><span class="line">m1();  <span class="comment">//[0,0]</span></span><br><span class="line">m2();  <span class="comment">//[0,0]</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// x,y都有值</span></span><br><span class="line">m1(&#123;<span class="attr">x</span>:<span class="number">3</span>,<span class="attr">y</span>:<span class="number">8</span>&#125;);  <span class="comment">//[3,8]</span></span><br><span class="line">m2(&#123;<span class="attr">x</span>:<span class="number">3</span>,<span class="attr">y</span>:<span class="number">8</span>&#125;);  <span class="comment">//[3,8]</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// x有值,y无值</span></span><br><span class="line">m1(&#123;<span class="attr">x</span>:<span class="number">3</span>&#125;);  <span class="comment">//[3,0]</span></span><br><span class="line">m2(&#123;<span class="attr">x</span>:<span class="number">3</span>&#125;);  <span class="comment">//[3,undefined]</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// x无值,y无值</span></span><br><span class="line">m1(&#123;&#125;);  <span class="comment">//[0,0]</span></span><br><span class="line">m2(&#123;&#125;);  <span class="comment">//[undefined,undefined]</span></span><br><span class="line">m1(&#123;<span class="attr">z</span>:<span class="number">3</span>&#125;);  <span class="comment">//[0,0]</span></span><br><span class="line">m2(&#123;<span class="attr">z</span>:<span class="number">3</span>&#125;);  <span class="comment">//[undefined,undefined]</span></span><br></pre></td></tr></table></figure>
+<h4 id="3-函数的length属性"><a href="#3-函数的length属性" class="headerlink" title="3. 函数的length属性"></a>3. 函数的length属性</h4><p>指定了默认值后，函数的length属性将返回没有指定默认值的参数个数。也就是length属性失真。<br>如果设置了默认值的参数不是尾参数，那么length属性也不再计入后面的参数。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">(<span class="function"><span class="keyword">function</span> (<span class="params">a</span>) </span>&#123;&#125;).length  <span class="comment">//1</span></span><br><span class="line">(<span class="function"><span class="keyword">function</span> (<span class="params">a = <span class="number">5</span></span>) </span>&#123;&#125;).length  <span class="comment">//0</span></span><br><span class="line">(<span class="function"><span class="keyword">function</span> (<span class="params">a , b , c = <span class="number">5</span></span>) </span>&#123;&#125;).length  <span class="comment">//2</span></span><br><span class="line">(<span class="function"><span class="keyword">function</span> (<span class="params">a = <span class="number">9</span> , b , c</span>) </span>&#123;&#125;).length  <span class="comment">//0</span></span><br><span class="line">(<span class="function"><span class="keyword">function</span> (<span class="params">a, b = <span class="number">1</span> , c</span>) </span>&#123;&#125;).length  <span class="comment">//1</span></span><br></pre></td></tr></table></figure></p>
+<h4 id="4-函数参数的作用域"><a href="#4-函数参数的作用域" class="headerlink" title="4. 函数参数的作用域"></a>4. 函数参数的作用域</h4><p>一旦设置了参数的默认值，函数进行声明初始化时，参数会形成一个单独的作用域（context）<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> x = <span class="number">1</span> ;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">f</span>(<span class="params">x, y=x</span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(y);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">f(<span class="number">2</span>);  <span class="comment">//2</span></span><br></pre></td></tr></table></figure></p>
+<p>因为调用函数f()时，参数形成一个单独的作用域，在这个作用域里，y = x ，的x指向这个作用域中的x，现在x等于传入的2，所以打印出2。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> x = <span class="number">1</span> ;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">f</span>(<span class="params">y = x</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">let</span> x = <span class="number">2</span>;</span><br><span class="line">    <span class="built_in">console</span>.log(y);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">f(); <span class="comment">// 1</span></span><br></pre></td></tr></table></figure>
+<p>上面例子因为参数的作用域中没有定义x，所以往外层找，x=1；如果外层没有x的定义，会报错。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> x = <span class="number">1</span>;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params">x , y = function(</span>) </span>&#123;x = <span class="number">2</span>;&#125;) &#123;</span><br><span class="line">    <span class="keyword">var</span> x = <span class="number">3</span>;</span><br><span class="line">    y();</span><br><span class="line">    <span class="built_in">console</span>.log(x);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">foo();  <span class="comment">//3</span></span><br><span class="line">x  <span class="comment">//1</span></span><br></pre></td></tr></table></figure>
+<p>上面例子，因为foo函数的参数形成了自己的作用域，其中声明了变量x,y。y参数函数中的x即参数作用域中的x，与foo函数内部var的x以及外层var的x没有关系。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> x = <span class="number">1</span>;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params">x , y = function (</span>) </span>&#123; x = <span class="number">2</span>;&#125;) &#123;</span><br><span class="line">    x = <span class="number">3</span>;   <span class="comment">//指向参数作用域中的x，</span></span><br><span class="line">    y();     <span class="comment">// 改变了参数作用域中的x的值为2</span></span><br><span class="line">    <span class="built_in">console</span>.log(x);   <span class="comment">//2</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">foo(); <span class="comment">// 2</span></span><br><span class="line">x = <span class="number">1</span>;</span><br></pre></td></tr></table></figure>
+<h4 id="5-rest参数"><a href="#5-rest参数" class="headerlink" title="5. rest参数"></a>5. rest参数</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">log</span>(<span class="params">...values</span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(values);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">log(<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>);  <span class="comment">//[1,2,3]</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">log</span>(<span class="params">a,...values</span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(a);</span><br><span class="line">    <span class="built_in">console</span>.log(values);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">log(<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>);   <span class="comment">//1  [2,3,4]</span></span><br></pre></td></tr></table></figure>
+<h4 id="6-箭头函数"><a href="#6-箭头函数" class="headerlink" title="6. 箭头函数"></a>6. 箭头函数</h4><p>注意事项：  </p>
+<ol>
+<li>函数体内的this对象就是定义时所在的对象，而不是使用时所在的对象。</li>
+<li>不可以当做构造函数，也就是不可以new。因为箭头函数没有自己的this。</li>
+<li>不可以使用arguments，该对象不存在。如果要用，可以用rest参数代替。</li>
+<li>不可以使用yield命令，因此不能用作Generator函数。</li>
+</ol>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Timer</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.s1 = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">this</span>.s2 = <span class="number">0</span>;</span><br><span class="line">    setInterval(<span class="function"><span class="params">()</span>=&gt;</span><span class="keyword">this</span>.s1++,<span class="number">1000</span>);</span><br><span class="line">    setInterval(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;<span class="keyword">this</span>.s2++&#125;,<span class="number">1000</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> timer = <span class="keyword">new</span> Timer();</span><br><span class="line"></span><br><span class="line">setTimeout(<span class="function"><span class="params">()</span>=&gt;</span><span class="built_in">console</span>.log(<span class="string">'s1:'</span>,timer.s1),<span class="number">3100</span>);</span><br><span class="line">setTimeout(<span class="function"><span class="params">()</span>=&gt;</span><span class="built_in">console</span>.log(<span class="string">'s2:'</span>,timer.s2),<span class="number">3100</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// s1:3</span></span><br><span class="line"><span class="comment">// s2:0</span></span><br></pre></td></tr></table></figure>
+<p>上面代码，在3100ms后，s1累加了3次，而s2没有被累加，因为箭头函数的this指向的是定义时所在的对象Timer，故this.s1可以找到，而第二个定时器，使用的普通函数，它的this指向的是运行时所在的作用域，即window，并没有改动到Timer里的s2。<br><strong>注意：</strong><br>除了this,箭头函数也没有以下三个参数：arguments,super,new.target</p>
 
           
         
@@ -1711,7 +1772,7 @@
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/6/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/6/">6</a><span class="page-number current">7</span><a class="page-number" href="/page/8/">8</a><span class="space">&hellip;</span><a class="page-number" href="/page/14/">14</a><a class="extend next" rel="next" href="/page/8/"><i class="fa fa-angle-right"></i></a>
+    <a class="extend prev" rel="prev" href="/page/6/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/6/">6</a><span class="page-number current">7</span><a class="page-number" href="/page/8/">8</a><span class="space">&hellip;</span><a class="page-number" href="/page/16/">16</a><a class="extend next" rel="next" href="/page/8/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 
@@ -1757,7 +1818,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">137</span>
+                  <span class="site-state-item-count">152</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -1768,7 +1829,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">18</span>
+                  <span class="site-state-item-count">19</span>
                   <span class="site-state-item-name">categories</span>
                 </a>
               </div>
@@ -1779,7 +1840,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">23</span>
+                  <span class="site-state-item-count">24</span>
                   <span class="site-state-item-name">tags</span>
                 </a>
               </div>

@@ -1,0 +1,808 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/2.jpg?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/2.jpg?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/2.jpg?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/2.jpg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="数据结构,">
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="1. 红黑树规则 结点是红色或者黑色 根节点是黑色 每个叶子结点都是黑色的空结点（NIL结点） 每个红色结点的两个子节点都是黑色。（从每个叶子到根的所有路径上，不能有两个连续的红色结点） 从任意一个结点到其他每个叶子节点的所有路径都包含相同数目的黑色结点  2. 红黑树的相对平衡 从根到叶子的最长路径，不会超过最短可能路径的两倍 结果基本平衡  3. 变色，左旋转，右旋转插入的结点默认是红色。">
+<meta name="keywords" content="数据结构">
+<meta property="og:type" content="article">
+<meta property="og:title" content="数据结构--红黑树">
+<meta property="og:url" content="http://yoursite.com/2019/11/17/数据结构--图论/index.html">
+<meta property="og:site_name" content="HJinPeng">
+<meta property="og:description" content="1. 红黑树规则 结点是红色或者黑色 根节点是黑色 每个叶子结点都是黑色的空结点（NIL结点） 每个红色结点的两个子节点都是黑色。（从每个叶子到根的所有路径上，不能有两个连续的红色结点） 从任意一个结点到其他每个叶子节点的所有路径都包含相同数目的黑色结点  2. 红黑树的相对平衡 从根到叶子的最长路径，不会超过最短可能路径的两倍 结果基本平衡  3. 变色，左旋转，右旋转插入的结点默认是红色。">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/2392382-abedf3ecc733ccd5.png?imageMogr2/auto-orient/strip|imageView2/2/w/772/format/webp">
+<meta property="og:image" content="https://note.youdao.com/yws/public/resource/03192ad5acd4e24a98ff33fda112ac1b/xmlnote/E7568F698317409194939B5376AA6B59/5079">
+<meta property="og:updated_time" content="2020-02-26T16:22:07.730Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="数据结构--红黑树">
+<meta name="twitter:description" content="1. 红黑树规则 结点是红色或者黑色 根节点是黑色 每个叶子结点都是黑色的空结点（NIL结点） 每个红色结点的两个子节点都是黑色。（从每个叶子到根的所有路径上，不能有两个连续的红色结点） 从任意一个结点到其他每个叶子节点的所有路径都包含相同数目的黑色结点  2. 红黑树的相对平衡 从根到叶子的最长路径，不会超过最短可能路径的两倍 结果基本平衡  3. 变色，左旋转，右旋转插入的结点默认是红色。">
+<meta name="twitter:image" content="https://upload-images.jianshu.io/upload_images/2392382-abedf3ecc733ccd5.png?imageMogr2/auto-orient/strip|imageView2/2/w/772/format/webp">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2019/11/17/数据结构--图论/">
+
+
+
+
+
+  <title>数据结构--红黑树 | HJinPeng</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope="" itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">HJinPeng</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            Tags
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            Categories
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            Archives
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            About
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/11/17/数据结构--图论/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="HJP">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="HJinPeng">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">数据结构--红黑树</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-11-17T00:00:00+08:00">
+                2019-11-17
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/数据结构/" itemprop="url" rel="index">
+                    <span itemprop="name">数据结构</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p><img src="https://upload-images.jianshu.io/upload_images/2392382-abedf3ecc733ccd5.png?imageMogr2/auto-orient/strip|imageView2/2/w/772/format/webp" alt="image"></p>
+<h4 id="1-红黑树规则"><a href="#1-红黑树规则" class="headerlink" title="1. 红黑树规则"></a>1. 红黑树规则</h4><ol>
+<li>结点是红色或者黑色</li>
+<li>根节点是黑色</li>
+<li>每个叶子结点都是黑色的空结点（NIL结点）</li>
+<li>每个红色结点的两个子节点都是黑色。（从每个叶子到根的所有路径上，不能有两个连续的红色结点）</li>
+<li>从任意一个结点到其他每个叶子节点的所有路径都包含相同数目的黑色结点</li>
+</ol>
+<h4 id="2-红黑树的相对平衡"><a href="#2-红黑树的相对平衡" class="headerlink" title="2. 红黑树的相对平衡"></a>2. 红黑树的相对平衡</h4><ul>
+<li>从根到叶子的最长路径，不会超过最短可能路径的两倍</li>
+<li>结果基本平衡</li>
+</ul>
+<h4 id="3-变色，左旋转，右旋转"><a href="#3-变色，左旋转，右旋转" class="headerlink" title="3. 变色，左旋转，右旋转"></a>3. 变色，左旋转，右旋转</h4><p>插入的结点默认是红色。</p>
+<h4 id="4-变换规则"><a href="#4-变换规则" class="headerlink" title="4. 变换规则"></a>4. 变换规则</h4><p><img src="https://note.youdao.com/yws/public/resource/03192ad5acd4e24a98ff33fda112ac1b/xmlnote/E7568F698317409194939B5376AA6B59/5079" alt="image"></p>
+<h5 id="4-1-情况1-和-情况2"><a href="#4-1-情况1-和-情况2" class="headerlink" title="4.1 情况1 和 情况2"></a>4.1 情况1 和 情况2</h5><p>情况1：  </p>
+<ul>
+<li>新节点N位于根上，没有父节点</li>
+</ul>
+<p>操作：  </p>
+<ul>
+<li>这时候把红色改为黑色即可</li>
+</ul>
+<p>情况2： </p>
+<ul>
+<li>新节点的父节点P是黑色</li>
+</ul>
+<p>操作：</p>
+<ul>
+<li>直接插入红色的新节点N</li>
+</ul>
+<h5 id="4-2-情况3"><a href="#4-2-情况3" class="headerlink" title="4.2 情况3"></a>4.2 情况3</h5><p>情况3：  </p>
+<ul>
+<li>P(父节点)为红色，U(叔叔结点)也为红色</li>
+<li>G(祖父结点)为黑色  </li>
+</ul>
+<p>操作：</p>
+<ul>
+<li>变成 -&gt; 父黑叔黑祖红</li>
+</ul>
+<h5 id="4-3-情况4"><a href="#4-3-情况4" class="headerlink" title="4.3 情况4"></a>4.3 情况4</h5><p>情况4：  </p>
+<ul>
+<li>父红树黑祖黑，N是左儿子</li>
+</ul>
+<p>操作：</p>
+<ul>
+<li>-&gt; 父黑</li>
+<li>-&gt; 祖红</li>
+<li>-&gt; 右旋转</li>
+</ul>
+<h5 id="4-4-情况5"><a href="#4-4-情况5" class="headerlink" title="4.4 情况5"></a>4.4 情况5</h5><p>情况5：</p>
+<ul>
+<li>父红叔黑祖黑，N是右儿子</li>
+</ul>
+<p>操作：</p>
+<ul>
+<li>-&gt; 以P为根进行左旋转</li>
+<li>将P作为新插入的红色结点考虑即可<ul>
+<li>自己变成黑色</li>
+<li>祖变成红色</li>
+<li>以祖为根，进行右旋转</li>
+</ul>
+</li>
+</ul>
+<h4 id="5-案例"><a href="#5-案例" class="headerlink" title="5. 案例"></a>5. 案例</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line">插入 10 9 8 7 6 5 4 3 2 1</span><br><span class="line">1. 插入 10 : 将 10 的结点颜色改为黑色</span><br><span class="line">2. 插入 9 ：不需要任何变化</span><br><span class="line">3. 插入 8 ：属于情况 4</span><br><span class="line">    - 9 变黑</span><br><span class="line">    - 10 变红</span><br><span class="line">    - 以 10 为轴右旋转</span><br><span class="line">4. 插入 7 ： 属于情况 3 </span><br><span class="line">    - 8，10 变黑</span><br><span class="line">    - 9 变红</span><br><span class="line">    * 不符合规则2</span><br><span class="line">    - 把 9 (根节点)变成黑</span><br><span class="line">5. 插入 6 ：属于情况 4</span><br><span class="line">    - 7 变黑</span><br><span class="line">    - 8 变红色</span><br><span class="line">    - 以 8 为轴右旋转</span><br><span class="line">6. 插入 5 ：属于情况3</span><br><span class="line">    - 6,8变黑</span><br><span class="line">    - 7变红</span><br><span class="line">7. 插入 4 ：属于情况4</span><br><span class="line">    - 5变黑</span><br><span class="line">    - 6变红</span><br><span class="line">    - 以6为轴进行右旋转</span><br><span class="line">8. 插入 3 ： 属于情况3</span><br><span class="line">    - 4,6变黑</span><br><span class="line">    - 5变红</span><br><span class="line">    * 不符合规则，故递归，将5看做插入节点，情况4</span><br><span class="line">    - 7,10变黑</span><br><span class="line">    - 9 变红</span><br><span class="line">    - 以9为轴右旋转</span><br><span class="line">    - 8作为9的左儿子</span><br><span class="line">9. 插入 2 ：属于情况4</span><br><span class="line">    - 3变黑</span><br><span class="line">    - 4变红</span><br><span class="line">    - 以4为轴进行右旋转</span><br><span class="line">10. 插入 1 ：属于情况3</span><br><span class="line">    - 2,4变黑</span><br><span class="line">    - 3变红</span><br><span class="line">    * 红红相连，不符合规则，递归，将3看做插入节点，属于情况3</span><br><span class="line">    - 5,9变黑</span><br><span class="line">    - 7变红</span><br><span class="line">    * 根必须是黑色</span><br><span class="line">    - 7变黑</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/数据结构/" rel="tag"># 数据结构</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/11/15/数据结构--二叉树/" rel="next" title="数据结构--二叉树">
+                <i class="fa fa-chevron-left"></i> 数据结构--二叉树
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/11/18/数据结构--图封装，广度深度优先遍历/" rel="prev" title="数据结构--图封装，广度深度优先遍历">
+                数据结构--图封装，广度深度优先遍历 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">HJP</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">152</span>
+                  <span class="site-state-item-name">posts</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">19</span>
+                  <span class="site-state-item-name">categories</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">24</span>
+                  <span class="site-state-item-name">tags</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-红黑树规则"><span class="nav-text">1. 红黑树规则</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-红黑树的相对平衡"><span class="nav-text">2. 红黑树的相对平衡</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-变色，左旋转，右旋转"><span class="nav-text">3. 变色，左旋转，右旋转</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-变换规则"><span class="nav-text">4. 变换规则</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#4-1-情况1-和-情况2"><span class="nav-text">4.1 情况1 和 情况2</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#4-2-情况3"><span class="nav-text">4.2 情况3</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#4-3-情况4"><span class="nav-text">4.3 情况4</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#4-4-情况5"><span class="nav-text">4.4 情况5</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5-案例"><span class="nav-text">5. 案例</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">HJP</span>
+
+  
+</div>
+
+
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
